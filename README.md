@@ -2,3 +2,4 @@
 
 - Thai Minh
 - Tuấn Ninh
+- Đặng Trang
