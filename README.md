@@ -1,5 +1,13 @@
 # Your JS Life
 
-- Thai Minh
+## Mentor
+
+## Takecare
+
+- Ho Khanh Vu
+
+## Members
+
+- Thái Minh
 - Tuấn Ninh
 - Đặng Trang
