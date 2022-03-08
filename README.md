@@ -2,6 +2,8 @@
 
 ## Mentor
 
+- Hưng thiên thần (mentor)
+
 ## Takecare
 
 - Ho Khanh Vu
@@ -11,4 +13,3 @@
 - Thái Minh
 - Tuấn Ninh
 - Đặng Trang
-- Hưng thiên thần (mentor)
