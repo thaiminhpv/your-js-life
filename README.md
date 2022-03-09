@@ -13,6 +13,7 @@
 - Thái Minh
 - Tuấn Ninh
 - Đặng Trang
+- Minh Duc
 
 ## Report họp
 Ngày 8/3
