@@ -19,4 +19,4 @@
 
 ## Report họp
 
-- https://docs.google.com/document/d/1BHub-hmrYJYtGRxU-C6DxXoJw8EneEHCohkRrMax0ZM/edit
+- [Thư mục chứa reports](https://drive.google.com/drive/folders/1lH4HKKwLGwdbXkEeUezOFPBTNW-S9KI1)
