@@ -16,6 +16,7 @@
 - Đặng Trang
 - Minh Đức
 - Xuân Hậu
+- Duy Khánh
 
 ## Report họp
 
