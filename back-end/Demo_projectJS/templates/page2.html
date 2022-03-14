@@ -33,7 +33,7 @@
            <!-- <div class="accordion col-md-6" id="accordionExample">-->
             <div class="text-container">
                 <p class = "hello">Hello</p>
-                <p>I'm ....</p>
+                <p>I'm {{user.firstname}}</p>
                 <p>I'm software engineering</p>
                 <p></p>
             </div> 
@@ -57,11 +57,11 @@
      <!--about text-->
      <div class="about-text">
          <p id="about-me">About me</p>
-         <p>Name: Jasmine</p>
-         <p>Age: 19 years old</p> 
-         <p>Languages: Vietnamese</p> 
-         <p>From: Viet Nam</p> 
-         <a href="https://mail.google.com/mail/u/0/#inbox">Emaii: yourjslife@gmail.com</a>
+         <p>Name: {{user.lastname}} {{user.firstname}}</p>
+         <p>Age: {{user.age}} years old</p> 
+         <p>Languages: {{user.language}}</p> 
+         <p>From: {{user.address}}</p> 
+         <a href="https://mail.google.com/mail/u/0/#inbox">Emaii: {{user.email}}</a>
          <br><br>      
          <button>Hire Me</button>
          <button>Download CV</button>
