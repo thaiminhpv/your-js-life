@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Input form</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/81e4fcabce.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'styles/style.css') }}">
+</head>
+
+<body>
+    <form novalidate id="border_form" class="row" method="post" action="#">
+        <div novalidate id="left" class="col-md-5 mt-5">
+
+            <img class="mb-4" src="{{ url_for('static', filename = 'img/imgcat.jpg') }}" id="avt">
+            <!-- <div class=" custom-file">
+                    <input type="file" class="custom-file-input " accept=".jpg, .png" id="customeFile">
+                    <label for="customFile" class="custom-file-label">Upload your photo</label>
+                </div> -->
+
+            <div class="row">
+                <div class="col-md-6 mb-2">
+                    <label for=" FirstName">First Name</label>
+                    <input type="text" id="FirstName" class="form-control" placeholder="First Name">
+                </div>
+                <div class="col-md-6 mb-2">
+                    <label for=" LastName">Last Name</label>
+                    <input type="text" id="LastName" class="form-control" placeholder="Last Name">
+                </div>
+            </div>
+            <div class="mb-2">
+                <label for=" Email">Email</label>
+                <input type="email" id="Email" class="form-control" placeholder="Email" >
+            </div>
+            <div class="mb-2">
+                <label for=" Phone">Phone</label>
+                <input type="Number" id="Phone" class="form-control" placeholder="Phone">
+            </div>
+            <div class="mb-2">
+                <label for=" Address">Address</label>
+                <input type="text" id="Address" class="form-control" placeholder="Address">
+            </div>
+        </div>
+
+        <div id="right" class="col-md-7 mt-5">
+            <div class="mb-2">
+                <label for=" Nation">Nation</label>
+                <input type="text" id="Nation" class="form-control" placeholder="Nation">
+            </div>
+            <div class="mb-2">
+                <label for=" Sologan">Slogan</label>
+                <input type="text" id="Sologan" class="form-control" placeholder="Slogan">
+            </div>
+            <div class="row mb-2">
+                <div class=" col-md-6">
+                    <label for="Gender">Gender</label>
+                    <select name="selectGender" class="custom-select-md custom-select">
+                        <option value="1" selected>Male</option>
+                        <option value="2">Female</option>
+                        <option value="3">Other</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="Gender">Language</label>
+                    <select name="selectLanguage" class="custom-select-md custom-select">
+                        <option value="1" selected>Viet Nam</option>
+                        <option value="2">English</option>
+                        <option value="3">Emoji</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mb-2 row">
+                <div class="col-md-6">
+                    <label for="dateOfBirth">Date of Birth</label>
+                    <input type="date" class="form-control">
+                </div>
+                <div class="col-md-6"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-2">
+                    <label for=Twitter">Twitter</label>
+                    <input type="text" id=Twitter" class="form-control" placeholder="Twitter">
+                </div>
+                <div class="col-md-6 mb-2">
+                    <label for=" Linked in">Linked in</label>
+                    <input type="text" id="Linked in" class="form-control" placeholder="Linked in">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-2">
+                    <label for=" Facebook">Facebook</label>
+                    <input type="text" id="Facebook" class="form-control" placeholder="Facebook">
+                </div>
+                <div class="col-md-6 mb-2">
+                    <label for="Google">Google</label>
+                    <input type="text" id="Google" class="form-control" placeholder="Google">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg mt-5" id="buttonSave">Submit</button>
+        </div>
+
+    </form>
+
+
+</body>
+
+</html>
