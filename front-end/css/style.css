@@ -1,3 +1,43 @@
-h1 {
-    color: red;
-}
+body {
+    background-color: rgb(57, 169, 219);
+    font-family: Rubik, Arial;
+  }
+  
+  form {
+    text-align: center;
+    line-height: 30px;
+    height: 80%;
+    overflow: auto;
+  }
+  
+  form hr {
+    width: 15%;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  #burger {
+    max-height: 30%;
+  }
+  
+  #overlay {
+    width: 90%;
+    margin: 3% auto;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 40px;
+  }
+  
+  #logo {
+    height: 200px;
+    display: block;
+    margin: auto;
+  }
+  
+  
+  .toppings label, .cheesy label {
+    margin-right: 25px;
+  }
+  

@@ -8,9 +8,74 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<h1>
-    Hello World!
-</h1>
+    <section id="overlay">
+        <img src="https://thuthuatnhanh.com/wp-content/uploads/2021/07/hinh-anh-welcome.jpg" alt="JS CLub Logo" id="logo">
+        <hr>
+    <form action="" method="POST">
+        <h1> Create your profile</h1>
+        <section class="name">
+            <label for="input1">What is your name ?</label>
+            <input type="text" name="patty" id="input1" value="Nguyen Duy Khanh">
+         </section>
+         <hr>
+
+    
+    <section class="age">
+      <label for="amount">How old are you ?</label>
+      <input type="number" name="amount" id="amount" value="18">
+    </section>
+    <hr>
+
+
+    <section class="country-selection">
+        <label for="country">What is your nationality ?</label>
+        <input list="country" id="country" name="country" value="Vietnamese">
+        <datalist id="country">
+          <option value="American"></option>
+          <option value="Japanese"></option>
+          <option value="Russia"></option>
+        </datalist>
+      </section>
+      <hr>
+
+      <section class="adress-infor">
+        <label for="adress">What is your address ?</label>
+        <input type="text" name="house" id="input1" value="Vinh Nghe An">
+     </section> 
+     <hr>
+     <section class="email">
+       <label for="email">What is your email ?
+       </label>
+      <input type="text" name="email" id="email" value="khanh@gmail.com">
+    </section>
+
+     <section class="feeling">
+        <label for="emotions">How are your feelings?</label>
+        <br>
+        <span>Sad</span>
+        <input type="range" name="emotions" id="emotions" value="5" min="1" max="10">
+        <span>Happy</span>
+      </section>
+      <hr>
+
+     <section class="extra-info">
+        <label for="extra">Anything else you want to say?</label>
+        <br>
+        <textarea id="extra" name="extra" rows="3" cols="40">EHEHE</textarea>
+      </section>
+      <hr>
+
+      <section class="submission">
+        <input type="submit" value="Submit">
+      </section>
+      
+    
+
+       
+
+
+    </form>
+    </section>
 <script src="js/script.js"></script>
 </body>
 </html>
