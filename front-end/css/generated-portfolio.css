@@ -1,0 +1,296 @@
+body{
+    background-color: #f6f5f5;
+    margin:0px;
+    padding: 0px;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+section{
+    width: 100%;
+    height: 95vh;
+    background-image: url("https://www.macmillandictionary.com/us/external/slideshow/thumb/Grey_thumb.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* nav{
+    width: 100%;
+    height: 500px;
+    background-color: #262626;
+} */
+
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    background-color: #ffffff;
+}
+nav ul{
+    display: flex;
+    color:forestgreen;
+    font-size: 15px;
+    font-weight: 700;
+}
+nav ul li a{
+    margin: 30px;
+    color: gray;
+}
+.active{
+    font-weight: bold; /*độ dày của chữ*/
+    color: black;
+}
+.hello{
+    font-size: 50px ;
+}
+.text-container{
+    font-family: calibri;/*font chữ*/
+    font-weight: bold;
+    color: rgb(250, 245, 245);
+    font-size: 30px;
+    display: inline-block;
+    margin: -7% auto 20px auto;
+    position: relative;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+.text-container .hello{
+
+}
+.text-container{
+    position: absolute;
+    left: 4%; 
+    bottom: 11%;
+    height: 70%;
+    /* padding: 10px; */
+    width: 40%;
+    text-align: center;
+    padding-top: 120px;
+  
+    /* background-color: #ffffff; */
+}
+.img-introduce{
+    position: absolute;
+    right: 0%; 
+    left: 60%;
+    bottom: 11%;
+    height: 70%;
+    width: 50%; 
+    /* padding: 10px; */
+    width: 40%;
+}
+button:active{
+    transform: scale(1.1);
+}
+.model{
+    height: 560px;
+    position: absolute;
+    bottom: 40px;
+    left: 70%;
+    transform: translateX(-70%);
+
+}
+.about-container{
+    width: 80%;
+    height: 330px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 2);
+    display: flex;
+    margin: -7% auto 20px auto;
+    position: relative;
+    justify-content: space-evenly;
+    align-items: center;
+
+
+}
+.about-container img{
+    height: 250px;
+    margin-left: 40px;
+}
+.about-text{
+    width: 550px;
+    padding-left: 80px;
+}
+.about-text #about-me{
+    color: #030000;
+    font-family: calibri;
+    font-size: 23px;
+}
+.about-text button{
+    width: 120px;
+    height: 40px;
+    color: #ffffff;
+    outline: none;
+    border: none;
+    background-color: #262525;
+}
+.services{
+    height: 600px;
+    background-color: #ffffff;
+    padding: 2% 10% 0px 10%; 
+    
+}
+.services-text{
+    width: 500px;
+    margin: 50px 0px;
+}
+.box-1, .box-2, .box-3{
+    width: 300px;
+    height: 320px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 2px 2px 12px rgb(253, 250, 250);
+    display:flex;
+    justify-items: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.box-container{
+    display: flex;
+    justify-content: space-between;
+}
+.box-1{
+    background-image: url("https://images.squarespace-cdn.com/content/v1/55fc0004e4b069a519961e2d/1442590746571-RPGKIXWGOO671REUNMCB/image-asset.gif");
+}
+.box-2{
+    background-image: url("https://images.squarespace-cdn.com/content/v1/55fc0004e4b069a519961e2d/1442590746571-RPGKIXWGOO671REUNMCB/image-asset.gif");
+}
+.box-3{
+    background-image: url("https://images.squarespace-cdn.com/content/v1/55fc0004e4b069a519961e2d/1442590746571-RPGKIXWGOO671REUNMCB/image-asset.gif");
+}
+.box-1 span,
+.box-2 span, 
+.box-3 span {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box-1{
+    color: #ffffff;
+    font-family: calibri;
+    font-size: 23px;
+
+}
+.box-1 .heading{
+    color: #ffffff;
+}
+.box-1 button,
+.box-2 button,
+.box-3 button{
+    width: 100px;
+    height: 20px;
+    background-color: #ffffff;
+    border: none;
+    outline: none;
+}
+.contact-me{
+    width: 100%;
+    height: 280px;
+    background-image: url("https://static.vecteezy.com/system/resources/previews/001/209/957/large_2x/square-png.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #191919;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+.contact-me .text-contact-me{
+    margin-left: 40%;
+}
+.contact-me p{
+    color: #ffffff;
+    font-size: 30px;
+    font-family: calibri;
+    font-weight: bold;
+    border-bottom: 2px solid #ffffff;
+    
+
+}
+.contact-me button{
+    width: 200px;
+    height: 40px;
+    background-color: #110101;
+    outline: none;
+    border: none;
+    font-size: 14px;
+}
+.footer{
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+.footer p{
+    font-family: calibri;
+    font-size: 30px;
+    color: #191919;
+}
+.social-icons a{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e6e3e3;
+    margin: 20px 10px;
+    border-radius: 50%;
+}
+.social-icons{
+    display: flex;
+}
+.copy-right{
+    color: #565555;
+    font-size: 15px;
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+}
+.social-icons i{
+    color: #000000;
+}
+.social-icons a:hover{
+    
+}
+#social-bar{
+    position: fixed;
+    top: 50%;
+    right: 0px;
+    transform: translateX(-50%);
+}
+.a-social-b{
+    position: fixed;
+    top: 50%;
+    right: 0px;
+    transform: translateX(-50%);
+}
+.a-social-b a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    padding: 0px;
+    margin: 0px;
+    background-color: #ffffff;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+
+}
+
+/*social-media*/
