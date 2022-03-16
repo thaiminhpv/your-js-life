@@ -63,23 +63,23 @@ nav ul li a{
 }
 .text-container{
     position: absolute;
-    left: 4%; 
+    left: 4%;
     bottom: 11%;
     height: 70%;
     /* padding: 10px; */
     width: 40%;
     text-align: center;
     padding-top: 120px;
-  
+
     /* background-color: #ffffff; */
 }
 .img-introduce{
     position: absolute;
-    right: 0%; 
+    right: 0%;
     left: 60%;
     bottom: 11%;
     height: 70%;
-    width: 50%; 
+    width: 50%;
     /* padding: 10px; */
     width: 40%;
 }
@@ -132,8 +132,8 @@ button:active{
 .services{
     height: 600px;
     background-color: #ffffff;
-    padding: 2% 10% 0px 10%; 
-    
+    padding: 2% 10% 0px 10%;
+
 }
 .services-text{
     width: 500px;
@@ -165,8 +165,8 @@ button:active{
     background-image: url("https://images.squarespace-cdn.com/content/v1/55fc0004e4b069a519961e2d/1442590746571-RPGKIXWGOO671REUNMCB/image-asset.gif");
 }
 .box-1 span,
-.box-2 span, 
-.box-3 span {
+.box-2 span,
+.box-3 span{
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -174,7 +174,6 @@ button:active{
     display: flex;
     justify-content: center;
     align-items: center;
-}
 .box-1{
     color: #ffffff;
     font-family: calibri;
@@ -216,7 +215,7 @@ button:active{
     font-family: calibri;
     font-weight: bold;
     border-bottom: 2px solid #ffffff;
-    
+
 
 }
 .contact-me button{
@@ -266,7 +265,7 @@ button:active{
     color: #000000;
 }
 .social-icons a:hover{
-    
+
 }
 #social-bar{
     position: fixed;
@@ -294,3 +293,7 @@ button:active{
 }
 
 /*social-media*/
+
+
+
+}
