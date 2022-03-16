@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  font-family: sans-serif;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: sans-serif;
+  background-color: rgb(207, 207, 207);
+}
+
+#border_form {
+  background-color: #ffff;
+  width: 80%;
+  height: 90%;
+  display: flex;
+  padding: 0 20px 0 20px;
+  border-radius: 4px;
+}
+
+#avt {
+  border-radius: 50%;
+  width: 131px;
+  height: 131px;
+  object-fit: cover;
+  display: block;
+  margin: auto;
+}
