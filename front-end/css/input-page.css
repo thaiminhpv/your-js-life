@@ -20,6 +20,7 @@ body {
   display: flex;
   padding: 0 20px 0 20px;
   border-radius: 4px;
+  position: relative;
 }
 
 #avt {
@@ -29,4 +30,24 @@ body {
   object-fit: cover;
   display: block;
   margin: auto;
+}
+
+/* Work experience */
+h4 {
+  color: green;
+  font-weight: 700;
+}
+
+#position {
+  font-weight: bold;
+}
+
+#workplace {
+  font-weight: bolder;
+}
+
+#buttonSave {
+  position: absolute;
+  right: 35px;
+  bottom: 2%;
 }
