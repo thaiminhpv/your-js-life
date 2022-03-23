@@ -1,9 +1,6 @@
-from django.apps import AppConfig
 from flask import Flask
-import os
-from dotenv import load_dotenv
 from .user import user
-import imp
+#import imp
 
 
 

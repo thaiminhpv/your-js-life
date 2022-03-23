@@ -1,9 +1,7 @@
-#from crypt import methods
-from flask_login import current_user
 from . import model
-import imp
 from unicodedata import name
 from flask import Flask, redirect, url_for, render_template, request, session, Blueprint
+
 user = Blueprint("user", __name__)
 data_user = model.users()
 
