@@ -15,14 +15,14 @@
 </head>
 
 <body>
-    <form novalidate id="border_form" class="row" method="post" action="#">
+    <form novalidate id="border_form" class="row" method="post" action="#" enctype="multipart/form-data">
         <div novalidate id="left" class="col-md-5 mt-5">
 
             <img class="mb-4" src="{{ url_for('static', filename = 'img/imgcat.jpg') }}" id="avt">
-            <!-- <div class=" custom-file">
-                    <input type="file" class="custom-file-input " accept=".jpg, .png" id="customeFile">
+                <div class=" custom-file">
+                    <input type="file" class="custom-file-input " accept=".jpg, .png" id="customeFile" name = "file">
                     <label for="customFile" class="custom-file-label">Upload your photo</label>
-                </div> -->
+                </div> 
 
             <div class="row">
                 <div class="col-md-6 mb-2">
@@ -77,8 +77,8 @@
             </div>
             <div class="mb-2 row">
                 <div class="col-md-6">
-                    <label for="dateOfBirth">Age</label>
-                    <input type="number" class="form-control" name="age">
+                    <label for="dateOfBirth">Date of Birth</label>
+                    <input type="date" class="form-control" name="age">
                 </div>
                 <div class="col-md-6"></div>
             </div>

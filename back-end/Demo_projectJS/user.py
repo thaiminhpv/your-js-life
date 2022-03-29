@@ -1,19 +1,34 @@
 from . import model
 from unicodedata import name
 from flask import Flask, redirect, url_for, render_template, request, session, Blueprint
+import cloudinary.uploader
 
 user = Blueprint("user", __name__)
-data_user = model.users()
 
+cloudinary.config(
+
+    cloud_name='dxu6nsoye',
+    api_key='824485715223673',
+    api_secret='8sJdauDy0yS_0aAKp13AJzEQKpE',
+)
+data_user = model.users()
+path = ""
 @user.route("/home")
 def user_home():
-    user = convert()
-    return render_template("page2.html",user = user )
+    global data_user
+    global path
+    return render_template("page2.html",user = data_user, image_path = path )
 
 @user.route("/", methods=["POST","GET"])
 def index():
     if request.method == "POST":
         GetDataRequest()
+        if request.files:
+            global path
+            file = request.files.get('file')
+            res = cloudinary.uploader.upload(file)
+            path = res['secure_url']
+            print(path)
         return redirect(url_for('user.user_home'))
     return render_template("index.html")
 

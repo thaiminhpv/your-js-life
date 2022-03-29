@@ -33,7 +33,7 @@
            <!-- <div class="accordion col-md-6" id="accordionExample">-->
             <div class="text-container">
                 <p class = "hello">Hello</p>
-                <p>I'm {{user.firstname}}</p>
+                <p>I'm {{user.first_name}}</p>
                 <p>I'm software engineering</p>
                 <p></p>
             </div> 
@@ -53,13 +53,13 @@
     <br><br><br><br><br><br><br><br><br><br><br>
     <!--about-section-->
     <div class="about-container">
-        <img src="https://vcdn-vnexpress.vnecdn.net/2021/12/13/elon-musk-2-9936-1639406089.jpg" alt="">
+        <img class="mb-4" src="{{ image_path }}" alt="">
      <!--about text-->
      <div class="about-text">
          <p id="about-me">About me</p>
-         <p>Name: {{user.lastname}} {{user.firstname}}</p>
+         <p>Name: {{user.last_name}} {{user.first_name}}</p>
          <p>Age: {{user.age}} years old</p> 
-         <p>Languages: {{user.language}}</p> 
+         <p>Languages: {{user.Language}}</p> 
          <p>From: {{user.address}}</p> 
          <a href="https://mail.google.com/mail/u/0/#inbox">Emaii: {{user.email}}</a>
          <br><br>      
