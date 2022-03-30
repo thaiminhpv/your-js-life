@@ -16,7 +16,7 @@ cloudinary.config(
     api_secret= os.getenv('API_SECREAT') ,
 )
 
-data_user = model.users()
+data_user = model.Users()
 path = ""
 
 
