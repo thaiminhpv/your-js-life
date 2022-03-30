@@ -1,4 +1,4 @@
-from Demo_projectJS import create_app
+from ProjectJS import create_app
 
 app = create_app()
 
