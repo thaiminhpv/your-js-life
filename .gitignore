@@ -1,5 +1,6 @@
 **/.vscode/
 **/.idea/
 **/__pycache__/
-/back-end/env
+**/env/
 .env
+.vercel
