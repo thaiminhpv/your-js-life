@@ -2,17 +2,24 @@ from . import model
 from unicodedata import name
 from flask import Flask, redirect, url_for, render_template, request, session, Blueprint
 import cloudinary.uploader
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 user = Blueprint("user", __name__)
 
 cloudinary.config(
 
     cloud_name='dxu6nsoye',
-    api_key='824485715223673',
-    api_secret='8sJdauDy0yS_0aAKp13AJzEQKpE',
+    api_key= os.getenv('API_KEY'),
+    api_secret= os.getenv('API_SECREAT') ,
 )
+
 data_user = model.users()
 path = ""
+
+
 @user.route("/home")
 def user_home():
     global data_user
