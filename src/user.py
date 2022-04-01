@@ -34,7 +34,7 @@ def index():
     if request.method == "POST":
         global data_user 
         data_user = model.Users.getdatafromrequest(request.form)
-        id = InteractDatabse.test(data_user.name)    #add data user to database and get id of this user
+        #id = InteractDatabse.test(data_user.name)    #add data user to database and get id of this user
         data_user.name = id
         file = request.files['file']
         if file:  #check if user has uploaded file, save the path
@@ -48,6 +48,6 @@ def index():
 
 @user.route("/", methods=["GET"])
 def home():
-    return render_template("landing-page.html")
+    return render_template("generated-portfolio.html")
 
 

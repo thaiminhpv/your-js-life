@@ -63,21 +63,23 @@ class InteractDatabse:
             if myTuple[i].isdigit():
                 id += myTuple[i]
         id = str(int(id)+1)
-
-        parameter.append(id)
-        parameter.append(user.name)
-        parameter.append(user.gmail)
-        parameter.append(user.phone)
-        parameter.append(user.address)
-        parameter.append(user.nation)
-        parameter.append(user.slogan)
-        parameter.append(user.gender)
-        parameter.append(user.language)
-        parameter.append(user.dateofbirth)
-        parameter.append(user.twitter)
-        parameter.append(user.linkedin)
-        parameter.append(user.facebook)
-        parameter.append(user.github)
+        {   # parameter append
+        parameter.append(id),
+        parameter.append(user.name),
+        parameter.append(user.gmail),
+        parameter.append(user.phone),
+        parameter.append(user.address),
+        parameter.append(user.nation),
+        parameter.append(user.slogan),
+        parameter.append(user.gender),
+        parameter.append(user.language),
+        parameter.append(user.dateofbirth),
+        parameter.append(user.twitter),
+        parameter.append(user.linkedin),
+        parameter.append(user.facebook),
+        parameter.append(user.github),
+        }        
+        
         query = "INSERT INTO `users` (`id`, `name`, `gmail`, `phone`, `address`, `nation`, `slogan`, `gender`, `language`, `dateofbirth`, `twitter`, `linkedin`, `facebook`, `github`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
         InteractDatabse.executequery(query, parameter)
         return id
