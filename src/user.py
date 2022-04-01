@@ -21,7 +21,7 @@ data_user = model.Users()
 path = "https://res.cloudinary.com/dxu6nsoye/image/upload/v1648535365/ihzghstemlzcobhbbfzg.jpg"
 
 
-@user.route("/user")
+@user.route("/portfolio", methods=["GET"])
 def user_home():
     global data_user
     global path
@@ -43,7 +43,7 @@ def index():
             path = res['secure_url']
             #InteractDatabase.savepath(id,path)      #save avt path user
         return redirect(url_for('user.user_home'))
-    return render_template("index.html")
+    return render_template("input-page.html")
 
 
 @user.route("/", methods=["GET"])
