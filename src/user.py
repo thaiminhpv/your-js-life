@@ -10,23 +10,24 @@ load_dotenv()
 user = Blueprint("user", __name__)
 
 cloudinary.config(
-
     cloud_name='dxu6nsoye',
-    api_key= os.getenv('API_KEY'),
-    api_secret= os.getenv('API_SECREAT') ,
+    api_key=os.getenv('API_KEY'),
+    api_secret=os.getenv('API_SECREAT'),
 )
 
 data_user = model.Users()
 path = ""
 
 
-@user.route("/home")
-def user_home():
+@user.route("/portfolio", methods=["GET"])
+def portfolio():
     global data_user
     global path
-    return render_template("page2.html",user = data_user, image_path = path )
+    # TODO: extract /portfolio?id=<id>
+    return render_template("generated-portfolio.html", user=data_user, image_path=path)
 
-@user.route("/", methods=["POST","GET"])
+
+@user.route("/create-portfolio", methods=["POST", "GET"])
 def index():
     if request.method == "POST":
         GetDataRequest()
@@ -36,15 +37,23 @@ def index():
             res = cloudinary.uploader.upload(file)
             path = res['secure_url']
             print(path)
-        return redirect(url_for('user.user_home'))
-    return render_template("input-page.html")
+        return redirect(url_for('user.portfolio'))
+    elif request.method == "GET":
+        return render_template("input-page.html")
+    else:
+        return "Something went wrong"
 
+
+@user.route("/", methods=["GET"])
+def home():
+    return render_template("landing-page.html")
 
 
 # convert model to dict
 def convert():
-    mydict = dict(firstname=data_user.first_name, lastname =data_user.last_name,language =data_user.Language,email= data_user.email,nation= data_user.nation, age =data_user.age, address = data_user.address)
+    mydict = dict(firstname=data_user.first_name, lastname=data_user.last_name, language=data_user.Language, email=data_user.email, nation=data_user.nation, age=data_user.age, address=data_user.address)
     return mydict
+
 
 def GetDataRequest():
     data_user.first_name = request.form["firstname"]
