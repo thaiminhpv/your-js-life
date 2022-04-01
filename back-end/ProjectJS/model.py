@@ -1,14 +1,30 @@
 from email.policy import default
+from inspect import Parameter
+from sqlite3 import paramstyle
 import string
 from time import timezone
-    
+from datetime import date
 
-class users:
-    def __init__(self, first_name = "", last_name = "", email = "", nation = "", Language = "",address = "", age = 0):
-        self.first_name = first_name
-        self.last_name = last_name
+# module
+class Users:
+    def __init__(self, name="", email="", nation="", language="", address="", dateofbirth = date.today()):
+        self.name = name
         self.email = email
         self.nation = nation
-        self.Language = Language
-        self.age = age
+        self.language = language
+        self.dateofbirth = dateofbirth
         self.address = address
+
+    # get data user from request.form   
+    def getdatafromrequest(data):   
+        user = Users()
+        user.name = data["firstname"]
+        user.email = data["email"]
+        user.nation = data["nation"]
+        user.dateofbirth = data["dateofbirth"]
+        user.language = data["selectLanguage"]
+        user.address = data["address"]
+        return user
+
+
+

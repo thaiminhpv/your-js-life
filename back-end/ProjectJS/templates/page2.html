@@ -33,7 +33,7 @@
            <!-- <div class="accordion col-md-6" id="accordionExample">-->
             <div class="text-container">
                 <p class = "hello">Hello</p>
-                <p>I'm {{user.first_name}}</p>
+                <p>I'm {{user.name}}</p>
                 <p>I'm software engineering</p>
                 <p></p>
             </div> 
@@ -57,9 +57,9 @@
      <!--about text-->
      <div class="about-text">
          <p id="about-me">About me</p>
-         <p>Name: {{user.last_name}} {{user.first_name}}</p>
-         <p>Age: {{user.age}} years old</p> 
-         <p>Languages: {{user.Language}}</p> 
+         <p>Name: {{user.name}}</p>
+         <p>Age: {{user.dateofbirth}} years old</p> 
+         <p>Languages: {{user.language}}</p> 
          <p>From: {{user.address}}</p> 
          <a href="https://mail.google.com/mail/u/0/#inbox">Emaii: {{user.email}}</a>
          <br><br>      
