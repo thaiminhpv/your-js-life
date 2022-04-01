@@ -37,7 +37,7 @@ def index():
             path = res['secure_url']
             print(path)
         return redirect(url_for('user.user_home'))
-    return render_template("index.html")
+    return render_template("input-page.html")
 
 
 
