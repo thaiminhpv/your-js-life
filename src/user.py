@@ -29,25 +29,28 @@ def user_home():
     return render_template("generated-portfolio.html", user=data_user, image_path=path)
 
 
-@user.route("/create-portfolio", methods=["POST", "GET"])
-def index():
-    if request.method == "POST":
-        global data_user 
-        data_user = model.Users.getdatafromrequest(request.form)
-        #id = InteractDatabse.test(data_user.name)    #add data user to database and get id of this user
-        data_user.name = id
-        file = request.files['file']
-        if file:  #check if user has uploaded file, save the path
-            global path
-            res = cloudinary.uploader.upload(file)
-            path = res['secure_url']
-            #InteractDatabase.savepath(id,path)      #save avt path user
-        return redirect(url_for('user.user_home'))
-    return render_template("input-page.html")
+# @user.route("/create-portfolio", methods=["POST", "GET"])
+# def index():
+#     if request.method == "POST":
+#         global data_user 
+#         data_user = model.Users.getdatafromrequest(request.form)
+#         id = InteractDatabse.test(data_user.name)    #add data user to database and get id of this user
+#         file = request.files['file']
+#         if file:  #check if user has uploaded file, save the path
+#             global path
+#             res = cloudinary.uploader.upload(file)
+#             path = res['secure_url']
+#             #InteractDatabase.savepath(id,path)      #save avt path user
+#         return redirect(url_for('user.user_home'))
+#     return render_template("input-page.html")
 
 
 @user.route("/", methods=["GET"])
 def home():
-    return render_template("generated-portfolio.html")
+    return render_template("landing-page.html")
 
 
+@user.route("/create-portfolio", methods=["POST", "GET"])
+def index():
+        data_user = model.Users.getdatafromrequest(request.form)
+        return InteractDatabse.addportfolio(data_user)    #add data user to database and get id of this user

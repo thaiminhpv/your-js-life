@@ -2,9 +2,8 @@ from getpass import getpass
 from mysql.connector import connect, Error
 from dotenv import load_dotenv
 import os
-
 from pymysql import NULL
-
+from .model import Users
 load_dotenv()
 
 class InteractDatabse:
@@ -53,8 +52,8 @@ class InteractDatabse:
         except Error as e:
             print(e)
     
-    # add data user to database and return id of this user
-    def adduser(user):
+    # add data portfolio to database and return id of this portfolio
+    def addportfolio(data_user):
         parameter = list()
         #get id user
         myTuple = str(InteractDatabse.executequery("SELECT COUNT(*) FROM `portfolio`"))
@@ -63,25 +62,23 @@ class InteractDatabse:
             if myTuple[i].isdigit():
                 id += myTuple[i]
         id = str(int(id)+1)
-        {   # parameter append
-        parameter.append(id),
-        parameter.append(user.name),
-        parameter.append(user.gmail),
-        parameter.append(user.phone),
-        parameter.append(user.address),
-        parameter.append(user.nation),
-        parameter.append(user.slogan),
-        parameter.append(user.gender),
-        parameter.append(user.language),
-        parameter.append(user.dateofbirth),
-        parameter.append(user.twitter),
-        parameter.append(user.linkedin),
-        parameter.append(user.facebook),
-        parameter.append(user.github),
-        }        
-        
-        query = "INSERT INTO `portfolio` (`id`, `name`, `gmail`, `phone`, `address`, `nation`, `slogan`, `gender`, `language`, `dateofbirth`, `twitter`, `linkedin`, `facebook`, `github`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-        InteractDatabse.executequery(query, parameter)
+        parameter.append(id)
+        parameter.append(data_user.name)
+        parameter.append(data_user.gmail)
+        parameter.append(data_user.phone)
+        parameter.append(data_user.address)
+        parameter.append(data_user.nation)
+        parameter.append(data_user.slogan)
+        parameter.append(data_user.gender)
+        parameter.append(data_user.language)
+        parameter.append(data_user.dateofbirth)
+        parameter.append(data_user.twitter)
+        parameter.append(data_user.linkedin)
+        parameter.append(data_user.facebook)
+        parameter.append(data_user.github)
+        query = "INSERT INTO `portfolio` (`id`, `name`, `gmail`, `phone`, `address` , `nation`, `slogan`, `gender`, `language`, `dateofbirth`, `twitter`, `linkedin`, `facebook`, `github`) VALUES ( %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s, %s)"       
+        #query = "INSERT INTO `portfolio` ( `name`, `gmail`, `phone`, `address`, `nation`, `slogan`, `gender`, `language`, `dateofbirth`, `twitter`, `linkedin`, `facebook`, `github`) VALUES ( %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s, %s)"
+        InteractDatabse.executenonquery(query, parameter)
         return id
 
     #save avt path of user to database
@@ -103,7 +100,7 @@ class InteractDatabse:
         for row in list_exp:
             InteractDatabse.executequery(query,row)
     
-    def test(name):
+    def test(data_user):
         parameter = list()
         #get id user
         myTuple = str(InteractDatabse.executequery("SELECT COUNT(*) FROM `portfolio`"))
@@ -112,8 +109,20 @@ class InteractDatabse:
             if myTuple[i].isdigit():
                 id += myTuple[i]
         #parameter.append(id)
-        parameter.append(name)
-        query = "INSERT INTO `portfolio` (`name`) VALUES ( %s )"
+        parameter.append(data_user.name)
+        parameter.append(data_user.gmail)
+        parameter.append(data_user.phone)
+        parameter.append(data_user.address)
+        parameter.append(data_user.nation)
+        parameter.append(data_user.slogan)
+        parameter.append(data_user.gender)
+        parameter.append(data_user.language)
+        parameter.append(data_user.dateofbirth)
+        parameter.append(data_user.twitter)
+        parameter.append(data_user.linkedin)
+        parameter.append(data_user.facebook)
+        parameter.append(data_user.github)
+        query = "INSERT INTO `portfolio` (`name`, `gmail`, `phone`, `address` , `nation`, `slogan`, `gender`, `language`, `dateofbirth`, `twitter`, `linkedin`, `facebook`, `github`) VALUES ( %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s, %s)"
         InteractDatabse.executenonquery(query,parameter)
         return id
 

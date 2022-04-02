@@ -12,6 +12,7 @@ class Users:
         self.phone = ""
         self.nation = ""
         self.slogan = ""
+        self.gender = ""
         self.address = ""
         self.language = ""
         self.dateofbirth = date.today()
@@ -29,6 +30,7 @@ class Users:
         user.phone = data["phone"]
         user.nation = data["nation"]
         user.slogan = data["slogan"]
+        user.gender = data["gender"]
         user.address = data["address"]
         user.language = data["language"]
         user.dateofbirth = data["dateofbirth"]
