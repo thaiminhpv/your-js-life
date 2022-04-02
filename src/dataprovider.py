@@ -57,7 +57,7 @@ class InteractDatabse:
     def adduser(user):
         parameter = list()
         #get id user
-        myTuple = str(InteractDatabse.executequery("SELECT COUNT(*) FROM `users`"))
+        myTuple = str(InteractDatabse.executequery("SELECT COUNT(*) FROM `portfolio`"))
         id = ''
         for i in range(len(myTuple)):
             if myTuple[i].isdigit():
@@ -80,13 +80,13 @@ class InteractDatabse:
         parameter.append(user.github),
         }        
         
-        query = "INSERT INTO `users` (`id`, `name`, `gmail`, `phone`, `address`, `nation`, `slogan`, `gender`, `language`, `dateofbirth`, `twitter`, `linkedin`, `facebook`, `github`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+        query = "INSERT INTO `portfolio` (`id`, `name`, `gmail`, `phone`, `address`, `nation`, `slogan`, `gender`, `language`, `dateofbirth`, `twitter`, `linkedin`, `facebook`, `github`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
         InteractDatabse.executequery(query, parameter)
         return id
 
     #save avt path of user to database
     def savepath(id, path):
-        query = "INSERT INTO `portfolio_js`.`avt_path` (`user_id`, `path`) VALUES (%s, %s) "
+        query = "INSERT INTO `avt_path` (`user_id`, `path`) VALUES (%s, %s) "
         parameter = list()
         parameter.append(id)
         parameter.append(path)
@@ -95,25 +95,25 @@ class InteractDatabse:
     #parameter list_edu [id, title, time, content] ; list_exp [id, title, time, content]
     def save_eduexp(list_edu, list_exp):
         #insert education
-        query = "INSERT INTO `education` (`user_id`, `title`, `time`, `content`) VALUES (%s, %s, %s, %s)"
+        query = "INSERT INTO `education` (`portfolio_id`, `title`, `time`, `content`) VALUES (%s, %s, %s, %s)"
         for row in list_edu:
             InteractDatabse.executequery(query,row)
         #insert experience
-        query = "INSERT INTO `experience` (`user_id`, `title`, `time`, `content`) VALUES (%s, %s, %s, %s)"
+        query = "INSERT INTO `experience` (`portfolio_id`, `title`, `time`, `content`) VALUES (%s, %s, %s, %s)"
         for row in list_exp:
             InteractDatabse.executequery(query,row)
     
     def test(name):
         parameter = list()
         #get id user
-        myTuple = str(InteractDatabse.executequery("SELECT COUNT(*) FROM `users`"))
+        myTuple = str(InteractDatabse.executequery("SELECT COUNT(*) FROM `portfolio`"))
         id = ''
         for i in range(len(myTuple)):
             if myTuple[i].isdigit():
                 id += myTuple[i]
         #parameter.append(id)
         parameter.append(name)
-        query = "INSERT INTO `users` (`name`) VALUES ( %s )"
+        query = "INSERT INTO `portfolio` (`name`) VALUES ( %s )"
         InteractDatabse.executenonquery(query,parameter)
         return id
 
