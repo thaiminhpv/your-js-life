@@ -21,12 +21,12 @@ data_user = model.Users()
 path = "https://res.cloudinary.com/dxu6nsoye/image/upload/v1648535365/ihzghstemlzcobhbbfzg.jpg"
 
 
-@user.route("/portfolio", methods=["GET"])
-def user_home():
-    global data_user
-    global path
-    # TODO: extract /portfolio?id=<id>
-    return render_template("generated-portfolio.html", user=data_user, image_path=path)
+# @user.route("/portfolio", methods=["GET"])
+# def user_home():
+#     global data_user
+#     global path
+#     # TODO: extract /portfolio?id=<id>
+#     return render_template("generated-portfolio.html", user=data_user, image_path=path)
 
 
 # @user.route("/create-portfolio", methods=["POST", "GET"])
@@ -54,3 +54,14 @@ def home():
 def index():
         data_user = model.Users.getdatafromrequest(request.form)
         return InteractDatabse.addportfolio(data_user)    #add data user to database and get id of this user
+
+
+
+@user.route("/portfolio/<id>", methods=["GET"])
+def user_home(id):
+    global data_user
+    global path
+    return InteractDatabse.getportfolio(id)
+
+#   http://127.0.0.1:5000/portfolio?id=1
+#   http://127.0.0.1:5000/portfolio/1

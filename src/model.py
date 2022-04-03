@@ -40,3 +40,21 @@ class Users:
         user.github = data["github"]
         return user
 
+
+          # get data user from request.form   
+    def getdatafromdb(data):   
+        user = Users()
+        user.name = data[1]
+        user.gmail = data[2]
+        user.phone = data[3]
+        user.address = data[4]
+        user.nation = data[5]
+        user.slogan = data[6]
+        user.gender = data[7]
+        user.language = data[8]
+        user.dateofbirth = data[9]
+        user.twitter = data[10]
+        user.linkedin = data[11]
+        user.facebook = data[12]
+        user.github = data[13]
+        return user.github
