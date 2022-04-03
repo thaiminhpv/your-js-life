@@ -9,14 +9,12 @@ from src import model
 
 load_dotenv()
 
-
-def connect_info():
-    return {
-        "host" : "localhost",
-        "user" : "root",
-        "password" : os.getenv('DATABASE_PASSWORD'),
-        "database" : os.getenv('DATABASE_NAME'),
-    }
+DATABASE_CONFIG = dict(
+    host="localhost",
+    user="root",
+    password=os.getenv('DATABASE_PASSWORD'),
+    database=os.getenv('DATABASE_NAME'),
+)
 
 
 class InteractDatabse:
@@ -27,9 +25,7 @@ class InteractDatabse:
 
     def executequery(query, parameter=NULL):
         try:
-            with connect(
-                **connect_info()
-            ) as connection:
+            with connect(**DATABASE_CONFIG) as connection:
                 with connection.cursor() as cursor:
                     if parameter != NULL:
                         cursor.execute(query, parameter)
@@ -44,9 +40,7 @@ class InteractDatabse:
 
     def executenonquery(query, parameter=NULL):
         try:
-            with connect(
-                **connect_info()
-            ) as connection:
+            with connect(**DATABASE_CONFIG) as connection:
                 with connection.cursor() as cursor:
                     if parameter != NULL:
                         cursor.execute(query, parameter)
