@@ -1,4 +1,4 @@
-from inspect import Parameter
+from inspect import data
 from math import gamma
 from sqlite3 import paramstyle
 import string
@@ -43,8 +43,7 @@ class Users:
         user.github = data["github"]
         return user
 
-        # get data user from request.form
-
+    # get data user from request.form
     def getdatafromdb(data):
         user = Users()
         user.name = data[1]
@@ -63,21 +62,23 @@ class Users:
         return user.github
 
 
-user = Users()
-user.name = 'Nguyen Minh A',
-user.gmail = 'minha@gmail.com',
-user.phone = '0132456789',
-user.address = 'ha noi, viet nam',
-user.nation = 'Viet Nam',
-user.slogan = 'nothingggg',
-user.gender = 'Nam',
-user.language = 'Vietnamese',
-user.dateofbirth = '2003-24-11',
-user.twitter = 'twitter123',
-user.linkedin = 'linkedin321',
-user.facebook = 'facebook000',
-user.github = 'github0101',
-
+    def getuserlist(data_user):
+        data = list()
+        data.append(id)
+        data.append(data_user.name)
+        data.append(data_user.gmail)
+        data.append(data_user.phone)
+        data.append(data_user.address)
+        data.append(data_user.nation)
+        data.append(data_user.slogan)
+        data.append(data_user.gender)
+        data.append(data_user.language)
+        data.append(data_user.dateofbirth)
+        data.append(data_user.twitter)
+        data.append(data_user.linkedin)
+        data.append(data_user.facebook)
+        data.append(data_user.github)
+        return data
 
 
 

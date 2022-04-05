@@ -1,4 +1,5 @@
 from getpass import getpass
+from inspect import Parameter
 from operator import ge
 from mysql.connector import connect, Error
 from dotenv import load_dotenv
@@ -81,23 +82,7 @@ class InteractDatabase:
 
     def addportfolio(data_user):
         id = get_id() # id of new user
-
-        parameter = list()
-
-        parameter.append(id)
-        parameter.append(data_user.name)
-        parameter.append(data_user.gmail)
-        parameter.append(data_user.phone)
-        parameter.append(data_user.address)
-        parameter.append(data_user.nation)
-        parameter.append(data_user.slogan)
-        parameter.append(data_user.gender)
-        parameter.append(data_user.language)
-        parameter.append(data_user.dateofbirth)
-        parameter.append(data_user.twitter)
-        parameter.append(data_user.linkedin)
-        parameter.append(data_user.facebook)
-        parameter.append(data_user.github)
+        parameter = model.Users.getuserlist(data_user)  # get data user with datatype: list
         query = "INSERT INTO `portfolio` (`id`, `name`, `gmail`, `phone`, `address` , `nation`, `slogan`, `gender`, `language`, `dateofbirth`, `twitter`, `linkedin`, `facebook`, `github`) VALUES ( %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s, %s)"
         InteractDatabase.executenonquery(query, parameter)
         return id
