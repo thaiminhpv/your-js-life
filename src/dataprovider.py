@@ -82,7 +82,7 @@ class InteractDatabase:
     def addportfolio(data_user):
         id = get_id() # id of new user
         parameter = model.Users.getuserlist(data_user)  # get data user with datatype: list
-        query = "INSERT INTO `portfolio` (`id`, `name`, `gmail`, `phone`, `address` , `nation`, `slogan`, `gender`, `language`, `dateofbirth`, `twitter`, `linkedin`, `facebook`, `github`) VALUES ( %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s, %s)"
+        query = "INSERT INTO `your_js_life_database`.`portfolio` (`id`, `name`, `gmail`, `phone`, `address`, `dateofbirth`, `linkedin`, `facebook`, `github`, `job`, `workingtime`, `introduction`) VALUES ( %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
         InteractDatabase.executenonquery(query, parameter)
         return id
 
@@ -115,7 +115,7 @@ class InteractDatabase:
         query = "SELECT * FROM `portfolio` WHERE ID = %s"
         temp = InteractDatabase.executequery(query, (id,))
         result = list()
-        for i in range(14):
+        for i in range(12):
             if temp[0][i] is None:
                 result.append("")
             else:
