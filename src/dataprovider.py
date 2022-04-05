@@ -1,5 +1,4 @@
 from getpass import getpass
-from inspect import Parameter
 from operator import ge
 from mysql.connector import connect, Error
 from dotenv import load_dotenv

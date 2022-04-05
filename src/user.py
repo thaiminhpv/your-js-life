@@ -26,7 +26,10 @@ cloudinary.config(
 def user_home(id):
     global data_user
     global path
-    return InteractDatabase.getportfolio(id)
+    user = InteractDatabase.getportfolio(id)
+    exp = InteractDatabase.get_exp(id)
+    edu = InteractDatabase.get_edu(id)
+    return render_template('generated-portfolio.html', user = user, image_path = path, experience = exp, education = edu)
 
 
 # @user.route("/create-portfolio", methods=["POST", "GET"])

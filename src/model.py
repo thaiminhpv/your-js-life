@@ -1,4 +1,3 @@
-from inspect import data
 from math import gamma
 from sqlite3 import paramstyle
 import string
@@ -59,7 +58,7 @@ class Users:
         user.linkedin = data[11]
         user.facebook = data[12]
         user.github = data[13]
-        return user.github
+        return user
 
 
     def getuserlist(data_user):
