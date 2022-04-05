@@ -31,13 +31,12 @@ def AddValueForTuple(database):
     return list_result
 
 
-def connect_info():
-    return {
-        "host": "localhost",
-        "user": "root",
-        "password": os.getenv('DATABASE_PASSWORD'),
-        "database": os.getenv('DATABASE_NAME'),
-    }
+DATABASE_CONFIG = dict(
+    host="localhost",
+    user="root",
+    password=os.getenv('DATABASE_PASSWORD'),
+    database=os.getenv('DATABASE_NAME'),
+)
 
 
 class InteractDatabase:
@@ -49,9 +48,7 @@ class InteractDatabase:
     # query select
     def executequery(query, parameter=NULL):
         try:
-            with connect(
-                **connect_info()
-            ) as connection:
+            with connect(**DATABASE_CONFIG) as connection:
                 with connection.cursor() as cursor:
                     if parameter != NULL:
                         cursor.execute(query, parameter)
@@ -67,9 +64,7 @@ class InteractDatabase:
     # query update,delete,insert
     def executenonquery(query, parameter=NULL):
         try:
-            with connect(
-                **connect_info()
-            ) as connection:
+            with connect(**DATABASE_CONFIG) as connection:
                 with connection.cursor() as cursor:
                     if parameter != NULL:
                         cursor.execute(query, parameter)
