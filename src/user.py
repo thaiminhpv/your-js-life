@@ -4,10 +4,14 @@ from flask import Flask, redirect, url_for, render_template, request, session, B
 import cloudinary.uploader
 from dotenv import load_dotenv
 import os
-from .dataprovider import InteractDatabse
+from .dataprovider import InteractDatabase
 from pymysql import NULL
 from mysql.connector import connect, Error
+
 load_dotenv()
+
+data_user = model.Users()
+path = ""
 
 user = Blueprint("user", __name__)
 
@@ -17,24 +21,20 @@ cloudinary.config(
     api_secret=os.getenv('API_SECREAT'),
 )
 
-data_user = model.Users()
-path = "https://res.cloudinary.com/dxu6nsoye/image/upload/v1648535365/ihzghstemlzcobhbbfzg.jpg"
 
-
-# @user.route("/portfolio", methods=["GET"])
-# def user_home():
-#     global data_user
-#     global path
-#     # TODO: extract /portfolio?id=<id>
-#     return render_template("generated-portfolio.html", user=data_user, image_path=path)
+@user.route("/portfolio/<id>", methods=["GET"])
+def user_home(id):
+    global data_user
+    global path
+    return InteractDatabase.getportfolio(id)
 
 
 # @user.route("/create-portfolio", methods=["POST", "GET"])
 # def index():
 #     if request.method == "POST":
-#         global data_user 
+#         global data_user
 #         data_user = model.Users.getdatafromrequest(request.form)
-#         id = InteractDatabse.test(data_user.name)    #add data user to database and get id of this user
+#         id = InteractDatabase.test(data_user.name)    #add data user to database and get id of this user
 #         file = request.files['file']
 #         if file:  #check if user has uploaded file, save the path
 #             global path
@@ -52,16 +52,21 @@ def home():
 
 @user.route("/create-portfolio", methods=["POST", "GET"])
 def index():
-        data_user = model.Users.getdatafromrequest(request.form)
-        return InteractDatabse.addportfolio(data_user)    #add data user to database and get id of this user
-
-
-
-@user.route("/portfolio/<id>", methods=["GET"])
-def user_home(id):
-    global data_user
     global path
-    return InteractDatabse.getportfolio(id)
+    data_user = model.Users.getdatafromrequest(request.form)
+    id = InteractDatabase.addportfolio(data_user)     # add data user to database and get id of this user        
+    path = get_path_image()     # save avt and get path user's avt from cloud
+    InteractDatabase.save_path_to_database(id, path) 
 
-#   http://127.0.0.1:5000/portfolio?id=1
-#   http://127.0.0.1:5000/portfolio/1
+    return id
+
+
+# method
+def get_path_image():
+    file = request.files['file']
+    # check if user has uploaded file, save the path
+    if file:
+        res = cloudinary.uploader.upload(file)
+        return res['secure_url']
+    else:
+        return "https://res.cloudinary.com/dxu6nsoye/image/upload/v1648535365/ihzghstemlzcobhbbfzg.jpg"

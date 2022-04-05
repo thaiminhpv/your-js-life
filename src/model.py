@@ -1,10 +1,13 @@
 from inspect import Parameter
+from math import gamma
 from sqlite3 import paramstyle
 import string
 from time import timezone
 from datetime import date
 
 # module
+
+
 class Users:
     def __init__(self):
         self.name = ""
@@ -20,10 +23,10 @@ class Users:
         self.linkedin = ""
         self.facebook = ""
         self.github = ""
-        
 
-    # get data user from request.form   
-    def getdatafromrequest(data):   
+    # get data user from request.form
+
+    def getdatafromrequest(data):
         user = Users()
         user.name = data["name"]
         user.gmail = data["gmail"]
@@ -40,9 +43,9 @@ class Users:
         user.github = data["github"]
         return user
 
+        # get data user from request.form
 
-          # get data user from request.form   
-    def getdatafromdb(data):   
+    def getdatafromdb(data):
         user = Users()
         user.name = data[1]
         user.gmail = data[2]
@@ -58,3 +61,23 @@ class Users:
         user.facebook = data[12]
         user.github = data[13]
         return user.github
+
+
+user = Users()
+user.name = 'Nguyen Minh A',
+user.gmail = 'minha@gmail.com',
+user.phone = '0132456789',
+user.address = 'ha noi, viet nam',
+user.nation = 'Viet Nam',
+user.slogan = 'nothingggg',
+user.gender = 'Nam',
+user.language = 'Vietnamese',
+user.dateofbirth = '2003-24-11',
+user.twitter = 'twitter123',
+user.linkedin = 'linkedin321',
+user.facebook = 'facebook000',
+user.github = 'github0101',
+
+
+
+
