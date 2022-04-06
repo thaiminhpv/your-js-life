@@ -1,0 +1,13 @@
+input {
+  border: 0;
+  padding: 5px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.aboutMeInput {
+  border: 1px solid black;
+  padding: 2px;
+}
