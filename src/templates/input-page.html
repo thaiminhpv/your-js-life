@@ -125,10 +125,16 @@
               <a href="#portfolio" class="btn btn-dark rounded-0 smooth-scroll mt-3">View My Works</a>
             </div>
             <div class="col-lg-5 text-center align-self-center mb-4 mb-lg-0 order-0 order-lg-1">
-              <div class="bg-light rounded-pill d-inline-block p-3 shadow-lg wow zoomIn"> <img
-                  class="img-fluid rounded-pill d-block" src="/static/images/web-developer.jpg" title="I'm Callum" alt>
+              <div class="bg-light rounded-pill d-inline-block p-3 shadow-lg wow zoomIn">
+                <img id="avt" class="img-fluid rounded-pill d-block" src="/static/images/web-developer.jpg" alt>
               </div>
+
+              <input type="file" id="default-btn" hidden>
+              <button onclick="defaultBtnActive()" id="custom-btn" class="btn btn-warning">Choose your
+                photo</button>
             </div>
+
+
           </div>
         </div>
         <a href="#about" class="scroll-down-arrow text-dark smooth-scroll"><span class="animated"><i
@@ -290,10 +296,10 @@
                   </div>
 
                   <div class="btn-group-vertical btn-group-sm px-3">
-                    <button type="button" class="btn btn-outline-success btn-sm mb-2">
+                    <button type="button" class="btn btn-outline-danger btn-sm mb-2">
                       <i class="fa-solid fa-trash-can"></i>
                     </button>
-                    <button type="button" class="btn btn-outline-danger btn-sm">
+                    <button type="button" class="btn btn-outline-success btn-sm">
                       <i class="fa-solid fa-plus"></i>
                     </button>
                   </div>
@@ -331,10 +337,10 @@
                     </button>
                   </div>
                   <div class="btn-group-vertical btn-group-sm px-3">
-                    <button type="button" class="btn btn-outline-success btn-sm mb-2">
+                    <button type="button" class="btn btn-outline-danger btn-sm mb-2">
                       <i class="fa-solid fa-trash-can"></i>
                     </button>
-                    <button type="button" class="btn btn-outline-danger btn-sm">
+                    <button type="button" class="btn btn-outline-success btn-sm">
                       <i class="fa-solid fa-plus"></i>
                     </button>
                   </div>
@@ -344,21 +350,31 @@
             </div>
 
             <!-- My Skills -->
-            <h2 class="text-7 fw-600 mb-4 pb-2 mt-5 wow fadeInUp">My Skills</h2>
+            <h2 id="text" class="text-7 fw-600 mb-4 pb-2 mt-5 wow fadeInUp">My Skills</h2>
             <div class="row gx-5">
-              <div class="col-md-6 wow fadeInUp">
-                <p class="fw-500 text-start mb-2">
-                  <span class="float-end">5%</span>
+              <div class="col-md-6 wow fadeInUp py-3" id="borderInputRange">
+
+                <div id="borderButtonRange">
+                  <button type="button" class="btn-outline-danger activeButton"
+                    style="border: 2px solid red; margin-right: 1rem;">
+                    <i class="fa-solid fa-trash-can"></i>
+                  </button>
+                  <button type="button" class="btn-outline-success activeButton" style="border: 2px solid green;">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+                <p class="fw-500 text-start mb-3">
+                  <span class="float-end" id="selectorValue">5%</span>
                   <input type="text" class="form-control" placeholder="Web Design" name="address"
                     style="width:fit-content; padding: 5px;">
                 </p>
-
                 <div class="progress progress-sm mb-4">
-                  <input type="range" min="1" max="100" value="50" style="width: 100%">
+                  <input id="inputRange" type="range" min="1" max="100" value="50" style="width: 100%">
                 </div>
 
               </div>
             </div>
+
             <p class="text-center mt-5 wow fadeInUp">
               <button type="submit" class="btn btn-outline-dark shadow-none rounded-0">Save</button>
             </p>
@@ -394,11 +410,10 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-6 text-center text-lg-start wow fadeInUp">
-              <p class="mb-2 mb-lg-0">Copyright © 2021 <a class="fw-600" href="#">Callum</a>. All Rights Reserved.</p>
+              <p class="mb-2 mb-lg-0">Copyright © 2022 <a class="fw-600" href="#">Team 2</a>. All Rights Reserved.</p>
             </div>
             <div class="col-lg-6 wow fadeInUp">
-              <p class="mb-0 text-center text-lg-end">Designed by <a class="fw-600"
-                  href="http://www.harnishdesign.net/">Harnish Design</a></p>
+              <p class="mb-0 text-center text-lg-end">Designed by <a class="fw-600" href="#">Team 2- CTV JS</a></p>
             </div>
           </div>
         </div>
@@ -442,6 +457,8 @@
     <script src="/static/js/switcher.min.js"></script>
     <!-- Custom Script -->
     <script src="/static/js/theme.js"></script>
+
+    <script src="/static/js/input-page.js"></script>
 
     <script src="https://kit.fontawesome.com/81e4fcabce.js" crossorigin="anonymous"></script>
 </body>
