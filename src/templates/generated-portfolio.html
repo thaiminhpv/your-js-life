@@ -112,7 +112,7 @@
             <a href="#portfolio" class="btn btn-dark rounded-0 smooth-scroll mt-3">View My Works</a>
 		  </div>
           <div class="col-lg-5 text-center align-self-center mb-4 mb-lg-0 order-0 order-lg-1">
-            <div class="bg-light rounded-pill d-inline-block p-3 shadow-lg wow zoomIn"> <img class="img-fluid rounded-pill d-block" src="/static/images/web-developer.jpg" title="I'm Callum" alt></div>
+            <div class="bg-light rounded-pill d-inline-block p-3 shadow-lg wow zoomIn"> <img class="img-fluid rounded-pill d-block" src="" title="I'm Callum" alt></div>
           </div>
         </div>
       </div>
@@ -228,37 +228,31 @@
         <!-- My Skills -->
         <h2 class="text-7 fw-600 mb-4 pb-2 mt-5 wow fadeInUp">My Skills</h2>
         <div class="row gx-5">
-          {%for item in skills%}
-            {% if((skills.index(item) % 2) == 0) %}
-            <div class="col-md-6 wow fadeInUp">
-              <p class="fw-500 text-start mb-2">{{item['title']}}<span class="float-end">{{item['value']}}%</span></p>
+          
+          <div class="col-md-6 wow fadeInUp">
+            {%for item in skills%}
+              {% if((skills.index(item) % 2) == 0) %}
+              <p class="fw-500 text-start mb-2">{{item['title']}} <span class="float-end">{{item['value']}}%</span></p>
               <div class="progress progress-sm mb-4">
-                <div class="progress-bar" role="progressbar" style="width: {{ int(item['value']) / 100}}" aria-valuenow="{{item['value']}}" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: 65%"  aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-            </div>
-            {% endif %}
-
+              {% endif %}
+            {%endfor%}
+          </div>
           <div class="col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-              <p class="fw-500 text-start mb-2">React JS <span class="float-end">70%</span></p>
+            {%for item in skills%}
+              {% if((skills.index(item) % 2) == 1) %}
+              <p class="fw-500 text-start mb-2">{{item['title']}}<span class="float-end">{{item['value']}}%</span></p>
               <div class="progress progress-sm mb-4">
                 <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-              <p class="fw-500 text-start mb-2">Angular Js <span class="float-end">60%</span></p>
-              <div class="progress progress-sm mb-4">
-                <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          {%endfor%}
+              {% endif %}
+            {%endfor%}
+          </div>
         </div>
-        <p class="text-center mt-5 wow fadeInUp"><a href="#" class="btn btn-outline-dark shadow-none rounded-0">Download CV</a></p>
       </div>
     </section>
     <!-- Resume end --> 
-    
-    <!-- Call to Action
-    ============================================= -->
-
-    <!-- Call to Action end --> 
   </div>
   <!-- Content end --> 
   
