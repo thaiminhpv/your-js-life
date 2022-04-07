@@ -232,7 +232,9 @@
               <h3 class="text-5">{{item['title']}}</h3>
               <p class="mb-2">{{item['time']}}</p>
               <p class="text-muted">{{item['content']}}</p>
-              <hr class="my-4">
+                {% if(education.index(item)) != education.index(education[-1]) %}
+                  <hr class="my-4">
+                {% endif %}
               {%endfor%}
             </div>
           </div>
@@ -244,7 +246,9 @@
               <h3 class="text-5">{{item['title']}}</h3>
               <p class="mb-2">{{item['time']}}</p>
               <p class="text-muted">{{item['content']}}</p>
-              <hr class="my-4">
+                {% if(experience.index(item)) != experience.index(experience[-1]) %}
+                  <hr class="my-4">
+                {% endif %}
               {%endfor%}
             </div>
           </div>
