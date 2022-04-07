@@ -130,10 +130,10 @@ services = [
 skills = [
     {
         'title': 'python',
-        'description': '55'
+        'value': '55'
     },
     {
         'title': 'html',
-        'description': '80'
+        'value': '80'
     }
 ]

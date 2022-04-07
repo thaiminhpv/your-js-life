@@ -231,9 +231,9 @@
           {%for item in skills%}
             {% if((skills.index(item) % 2) == 0) %}
             <div class="col-md-6 wow fadeInUp">
-              <p class="fw-500 text-start mb-2">{{item['title']}}<span class="float-end">{{item['description']}}%</span></p>
+              <p class="fw-500 text-start mb-2">{{item['title']}}<span class="float-end">{{item['value']}}%</span></p>
               <div class="progress progress-sm mb-4">
-                <input id="inputRange" type="range" min="1" max="100" value="70" style="width: 100%">
+                <div class="progress-bar" role="progressbar" style="width: {{ int(item['value']) / 100}}" aria-valuenow="{{item['value']}}" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
             {% endif %}
