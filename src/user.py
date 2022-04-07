@@ -11,9 +11,6 @@ import json
 
 load_dotenv()
 
-data_user = model.Users()
-path = ""
-
 user = Blueprint("user", __name__)
 
 cloudinary.config(
@@ -22,57 +19,63 @@ cloudinary.config(
     api_secret=os.getenv('API_SECREAT'),
 )
 
-
-@user.route("/portfolio/<id>", methods=["GET"])
-def user_home(id):
-    global data_user
-    global path
-    user = InteractDatabase.getportfolio(id)
-    exp = InteractDatabase.get_exp(id)
-    edu = InteractDatabase.get_edu(id)
-    return render_template('generated-portfolio.html', user = user, image_path = path, experience = exp, education = edu)
-
-
-# @user.route("/create-portfolio", methods=["POST", "GET"])
-# def index():
-#     if request.method == "POST":
-#         global data_user
-#         data_user = model.Users.getdatafromrequest(request.form)
-#         id = InteractDatabase.test(data_user.name)    #add data user to database and get id of this user
-#         file = request.files['file']
-#         if file:  #check if user has uploaded file, save the path
-#             global path
-#             res = cloudinary.uploader.upload(file)
-#             path = res['secure_url']
-#             #InteractDatabase.savepath(id,path)      #save avt path user
-#         return redirect(url_for('user.user_home'))
-#     return render_template("input-page.html")
-
-
-@user.route("/", methods=["GET"])
+@user.route("/", methods=["POST", "GET"])
 def home():
-    return render_template("input-page.html")
+    if request.method == "POST":
+        render_template(url_for(''))
+    elif request.method == "GET":
+        return render_template("landing-page.html")
 
 
 @user.route("/create-portfolio", methods=["POST", "GET"])
-def index():
-    global path
-    #data_user = model.Users.getdatafromrequest(request.form)
-    #id = InteractDatabase.addportfolio(data_user)     # add data user to database and get id of this user        
-    #path = get_path_image()     # save avt and get path user's avt from cloud
-    #InteractDatabase.save_path_to_database(id, path)
-    id = 1
+def register():
+    if request.method == "POST":
+        handle_data()
+        return redirect(url_for('user.portfolio'))
+    elif request.method == "GET":
+        return render_template("input-page.html")
+
+
+@user.route("/portfolio/<id>", methods=["GET"])
+def portfolio(id):
+    user = InteractDatabase.getportfolio(id)
+    path = InteractDatabase.Get
+    experience = InteractDatabase.get_exp(id)
+    education = InteractDatabase.get_edu(id)
+    services = InteractDatabase.get_services(id)
+    skills = InteractDatabase.get_skills(id)
+    return render_template('generated-portfolio.html', user = user, image_path = path, experience = experience, education = education, services = services, skills = skills)
+
+
+
+#method
+    """    handle_data
+    get data from request
+    save data to database ( data_user, experience, education, service, skills, path of image)
+    """
+
+def handle_data():
+    data_user = model.Users.getdatafromrequest(request.form)
+    id = InteractDatabase.test(data_user.name)       # add data user to database and get id of this user
+
     request_json = request.json
     experience = request_json["experience"]
-    education = request_json["education"]
-    services = request_json["services"]
     InteractDatabase.save_exp(id, experience)
-    InteractDatabase.save_edu(id,education)
-    InteractDatabase.save_services(id,services)
-    return "successful"
+
+    education = request_json["education"]
+    InteractDatabase.save_edu(id, education)
+
+    services = request_json["services"]
+    InteractDatabase.save_services(id, services)
+
+    skills = request_json["skills"]
+    InteractDatabase.save_skills(id, skills)
+
+    path = get_path_image()     # save avt and get path user's avt from cloud
+    InteractDatabase.save_path_to_database(id, path)
+    return id
 
 
-# method
 def get_path_image():
     file = request.files['file']
     # check if user has uploaded file, save the path
