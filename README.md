@@ -14,14 +14,18 @@
 ## How to run locally
 
 ```bash
-# create virtual environment
+# 1. Create virtual environment
 python -m venv env
-source env/bin/activate
 
-# install dependencies
+# 2. Activate virtual environment
+env\Scripts\activate.bat          # for Windows
+    # or
+source env/bin/activate           # for Linux
+
+# 3. Install dependencies
 pip install -r requirements.txt
 
-# run server
+# 4. Run server
 python app.py
 ```
 

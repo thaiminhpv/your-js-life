@@ -1,4 +1,3 @@
-import re
 from . import model
 from unicodedata import name
 from flask import Flask, jsonify, redirect, url_for, render_template, request, session, Blueprint
