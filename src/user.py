@@ -1,12 +1,13 @@
 from . import model
 from unicodedata import name
-from flask import Flask, redirect, url_for, render_template, request, session, Blueprint
+from flask import Flask, jsonify, redirect, url_for, render_template, request, session, Blueprint
 import cloudinary.uploader
 from dotenv import load_dotenv
 import os
-from .dataprovider import InteractDatabase
+from .dataprovider import InteractDatabase, get_id
 from pymysql import NULL
 from mysql.connector import connect, Error
+import json
 
 load_dotenv()
 
@@ -56,12 +57,17 @@ def home():
 @user.route("/create-portfolio", methods=["POST", "GET"])
 def index():
     global path
-    data_user = model.Users.getdatafromrequest(request.form)
-    id = InteractDatabase.addportfolio(data_user)     # add data user to database and get id of this user        
-    path = get_path_image()     # save avt and get path user's avt from cloud
-    InteractDatabase.save_path_to_database(id, path) 
-
-    return id
+    #data_user = model.Users.getdatafromrequest(request.form)
+    #id = InteractDatabase.addportfolio(data_user)     # add data user to database and get id of this user        
+    #path = get_path_image()     # save avt and get path user's avt from cloud
+    #InteractDatabase.save_path_to_database(id, path)
+    id = 1
+    request_json = request.json
+    exp = request_json["experience"]
+    edu = request_json["education"]
+    InteractDatabase.save_exp(id, exp)
+    InteractDatabase.save_edu(id,edu)
+    return "successful"
 
 
 # method

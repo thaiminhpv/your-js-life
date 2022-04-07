@@ -97,17 +97,21 @@ class InteractDatabase:
 
 
     # parameter list_edu [id, title, time, content] ; list_exp [id, title, time, content]
-    def save_edu(list_edu):
+    def save_edu(id, list_edu):
         # insert education
         query = "INSERT INTO `education` (`portfolio_id`, `title`, `time`, `content`) VALUES (%s, %s, %s, %s)"
         for row in list_edu:
-            InteractDatabase.executequery(query, row)
+            parameter = (id, row['title'], row['time'], row['content'])
+            InteractDatabase.executenonquery(query, parameter)
 
-    def save_exp(list_exp):
+
+    # parameter list_edu [id, title, time, content] ; list_exp [id, title, time, content]
+    def save_exp(id, list_exp):
         # insert experience
         query = "INSERT INTO `experience` (`portfolio_id`, `title`, `time`, `content`) VALUES (%s, %s, %s, %s)"
         for row in list_exp:
-            InteractDatabase.executequery(query, row)
+            parameter = (id, row['title'], row['time'], row['content'])
+            InteractDatabase.executenonquery(query, parameter)
 
 
     # pass parameter id and get portfolio
