@@ -1,3 +1,4 @@
+import re
 from . import model
 from unicodedata import name
 from flask import Flask, jsonify, redirect, url_for, render_template, request, session, Blueprint
@@ -30,9 +31,10 @@ def home():
 @user.route("/create-portfolio", methods=["POST", "GET"])
 def register():
     if request.method == "POST":
-        id = handle_data(request)
-        #return redirect(url_for('user.portfolio'), id = id)
-        return id
+        if 'submitform' in request.POST:
+            id = handle_data(request)
+            return redirect(url_for('user.portfolio', id = id))
+            #return id
     elif request.method == "GET":
         return render_template("input-page.html")
 
