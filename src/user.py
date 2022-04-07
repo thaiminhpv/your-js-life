@@ -51,7 +51,7 @@ def user_home(id):
 
 @user.route("/", methods=["GET"])
 def home():
-    return render_template("landing-page.html")
+    return render_template("input-page.html")
 
 
 @user.route("/create-portfolio", methods=["POST", "GET"])
@@ -63,10 +63,12 @@ def index():
     #InteractDatabase.save_path_to_database(id, path)
     id = 1
     request_json = request.json
-    exp = request_json["experience"]
-    edu = request_json["education"]
-    InteractDatabase.save_exp(id, exp)
-    InteractDatabase.save_edu(id,edu)
+    experience = request_json["experience"]
+    education = request_json["education"]
+    services = request_json["services"]
+    InteractDatabase.save_exp(id, experience)
+    InteractDatabase.save_edu(id,education)
+    InteractDatabase.save_services(id,services)
     return "successful"
 
 
