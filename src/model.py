@@ -33,9 +33,9 @@ class Users:
         user.linkedin = data["linkedin"]
         user.facebook = data["facebook"]
         user.github = data["github"]
-        user.address = data["job"]
-        user.address = data["workingtime"]
-        user.address = data["introduction"]
+        user.job = data["job"]
+        user.workingtime = data["workingtime"]
+        user.introduction = data["introduction"]
         return user
 
     # get data user from request.form
