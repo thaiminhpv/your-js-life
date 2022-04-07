@@ -30,8 +30,9 @@ def home():
 @user.route("/create-portfolio", methods=["POST", "GET"])
 def register():
     if request.method == "POST":
-        handle_data()
-        return redirect(url_for('user.portfolio'))
+        id = handle_data(request)
+        #return redirect(url_for('user.portfolio'), id = id)
+        return id
     elif request.method == "GET":
         return render_template("input-page.html")
 
@@ -39,7 +40,7 @@ def register():
 @user.route("/portfolio/<id>", methods=["GET"])
 def portfolio(id):
     user = InteractDatabase.getportfolio(id)
-    path = InteractDatabase.Get
+    path = InteractDatabase.get_path_image(id)
     experience = InteractDatabase.get_exp(id)
     education = InteractDatabase.get_edu(id)
     services = InteractDatabase.get_services(id)
@@ -54,25 +55,25 @@ def portfolio(id):
     save data to database ( data_user, experience, education, service, skills, path of image)
     """
 
-def handle_data():
+def handle_data(request):
     data_user = model.Users.getdatafromrequest(request.form)
-    id = InteractDatabase.test(data_user.name)       # add data user to database and get id of this user
+    id = InteractDatabase.addportfolio(data_user)       # add data user to database and get id of this user
 
-    request_json = request.json
-    experience = request_json["experience"]
-    InteractDatabase.save_exp(id, experience)
+    # request_json = request.json
+    # experience = request_json["experience"]
+    # InteractDatabase.save_exp(id, experience)
 
-    education = request_json["education"]
-    InteractDatabase.save_edu(id, education)
+    # education = request_json["education"]
+    # InteractDatabase.save_edu(id, education)
 
-    services = request_json["services"]
-    InteractDatabase.save_services(id, services)
+    # services = request_json["services"]
+    # InteractDatabase.save_services(id, services)
 
-    skills = request_json["skills"]
-    InteractDatabase.save_skills(id, skills)
+    # skills = request_json["skills"]
+    # InteractDatabase.save_skills(id, skills)
 
-    path = get_path_image()     # save avt and get path user's avt from cloud
-    InteractDatabase.save_path_to_database(id, path)
+    # path = get_path_image()     # save avt and get path user's avt from cloud
+    # InteractDatabase.save_path_to_database(id, path)
     return id
 
 

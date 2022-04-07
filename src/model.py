@@ -54,7 +54,7 @@ class Users:
         user.address = data[11]
         return user
 
-    def getuserlist(data_user):
+    def getuserlist(id, data_user):
         data = list()
         data.append(id)
         data.append(data_user.name)
