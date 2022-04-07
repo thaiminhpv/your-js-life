@@ -17,7 +17,7 @@ path = ""
 user = Blueprint("user", __name__)
 
 cloudinary.config(
-    cloud_name='dxu6nsoye',
+    cloud_name=os.getenv('CLOUD_NAME'),
     api_key=os.getenv('API_KEY'),
     api_secret=os.getenv('API_SECREAT'),
 )

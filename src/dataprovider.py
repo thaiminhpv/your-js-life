@@ -32,8 +32,8 @@ def AddValueForTuple(database):
 
 
 DATABASE_CONFIG = dict(
-    host="localhost",
-    user="root",
+    host=os.getenv('DATABASE_HOST'),
+    user=os.getenv('DATABASE_USER'),
     password=os.getenv('DATABASE_PASSWORD'),
     database=os.getenv('DATABASE_NAME'),
 )
