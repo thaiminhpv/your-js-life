@@ -113,6 +113,13 @@ class InteractDatabase:
             parameter = (id, row['title'], row['time'], row['content'])
             InteractDatabase.executenonquery(query, parameter)
 
+    def save_services(id, list_services):
+        # insert service
+        query = "INSERT INTO `service` (`portfolio_id`, `title`, `description`) VALUES (%s, %s, %s)"
+        for row in list_services:
+            parameter = (id, row['title'], row['description'])
+            InteractDatabase.executenonquery(query, parameter)
+
 
     # pass parameter id and get portfolio
     def getportfolio(id):
