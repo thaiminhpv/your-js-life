@@ -55,7 +55,8 @@
     <nav class="primary-menu navbar navbar-expand-none navbar-overlay navbar-overlay-dark bg-transparent border-bottom-0 text-5 fw-600">
       <div class="container"> 
         <!-- Logo --> 
-        <a class="logo" href title="Callum"> <img src="/static/images/logo.png" alt="Callum"> </a>
+        <a class="logo" href title="JS-Club"> <img src="/static/images/LogoJS.png" alt="JS-Club"
+          style="width: 70px; height: 70px;"> </a>
         <!-- Logo End -->
         <div class="text-3 ms-auto me-2"><span class="text-4 me-2"><i class="fas fa-phone"></i></span>{{user.phone}}</div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#header-nav"><span></span><span></span><span></span></button>
@@ -66,17 +67,22 @@
               <li class="nav-item"><a class="nav-link smooth-scroll" href="#about">About Me</a></li>
               <li class="nav-item"><a class="nav-link smooth-scroll" href="#services">What I Do</a></li>
               <li class="nav-item"><a class="nav-link smooth-scroll" href="#resume">Resume</a></li>
-              <li class="nav-item"><a class="nav-link smooth-scroll" href="#portfolio">Portfolio</a></li>
-              <li class="nav-item"><a class="nav-link smooth-scroll" href="#faq">FAQ</a></li>
-              <li class="nav-item"><a class="nav-link smooth-scroll" href="#testimonial">Client Speak</a></li>
-              <li class="nav-item"><a class="nav-link smooth-scroll" href="#contact">Contact Me</a></li>
             </ul>
             <ul class="social-icons social-icons-light social-icons-lg social-icons-light d-inline-flex mt-4">
-              <li class="social-icons-twitter"><a data-bs-toggle="tooltip" href="https://twitter.com/harnishdesign/" target="_blank" title data-bs-original-title="Twitter"><i class="fab fa-twitter"></i></a></li>
-              <li class="social-icons-facebook"><a data-bs-toggle="tooltip" href="http://www.facebook.com/harnishdesign/" target="_blank" title data-bs-original-title="Facebook"><i class="fab fa-facebook"></i></a></li>
-              <li class="social-icons-instagram"><a data-bs-toggle="tooltip" href="http://www.instagram.com/" target="_blank" title data-bs-original-title="Instagram"><i class="fab fa-instagram"></i></a></li>
-              <li class="social-icons-linkedin"><a data-bs-toggle="tooltip" href="http://www.linkedin.com/" target="_blank" title data-bs-original-title="Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
-              <li class="social-icons-dribbble"><a data-bs-toggle="tooltip" href="http://www.dribbble.com/harnishdesign/" target="_blank" title data-bs-original-title="Dribbble"><i class="fab fa-dribbble"></i></a></li>
+              <li class="social-icons-facebook"><a data-bs-toggle="tooltip" href="{{user.facebook}}" target="_blank" title
+                  data-bs-original-title="Facebook"><i class="fab fa-facebook"></i></a></li>
+
+              <li class="social-icons-instagram">
+                <a data-bs-toggle="tooltip" href="{{user.github}}" target="_blank" title data-bs-original-title="Github">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </li>
+
+              <li class="social-icons-linkedin"><a data-bs-toggle="tooltip" href="{{user.linkedin}}" target="_blank" title
+                  data-bs-original-title="Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+
+              <li class="social-icons-dribbble"><a data-bs-toggle="tooltip" href="{{user.gmail}}" target="_blank" title
+                  data-bs-original-title="Gmail"> <i class="fa-solid fa-envelope"></i> </a></li>
             </ul>
           </div>
         </div>
@@ -96,15 +102,14 @@
       <div class="container my-auto py-4">
         <div class="row">
           <div class="col-lg-7 text-center text-lg-start align-self-center order-1 order-lg-0 wow fadeIn">
-            <h1 class="text-12 fw-300 mb-0 text-uppercase">Hi, I'm a Freelancer</h1>
+            <h1 class="text-12 fw-300 mb-0 text-uppercase">Hi, I'm a {{user.job}}</h1>
             <div class="typed-strings">
               <p>Designer</p>
               <p>Developer</p>
-              <p>Callum</p>
             </div>
             <h2 class="text-21 fw-600 text-uppercase mb-0 ms-n1"><span class="typed"></span></h2>
-            <p class="text-5">based in Los Angeles, USA.</p>
-            <a href="#portfolio" class="btn btn-dark rounded-0 smooth-scroll mt-3">View My Works</a><a href="#contact" class="btn btn-link text-dark smooth-scroll mt-3">Contact Me<span class="text-4 ms-2"><i class="far fa-arrow-alt-circle-down"></i></span></a>
+            <p class="text-5">based in {{user.address}}.</p>
+            <a href="#portfolio" class="btn btn-dark rounded-0 smooth-scroll mt-3">View My Works</a>
 		  </div>
           <div class="col-lg-5 text-center align-self-center mb-4 mb-lg-0 order-0 order-lg-1">
             <div class="bg-light rounded-pill d-inline-block p-3 shadow-lg wow zoomIn"> <img class="img-fluid rounded-pill d-block" src="/static/images/web-developer.jpg" title="I'm Callum" alt></div>
@@ -130,8 +135,8 @@
           </div>
           <div class="col-lg-4 mt-4 mt-lg-0 wow fadeInUp" data-wow-delay="0.2s">
             <div class="featured-box style-4">
-              <div class="featured-box-icon text-25 fw-500 bg-primary rounded-circle"><span class="wow heartBeat" data-wow-delay="1.3s">22</span></div>
-              <h3 class="text-7 wow rubberBand" data-wow-delay="2s">Years of <span class="fw-700">Experiance</span></h3>
+              <div class="featured-box-icon text-25 fw-500 bg-primary rounded-circle"><span class="wow heartBeat" data-wow-delay="1.3s">{{user.workingtime}}</span></div>
+              <h3 class="text-7 wow rubberBand" data-wow-delay="2s">Years of <span class="fw-700">Experience</span></h3>
             </div>
           </div>
         </div>
@@ -167,48 +172,14 @@
         <!-- Heading end-->
         
         <div class="row gy-5 mt-5">
+          {%for item in services%}
           <div class="col-sm-6 col-lg-4 wow fadeInUp">
             <div class="featured-box text-center px-md-4">
-              <div class="featured-box-icon text-primary text-13"> <i class="fas fa-palette"></i> </div>
-              <h3 class="text-6 fw-600 mb-3">Graphic Design</h3>
-              <p class="text-muted mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text. </p>
+              <h3 class="text-6 fw-600 mb-3">{{item['title']}}</h3>
+              <p class="text-muted mb-0">{{item['description']}}</p>
             </div>
           </div>
-          <div class="col-sm-6 col-lg-4 wow fadeInUp">
-            <div class="featured-box text-center px-md-4">
-              <div class="featured-box-icon text-primary text-13"> <i class="fas fa-desktop"></i></div>
-              <h3 class="text-6 fw-600 mb-3">Web Design</h3>
-              <p class="text-muted mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text. </p>
-            </div>
-          </div>
-          <div class="col-sm-6 col-lg-4 wow fadeInUp">
-            <div class="featured-box text-center px-md-4">
-              <div class="featured-box-icon text-primary text-13"> <i class="fas fa-pencil-ruler"></i> </div>
-              <h3 class="text-6 fw-600 mb-3">Web Development</h3>
-              <p class="text-muted mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text. </p>
-            </div>
-          </div>
-          <div class="col-sm-6 col-lg-4 wow fadeInUp">
-            <div class="featured-box text-center px-md-4">
-              <div class="featured-box-icon text-primary text-13"> <i class="fas fa-paint-brush"></i> </div>
-              <h3 class="text-6 fw-600 mb-3">Brand Identity</h3>
-              <p class="text-muted mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text. </p>
-            </div>
-          </div>
-          <div class="col-sm-6 col-lg-4 wow fadeInUp">
-            <div class="featured-box text-center px-md-4">
-              <div class="featured-box-icon text-primary text-13"> <i class="fas fa-chart-area"></i> </div>
-              <h3 class="text-6 fw-600 mb-3">Business Analysis</h3>
-              <p class="text-muted mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text. </p>
-            </div>
-          </div>
-          <div class="col-sm-6 col-lg-4 wow fadeInUp">
-            <div class="featured-box text-center px-md-4">
-              <div class="featured-box-icon text-primary text-13"> <i class="fas fa-bullhorn"></i> </div>
-              <h3 class="text-6 fw-600 mb-3">Digital Marketing</h3>
-              <p class="text-muted mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text. </p>
-            </div>
-          </div>
+          {%endfor%}
         </div>
       </div>
     </section>
@@ -257,34 +228,27 @@
         <!-- My Skills -->
         <h2 class="text-7 fw-600 mb-4 pb-2 mt-5 wow fadeInUp">My Skills</h2>
         <div class="row gx-5">
-          <div class="col-md-6 wow fadeInUp">
-            <p class="fw-500 text-start mb-2">Web Design <span class="float-end">65%</span></p>
-            <div class="progress progress-sm mb-4">
-              <div class="progress-bar" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+          {%for item in skills%}
+            {% if((skills.index(item) % 2) == 0) %}
+            <div class="col-md-6 wow fadeInUp">
+              <p class="fw-500 text-start mb-2">{{item['title']}}<span class="float-end">{{item['description']}}%</span></p>
+              <div class="progress progress-sm mb-4">
+                <input id="inputRange" type="range" min="1" max="100" value="70" style="width: 100%">
+              </div>
             </div>
-            <p class="fw-500 text-start mb-2">HTML/CSS <span class="float-end">95%</span></p>
-            <div class="progress progress-sm mb-4">
-              <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <p class="fw-500 text-start mb-2">JavaScript <span class="float-end">80%</span></p>
-            <div class="progress progress-sm mb-4">
-              <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
+            {% endif %}
+
           <div class="col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-            <p class="fw-500 text-start mb-2">React JS <span class="float-end">70%</span></p>
-            <div class="progress progress-sm mb-4">
-              <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+              <p class="fw-500 text-start mb-2">React JS <span class="float-end">70%</span></p>
+              <div class="progress progress-sm mb-4">
+                <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              <p class="fw-500 text-start mb-2">Angular Js <span class="float-end">60%</span></p>
+              <div class="progress progress-sm mb-4">
+                <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
             </div>
-            <p class="fw-500 text-start mb-2">Angular Js <span class="float-end">60%</span></p>
-            <div class="progress progress-sm mb-4">
-              <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <p class="fw-500 text-start mb-2">Bootstrap <span class="float-end">99%</span></p>
-            <div class="progress progress-sm mb-4">
-              <div class="progress-bar" role="progressbar" style="width: 99%" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
+          {%endfor%}
         </div>
         <p class="text-center mt-5 wow fadeInUp"><a href="#" class="btn btn-outline-dark shadow-none rounded-0">Download CV</a></p>
       </div>
@@ -293,17 +257,7 @@
     
     <!-- Call to Action
     ============================================= -->
-    <section>
-      <div class="hero-wrap">
-        <div class="hero-mask opacity-8 bg-dark"></div>
-        <div class="hero-bg parallax" style="background-image:url('/static/images/intro-bg-2.jpg');"></div>
-        <div class="hero-content section">
-          <div class="container text-center py-5 wow fadeInUp">
-            <h2 class="text-10 fw-600 text-white mb-5">Interested in working with me?</h2>
-            <a href="#contact" class="btn btn-primary rounded-0 smooth-scroll wow rubberBand" data-wow-delay="1s">Hire Me!</a> </div>
-        </div>
-      </div>
-    </section>
+
     <!-- Call to Action end --> 
   </div>
   <!-- Content end --> 
@@ -314,10 +268,10 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 text-center text-lg-start wow fadeInUp">
-          <p class="mb-2 mb-lg-0">Copyright © 2021 <a class="fw-600" href="#">Callum</a>. All Rights Reserved.</p>
+          <p class="mb-2 mb-lg-0">Copyright © 2022 <a class="fw-600" href="#">Team 2</a>. All Rights Reserved.</p>
         </div>
         <div class="col-lg-6 wow fadeInUp">
-          <p class="mb-0 text-center text-lg-end">Designed by <a class="fw-600" href="http://www.harnishdesign.net/">Harnish Design</a></p>
+          <p class="mb-0 text-center text-lg-end">Designed by <a class="fw-600" href="#">Team 2- CTV JS</a></p>
         </div>
       </div>
     </div>

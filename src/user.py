@@ -24,7 +24,7 @@ def portfolio():
     global data_user
     global path
     # TODO: extract /portfolio?id=<id>
-    return render_template("generated-portfolio.html", user= model.user, image_path=path, experience = model.experience, education = model.education)
+    return render_template("generated-portfolio.html", user= model.user, image_path=path, experience = model.experience, education = model.education, services = model.services, skills = model.skills)
 
 
 @user.route("/create-portfolio", methods=["POST", "GET"])
