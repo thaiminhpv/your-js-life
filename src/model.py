@@ -78,8 +78,8 @@ user.dateofbirth = '2003-24-11'
 user.linkedin = 'linkedin321'
 user.facebook = 'facebook000'
 user.github = 'github0101'
-user.job = 'github0101'
-user.workingtime= 'github0101'
+user.job = 'developer'
+user.workingtime= '20'
 user.introduction = 'github0101'
 
 experience = [
@@ -130,10 +130,14 @@ services = [
 skills = [
     {
         'title': 'python',
-        'value': '55'
+        'value': '50'
     },
     {
         'title': 'html',
         'value': '80'
+    },
+    {
+        'title': 'photoshop',
+        'value': '20'
     }
 ]
