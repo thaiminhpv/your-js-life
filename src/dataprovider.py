@@ -41,6 +41,16 @@ def ConvertForTuple_Services(database):
         list_result.append(dict_temp)
     return list_result
 
+def ConvertForTuple_my_skills(database):
+    list_result = list()
+    dict_temp = dict()
+    list_key = ["id", "portfolio_id", "skill", "value"]
+    for item in database:
+        tuple_temp = [(list_key[0],item[0]), (list_key[1],item[1]), (list_key[2],item[2]), (list_key[3],item[3])]
+        dict_temp = dict(tuple_temp)
+        list_result.append(dict_temp)
+    return list_result
+
 
 DATABASE_CONFIG = dict(
     host=os.getenv('DATABASE_HOST'),
@@ -118,18 +128,24 @@ class InteractDatabase:
 
     # parameter list_edu [id, title, time, content] ; list_exp [id, title, time, content]
     def save_exp(id, list_exp):
-        # insert experience
         query = "INSERT INTO `experience` (`portfolio_id`, `title`, `time`, `content`) VALUES (%s, %s, %s, %s)"
         for row in list_exp:
             parameter = (id, row['title'], row['time'], row['content'])
             InteractDatabase.executenonquery(query, parameter)
 
+
     def save_services(id, list_services):
-        # insert service
         query = "INSERT INTO `services` (`portfolio_id`, `title`, `description`) VALUES (%s, %s, %s)"
         for row in list_services:
             parameter = (id, row['title'], row['description'])
             InteractDatabase.executenonquery(query, parameter)
+
+
+    def save_skills(id, list_skill):
+        query = "INSERT INTO `my_skills` (`portfolio_id`, `skill`, `value`) VALUES (%s, %s, %s)"
+        for row in list_skill:
+            parameter = (id, row['skill'], row['value'])
+            InteractDatabase.executenonquery(query, parameter)        
 
 
     # pass parameter id and get portfolio
@@ -147,16 +163,25 @@ class InteractDatabase:
 
 
     def get_exp(id):
-        database = InteractDatabase.executequery("SELECT * FROM `experience` WHERE `portfolio_id` = %s", (id,))
-        return ConvertForTuple_Exp_Edu(database)
+        data = InteractDatabase.executequery("SELECT * FROM `experience` WHERE `portfolio_id` = %s", (id,))
+        return ConvertForTuple_Exp_Edu(data)
 
 
     def get_edu(id):
-        database = InteractDatabase.executequery("SELECT * FROM `education` WHERE `portfolio_id` = %s", (id,))
-        return ConvertForTuple_Exp_Edu(database)
+        data = InteractDatabase.executequery("SELECT * FROM `education` WHERE `portfolio_id` = %s", (id,))
+        return ConvertForTuple_Exp_Edu(data)
 
 
     def get_services(id):
-        database = InteractDatabase.executequery("SELECT * FROM `services` WHERE `portfolio_id` = %s", (id,))
-        return ConvertForTuple_Services(database)
+        data = InteractDatabase.executequery("SELECT * FROM `services` WHERE `portfolio_id` = %s", (id,))
+        return ConvertForTuple_Services(data)
+
+    def get_skills(id):
+        data = InteractDatabase.executequery("SELECT * FROM `my_skills` WHERE `portfolio_id` = %s", (id,))
+        return ConvertForTuple_my_skills(data)
+
+
+    def get_path_image(id):
+        data = InteractDatabase.executequery("SELECT `path` FROM `avt_path` WHERE `portfolio_id` = %s", (id,))
+        return data 
 
