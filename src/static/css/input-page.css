@@ -20,6 +20,57 @@ input:focus {
   padding: 0.6rem 1.2rem 0.6rem 1.2rem;
 }
 
+/* What I do */
+.borderWhatIDo {
+  border: 1.5px solid #fff;
+  border-radius: 3px;
+  position: relative;
+  padding: 0.8rem;
+}
+
+.borderWhatIDo:hover {
+  border: 1.5px solid rgb(97, 95, 95);
+}
+
+.borderWhatIDo:hover .buttonWhatIDo {
+  visibility: visible;
+}
+
+.buttonWhatIDo {
+  position: absolute;
+  top: -13%;
+  right: 0;
+  visibility: hidden;
+}
+
+/* My education , My experience */
+
+.borderEducation {
+  border: 1.5px solid #fff;
+  border-radius: 3px;
+  position: relative;
+  padding: 0.8rem;
+}
+
+.borderEducation:hover {
+  border: 1.5px solid rgb(97, 95, 95);
+}
+
+.borderEducation:hover .buttonEducation {
+  visibility: visible;
+}
+
+.buttonEducation {
+  position: absolute;
+  top: -18%;
+  right: 0;
+  visibility: hidden;
+}
+
+.borderButtonEducation {
+  border-width: 2.5px;
+}
+
 /* input range skill */
 #inputRange {
   cursor: pointer;
@@ -53,4 +104,5 @@ input:focus {
   border-radius: 0.25rem;
   width: 4rem;
   height: 2rem;
+  border-width: 3px;
 }
