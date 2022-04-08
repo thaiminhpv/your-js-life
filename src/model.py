@@ -23,6 +23,7 @@ class Users:
 
     # get data user from request.form
 
+    @staticmethod
     def getdatafromrequest(data):
         user = Users()
         user.name = data["name"]
@@ -42,6 +43,7 @@ class Users:
         return user
 
     # get data user from request.form
+    @staticmethod
     def getdatafromdb(data):
         user = Users()
         user.name = data[1]
@@ -57,6 +59,7 @@ class Users:
         user.introduction = data[11]
         return user
 
+    @staticmethod
     def getuserlist(id, data_user):
         data = list()
         data.append(id)

@@ -41,7 +41,7 @@ def register():
 @user.route("/portfolio/<id>", methods=["GET"])
 def portfolio(id):
     if id != 'None':
-        data = InteractDatabase.get_all(id)
+        data = InteractDatabase.get_user_data_from_id(id)
 
         data_user = data['user']
         path = data['path']

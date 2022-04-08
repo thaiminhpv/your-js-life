@@ -9,17 +9,6 @@ from src import model
 
 load_dotenv()
 
-
-# get id of new user
-def get_id():
-    data = str(InteractDatabase.executequery("SELECT COUNT(*) FROM `portfolio`"))
-    id = ''
-    for i in range(len(data)):
-        if data[i].isdigit():
-            id += data[i]
-    return str(int(id) + 1)
-
-
 DATABASE_CONFIG = dict(
     host=os.getenv('DATABASE_HOST'),
     user=os.getenv('DATABASE_USER'),
@@ -28,14 +17,31 @@ DATABASE_CONFIG = dict(
 )
 
 
+def get_id():
+    """
+    :return: id of new user
+    """
+    data = str(InteractDatabase.executequery("SELECT COUNT(*) FROM `portfolio`"))
+    id = ''
+    for i in range(len(data)):
+        if data[i].isdigit():
+            id += data[i]
+    return str(int(id) + 1)
+
+
 class InteractDatabase:
     def __new__(cls):
         if not hasattr(cls, 'instance'):
             cls.instance = super(InteractDatabase, cls).__new__(cls)
         return cls.instance
 
-    # query select
+    @staticmethod
     def executequery(query: str, parameter=NULL):
+        """
+        query select
+        :param parameter:
+        :return:
+        """
         try:
             with connect(**DATABASE_CONFIG) as connection:
                 with connection.cursor() as cursor:
@@ -50,8 +56,13 @@ class InteractDatabase:
         except Error as e:
             print(e)
 
-    # query update,delete,insert
+    @staticmethod
     def executenonquery(query, parameter=NULL):
+        """
+        query update,delete,insert
+        :param parameter:
+        :return:
+        """
         try:
             with connect(**DATABASE_CONFIG) as connection:
                 with connection.cursor() as cursor:
@@ -66,18 +77,27 @@ class InteractDatabase:
         except Error as e:
             print(e)
 
-    # add data portfolio to database and return id of this portfolio
 
+    @staticmethod
     def addportfolio(data_user):
+        """
+        add data portfolio to database
+        :return: id of this portfolio
+        """
         id = get_id()  # id of new user
         parameter = model.Users.getuserlist(id, data_user)  # get data user with datatype: list
         query = "INSERT INTO `portfolio` (`id`, `name`, `gmail`, `phone`, `address`, `dateofbirth`, `linkedin`, `facebook`, `github`, `job`, `workingtime`, `introduction`) VALUES ( %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
         InteractDatabase.executenonquery(query, parameter)
         return id
 
-    # save avt path of user to database
 
+    @staticmethod
     def save_path_to_database(id, path):
+        """
+        save avt path of user to database
+        :param path:
+        :return:
+        """
         query = "INSERT INTO `avt_path` (`portfolio_id`, `path`) VALUES (%s, %s) "
         parameter = list()
         parameter.append(id)
@@ -85,6 +105,7 @@ class InteractDatabase:
         InteractDatabase.executenonquery(query, parameter)
 
     # parameter list_edu [id, title, time, content] ; list_exp [id, title, time, content]
+    @staticmethod
     def save_edu(id, list_edu):
         # insert education
         query = "INSERT INTO `education` (`portfolio_id`, `title`, `time`, `content`) VALUES (%s, %s, %s, %s)"
@@ -93,25 +114,29 @@ class InteractDatabase:
             InteractDatabase.executenonquery(query, parameter)
 
     # parameter list_edu [id, title, time, content] ; list_exp [id, title, time, content]
+    @staticmethod
     def save_exp(id, list_exp):
         query = "INSERT INTO `experience` (`portfolio_id`, `title`, `time`, `content`) VALUES (%s, %s, %s, %s)"
         for row in list_exp:
             parameter = (id, row['title'], row['time'], row['content'])
             InteractDatabase.executenonquery(query, parameter)
 
+    @staticmethod
     def save_services(id, list_services):
         query = "INSERT INTO `services` (`portfolio_id`, `title`, `description`) VALUES (%s, %s, %s)"
         for row in list_services:
             parameter = (id, row['title'], row['description'])
             InteractDatabase.executenonquery(query, parameter)
 
+    @staticmethod
     def save_skills(id, list_skill):
         query = "INSERT INTO `my_skills` (`portfolio_id`, `skill`, `value`) VALUES (%s, %s, %s)"
         for row in list_skill:
             parameter = (id, row['skill'], row['value'])
             InteractDatabase.executenonquery(query, parameter)
 
-    def get_all(id):
+    @staticmethod
+    def get_user_data_from_id(id):
         data = InteractDatabase.executequery(
             """
             SELECT
