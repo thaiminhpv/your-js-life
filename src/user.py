@@ -71,7 +71,7 @@ def handle_data(request):
     # skills = request_json["skills"]
     # InteractDatabase.save_skills(id, skills)
 
-    path = get_path_image(request)     # save avt and get path user's avt from cloud
+    path = get_path_image(request)     # get path user's avt from cloud
     InteractDatabase.save_path_to_database(id, path)
     return id
 

@@ -52,9 +52,9 @@ class Users:
         user.linkedin = data[6]
         user.facebook = data[7]
         user.github = data[8]
-        user.address = data[9]
-        user.address = data[10]
-        user.address = data[11]
+        user.job = data[9]
+        user.workingtime = data[10]
+        user.introduction = data[11]
         return user
 
     def getuserlist(id, data_user):

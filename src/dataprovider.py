@@ -183,5 +183,5 @@ class InteractDatabase:
 
     def get_path_image(id):
         data = InteractDatabase.executequery("SELECT `path` FROM `avt_path` WHERE `portfolio_id` = %s", (id,))
-        return data 
-
+        result = str(data)
+        return result[3:-4]
