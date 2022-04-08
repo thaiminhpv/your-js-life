@@ -29,7 +29,10 @@ class Users:
         user.gmail = data["gmail"]
         user.phone = data["phone"]
         user.address = data["address"]
-        user.dateofbirth = data["dateofbirth"]
+        try:
+            user.dateofbirth = data["dateofbirth"]
+        except:
+            pass
         user.linkedin = data["linkedin"]
         user.facebook = data["facebook"]
         user.github = data["github"]

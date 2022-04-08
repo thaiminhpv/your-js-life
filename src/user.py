@@ -30,10 +30,9 @@ def home():
 @user.route("/create-portfolio", methods=["POST", "GET"])
 def register():
     if request.method == "POST":
-        if 'submitform' in request.POST:
-            id = handle_data(request)
-            return redirect(url_for('user.portfolio', id = id))
-            #return id
+        id = handle_data(request)
+        #return redirect(url_for('user.portfolio', id = id))
+        return id
     elif request.method == "GET":
         return render_template("input-page.html")
 
@@ -73,12 +72,12 @@ def handle_data(request):
     # skills = request_json["skills"]
     # InteractDatabase.save_skills(id, skills)
 
-    # path = get_path_image()     # save avt and get path user's avt from cloud
-    # InteractDatabase.save_path_to_database(id, path)
+    path = get_path_image(request)     # save avt and get path user's avt from cloud
+    InteractDatabase.save_path_to_database(id, path)
     return id
 
 
-def get_path_image():
+def get_path_image(request):
     file = request.files['file']
     # check if user has uploaded file, save the path
     if file:

@@ -36,7 +36,7 @@
 </head>
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
-  <form action="#" method="POST" enctype="multipart/form-data">
+  <form action="#" method="POST" >
       <!-- Preloader -->
     <div class="preloader">
       <div class="lds-ellipsis">
@@ -131,7 +131,7 @@
                 </div>
 
                 <input type="file" name="file" id="default-btn" hidden>
-                <button onclick="defaultBtnActive()" id="custom-btn" name="submitavt" class="btn btn-warning">Choose your photo</button>
+                <label onclick="defaultBtnActive()" id="custom-btn" name="submitavt" class="btn btn-warning">Choose your photo</label>
               </div>
 
 
@@ -391,10 +391,11 @@
 
                 </div>
               </div>
-
+              
               <p class="text-center mt-5 wow fadeInUp" >
                 <button type="submit" name="submitform" class="btn btn-outline-dark shadow-none rounded-0">Create Portfolio</button>
               </p>
+            </form>
             </div>
         </section>
         <!-- Resume end -->
@@ -478,7 +479,6 @@
       <script src="/static/js/input-page.js"></script>
 
       <script src="https://kit.fontawesome.com/81e4fcabce.js" crossorigin="anonymous"></script>              
-  </form>
 </body>
 
 </html>
