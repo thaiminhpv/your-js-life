@@ -1,23 +1,10 @@
-from . import model
-from unicodedata import name
-from flask import Flask, jsonify, redirect, url_for, render_template, request, session, Blueprint
 import cloudinary.uploader
-from dotenv import load_dotenv
-import os
-from .dataprovider import InteractDatabase, get_id
-from pymysql import NULL
-from mysql.connector import connect, Error
-import json
+from flask import redirect, url_for, render_template, request, Blueprint
 
-load_dotenv()
+from . import model
+from .dataprovider import InteractDatabase
 
 user = Blueprint("user", __name__)
-
-cloudinary.config(
-    cloud_name=os.getenv('CLOUD_NAME'),
-    api_key=os.getenv('API_KEY'),
-    api_secret=os.getenv('API_SECREAT'),
-)
 
 
 @user.route("/", methods=["POST", "GET"])

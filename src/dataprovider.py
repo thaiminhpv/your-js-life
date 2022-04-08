@@ -1,20 +1,9 @@
-from getpass import getpass
-from operator import ge
 from mysql.connector import connect, Error
-from dotenv import load_dotenv
-import os
 from pymysql import NULL
+
+from .config import *
 from .model import Users
 from src import model
-
-load_dotenv()
-
-DATABASE_CONFIG = dict(
-    host=os.getenv('DATABASE_HOST'),
-    user=os.getenv('DATABASE_USER'),
-    password=os.getenv('DATABASE_PASSWORD'),
-    database=os.getenv('DATABASE_NAME'),
-)
 
 
 def get_id():
@@ -77,7 +66,6 @@ class InteractDatabase:
         except Error as e:
             print(e)
 
-
     @staticmethod
     def addportfolio(data_user):
         """
@@ -89,7 +77,6 @@ class InteractDatabase:
         query = "INSERT INTO `portfolio` (`id`, `name`, `gmail`, `phone`, `address`, `dateofbirth`, `linkedin`, `facebook`, `github`, `job`, `workingtime`, `introduction`) VALUES ( %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
         InteractDatabase.executenonquery(query, parameter)
         return id
-
 
     @staticmethod
     def save_path_to_database(id, path):

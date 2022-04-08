@@ -1,5 +1,8 @@
 from flask import Flask
+from .config import *
 from .user import user
+
+
 # import imp
 
 def create_app():
