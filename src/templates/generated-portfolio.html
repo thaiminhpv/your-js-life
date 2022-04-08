@@ -164,6 +164,7 @@
     
     <!-- Services
     ============================================= -->
+    {% if(services != [])%}
     <section id="services" class="section bg-light">
       <div class="container"> 
         <!-- Heading -->
@@ -184,6 +185,8 @@
       </div>
     </section>
     <!-- Services end --> 
+    {%endif%}
+
     
     <!-- Resume
     ============================================= -->
@@ -195,6 +198,7 @@
         <!-- Heading end-->
         
         <div class="row g-5 mt-5"> 
+          {% if(education != [])%}
           <!-- My Education -->
           <div class="col-lg-6 wow fadeInUp">
             <h2 class="text-7 fw-600 mb-4 pb-2">My Education</h2>
@@ -209,7 +213,11 @@
               {%endfor%}
             </div>
           </div>
+          {%endif%}
+          
+          
           <!-- My Experience -->
+          {% if(experience != [])%}
           <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
             <h2 class="text-7 fw-600 mb-4 pb-2">My Experience</h2>
             <div class="border-start border-2 border-primary ps-3">
@@ -223,8 +231,10 @@
               {%endfor%}
             </div>
           </div>
+          {%endif%}
         </div>
-        
+
+        {% if(skills != [])%}
         <!-- My Skills -->
         <h2 class="text-7 fw-600 mb-4 pb-2 mt-5 wow fadeInUp">My Skills</h2>
         <div class="row gx-5">
@@ -250,6 +260,8 @@
             {%endfor%}
           </div>
         </div>
+        {%endif%}
+
       </div>
     </section>
     <!-- Resume end --> 
@@ -337,5 +349,6 @@
 <script src="/static/js/switcher.min.js"></script>
 <!-- Custom Script --> 
 <script src="/static/js/theme.js"></script>
+<script src="https://kit.fontawesome.com/81e4fcabce.js" crossorigin="anonymous"></script>
 </body>
 </html>
