@@ -190,3 +190,11 @@ class InteractDatabase:
             'experience': experience,
             'skills': skills
         }
+
+    @staticmethod
+    def get_all_portfolio():
+        data = InteractDatabase.executequery(
+            """
+            SELECT p.id, p.name, p.introduction FROM portfolio as p LIMIT 12
+            """)
+        return data

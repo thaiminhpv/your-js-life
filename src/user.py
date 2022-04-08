@@ -12,7 +12,14 @@ def home():
     if request.method == "POST":
         render_template(url_for('user.register'))
     elif request.method == "GET":
-        return render_template("landing-page.html")
+        MAX_DESCRIPTION_LENGTH = 15
+        portfolios_tuple = InteractDatabase.get_all_portfolio()
+        portfolios = list(map(list, portfolios_tuple))  # convert list of tuple to list of list
+        for index, portfolio in enumerate(portfolios):
+            if len(portfolio[2]) > MAX_DESCRIPTION_LENGTH:
+                portfolios[index][2] = portfolio[2][:MAX_DESCRIPTION_LENGTH] + "..."
+
+        return render_template("landing-page.html", portfolios=portfolios)
 
 
 @user.route("/create-portfolio", methods=["POST", "GET"])
