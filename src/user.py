@@ -1,5 +1,3 @@
-from threading import Thread
-
 from . import model
 from unicodedata import name
 from flask import Flask, jsonify, redirect, url_for, render_template, request, session, Blueprint
@@ -73,19 +71,13 @@ def handle_data(request):
     # skills = request_json["skills"]
     # InteractDatabase.save_skills(id, skills)
 
-    # create Thread to save image to database
-    # save_image_to_database(id, request.files['file'])
-    Thread(target=save_image_to_database, args=(id, request.files['file'])).start()
-
+    path = get_path_image(request)     # get path user's avt from cloud
+    InteractDatabase.save_path_to_database(id, path)
     return id
 
 
-def save_image_to_database(id, file):
-    path = get_path_image(file)     # get path user's avt from cloud
-    InteractDatabase.save_path_to_database(id, path)
-
-
-def get_path_image(file):
+def get_path_image(request):
+    file = request.files['file']
     # check if user has uploaded file, save the path
     if file:
         res = cloudinary.uploader.upload(file)
