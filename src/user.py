@@ -22,7 +22,7 @@ cloudinary.config(
 @user.route("/", methods=["POST", "GET"])
 def home():
     if request.method == "POST":
-        render_template(url_for(''))
+        render_template(url_for('user.register'))
     elif request.method == "GET":
         return render_template("landing-page.html")
 
