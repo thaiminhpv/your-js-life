@@ -65,9 +65,9 @@ class InteractDatabase:
         if not hasattr(cls, 'instance'):
             cls.instance = super(InteractDatabase, cls).__new__(cls)
         return cls.instance
-  
+
     # query select
-    def executequery(query, parameter=NULL):
+    def executequery(query:str, parameter=NULL):
         try:
             with connect(**DATABASE_CONFIG) as connection:
                 with connection.cursor() as cursor:
@@ -81,7 +81,7 @@ class InteractDatabase:
             return result
         except Error as e:
             print(e)
-      
+
     # query update,delete,insert
     def executenonquery(query, parameter=NULL):
         try:
@@ -145,7 +145,7 @@ class InteractDatabase:
         query = "INSERT INTO `my_skills` (`portfolio_id`, `skill`, `value`) VALUES (%s, %s, %s)"
         for row in list_skill:
             parameter = (id, row['skill'], row['value'])
-            InteractDatabase.executenonquery(query, parameter)        
+            InteractDatabase.executenonquery(query, parameter)
 
 
     # pass parameter id and get portfolio
@@ -185,3 +185,42 @@ class InteractDatabase:
         data = InteractDatabase.executequery("SELECT `path` FROM `avt_path` WHERE `portfolio_id` = %s", (id,))
         result = str(data)
         return result[3:-4]
+
+    def get_all(id):
+        data = InteractDatabase.executequery(
+            """
+            SELECT
+            #   *
+                p.id,
+                p.name,
+                p.gmail,
+                p.phone,
+                p.address,
+                p.dateofbirth,
+                p.linkedin,
+                p.facebook,
+                p.github,
+                p.job,
+                p.workingtime,
+                p.introduction,
+                ap.path,
+                e.title,
+                e.time,
+                e.content,
+                s.title,
+                s.description,
+                ex.title,
+                ex.time,
+                ex.content,
+                ms.skill,
+                ms.value
+            FROM portfolio as p
+                     LEFT JOIN avt_path ap on p.id = ap.portfolio_id
+                     LEFT JOIN education e on p.id = e.portfolio_id
+                     LEFT JOIN services s on p.id = s.portfolio_id
+                     LEFT JOIN experience ex on p.id = ex.portfolio_id
+                     LEFT JOIN my_skills ms on p.id = ms.portfolio_id
+            WHERE p.id = %s
+            """,
+            (id,))
+        return data

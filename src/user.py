@@ -39,13 +39,36 @@ def register():
 
 @user.route("/portfolio/<id>", methods=["GET"])
 def portfolio(id):
-    data_user = InteractDatabase.getportfolio(id)
-    path = InteractDatabase.get_path_image(id)
-    experience = InteractDatabase.get_exp(id)
-    education = InteractDatabase.get_edu(id)
-    services = InteractDatabase.get_services(id)
-    skills = InteractDatabase.get_skills(id)
-    return render_template('generated-portfolio.html', user = data_user, image_path = path, experience = experience, education = education, services = services, skills = skills)
+    if id != 'None':
+        data = InteractDatabase.get_all(id)
+        temp = data[0]
+        data_user = dict(
+            id=temp[0],
+            name=temp[1],
+            gmail=temp[2],
+            phone=temp[3],
+            address=temp[4],
+            dateofbirth=temp[5],
+            linkedin=temp[6],
+            facebook=temp[7],
+            github=temp[8],
+            job=temp[9],
+            workingtime=temp[10],
+            introduction=temp[11],
+        )
+        path = temp[12]
+        education = [_[13] for _ in data]  # = data[:, 13].T in numpy
+        services = [_[14] for _ in data]
+        experience = [_[15] for _ in data]
+        skills = [_[16] for _ in data]
+
+        return render_template(
+            'generated-portfolio.html',
+            user=data_user, image_path=path, experience=experience,
+            education=education, services=services, skills=skills
+        )
+    else:
+        return redirect(url_for('user.register'))
 
 
 #method
@@ -53,6 +76,7 @@ def portfolio(id):
     get data from request
     save data to database ( data_user, experience, education, service, skills, path of image)
     """
+
 
 def handle_data(request):
     data_user = model.Users.getdatafromrequest(request.form)
