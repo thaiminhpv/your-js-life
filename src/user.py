@@ -19,6 +19,7 @@ cloudinary.config(
     api_secret=os.getenv('API_SECREAT'),
 )
 
+
 @user.route("/", methods=["POST", "GET"])
 def home():
     if request.method == "POST":
@@ -31,8 +32,8 @@ def home():
 def register():
     if request.method == "POST":
         id = handle_data(request)
-        return redirect(url_for('user.portfolio', id = id))
-        #return id
+        return redirect(url_for('user.portfolio', id=id))
+        # return id
     elif request.method == "GET":
         return render_template("input-page.html")
 
@@ -41,26 +42,13 @@ def register():
 def portfolio(id):
     if id != 'None':
         data = InteractDatabase.get_all(id)
-        temp = data[0]
-        data_user = dict(
-            id=temp[0],
-            name=temp[1],
-            gmail=temp[2],
-            phone=temp[3],
-            address=temp[4],
-            dateofbirth=temp[5],
-            linkedin=temp[6],
-            facebook=temp[7],
-            github=temp[8],
-            job=temp[9],
-            workingtime=temp[10],
-            introduction=temp[11],
-        )
-        path = temp[12]
-        education = [_[13] for _ in data]  # = data[:, 13].T in numpy
-        services = [_[14] for _ in data]
-        experience = [_[15] for _ in data]
-        skills = [_[16] for _ in data]
+
+        data_user = data['user']
+        path = data['path']
+        education = data['education']
+        services = data['services']
+        experience = data['experience']
+        skills = data['skills']
 
         return render_template(
             'generated-portfolio.html',
@@ -71,16 +59,15 @@ def portfolio(id):
         return redirect(url_for('user.register'))
 
 
-#method
-    """    handle_data
+def handle_data(request):
+    """
     get data from request
     save data to database ( data_user, experience, education, service, skills, path of image)
+    :param request:
+    :return:
     """
-
-
-def handle_data(request):
     data_user = model.Users.getdatafromrequest(request.form)
-    id = InteractDatabase.addportfolio(data_user)       # add data user to database and get id of this user
+    id = InteractDatabase.addportfolio(data_user)  # add data user to database and get id of this user
 
     # request_json = request.json
     # experience = request_json["experience"]
@@ -95,7 +82,7 @@ def handle_data(request):
     # skills = request_json["skills"]
     # InteractDatabase.save_skills(id, skills)
 
-    path = get_path_image(request)     # get path user's avt from cloud
+    path = get_path_image(request)  # get path user's avt from cloud
     InteractDatabase.save_path_to_database(id, path)
     return id
 
