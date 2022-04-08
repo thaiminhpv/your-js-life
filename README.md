@@ -1,4 +1,4 @@
-<p align="center"><img width="30%" src="src/static/images/favicon.png" alt="icon"></p>
+<p align="center"><img width="35%" src="src/static/images/favicon.png" alt="icon"></p>
 <h2 align="center">Your JS Life</h2>
 <p align="center">A portfolio is All You Need</p>
 
