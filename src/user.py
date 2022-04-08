@@ -31,22 +31,21 @@ def home():
 def register():
     if request.method == "POST":
         id = handle_data(request)
-        #return redirect(url_for('user.portfolio', id = id))
-        return id
+        return redirect(url_for('user.portfolio', id = id))
+        #return id
     elif request.method == "GET":
         return render_template("input-page.html")
 
 
 @user.route("/portfolio/<id>", methods=["GET"])
 def portfolio(id):
-    user = InteractDatabase.getportfolio(id)
+    data_user = InteractDatabase.getportfolio(id)
     path = InteractDatabase.get_path_image(id)
     experience = InteractDatabase.get_exp(id)
     education = InteractDatabase.get_edu(id)
     services = InteractDatabase.get_services(id)
     skills = InteractDatabase.get_skills(id)
-    return render_template('generated-portfolio.html', user = user, image_path = path, experience = experience, education = education, services = services, skills = skills)
-
+    return render_template('generated-portfolio.html', user = data_user, image_path = path, experience = experience, education = education, services = services, skills = skills)
 
 
 #method
