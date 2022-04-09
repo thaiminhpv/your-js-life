@@ -113,35 +113,41 @@
     <!-- Intro end --> 
     
    
-    
+     {%for item in range(5)%} 
+        
+        {%endfor%}
     <!-- Portfolio
     ============================================= -->
     <section id="portfolio" class="section bg-light">
-      <div class="container"> 
+      <div class="container">
         <!-- Heading -->
         <p class=" text-center mb-2 wow fadeInUp"><span class="bg-primary text-dark px-2">Portfolio</span></p>
-        <h2 class="text-10 fw-600 text-center mb-5 wow fadeInUp">Some of recent generated-portfolios</h2>
-        <!-- Heading end--> 
+        <h2 class="text-10 fw-600 text-center mb-5 wow fadeInUp">Some sample Portfolio on our website</h2>
+        <!-- Heading end-->
+
+        <!-- Filter Menu -->
+        <ul
+          class="portfolio-menu nav nav-tabs fw-600 justify-content-start justify-content-md-center border-bottom-0 mb-4 wow fadeInUp">
         
+        </ul>
         <!-- Filter Menu end -->
         <div class="portfolio wow fadeInUp">
           <div class="row g-4 mt-3 portfolio-filter">
-            {%for item in range(5)%}
+            {%for item in data%}
             <div class="col-sm-6 col-lg-4 detailed">
               <div class="portfolio-box">
                 <div class="portfolio-img"> <img class="img-fluid d-block" src="/static/images/projects/project-1.jpg" alt>
                   <div class="portfolio-overlay"> <a class="popup-ajax stretched-link" href="ajax/portfolio-ajax-project-1.html"></a>
                     <div class="portfolio-overlay-details">
                       <p class="text-primary text-8"><i class="fas fa-file-alt"></i></p>
-                      <h5 class="text-white text-5">Name of the portfolio</h5>
-                      <span class="text-light">Some of the description</span> </div>
+                      <h5 class="text-white text-5">{{item.name}}</h5>
+                      <span class="text-light">{{item.introduction[0:20]}}</span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             {%endfor%}
-
           </div>
         </div>
       </div>
