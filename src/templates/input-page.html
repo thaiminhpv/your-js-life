@@ -131,7 +131,7 @@
               </div>
 
               <input type="file" id="default-btn" hidden>
-              <button type="button" onclick="defaultBtnActive()" id="custom-btn" class="btn btn-warning">Choose your
+              <button onclick="defaultBtnActive()" id="custom-btn" class="btn btn-warning">Choose your
                 photo</button>
             </div>
 
@@ -178,42 +178,56 @@
             </div>
           </div>
 
-          <div class="container row gy-3 mt-4">
-            <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-delay="0.2s">
+          <div class="row gy-3 mt-4">
+            <div class="col-6 col-lg-3 wow fadeInUp">
               <p class="text-muted fw-500 mb-0">Name:</p>
-              <input type="text" class="aboutMeInput form-control" placeholder="Callum Smith" name="name"
-                style="width: auto; display: inline; padding: 5px;" required>
+              <p class="text-4 text-dark fw-600 mb-0">
+                <input type="text" class="aboutMeInput form-control" placeholder="Callum Smith" name="name"
+                  style="width: auto; display: inline; padding: 5px;">
+              </p>
             </div>
-            <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="col-6 col-lg-3 wow fadeInUp" data-wow-delay="0.2s">
               <p class="text-muted fw-500 mb-0">Email:</p>
-              <input type="email" class="aboutMeInput form-control" placeholder="chat@callum.com" name="gmail"
-                style="width: auto; display: inline; padding: 5px;">
+              <p class="text-4 fw-600 mb-0">
+                <input type="email" class="aboutMeInput form-control" placeholder="chat@callum.com" name="gmail"
+                  style="width: auto; display: inline; padding: 5px;">
+              </p>
             </div>
-            <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="col-6 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
               <p class="text-muted fw-500 mb-0">Date of birth:</p>
-              <input type="date" class="aboutMeInput form-control" placeholder="Callum Smith" name="dateofbirth"
-                style="width: auto; display: inline; padding: 5px;" required>
+              <p class="text-4 text-dark fw-600 mb-0">
+                <input type="date" class="aboutMeInput form-control" placeholder="Callum Smith" name="dateofbirth"
+                  style="width: auto; display: inline; padding: 5px;">
+              </p>
             </div>
-            <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="col-6 col-lg-3 wow fadeInUp" data-wow-delay="0.4s">
               <p class="text-muted fw-500 mb-0">From:</p>
-              <input type="text" class="aboutMeInput form-control" placeholder="Los Angeles, USA." name="address"
-                style="width: auto; display: inline; padding: 5px;">
+              <p class="text-4 text-dark fw-600 mb-0">
+                <input type="text" class="aboutMeInput form-control" placeholder="Los Angeles, USA." name="address"
+                  style="width: auto; display: inline; padding: 5px;">
+              </p>
             </div>
 
-            <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="col-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
               <p class="text-muted fw-500 mb-0">Facebook:</p>
-              <input type="text" class="aboutMeInput form-control" placeholder="facebook.com/abc" name="facebook"
-                style="width: fit-content; padding: 5px;">
+              <p class="text-4 text-dark fw-600 mb-0">
+                <input type="text" class="aboutMeInput form-control" placeholder="facebook.com/abc" name="facebook"
+                  style="width: fit-content; padding: 5px;">
+              </p>
             </div>
-            <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="col-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
               <p class="text-muted fw-500 mb-0">Github:</p>
-              <input type="text" class="aboutMeInput form-control" placeholder="github.com/abc" name="github"
-                style="width: auto; display: inline; padding: 5px;">
+              <p class="text-4 text-dark fw-600 mb-0">
+                <input type="text" class="aboutMeInput form-control" placeholder="github.com/abc" name="github"
+                  style="width: auto; display: inline; padding: 5px;">
+              </p>
             </div>
-            <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="col-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
               <p class="text-muted fw-500 mb-0">Linked in:</p>
-              <input type="text" class="aboutMeInput form-control" placeholder="linkedin.com/abc" name="linkedin"
-                style="width: auto; display: inline; padding: 5px;">
+              <p class="text-4 text-dark fw-600 mb-0">
+                <input type="text" class="aboutMeInput form-control" placeholder="linkedin.com/abc" name="linkedin"
+                  style="width: auto; display: inline; padding: 5px;">
+              </p>
             </div>
           </div>
         </div>
@@ -275,20 +289,20 @@
               <h2 class="text-7 fw-600 mb-4 pb-2">My Education</h2>
 
               <!-- x2 here -->
-              <div class="boxMyEducation">
+              
                 <div class="border-start border-2 border-primary ps-3 row">
                   <div class="borderEducation">
                     <div>
                       <div class="form-group">
-                        <input type="text" class="form-control text-5 mb-2 form-control-sm"
-                          placeholder="Master in Computer Engineering">
+                        <input type="text" class="form-control text-5 mb-2 form-control-sm master "
+                          placeholder="Master in Computer Engineering" name="title">
                       </div>
                       <div class="form-group">
-                        <input type="text" class="form-control mb-2 form-control-sm"
-                          placeholder="Harvard University / 2015 - 2017">
+                        <input type="text" class="form-control mb-2 form-control-sm university"
+                          placeholder="Harvard University / 2015 - 2017" name="time">
                       </div>
                       <div class="form-group">
-                        <textarea class="form-control text-muted" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control text-muted " rows="3" name="content"></textarea>
                       </div>
                     </div>
 
@@ -312,22 +326,22 @@
                   </div>
                   <hr class="my-4">
                 </div>
-              </div>
+              
               <!-- x2 to here -->
 
               <div class="border-start border-2 border-primary ps-3 row">
                 <div class="borderEducation">
                   <div>
                     <div class="form-group">
-                      <input type="text" class="form-control text-5 mb-2 form-control-sm"
-                        placeholder="Master in Computer Engineering">
+                      <input type="text" class="form-control text-5 mb-2 form-control-sm master"
+                        placeholder="Master in Computer Engineering" name="title">
                     </div>
                     <div class="form-group">
-                      <input type="text" class="form-control mb-2 form-control-sm"
-                        placeholder="Harvard University / 2015 - 2017">
+                      <input type="text" class="form-control mb-2 form-control-sm university"
+                        placeholder="Harvard University / 2015 - 2017" name="time">
                     </div>
                     <div class="form-group">
-                      <textarea class="form-control text-muted" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      <textarea class="form-control text-muted " rows="3" name="content"></textarea>
                     </div>
                   </div>
                   <div class="buttonEducation">
@@ -353,15 +367,15 @@
                 <div class="borderEducation">
                   <div>
                     <div class="form-group">
-                      <input type="text" class="form-control text-5 mb-2 form-control-sm"
-                        placeholder="Master in Computer Engineering">
+                      <input type="text" class="form-control text-5 mb-2 form-control-sm master"
+                        placeholder="Master in Computer Engineering" name="title">
                     </div>
                     <div class="form-group">
-                      <input type="text" class="form-control mb-2 form-control-sm"
-                        placeholder="Harvard University / 2015 - 2017">
+                      <input type="text" class="form-control mb-2 form-control-sm university"
+                        placeholder="Harvard University / 2015 - 2017" name="time">
                     </div>
                     <div class="form-group">
-                      <textarea class="form-control text-muted" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      <textarea class="form-control text-muted " rows="3" name="content"></textarea>
                     </div>
                   </div>
                   <div class="buttonEducation">
@@ -386,10 +400,10 @@
             </div>
             <!-- My Experience -->
             <div class="col-lg-6 wow fadeInUp">
-              <h2 class="text-7 fw-600 mb-4 pb-2">My Education</h2>
+              <h2 class="text-7 fw-600 mb-4 pb-2">My Experience</h2>
 
               <!-- x2 here -->
-              <div class="boxMyExperience">
+              
                 <div class="border-start border-2 border-primary ps-3 row">
                   <div class="borderEducation">
                     <div>
@@ -423,7 +437,7 @@
                   </div>
                   <hr class="my-4">
                 </div>
-              </div>
+              
               <!-- x2 to here -->
 
               <div class="border-start border-2 border-primary ps-3 row">
@@ -500,7 +514,6 @@
             <h2 id="text" class="text-7 fw-600 mb-4 pb-2 mt-5 wow fadeInUp">My Skills</h2>
             <div class="row gx-5">
 
-<<<<<<< HEAD
               <!-- x2 -->
               
                 <div class="col-md-6 wow fadeInUp py-3 borderInputRange boxMySkills" >
@@ -524,35 +537,11 @@
                     <input class="inputRange" type="range" min="1" max="100" value="70" style="width: 100%">
                   </div>
 
-=======
-              <!-- x2 div class borderInputRange -->
-              <div class="col-lg-6 wow fadeInUp py-3 borderInputRange">
-                <div class="borderButtonRange">
-                  <button type="button" class="btn-outline-danger activeButton"
-                    style="border: 2.5px solid red; margin-right: 1rem;">
-                    <i class="fa-solid fa-trash-can"></i>
-                  </button>
-                  <button type="button" class="btn-outline-success activeButton" style="border: 2.5px solid green;">
-                    <i class="fa-solid fa-plus"></i>
-                  </button>
-                </div>
-                <p class="fw-500 text-start mb-3">
-                  <span class="float-end selectorValue">5%</span>
-                  <input type=" text" class="form-control" placeholder="Web Design" name="address"
-                    style="width:fit-content; padding: 5px;">
-                </p>
-                <div class="progress progress-sm mb-4">
-                  <input class="inputRange" type="range" min="1" max="100" value="70" style="width: 100%">
->>>>>>> cd244f30cec5a214b3066fa93f1f4600db32814e
                 </div>
               
               <!-- x2 to here-->
 
-<<<<<<< HEAD
               <!-- <div class="col-md-6 wow fadeInUp py-3 borderInputRange ">
-=======
-              <div class="col-lg-6 wow fadeInUp py-3 borderInputRange">
->>>>>>> cd244f30cec5a214b3066fa93f1f4600db32814e
                 <div class="borderButtonRange">
                   <button onclick="remove()" type="button" class="btn-outline-danger activeButton"
                     style="border: 2.5px solid red; margin-right: 1rem;">
@@ -592,7 +581,7 @@
                 </div>
               </div>
 
-              <div class="col-lg-6 wow fadeInUp py-3 borderInputRange">
+              <div class="col-md-6 wow fadeInUp py-3 borderInputRange">
                 <div class="borderButtonRange">
                   <button type="button" class="btn-outline-danger activeButton"
                     style="border: 2.5px solid red; margin-right: 1rem;">
@@ -612,28 +601,6 @@
                 </div>
               </div> -->
 
-<<<<<<< HEAD
-=======
-              <div class="col-lg-6 wow fadeInUp py-3 borderInputRange">
-                <div class="borderButtonRange">
-                  <button type="button" class="btn-outline-danger activeButton"
-                    style="border: 2.5px solid red; margin-right: 1rem;">
-                    <i class="fa-solid fa-trash-can"></i>
-                  </button>
-                  <button type="button" class="btn-outline-success activeButton" style="border: 2.5px solid green;">
-                    <i class="fa-solid fa-plus"></i>
-                  </button>
-                </div>
-                <p class="fw-500 text-start mb-3">
-                  <span class="float-end selectorValue">5%</span>
-                  <input type=" text" class="form-control" placeholder="Web Design" name="address"
-                    style="width:fit-content; padding: 5px;">
-                </p>
-                <div class="progress progress-sm mb-4">
-                  <input class="inputRange" type="range" min="1" max="100" value="70" style="width: 100%">
-                </div>
-              </div>
->>>>>>> cd244f30cec5a214b3066fa93f1f4600db32814e
             </div>
 
             <p class="text-center mt-5 wow fadeInUp">
@@ -723,6 +690,10 @@
 
     <script src="https://kit.fontawesome.com/81e4fcabce.js" crossorigin="anonymous"></script>
     <script>
+      object();
+    </script>
+    
+    <!-- <script>
       
       function add_box(boxMySkills) {
         let box = document.querySelector('.boxMySkills')
@@ -734,12 +705,13 @@
       }
       function remove_box() {
         var box = document.querySelector('.boxMySkills')
-      console.log(box)
-      box.remove(box);
+        console.log(box)
+        box.remove(box);
       
       }
       
-    </script>
+      
+    </script> -->
 </body>
 
 </html>
