@@ -131,7 +131,7 @@
               </div>
 
               <input type="file" id="default-btn" hidden>
-              <button onclick="defaultBtnActive()" id="custom-btn" class="btn btn-warning">Choose your
+              <button type="button" onclick="defaultBtnActive()" id="custom-btn" class="btn btn-warning">Choose your
                 photo</button>
             </div>
 
@@ -178,56 +178,42 @@
             </div>
           </div>
 
-          <div class="row gy-3 mt-4">
-            <div class="col-6 col-lg-3 wow fadeInUp">
+          <div class="container row gy-3 mt-4">
+            <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-delay="0.2s">
               <p class="text-muted fw-500 mb-0">Name:</p>
-              <p class="text-4 text-dark fw-600 mb-0">
-                <input type="text" class="aboutMeInput form-control" placeholder="Callum Smith" name="name"
-                  style="width: auto; display: inline; padding: 5px;">
-              </p>
+              <input type="text" class="aboutMeInput form-control" placeholder="Callum Smith" name="name"
+                style="width: auto; display: inline; padding: 5px;" required>
             </div>
-            <div class="col-6 col-lg-3 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-delay="0.2s">
               <p class="text-muted fw-500 mb-0">Email:</p>
-              <p class="text-4 fw-600 mb-0">
-                <input type="email" class="aboutMeInput form-control" placeholder="chat@callum.com" name="gmail"
-                  style="width: auto; display: inline; padding: 5px;">
-              </p>
+              <input type="email" class="aboutMeInput form-control" placeholder="chat@callum.com" name="gmail"
+                style="width: auto; display: inline; padding: 5px;">
             </div>
-            <div class="col-6 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
               <p class="text-muted fw-500 mb-0">Date of birth:</p>
-              <p class="text-4 text-dark fw-600 mb-0">
-                <input type="date" class="aboutMeInput form-control" placeholder="Callum Smith" name="dateofbirth"
-                  style="width: auto; display: inline; padding: 5px;">
-              </p>
+              <input type="date" class="aboutMeInput form-control" placeholder="Callum Smith" name="dateofbirth"
+                style="width: auto; display: inline; padding: 5px;" required>
             </div>
-            <div class="col-6 col-lg-3 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-delay="0.4s">
               <p class="text-muted fw-500 mb-0">From:</p>
-              <p class="text-4 text-dark fw-600 mb-0">
-                <input type="text" class="aboutMeInput form-control" placeholder="Los Angeles, USA." name="address"
-                  style="width: auto; display: inline; padding: 5px;">
-              </p>
+              <input type="text" class="aboutMeInput form-control" placeholder="Los Angeles, USA." name="address"
+                style="width: auto; display: inline; padding: 5px;">
             </div>
 
-            <div class="col-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
               <p class="text-muted fw-500 mb-0">Facebook:</p>
-              <p class="text-4 text-dark fw-600 mb-0">
-                <input type="text" class="aboutMeInput form-control" placeholder="facebook.com/abc" name="facebook"
-                  style="width: fit-content; padding: 5px;">
-              </p>
+              <input type="text" class="aboutMeInput form-control" placeholder="facebook.com/abc" name="facebook"
+                style="width: fit-content; padding: 5px;">
             </div>
-            <div class="col-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
               <p class="text-muted fw-500 mb-0">Github:</p>
-              <p class="text-4 text-dark fw-600 mb-0">
-                <input type="text" class="aboutMeInput form-control" placeholder="github.com/abc" name="github"
-                  style="width: auto; display: inline; padding: 5px;">
-              </p>
+              <input type="text" class="aboutMeInput form-control" placeholder="github.com/abc" name="github"
+                style="width: auto; display: inline; padding: 5px;">
             </div>
-            <div class="col-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
               <p class="text-muted fw-500 mb-0">Linked in:</p>
-              <p class="text-4 text-dark fw-600 mb-0">
-                <input type="text" class="aboutMeInput form-control" placeholder="linkedin.com/abc" name="linkedin"
-                  style="width: auto; display: inline; padding: 5px;">
-              </p>
+              <input type="text" class="aboutMeInput form-control" placeholder="linkedin.com/abc" name="linkedin"
+                style="width: auto; display: inline; padding: 5px;">
             </div>
           </div>
         </div>
@@ -514,6 +500,7 @@
             <h2 id="text" class="text-7 fw-600 mb-4 pb-2 mt-5 wow fadeInUp">My Skills</h2>
             <div class="row gx-5">
 
+<<<<<<< HEAD
               <!-- x2 -->
               
                 <div class="col-md-6 wow fadeInUp py-3 borderInputRange boxMySkills" >
@@ -537,11 +524,35 @@
                     <input class="inputRange" type="range" min="1" max="100" value="70" style="width: 100%">
                   </div>
 
+=======
+              <!-- x2 div class borderInputRange -->
+              <div class="col-lg-6 wow fadeInUp py-3 borderInputRange">
+                <div class="borderButtonRange">
+                  <button type="button" class="btn-outline-danger activeButton"
+                    style="border: 2.5px solid red; margin-right: 1rem;">
+                    <i class="fa-solid fa-trash-can"></i>
+                  </button>
+                  <button type="button" class="btn-outline-success activeButton" style="border: 2.5px solid green;">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+                <p class="fw-500 text-start mb-3">
+                  <span class="float-end selectorValue">5%</span>
+                  <input type=" text" class="form-control" placeholder="Web Design" name="address"
+                    style="width:fit-content; padding: 5px;">
+                </p>
+                <div class="progress progress-sm mb-4">
+                  <input class="inputRange" type="range" min="1" max="100" value="70" style="width: 100%">
+>>>>>>> cd244f30cec5a214b3066fa93f1f4600db32814e
                 </div>
               
               <!-- x2 to here-->
 
+<<<<<<< HEAD
               <!-- <div class="col-md-6 wow fadeInUp py-3 borderInputRange ">
+=======
+              <div class="col-lg-6 wow fadeInUp py-3 borderInputRange">
+>>>>>>> cd244f30cec5a214b3066fa93f1f4600db32814e
                 <div class="borderButtonRange">
                   <button onclick="remove()" type="button" class="btn-outline-danger activeButton"
                     style="border: 2.5px solid red; margin-right: 1rem;">
@@ -581,7 +592,7 @@
                 </div>
               </div>
 
-              <div class="col-md-6 wow fadeInUp py-3 borderInputRange">
+              <div class="col-lg-6 wow fadeInUp py-3 borderInputRange">
                 <div class="borderButtonRange">
                   <button type="button" class="btn-outline-danger activeButton"
                     style="border: 2.5px solid red; margin-right: 1rem;">
@@ -601,6 +612,28 @@
                 </div>
               </div> -->
 
+<<<<<<< HEAD
+=======
+              <div class="col-lg-6 wow fadeInUp py-3 borderInputRange">
+                <div class="borderButtonRange">
+                  <button type="button" class="btn-outline-danger activeButton"
+                    style="border: 2.5px solid red; margin-right: 1rem;">
+                    <i class="fa-solid fa-trash-can"></i>
+                  </button>
+                  <button type="button" class="btn-outline-success activeButton" style="border: 2.5px solid green;">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+                <p class="fw-500 text-start mb-3">
+                  <span class="float-end selectorValue">5%</span>
+                  <input type=" text" class="form-control" placeholder="Web Design" name="address"
+                    style="width:fit-content; padding: 5px;">
+                </p>
+                <div class="progress progress-sm mb-4">
+                  <input class="inputRange" type="range" min="1" max="100" value="70" style="width: 100%">
+                </div>
+              </div>
+>>>>>>> cd244f30cec5a214b3066fa93f1f4600db32814e
             </div>
 
             <p class="text-center mt-5 wow fadeInUp">
