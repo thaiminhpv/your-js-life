@@ -12,6 +12,10 @@ input:focus {
   padding: 2px;
 }
 
+.btn {
+  transition-duration: 0ms;
+}
+
 /* upload avt */
 #custom-btn {
   border-radius: 25px;
