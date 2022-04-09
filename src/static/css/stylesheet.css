@@ -3669,3 +3669,7 @@ video {
   left: 0;
   object-fit: cover;
 }
+#hero-bg parallax{
+  text-shadow: white 2px 2px 1px;
+  background-color: white;
+}
