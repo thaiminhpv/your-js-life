@@ -515,17 +515,19 @@
             <div class="row gx-5">
 
               <!-- x2 -->
-              <div class="boxMySkills">
-                <div class="col-md-6 wow fadeInUp py-3 borderInputRange">
+              
+                <div class="col-md-6 wow fadeInUp py-3 borderInputRange boxMySkills" >
+
                   <div class="borderButtonRange">
-                    <button type="button" class="btn-outline-danger activeButton"
+                    <button  onclick="remove_box()" type="button" class="btn-outline-danger activeButton " 
                       style="border: 2.5px solid red; margin-right: 1rem;">
                       <i class="fa-solid fa-trash-can"></i>
                     </button>
-                    <button type="button" class="btn-outline-success activeButton" style="border: 2.5px solid green;">
+                    <button onclick="add_box()" type="button" class="btn-outline-success activeButton" style="border: 2.5px solid green;">
                       <i class="fa-solid fa-plus"></i>
                     </button>
                   </div>
+
                   <p class="fw-500 text-start mb-3">
                     <span class="float-end selectorValue">5%</span>
                     <input type=" text" class="form-control" placeholder="Web Design" name="address"
@@ -534,17 +536,38 @@
                   <div class="progress progress-sm mb-4">
                     <input class="inputRange" type="range" min="1" max="100" value="70" style="width: 100%">
                   </div>
+
                 </div>
-              </div>
+              
               <!-- x2 to here-->
 
-              <div class="col-md-6 wow fadeInUp py-3 borderInputRange">
+              <!-- <div class="col-md-6 wow fadeInUp py-3 borderInputRange ">
                 <div class="borderButtonRange">
-                  <button type="button" class="btn-outline-danger activeButton"
+                  <button onclick="remove()" type="button" class="btn-outline-danger activeButton"
                     style="border: 2.5px solid red; margin-right: 1rem;">
                     <i class="fa-solid fa-trash-can"></i>
                   </button>
-                  <button type="button" class="btn-outline-success activeButton" style="border: 2.5px solid green;">
+                  <button onclick="add()" type="button" class="btn-outline-success activeButton" style="border: 2.5px solid green;">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+                <p class="fw-500 text-start mb-3">
+                  <span class="float-end selectorValue">5%</span>
+                  <input type=" text" class="form-control" placeholder="Web Design" name="address"
+                    style="width:fit-content; padding: 5px;">
+                </p>
+                <div class="progress progress-sm mb-4">
+                  <input class="inputRange" type="range" min="1" max="100" value="70" style="width: 100%">
+                </div>
+              </div>
+
+              <div class="col-md-6 wow fadeInUp py-3 borderInputRange">
+                <div class="borderButtonRange">
+                  <button type="button" class="btn-outline-danger activeButton" id="add_more_fields"
+                    style="border: 2.5px solid red; margin-right: 1rem;">
+                    <i class="fa-solid fa-trash-can"></i>
+                  </button>
+                  <button type="button" class="btn-outline-success activeButton" style="border: 2.5px solid green;" id="">
                     <i class="fa-solid fa-plus"></i>
                   </button>
                 </div>
@@ -576,27 +599,8 @@
                 <div class="progress progress-sm mb-4">
                   <input class="inputRange" type="range" min="1" max="100" value="70" style="width: 100%">
                 </div>
-              </div>
+              </div> -->
 
-              <div class="col-md-6 wow fadeInUp py-3 borderInputRange">
-                <div class="borderButtonRange">
-                  <button type="button" class="btn-outline-danger activeButton"
-                    style="border: 2.5px solid red; margin-right: 1rem;">
-                    <i class="fa-solid fa-trash-can"></i>
-                  </button>
-                  <button type="button" class="btn-outline-success activeButton" style="border: 2.5px solid green;">
-                    <i class="fa-solid fa-plus"></i>
-                  </button>
-                </div>
-                <p class="fw-500 text-start mb-3">
-                  <span class="float-end selectorValue">5%</span>
-                  <input type=" text" class="form-control" placeholder="Web Design" name="address"
-                    style="width:fit-content; padding: 5px;">
-                </p>
-                <div class="progress progress-sm mb-4">
-                  <input class="inputRange" type="range" min="1" max="100" value="70" style="width: 100%">
-                </div>
-              </div>
             </div>
 
             <p class="text-center mt-5 wow fadeInUp">
@@ -685,6 +689,24 @@
     <script src="/static/js/input-page.js"></script>
 
     <script src="https://kit.fontawesome.com/81e4fcabce.js" crossorigin="anonymous"></script>
+    <script>
+      
+      function add_box(boxMySkills) {
+        let box = document.querySelector('.boxMySkills')
+        console.log(box)
+        let newField = box.cloneNode(true);
+        console.log(newField)
+        box.append(newField); 
+        
+      }
+      function remove_box() {
+        var box = document.querySelector('.boxMySkills')
+      console.log(box)
+      box.remove(box);
+      
+      }
+      
+    </script>
 </body>
 
 </html>
