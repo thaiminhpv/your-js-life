@@ -26,8 +26,8 @@ def home():
 def register():
     if request.method == "POST":
         id = handle_data(request)
-        return redirect(url_for('user.portfolio', id=id))
-        # return id
+        #return redirect(url_for('user.portfolio', id=id))
+        return "successful"
     elif request.method == "GET":
         return render_template("input-page.html")
 
@@ -60,24 +60,25 @@ def handle_data(request):
     :param request:
     :return:
     """
-    data_user = model.Users.getdatafromrequest(request.form)
+    request_json = request.json
+    
+    data_user = model.Users.getdatafromrequest(request_json)
     id = InteractDatabase.addportfolio(data_user)  # add data user to database and get id of this user
 
-    # request_json = request.json
-    # experience = request_json["experience"]
-    # InteractDatabase.save_exp(id, experience)
+    experience = request_json["experience"]
+    InteractDatabase.save_exp(id, experience)
 
-    # education = request_json["education"]
-    # InteractDatabase.save_edu(id, education)
+    education = request_json["education"]
+    InteractDatabase.save_edu(id, education)
 
-    # services = request_json["services"]
-    # InteractDatabase.save_services(id, services)
+    services = request_json["services"]
+    InteractDatabase.save_services(id, services)
 
-    # skills = request_json["skills"]
-    # InteractDatabase.save_skills(id, skills)
+    skills = request_json["skills"]
+    InteractDatabase.save_skills(id, skills)
 
-    path = get_path_image(request)  # get path user's avt from cloud
-    InteractDatabase.save_path_to_database(id, path)
+    # path = get_path_image(request)  # get path user's avt from cloud
+    # InteractDatabase.save_path_to_database(id, path)
     return id
 
 
