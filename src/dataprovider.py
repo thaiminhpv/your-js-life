@@ -10,7 +10,7 @@ def get_id():
     """
     :return: id of new user
     """
-    data = str(InteractDatabase.executequery("SELECT COUNT(*) FROM `portfolio`"))
+    data = str(InteractDatabase.executequery("SELECT max(id) FROM portfolio;"))
     id = ''
     for i in range(len(data)):
         if data[i].isdigit():
