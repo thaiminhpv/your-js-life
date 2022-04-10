@@ -93,8 +93,6 @@ def save_data(id, data_user, experience, education, services, skills, path):
     InteractDatabase.save_services(id, services)
     InteractDatabase.save_skills(id, skills)
     InteractDatabase.save_path_to_database(id, path)
-    time.sleep(10)
-
 
 
 def get_path_image(request):
