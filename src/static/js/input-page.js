@@ -21,20 +21,22 @@ defaultBtn.addEventListener("change", function () {
 //-------------------------------------------------
 
 // Input range My Skills
-// const selectorValue = document.getElementById("selectorValue");
-// const slider = document.getElementById("inputRange");
+const selectorValue = document.getElementById("selectorValue");
+const slider = document.getElementById("inputRange");
 
-// selectorValue.innerHTML = slider.value + "%";
-// slider.oninput = function () {
-//     selectorValue.innerHTML = slider.value + "%";
-// }
+selectorValue.innerHTML = slider.value + "%";
+slider.oninput = function () {
+    selectorValue.innerHTML = slider.value + "%";
+}
 
-// var mySkill_box = document.querySelector('.boxMySkills')
+// var mySkill_box = document.getElementById('border-what-i-do')
 // console.log(mySkill_box);
 // console.log('a');
 // var remove_fields = document.getElementById('remove_fields');
 
 // add_more_fields.onclick = function() {  
+//     console.log(mySkill_box);
+//     console.log('a');
 //     var newField = mySkill_box.cloneNode(true);
 //     mySkill_box.append(newField);  
 // }
@@ -45,22 +47,68 @@ defaultBtn.addEventListener("change", function () {
 //         mySkill_box.remove(input_tags[(input_tags.length) - 1 ]);
 //     // }
 // }
-// function add() {
-//         var newField = mySkill_box.cloneNode(true);
-//         mySkill_box.append(newField); 
-// }
-// function remove() {
-//         var input_tags = document.getElementsByClassName('borderInputRange');
-//         console.log(input_tags);
-//     // if(input_tags.length > 1){
-//         mySkill_box.remove(input_tags[(input_tags.length) - 1 ]);
-// }
+function add_box() {
+    var mySkill_box = document.getElementById('border-what-i-do');
+        var newField = mySkill_box.cloneNode(true);
+        // var newField = document.createElement('div');
+        mySkill_box.append(newField); 
+}
+function remove_box() {
+    //     var input_tags = document.getElementsByClassName('borderInputRange');
+    //     console.log(input_tags);
+    // // if(input_tags.length > 1){
+        var array = document.getElementsByClassName('borderWhatIDo')     
+        var mySkill_box = document.getElementById('border-what-i-do')
+        mySkill_box.remove(array);
+}
+
+function add_box_education() {
+    var mySkill_box = document.getElementsByClassName('borderEducation')[0];
+        var newField = mySkill_box.cloneNode(true);
+        // var newField = document.createElement('div');
+        mySkill_box.append(newField); 
+}
+
+function remove_box_education() {
+        var array = document.getElementsByClassName('borderEducation')[0]    
+        // var mySkill_box = document.getElementById('border-what-i-do')
+        // if(input_tags > 2){
+            array.remove(array);
+        // }
+        
+}
+
+function add_box_experience() {
+    var mySkill_box = document.getElementsByClassName('boxMyExperience')[0];
+        var newField = mySkill_box.cloneNode(true);
+        // var newField = document.createElement('div');
+        mySkill_box.append(newField); 
+}
+function remove_box_experience() {
+    //     var input_tags = document.getElementsByClassName('borderInputRange');
+    //     console.log(input_tags);
+    // // if(input_tags.length > 1){
+        var input_tags = document.getElementsByClassName('boxMyExperience').length;
+        var array = document.getElementsByClassName('boxMyExperience')[0]    
+        // var mySkill_box = document.getElementById('border-what-i-do')
+        // if(input_tags > 2){
+            array.remove(array);
+        // }
+        
+}
+
+
+
+      
+      
+
 
 function object(){
     //Intro
     phone = document.querySelectorAll('input[name="phone"]')[0].value;
     avatar = document.getElementById('avt').src;
     job = document.querySelectorAll('input[name="job"]')[0].value;
+    jobTextarea = document.querySelectorAll('textarea[name="job-textarea"]')[0].value;
     //About Me
     address = document.querySelectorAll('input[name="address"]')[0].value;
     nickname = document.querySelectorAll('input[name="nickname"]')[0].value;
@@ -113,10 +161,11 @@ function object(){
             value_: e[1]
         }
     })
-    ObjectJS = {
+    objectJS = {
         phone: phone,
         avt: avt,
         job: job,
+        jobDescription: jobTextarea,
         address: address,
         nickname: nickname,
         introduction: introduction,

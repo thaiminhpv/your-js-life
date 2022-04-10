@@ -115,7 +115,7 @@
               </h1>
               <div class="form-group">
                 <textarea class="form-control text-muted mb-2 mt-2" style="width: 60%;" rows="3" cols="15"
-                  placeholder="Designer &#10Developer &#10YouTuber"></textarea>
+                  placeholder="Designer &#10Developer &#10YouTuber" name="job-textarea"></textarea>
               </div>
 
               <p class="text-5">based in
@@ -243,8 +243,8 @@
           <h2 class="text-10 fw-600 text-center mb-5 wow fadeInUp">How I can help your next project</h2>
           <!-- Heading end-->
 
-          <div class="row gy-5 mt-5">
-            <div class="col-sm-6 col-lg-4 wow fadeInUp">
+          <div class="row gy-5 mt-5" id="border-what-i-do">
+            <div class="col-sm-6 col-lg-4 wow fadeInUp "  >
               <div class="featured-box text-center px-md-4 borderWhatIDo">
                 <div class="input-group mb-3">
                   <input type="text" class="text-6 fw-600 mb-3 aboutMeInput form-control" placeholder="Graphic Design"
@@ -260,16 +260,19 @@
                     style="margin-right: 2rem;">
                     <i class="fa-solid fa-arrow-down"></i>
                   </button>
-                  <button type="button" class="btn btn-outline-danger btn-sm borderButtonEducation">
+                  <button  onclick="remove_box()" type="button" class="btn btn-outline-danger btn-sm borderButtonEducation">
                     <i class="fa-solid fa-trash-can"></i>
                   </button>
-                  <button type="button" class="btn btn-outline-success btn-sm borderButtonEducation">
+                  <button onclick="add_box()"  type="button" class="btn btn-outline-success btn-sm borderButtonEducation">
                     <i class="fa-solid fa-plus"></i>
                   </button>
                 </div>
-              </div>
+              </div>          
             </div>
+
+            
           </div>
+
         </div>
       </section>
       <!-- Services end -->
@@ -315,10 +318,10 @@
                       style="margin-right: 2rem;">
                       <i class="fa-solid fa-arrow-down"></i>
                     </button>
-                    <button type="button" class="btn btn-outline-danger btn-sm borderButtonEducation">
+                    <button onclick="remove_box_education()" type="button" class="btn btn-outline-danger btn-sm borderButtonEducation">
                       <i class="fa-solid fa-trash-can"></i>
                     </button>
-                    <button type="button" class="btn btn-outline-success btn-sm borderButtonEducation">
+                    <button onclick="add_box_education()" type="button" class="btn btn-outline-success btn-sm borderButtonEducation">
                       <i class="fa-solid fa-plus"></i>
                     </button>
 
@@ -329,7 +332,7 @@
 
               <!-- x2 to here -->
 
-              <div class="border-start border-2 border-primary ps-3 row boxMyEducation">
+              <!-- <div class="border-start border-2 border-primary ps-3 row boxMyEducation">
                 <div class="borderEducation">
                   <div>
                     <div class="form-group">
@@ -361,9 +364,9 @@
                   </div>
                 </div>
                 <hr class="my-4">
-              </div>
+              </div> -->
 
-              <div class="border-start border-2 border-primary ps-3 row boxMyEducation">
+              <!-- <div class="border-start border-2 border-primary ps-3 row boxMyEducation">
                 <div class="borderEducation">
                   <div>
                     <div class="form-group">
@@ -395,7 +398,7 @@
                   </div>
                 </div>
                 <hr class="my-4">
-              </div>
+              </div> -->
 
             </div>
             <!-- My Experience -->
@@ -404,7 +407,7 @@
 
               <!-- x2 here -->
 
-              <div class="border-start border-2 border-primary ps-3 row boxMyExperience">
+              <div class="border-start border-2 border-primary ps-3 row boxMyExperience" >
                 <div class="borderEducation">
                   <div>
                     <div class="form-group">
@@ -427,10 +430,10 @@
                       style="margin-right: 2rem;">
                       <i class="fa-solid fa-arrow-down"></i>
                     </button>
-                    <button type="button" class="btn btn-outline-danger btn-sm borderButtonEducation">
+                    <button onclick="remove_box_experience()" type="button" class="btn btn-outline-danger btn-sm borderButtonEducation">
                       <i class="fa-solid fa-trash-can"></i>
                     </button>
-                    <button type="button" class="btn btn-outline-success btn-sm borderButtonEducation">
+                    <button onclick="add_box_experience()" type="button" class="btn btn-outline-success btn-sm borderButtonEducation">
                       <i class="fa-solid fa-plus"></i>
                     </button>
                   </div>
@@ -440,7 +443,7 @@
 
               <!-- x2 to here -->
 
-              <div class="border-start border-2 border-primary ps-3 row boxMyExperience">
+              <!-- <div class="border-start border-2 border-primary ps-3 row boxMyExperience">
                 <div class="borderEducation">
                   <div>
                     <div class="form-group">
@@ -451,9 +454,9 @@
                       <input type="text" class="form-control mb-2 form-control-sm"
                         placeholder="Harvard University / 2015 - 2017" name="time">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group"> -->
                       <!-- <textarea class="form-control text-muted" id="exampleFormControlTextarea1" rows="3"></textarea> -->
-                      <textarea class="form-control text-muted" rows="3" name="content"></textarea>
+                      <!-- <textarea class="form-control text-muted" rows="3" name="content"></textarea>
                     </div>
                   </div>
                   <div class="buttonEducation">
@@ -473,9 +476,9 @@
                   </div>
                 </div>
                 <hr class="my-4">
-              </div>
+              </div> -->
 
-              <div class="border-start border-2 border-primary ps-3 row boxMyExperience">
+              <!-- <div class="border-start border-2 border-primary ps-3 row boxMyExperience">
                 <div class="borderEducation">
                   <div>
                     <div class="form-group">
@@ -507,8 +510,8 @@
                   </div>
                 </div>
                 <hr class="my-4">
-              </div>
-
+              </div> -->
+</div>
             </div>
 
             <!-- My Skills -->
@@ -520,11 +523,11 @@
               <div class="col-md-6 wow fadeInUp py-3 borderInputRange boxMySkills">
 
                 <div class="borderButtonRange">
-                  <button onclick="remove_box()" type="button" class="btn-outline-danger activeButton "
+                  <button type="button" class="btn-outline-danger activeButton "
                     style="border: 2.5px solid red; margin-right: 1rem;">
                     <i class="fa-solid fa-trash-can"></i>
                   </button>
-                  <button onclick="add_box()" type="button" class="btn-outline-success activeButton"
+                  <button  type="button" class="btn-outline-success activeButton"
                     style="border: 2.5px solid green;">
                     <i class="fa-solid fa-plus"></i>
                   </button>
@@ -570,7 +573,7 @@
 
               <div class="col-md-6 wow fadeInUp py-3 borderInputRange boxMySkills">
                 <div class="borderButtonRange">
-                  <button type="button" class="btn-outline-danger activeButton" id="add_more_fields"
+                  <button type="button" class="btn-outline-danger activeButton" 
                     style="border: 2.5px solid red; margin-right: 1rem;">
                     <i class="fa-solid fa-trash-can"></i>
                   </button>
@@ -696,14 +699,12 @@
     <script src="/static/js/input-page.js"></script>
 
     <script src="https://kit.fontawesome.com/81e4fcabce.js" crossorigin="anonymous"></script>
-    <script>
-      object();
-    </script>
+    
 
     <!-- <script>
       
-      function add_box(boxMySkills) {
-        let box = document.querySelector('.boxMySkills')
+      function add_box() {
+        let box = document.getElementById('border-what-i-do')
         console.log(box)
         let newField = box.cloneNode(true);
         console.log(newField)
