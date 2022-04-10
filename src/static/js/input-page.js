@@ -29,60 +29,42 @@ slider.oninput = function () {
     selectorValue.innerHTML = slider.value + "%";
 }
 
-// var mySkill_box = document.getElementById('border-what-i-do')
-// console.log(mySkill_box);
-// console.log('a');
-// var remove_fields = document.getElementById('remove_fields');
-
-// add_more_fields.onclick = function() {  
-//     console.log(mySkill_box);
-//     console.log('a');
-//     var newField = mySkill_box.cloneNode(true);
-//     mySkill_box.append(newField);  
-// }
-// remove_fields.onclick = function() {
-//     var input_tags = document.getElementsByClassName('borderInputRange');
-//     console.log(input_tags);
-//     // if(input_tags.length > 1){
-//         mySkill_box.remove(input_tags[(input_tags.length) - 1 ]);
-//     // }
-// }
+var array_my_skill = document.getElementsByClassName('what-i-do-item')
 function add_box() {
-    var mySkill_box = document.getElementById('border-what-i-do');
+    var mySkill_box = document.getElementsByClassName('what-i-do-item')[0]
+    var parent_box = mySkill_box.parentNode;
         var newField = mySkill_box.cloneNode(true);
-        // var newField = document.createElement('div');
-        mySkill_box.append(newField); 
+        parent_box.append(newField); 
 }
 function remove_box() {
-    //     var input_tags = document.getElementsByClassName('borderInputRange');
-    //     console.log(input_tags);
-    // // if(input_tags.length > 1){
+    
         var array = document.getElementsByClassName('borderWhatIDo')     
-        var mySkill_box = document.getElementById('border-what-i-do')
-        mySkill_box.remove(array);
+        var mySkill_box = document.getElementsByClassName('what-i-do-item')[0]
+        if(array.length > 1){
+            mySkill_box.remove(array);
+        }
+        
 }
 
 function add_box_education() {
-    var mySkill_box = document.getElementsByClassName('borderEducation')[0];
+    var mySkill_box = document.getElementsByClassName('boxMyEducation')[0];
+    var parent_box = mySkill_box.parentNode;
         var newField = mySkill_box.cloneNode(true);
-        // var newField = document.createElement('div');
-        mySkill_box.append(newField); 
+        parent_box.append(newField); 
 }
-
+ 
 function remove_box_education() {
-        var array = document.getElementsByClassName('borderEducation')[0]    
-        // var mySkill_box = document.getElementById('border-what-i-do')
-        // if(input_tags > 2){
+        var array = document.getElementsByClassName('borderEducation')[0]           
             array.remove(array);
-        // }
         
 }
 
 function add_box_experience() {
     var mySkill_box = document.getElementsByClassName('boxMyExperience')[0];
+    var parent_box = mySkill_box.parentNode;
         var newField = mySkill_box.cloneNode(true);
         // var newField = document.createElement('div');
-        mySkill_box.append(newField); 
+        parent_box.append(newField); 
 }
 function remove_box_experience() {
     //     var input_tags = document.getElementsByClassName('borderInputRange');
