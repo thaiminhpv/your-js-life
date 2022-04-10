@@ -45,7 +45,7 @@ function remove_box() {
         }
         
 }
-
+var array_my_education = document.getElementsByClassName('boxMyEducation');
 function add_box_education() {
     var mySkill_box = document.getElementsByClassName('boxMyEducation')[0];
     var parent_box = mySkill_box.parentNode;
@@ -71,11 +71,11 @@ function add_box_experience() {
         parent_box.append(newField); 
 }
 function remove_box_experience() {
-        var array = document.getElementsByClassName('boxMyExperience')[0]    
-        // var mySkill_box = document.getElementById('border-what-i-do')
-        // if(input_tags > 2){
-            array.remove(array);
-        // }
+    var array = document.getElementsByClassName('borderExperience')
+        var mySkill_box = document.getElementsByClassName('boxMyExperience')[0]    
+        if(array.length > 1){
+            mySkill_box.remove(array);
+        }
         
 }
 
@@ -87,11 +87,12 @@ function add_box_skills() {
 }
  
 function remove_box_skills() {
-        var array = document.getElementsByClassName('boxMySkills')
-        var mySkill_box = document.getElementsByClassName('my-skill-item')[0]  
+        var array = document.getElementsByClassName('my-skill-item')
+        var mySkill_box = document.getElementsByClassName('boxMySkills')[0]  
         if(array.length > 1){
             mySkill_box.remove(array);
-        }      
+        }  
+
            
         
 }
