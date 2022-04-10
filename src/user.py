@@ -1,11 +1,12 @@
-from statistics import mode
+import threading
+from time import time
 import cloudinary.uploader
 from flask import redirect, url_for, render_template, request, Blueprint
 from . import config 
 from . import model
 from .dataprovider import InteractDatabase
 from src import dataprovider
-
+import time
 user = Blueprint("user", __name__)
 
 
@@ -74,7 +75,8 @@ def get_data(id):
     services = request_json["services"]
     skills = request_json["skills"]
     
-    save_data(id, data_user, experience, education, services, skills, path)
+    threading.Thread(target=save_data, args=(id, data_user, experience, education, services, skills, path)).start()
+    
     #return "successful"
     return render_template(
         'generated-portfolio.html',
@@ -91,6 +93,7 @@ def save_data(id, data_user, experience, education, services, skills, path):
     InteractDatabase.save_services(id, services)
     InteractDatabase.save_skills(id, skills)
     InteractDatabase.save_path_to_database(id, path)
+    time.sleep(10)
 
 
 
@@ -102,3 +105,4 @@ def get_path_image(request):
         return res['secure_url']
     else:
         return "https://res.cloudinary.com/dxu6nsoye/image/upload/v1648535365/ihzghstemlzcobhbbfzg.jpg"
+
