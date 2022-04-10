@@ -25,22 +25,14 @@ def home():
         return render_template("landing-page.html", portfolios=portfolios)
 
 
-# @user.route("/create-portfolio", methods=["POST", "GET"])
-# def register():
-#     config.post_request = request.json
-#     if request.method == "POST":
-#         id = dataprovider.get_id()
-#         return redirect(url_for('user.portfolio', id = id))
-#     elif request.method == "GET":
-#         return render_template("input-page.html")
-
 @user.route("/create-portfolio", methods=["POST", "GET"])
 def register():
-        if request.method == "POST":
-            temp = request.json
-            return str(temp["education"][0])
-        else:
-            return render_template('input-page.html')
+    config.post_request = request.json
+    if request.method == "POST":
+        id = dataprovider.get_id()
+        return redirect(url_for('user.portfolio', id = id))
+    elif request.method == "GET":
+        return render_template("input-page.html")
         
 
 @user.route("/portfolio/<id>", methods=["GET"])
@@ -48,7 +40,6 @@ def portfolio(id):
     temp = dataprovider.get_id()
     if id == temp:
         return get_data(id)
-
     elif id != temp:
         data = InteractDatabase.get_user_data_from_id(id)
 

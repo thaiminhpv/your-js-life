@@ -5,6 +5,8 @@ from .config import *
 from .model import Users
 from src import model
 
+connection = connect(**DATABASE_CONFIG) 
+
 
 def get_id():
     """
@@ -62,15 +64,16 @@ class InteractDatabase:
         :param parameter:
         :return:
         """
+        if not connection.is_connected():
+            connection.connect()
         try:
-            with connect(**DATABASE_CONFIG) as connection:
-                with connection.cursor() as cursor:
-                    if parameter != NULL:
-                        cursor.execute(query, parameter)
-                    else:
-                        cursor.execute(query)
+            with connection.cursor() as cursor:
+                if parameter != NULL:
+                    cursor.execute(query, parameter)
+                else:
+                    cursor.execute(query)
 
-                    result = cursor.fetchall()
+                result = cursor.fetchall()
 
             return result
         except Error as e:
@@ -83,16 +86,18 @@ class InteractDatabase:
         :param parameter:
         :return:
         """
+        if not connection.is_connected():
+                connection.connect()
         try:
-            with connect(**DATABASE_CONFIG) as connection:
-                with connection.cursor() as cursor:
-                    if parameter != NULL:
-                        cursor.execute(query, parameter)
-                    else:
-                        cursor.execute(query)
+            
+            with connection.cursor() as cursor:
+                if parameter != NULL:
+                    cursor.execute(query, parameter)
+                else:
+                    cursor.execute(query)
 
-                    result = cursor.rowcount
-                connection.commit()
+                result = cursor.rowcount
+            connection.commit()
             return result
         except Error as e:
             print(e)
@@ -121,6 +126,9 @@ class InteractDatabase:
         parameter.append(id)
         parameter.append(path)
         InteractDatabase.executenonquery(query, parameter)
+        if not connection.is_connected():
+            connection.close()
+
 
     # parameter list_edu [id, title, time, content] ; list_exp [id, title, time, content]
     @staticmethod
@@ -201,7 +209,8 @@ class InteractDatabase:
         services = ConvertForTuple_Services( InteractDatabase.executequery("SELECT * FROM `services` WHERE `portfolio_id` = %s", (id,)) )
         experience = ConvertForTuple_Exp_Edu( InteractDatabase.executequery("SELECT * FROM `experience` WHERE `portfolio_id` = %s", (id,)) )
         skills = ConvertForTuple_my_skills( InteractDatabase.executequery("SELECT * FROM `my_skills` WHERE `portfolio_id` = %s", (id,)) )
-
+        if not connection.is_connected():
+            connection.close()
         return {
             'user': data_user,
             'path': path,
