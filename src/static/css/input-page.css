@@ -12,6 +12,10 @@ input:focus {
   padding: 2px;
 }
 
+.btn {
+  transition-duration: 0ms;
+}
+
 /* upload avt */
 #custom-btn {
   border-radius: 25px;
@@ -72,25 +76,25 @@ input:focus {
 }
 
 /* input range skill */
-#inputRange {
+.inputRange {
   cursor: pointer;
 }
 
-#borderInputRange {
+.borderInputRange {
   border: 2px solid #fff;
   border-radius: 5px;
   position: relative;
   opacity: 0.7;
 }
 
-#borderInputRange:hover {
+.borderInputRange:hover {
   border: 2px solid rgb(97, 95, 95);
 }
-#borderInputRange:hover #borderButtonRange {
+.borderInputRange:hover .borderButtonRange {
   visibility: visible;
 }
 
-#borderButtonRange {
+.borderButtonRange {
   visibility: hidden;
   position: absolute;
   top: -26%;

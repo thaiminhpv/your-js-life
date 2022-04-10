@@ -1,7 +1,7 @@
 import threading
 from time import time
 import cloudinary.uploader
-from flask import redirect, url_for, render_template, request, Blueprint
+from flask import redirect, template_rendered, url_for, render_template, request, Blueprint
 from . import config 
 from . import model
 from .dataprovider import InteractDatabase
@@ -25,17 +25,23 @@ def home():
         return render_template("landing-page.html", portfolios=portfolios)
 
 
+# @user.route("/create-portfolio", methods=["POST", "GET"])
+# def register():
+#     config.post_request = request.json
+#     if request.method == "POST":
+#         id = dataprovider.get_id()
+#         return redirect(url_for('user.portfolio', id = id))
+#     elif request.method == "GET":
+#         return render_template("input-page.html")
+
 @user.route("/create-portfolio", methods=["POST", "GET"])
 def register():
-    config.post_request = request.json
-    if request.method == "POST":
+        if request.method == "POST":
+            temp = request.json
+            return str(temp["education"][0])
+        else:
+            return render_template('input-page.html')
         
-        id = dataprovider.get_id()
-        return redirect(url_for('user.portfolio', id = id))
-    elif request.method == "GET":
-        return render_template("input-page.html")
-
-
 
 @user.route("/portfolio/<id>", methods=["GET"])
 def portfolio(id):

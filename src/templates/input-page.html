@@ -36,222 +36,318 @@
 </head>
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
-  <form action="#" method="POST" enctype="multipart/form-data">
-      <!-- Preloader -->
-    <div class="preloader">
-      <div class="lds-ellipsis">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+ <form action="#" method="post" enctype="multipart/form-data">
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="lds-ellipsis">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
-    <!-- Preloader End -->
+  </div>
+  <!-- Preloader End -->
 
-    <!-- Document Wrapper   
-  =============================== -->
-    <div id="main-wrapper">
+  <!-- Document Wrapper   
+=============================== -->
+  <div id="main-wrapper">
 
-      <!-- Header -->
-      <header id="header" class="sticky-top">
-        <!-- Navbar -->
-        <nav
-          class="primary-menu navbar navbar-expand-none navbar-overlay navbar-overlay-dark bg-transparent border-bottom-0 text-5 fw-600">
-          <div class="container">
-            <!-- Logo -->
-            <a class="logo" href title="JS-Club"> <img src="/static/images/LogoJS.png" alt="JS-Club"
-                style="width: 70px; height: 70px;"> </a>
-            <!-- Logo End -->
-            <div class="text-3 ms-auto me-2">
-              <span class="text-4 me-2"><i class="fas fa-phone"></i></span>
-              <input type="text" placeholder="(060) 444 434 444" name="phone">
-            </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#header-nav"><span></span><span></span><span></span></button>
-            <div id="header-nav" class="collapse navbar-collapse">
-              <div class="d-flex flex-column h-100 align-items-center justify-content-center">
-                <ul class="navbar-nav">
-                  <li class="nav-item"><a class="nav-link smooth-scroll active" href="#home">Home</a></li>
-                  <li class="nav-item"><a class="nav-link smooth-scroll" href="#about">About Me</a></li>
-                  <li class="nav-item"><a class="nav-link smooth-scroll" href="#services">What I Do</a></li>
-                  <li class="nav-item"><a class="nav-link smooth-scroll" href="#resume">Resume</a></li>
-                </ul>
-                <ul class="social-icons social-icons-light social-icons-lg social-icons-light d-inline-flex mt-4">
-                  <li class="social-icons-facebook"><a data-bs-toggle="tooltip" href="#" target="_blank" title
-                      data-bs-original-title="Facebook"><i class="fab fa-facebook"></i></a></li>
+    <!-- Header -->
+    <header id="header" class="sticky-top">
+      <!-- Navbar -->
+      <nav
+        class="primary-menu navbar navbar-expand-none navbar-overlay navbar-overlay-dark bg-transparent border-bottom-0 text-5 fw-600">
+        <div class="container">
+          <!-- Logo -->
+          <a class="logo" href title="JS-Club"> <img src="/static/images/LogoJS.png" alt="JS-Club"
+              style="width: 70px; height: 70px;"> </a>
+          <!-- Logo End -->
+          <div class="text-3 ms-auto me-2">
+            <span class="text-4 me-2"><i class="fas fa-phone"></i></span>
+            <input type="text" placeholder="(060) 444 434 444" name="phone">
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#header-nav"><span></span><span></span><span></span></button>
+          <div id="header-nav" class="collapse navbar-collapse">
+            <div class="d-flex flex-column h-100 align-items-center justify-content-center">
+              <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link smooth-scroll active" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#about">About Me</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#services">What I Do</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#resume">Resume</a></li>
+              </ul>
+              <ul class="social-icons social-icons-light social-icons-lg social-icons-light d-inline-flex mt-4">
+                <li class="social-icons-facebook"><a data-bs-toggle="tooltip" href="#" target="_blank" title
+                    data-bs-original-title="Facebook"><i class="fab fa-facebook"></i></a></li>
 
-                  <li class="social-icons-instagram">
-                    <a data-bs-toggle="tooltip" href="#" target="_blank" title data-bs-original-title="Github">
-                      <i class="fa-brands fa-github"></i>
-                    </a>
-                  </li>
+                <li class="social-icons-instagram">
+                  <a data-bs-toggle="tooltip" href="#" target="_blank" title data-bs-original-title="Github">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </li>
 
-                  <li class="social-icons-linkedin"><a data-bs-toggle="tooltip" href="#" target="_blank" title
-                      data-bs-original-title="Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+                <li class="social-icons-linkedin"><a data-bs-toggle="tooltip" href="#" target="_blank" title
+                    data-bs-original-title="Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
 
-                  <li class="social-icons-dribbble"><a data-bs-toggle="tooltip" href="#" target="_blank" title
-                      data-bs-original-title="Gmail"> <i class="fa-solid fa-envelope"></i> </a></li>
-                </ul>
-              </div>
+                <li class="social-icons-dribbble"><a data-bs-toggle="tooltip" href="#" target="_blank" title
+                    data-bs-original-title="Gmail"> <i class="fa-solid fa-envelope"></i> </a></li>
+              </ul>
             </div>
           </div>
-        </nav>
-        <!-- Navbar End -->
-      </header>
-      <!-- Header End -->
+        </div>
+      </nav>
+      <!-- Navbar End -->
+    </header>
+    <!-- Header End -->
 
-      <!-- Content
+    <!-- Content
+  ============================================= -->
+    <div id="content" role="main">
+
+      <!-- Intro
     ============================================= -->
-      <div id="content" role="main">
-
-        <!-- Intro
-      ============================================= -->
-        <section id="home" class="bg-primary d-flex fullscreen position-relative py-5">
-          <div class="container my-auto py-4">
-            <div class="row">
-              <div class="col-lg-7 text-center text-lg-start align-self-center order-1 order-lg-0 wow fadeIn">
-                <h1 class="text-12 fw-300 mb-0 text-uppercase">Hi, I'm a
-                  <input type="text" placeholder="Freelancer" style="width: 60%;" name="job">
-                </h1>
-                <div class="typed-strings">
-                  <p>Designer</p>
-                  <p>Developer</p>
-                </div>
-                <h2 class="text-21 fw-600 text-uppercase mb-0 ms-n1"><span class="typed"></span></h2>
-                <p class="text-5">based in
-                  <input type="text" class="form-control" placeholder="Los Angeles, USA." name="address"
-                    style="width: auto; display: inline; padding: 5px;">
-                </p>
-                <a href="#portfolio" class="btn btn-dark rounded-0 smooth-scroll mt-3">View My Works</a>
+      <section id="home" class="bg-primary d-flex fullscreen position-relative py-5">
+        <div class="container my-auto py-4">
+          <div class="row">
+            <div class="col-lg-7 text-center text-lg-start align-self-center order-1 order-lg-0 wow fadeIn">
+              <h1 class="text-12 fw-300 mb-0 text-uppercase">Hi, I'm a
+                <input type="text" placeholder="Freelancer" style="width: 60%;" name="job">
+              </h1>
+              <div class="form-group">
+                <textarea class="form-control text-muted mb-2 mt-2" style="width: 60%;" rows="3" cols="15"
+                  placeholder="Designer &#10Developer &#10YouTuber" name="job-textarea"></textarea>
               </div>
 
-              <div class="col-lg-5 text-center align-self-center mb-4 mb-lg-0 order-0 order-lg-1">
-                <div class="bg-light rounded-pill d-inline-block p-3 shadow-lg wow zoomIn">
-                  <img id="avt" class="img-fluid rounded-pill d-block" src="/static/images/web-developer.jpg">
-                </div>
-
-                <input type="file" name="file" id="default-btn" hidden>
-                <button type="button" onclick="defaultBtnActive()" id="custom-btn" name="submitavt" value="submitavt" class="btn btn-warning">Choose your photo</button>
-              </div>
-
-
+              <p class="text-5">based in
+                <input type="text" class="form-control" placeholder="Los Angeles, USA." name="address"
+                  style="width: auto; display: inline; padding: 5px;">
+              </p>
+              <a href="#portfolio" class="btn btn-dark rounded-0 smooth-scroll mt-3">View My Works</a>
             </div>
+
+            <div class="col-lg-5 text-center align-self-center mb-4 mb-lg-0 order-0 order-lg-1">
+              <div class="bg-light rounded-pill d-inline-block p-3 shadow-lg wow zoomIn">
+                <img id="avt" class="img-fluid rounded-pill d-block" src="/static/images/web-developer.jpg">
+              </div>
+
+              <input type="file" id="default-btn" hidden>
+              <button type="button" onclick="defaultBtnActive()" id="custom-btn" class="btn btn-warning">Choose your
+                photo</button>
+            </div>
+
+
           </div>
-          <a href=" #about" class="scroll-down-arrow text-dark smooth-scroll"><span class="animated"><i
-                class="fas fa-arrow-down"></i></span></a>
-        </section>
-        <!-- Intro end -->
+        </div>
+        <a href=" #about" class="scroll-down-arrow text-dark smooth-scroll"><span class="animated"><i
+              class="fas fa-arrow-down"></i></span></a>
+      </section>
+      <!-- Intro end -->
 
-        <!-- About
-      ============================================= -->
-        <section id="about" class="section">
-          <div class="container">
-            <!-- Heading -->
-            <p class="text-center mb-2 wow fadeInUp"><span class="bg-primary text-dark px-2">About Me</span></p>
-            <h2 class="text-10 fw-600 text-center mb-5 wow fadeInUp">Know Me More</h2>
-            <!-- Heading end-->
+      <!-- About
+    ============================================= -->
+      <section id="about" class="section">
+        <div class="container">
+          <!-- Heading -->
+          <p class="text-center mb-2 wow fadeInUp"><span class="bg-primary text-dark px-2">About Me</span></p>
+          <h2 class="text-10 fw-600 text-center mb-5 wow fadeInUp">Know Me More</h2>
+          <!-- Heading end-->
 
-            <div class="row">
-              <div class="col-lg-8 text-center text-lg-start wow fadeInUp">
-                <h2 class="text-8 fw-400 mb-3">Hi, I'm
-                  <span class="fw-700">
-                    <input type="text" name="nickname" class="aboutMeInput form-control" placeholder="Callum Smith" 
-                      style="width: auto; display: inline; padding: 5px;">
-                  </span>
-                </h2>
-                <div class="input-group">
-                  <textarea name="introduction" class="text-5 form-control" cols="70" rows="6" placeholder="I'm a designer & developer with a passion for web design. I enjoy developing simple, clean and slick websites that provide real value to the end user. Thousands of clients have procured exceptional results while working with me. Delivering work within time and budget which meets client’s requirements is our moto.
-                "></textarea>
-                </div>
-              </div>
-
-              <div class="col-lg-4 mt-4 mt-lg-0 wow fadeInUp" data-wow-delay="0.2s">
-                <div class="featured-box style-4">
-                  <div class="featured-box-icon text-13 bg-primary rounded-circle">
-                    <input type="number" style="width: 70%; background-color: inherit; text-align: center;"
-                      placeholder="22" name="workingtime" min="0" max="99">
-                  </div>
-                  <h3 class="text-7 wow rubberBand" data-wow-delay="2s">Years of <span class="fw-700">Experience</span>
-                  </h3>
-                </div>
+          <div class="row">
+            <div class="col-lg-8 text-center text-lg-start wow fadeInUp">
+              <h2 class="text-8 fw-400 mb-3">Hi, I'm
+                <span class="fw-700">
+                  <input type="text" class="aboutMeInput form-control" placeholder="your nickname" name="nickname"
+                    style="width: auto; display: inline; padding: 5px;">
+                </span>
+              </h2>
+              <div class="input-group">
+                <textarea name="introduction" class="text-5 form-control" cols="70" rows="6" placeholder="I'm a designer & developer with a passion for web design. I enjoy developing simple, clean and slick websites that provide real value to the end user. Thousands of clients have procured exceptional results while working with me. Delivering work within time and budget which meets client’s requirements is our moto.
+              "></textarea>
               </div>
             </div>
 
-            <div class="row gy-3 mt-4">
-              <div class="col-6 col-lg-3 wow fadeInUp">
-                <p class="text-muted fw-500 mb-0">Name:</p>
-                <p class="text-4 text-dark fw-600 mb-0">
-                  <input type="text" class="aboutMeInput form-control" placeholder="Callum Smith" name="name"
-                    style="width: auto; display: inline; padding: 5px;">
-                </p>
-              </div>
-              <div class="col-6 col-lg-3 wow fadeInUp" data-wow-delay="0.2s">
-                <p class="text-muted fw-500 mb-0">Email:</p>
-                <p class="text-4 fw-600 mb-0">
-                  <input type="email" class="aboutMeInput form-control" placeholder="chat@callum.com" name="gmail"
-                    style="width: auto; display: inline; padding: 5px;">
-                </p>
-              </div>
-              <div class="col-6 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                <p class="text-muted fw-500 mb-0">Date of birth:</p>
-                <p class="text-4 text-dark fw-600 mb-0">
-                  <input type="date" class="aboutMeInput form-control" placeholder="Callum Smith" name="dateofbirth"
-                    style="width: auto; display: inline; padding: 5px;">
-                </p>
-              </div>
-              <div class="col-6 col-lg-3 wow fadeInUp" data-wow-delay="0.4s">
-                <p class="text-muted fw-500 mb-0">From:</p>
-                <p class="text-4 text-dark fw-600 mb-0">
-                  <input type="text" class="aboutMeInput form-control" placeholder="Los Angeles, USA." name="address"
-                    style="width: auto; display: inline; padding: 5px;">
-                </p>
-              </div>
-
-              <div class="col-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
-                <p class="text-muted fw-500 mb-0">Facebook:</p>
-                <p class="text-4 text-dark fw-600 mb-0">
-                  <input type="text" class="aboutMeInput form-control" placeholder="facebook.com/abc" name="facebook"
-                    style="width: fit-content; padding: 5px;">
-                </p>
-              </div>
-              <div class="col-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
-                <p class="text-muted fw-500 mb-0">Github:</p>
-                <p class="text-4 text-dark fw-600 mb-0">
-                  <input type="text" class="aboutMeInput form-control" placeholder="github.com/abc" name="github"
-                    style="width: auto; display: inline; padding: 5px;">
-                </p>
-              </div>
-              <div class="col-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
-                <p class="text-muted fw-500 mb-0">Linked in:</p>
-                <p class="text-4 text-dark fw-600 mb-0">
-                  <input type="text" class="aboutMeInput form-control" placeholder="linkedin.com/abc" name="linkedin"
-                    style="width: auto; display: inline; padding: 5px;">
-                </p>
+            <div class="col-lg-4 mt-4 mt-lg-0 wow fadeInUp" data-wow-delay="0.2s">
+              <div class="featured-box style-4">
+                <div class="featured-box-icon text-13 bg-primary rounded-circle">
+                  <input type="number" style="width: 70%; background-color: inherit; text-align: center;"
+                    placeholder="22" name="workingtime" min="0" max="99">
+                </div>
+                <h3 class="text-7 wow rubberBand" data-wow-delay="2s">Years of <span class="fw-700">Experience</span>
+                </h3>
               </div>
             </div>
           </div>
-        </section>
-        <!-- About end -->
 
-        <!-- Services
-      ============================================= -->
-        <section id="services" class="section bg-light">
-          <div class="container">
-            <!-- Heading -->
-            <p class=" text-center mb-2 wow fadeInUp"><span class="bg-primary text-dark px-2">What I Do?</span></p>
-            <h2 class="text-10 fw-600 text-center mb-5 wow fadeInUp">How I can help your next project</h2>
-            <!-- Heading end-->
+          <div class="row gy-3 mt-4">
+            <div class="col-6 col-lg-3 wow fadeInUp">
+              <p class="text-muted fw-500 mb-0">Name:</p>
+              <p class="text-4 text-dark fw-600 mb-0">
+                <input type="text" class="aboutMeInput form-control" placeholder="Callum Smith" name="name"
+                  style="width: auto; display: inline; padding: 5px;">
+              </p>
+            </div>
+            <div class="col-6 col-lg-3 wow fadeInUp" data-wow-delay="0.2s">
+              <p class="text-muted fw-500 mb-0">Email:</p>
+              <p class="text-4 fw-600 mb-0">
+                <input type="email" class="aboutMeInput form-control" placeholder="chat@callum.com" name="gmail"
+                  style="width: auto; display: inline; padding: 5px;">
+              </p>
+            </div>
+            <div class="col-6 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+              <p class="text-muted fw-500 mb-0">Date of birth:</p>
+              <p class="text-4 text-dark fw-600 mb-0">
+                <input type="date" class="aboutMeInput form-control" placeholder="Callum Smith" name="dateofbirth"
+                  style="width: auto; display: inline; padding: 5px;">
+              </p>
+            </div>
+            <div class="col-6 col-lg-3 wow fadeInUp" data-wow-delay="0.4s">
+              <p class="text-muted fw-500 mb-0">From:</p>
+              <p class="text-4 text-dark fw-600 mb-0">
+                <input type="text" class="aboutMeInput form-control" placeholder="Los Angeles, USA." name="address"
+                  style="width: auto; display: inline; padding: 5px;">
+              </p>
+            </div>
 
-            <div class="row gy-5 mt-5">
-              <div class="col-sm-6 col-lg-4 wow fadeInUp">
-                <div class="featured-box text-center px-md-4 borderWhatIDo">
-                  <div class="input-group mb-3">
-                    <input type="text" class="text-6 fw-600 mb-3 aboutMeInput form-control" placeholder="Graphic Design"
-                      style="text-align: center;">
+            <div class="col-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
+              <p class="text-muted fw-500 mb-0">Facebook:</p>
+              <p class="text-4 text-dark fw-600 mb-0">
+                <input type="text" class="aboutMeInput form-control" placeholder="facebook.com/abc" name="facebook"
+                  style="width: fit-content; padding: 5px;">
+              </p>
+            </div>
+            <div class="col-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
+              <p class="text-muted fw-500 mb-0">Github:</p>
+              <p class="text-4 text-dark fw-600 mb-0">
+                <input type="text" class="aboutMeInput form-control" placeholder="github.com/abc" name="github"
+                  style="width: auto; display: inline; padding: 5px;">
+              </p>
+            </div>
+            <div class="col-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
+              <p class="text-muted fw-500 mb-0">Linked in:</p>
+              <p class="text-4 text-dark fw-600 mb-0">
+                <input type="text" class="aboutMeInput form-control" placeholder="linkedin.com/abc" name="linkedin"
+                  style="width: auto; display: inline; padding: 5px;">
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- About end -->
+
+      <!-- Services
+    ============================================= -->
+      <section id="services" class="section bg-light">
+        <div class="container">
+          <!-- Heading -->
+          <p class=" text-center mb-2 wow fadeInUp"><span class="bg-primary text-dark px-2">What I Do?</span></p>
+          <h2 class="text-10 fw-600 text-center mb-5 wow fadeInUp">How I can help your next project</h2>
+          <!-- Heading end-->
+
+          <div class="row gy-5 mt-5" >
+            <div class="col-sm-6 col-lg-4 wow fadeInUp what-i-do-item"  >
+              <div class="featured-box text-center px-md-4 borderWhatIDo">
+                <div class="input-group mb-3">
+                  <input type="text" class="text-6 fw-600 mb-3 aboutMeInput form-control" placeholder="Graphic Design"
+                    style="text-align: center;" name="title">
+                </div>
+                <div class="input-group mb-3"><textarea class="text-muted mb-0 form-control" rows="5" name="description"></textarea></div>
+
+                <div class="buttonWhatIDo">
+                  <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation">
+                    <i class="fa-solid fa-arrow-up"></i>
+                  </button>
+                  <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation"
+                    style="margin-right: 2rem;">
+                    <i class="fa-solid fa-arrow-down"></i>
+                  </button>
+                  <button  onclick="remove_box()" type="button" class="btn btn-outline-danger btn-sm borderButtonEducation">
+                    <i class="fa-solid fa-trash-can"></i>
+                  </button>
+                  <button onclick="add_box()"  type="button" class="btn btn-outline-success btn-sm borderButtonEducation">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+              </div>          
+            </div>
+
+            
+          </div>
+
+        </div>
+      </section>
+      <!-- Services end -->
+
+      <!-- Resume
+    ============================================= -->
+      <section id="resume" class="section">
+        <div class="container">
+          <!-- Heading -->
+          <p class=" text-center mb-2 wow fadeInUp"><span class="bg-primary text-dark px-2">Resume</span></p>
+          <h2 class="text-10 fw-600 text-center mb-5 wow fadeInUp">A summary of My Resume</h2>
+          <!-- Heading end-->
+
+          <div class="row g-5 mt-5">
+            <!-- My Education -->
+            <div class="col-lg-6 wow fadeInUp">
+              <h2 class="text-7 fw-600 mb-4 pb-2">My Education</h2>
+
+              <!-- x2 here -->
+
+              <div class="border-start border-2 border-primary ps-3 row boxMyEducation">
+                <div class="borderEducation">
+                  <div>
+                    <div class="form-group">
+                      <input type="text" class="form-control text-5 mb-2 form-control-sm master "
+                        placeholder="Master in Computer Engineering" name="title">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control mb-2 form-control-sm university"
+                        placeholder="Harvard University / 2015 - 2017" name="time">
+                    </div>
+                    <div class="form-group">
+                      <textarea class="form-control text-muted " rows="3" name="content"></textarea>
+                    </div>
                   </div>
-                  <div class="input-group mb-3"><textarea class="text-muted mb-0 form-control" rows="5"></textarea></div>
 
-                  <div class="buttonWhatIDo">
+                  <div class="buttonEducation">
+
+                    <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation">
+                      <i class="fa-solid fa-arrow-up"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation"
+                      style="margin-right: 2rem;">
+                      <i class="fa-solid fa-arrow-down"></i>
+                    </button>
+                    <button onclick="remove_box_education()" type="button" class="btn btn-outline-danger btn-sm borderButtonEducation">
+                      <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                    <button onclick="add_box_education()" type="button" class="btn btn-outline-success btn-sm borderButtonEducation">
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+
+                  </div>
+                </div>
+                <hr class="my-4">
+              </div>
+
+              <!-- x2 to here -->
+
+              <!-- <div class="border-start border-2 border-primary ps-3 row boxMyEducation">
+                <div class="borderEducation">
+                  <div>
+                    <div class="form-group">
+                      <input type="text" class="form-control text-5 mb-2 form-control-sm master"
+                        placeholder="Master in Computer Engineering" name="title">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control mb-2 form-control-sm university"
+                        placeholder="Harvard University / 2015 - 2017" name="time">
+                    </div>
+                    <div class="form-group">
+                      <textarea class="form-control text-muted " rows="3" name="content"></textarea>
+                    </div>
+                  </div>
+                  <div class="buttonEducation">
                     <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation">
                       <i class="fa-solid fa-arrow-up"></i>
                     </button>
@@ -267,218 +363,364 @@
                     </button>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- Services end -->
+                <hr class="my-4">
+              </div> -->
 
-        <!-- Resume
-      ============================================= -->
-        <section id="resume" class="section">
-          <div class="container">
-            <!-- Heading -->
-            <p class=" text-center mb-2 wow fadeInUp"><span class="bg-primary text-dark px-2">Resume</span></p>
-            <h2 class="text-10 fw-600 text-center mb-5 wow fadeInUp">A summary of My Resume</h2>
-            <!-- Heading end-->
-
-            <div class="row g-5 mt-5">
-              <!-- My Education -->
-              <div class="col-lg-6 wow fadeInUp">
-                <h2 class="text-7 fw-600 mb-4 pb-2">My Education</h2>
-
-                <div class="border-start border-2 border-primary ps-3 row">
-                  <div class="borderEducation">
-                    <div>
-                      <div class="form-group">
-                        <input type="text" class="form-control text-5 mb-2 form-control-sm"
-                          placeholder="Master in Computer Engineering">
-                      </div>
-                      <div class="form-group">
-                        <input type="text" class="form-control mb-2 form-control-sm"
-                          placeholder="Harvard University / 2015 - 2017">
-                      </div>
-                      <div class="form-group">
-                        <textarea class="form-control text-muted" id="exampleFormControlTextarea1" rows="3"></textarea>
-                      </div>
+              <!-- <div class="border-start border-2 border-primary ps-3 row boxMyEducation">
+                <div class="borderEducation">
+                  <div>
+                    <div class="form-group">
+                      <input type="text" class="form-control text-5 mb-2 form-control-sm master"
+                        placeholder="Master in Computer Engineering" name="title">
                     </div>
-
-                    <div class="buttonEducation">
-
-                      <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation">
-                        <i class="fa-solid fa-arrow-up"></i>
-                      </button>
-                      <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation"
-                        style="margin-right: 2rem;">
-                        <i class="fa-solid fa-arrow-down"></i>
-                      </button>
-                      <button type="button" class="btn btn-outline-danger btn-sm borderButtonEducation">
-                        <i class="fa-solid fa-trash-can"></i>
-                      </button>
-                      <button type="button" class="btn btn-outline-success btn-sm borderButtonEducation">
-                        <i class="fa-solid fa-plus"></i>
-                      </button>
-
+                    <div class="form-group">
+                      <input type="text" class="form-control mb-2 form-control-sm university"
+                        placeholder="Harvard University / 2015 - 2017" name="time">
+                    </div>
+                    <div class="form-group">
+                      <textarea class="form-control text-muted " rows="3" name="content"></textarea>
                     </div>
                   </div>
-                  <hr class="my-4">
+                  <div class="buttonEducation">
+                    <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation">
+                      <i class="fa-solid fa-arrow-up"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation"
+                      style="margin-right: 2rem;">
+                      <i class="fa-solid fa-arrow-down"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-danger btn-sm borderButtonEducation">
+                      <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-success btn-sm borderButtonEducation">
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                  </div>
                 </div>
+                <hr class="my-4">
+              </div> -->
 
+            </div>
+            <!-- My Experience -->
+            <div class="col-lg-6 wow fadeInUp">
+              <h2 class="text-7 fw-600 mb-4 pb-2">My Experience</h2>
 
+              <!-- x2 here -->
 
-              </div>
-              <!-- My Experience -->
-              <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
-                <h2 class="text-7 fw-600 mb-4 pb-2">My Experience</h2>
-                <div class="border-start border-2 border-primary ps-3 row">
-                  <div class="borderEducation">
-                    <div>
-                      <div class="form-group">
-                        <input type="text" class="form-control text-5 mb-2 form-control-sm"
-                          placeholder="Sr. Font End Developer">
-                      </div>
-                      <div class="form-group">
-                        <input type="text" class="form-control mb-2 form-control-sm"
-                          placeholder="Apple Inc / 2020 - Current">
-                      </div>
-                      <div class="form-group">
-                        <textarea class="form-control text-muted" id="exampleFormControlTextarea1" rows="3"></textarea>
-                      </div>
+              <div class="border-start border-2 border-primary ps-3 row boxMyExperience" >
+                <div class="borderEducation">
+                  <div>
+                    <div class="form-group">
+                      <input type="text" class="form-control text-5 mb-2 form-control-sm"
+                        placeholder="Master in Computer Engineering" name="title">
                     </div>
-
-                    <div class="buttonEducation">
-                      <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation">
-                        <i class="fa-solid fa-arrow-up"></i>
-                      </button>
-                      <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation"
-                        style="margin-right: 2rem;">
-                        <i class="fa-solid fa-arrow-down"></i>
-                      </button>
-                      <button type="button" class="btn btn-outline-danger btn-sm borderButtonEducation">
-                        <i class="fa-solid fa-trash-can"></i>
-                      </button>
-                      <button type="button" class="btn btn-outline-success btn-sm borderButtonEducation">
-                        <i class="fa-solid fa-plus"></i>
-                      </button>
+                    <div class="form-group">
+                      <input type="text" class="form-control mb-2 form-control-sm"
+                        placeholder="Harvard University / 2015 - 2017" name="time">
                     </div>
+                    <div class="form-group">
+                      <textarea class="form-control text-muted"  rows="3" name="content"></textarea>
+                    </div>
+                  </div>
+                  <div class="buttonEducation">
+                    <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation">
+                      <i class="fa-solid fa-arrow-up"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation"
+                      style="margin-right: 2rem;">
+                      <i class="fa-solid fa-arrow-down"></i>
+                    </button>
+                    <button onclick="remove_box_experience()" type="button" class="btn btn-outline-danger btn-sm borderButtonEducation">
+                      <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                    <button onclick="add_box_experience()" type="button" class="btn btn-outline-success btn-sm borderButtonEducation">
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
                   </div>
                 </div>
                 <hr class="my-4">
               </div>
 
-              <!-- My Skills -->
-              <h2 id="text" class="text-7 fw-600 mb-4 pb-2 mt-5 wow fadeInUp">My Skills</h2>
-              <div class="row gx-5">
-                <div class="col-md-6 wow fadeInUp py-3" id="borderInputRange">
+              <!-- x2 to here -->
 
-                  <div id="borderButtonRange">
-                    <button type="button" class="btn-outline-danger activeButton"
-                      style="border: 2.5px solid red; margin-right: 1rem;">
+              <!-- <div class="border-start border-2 border-primary ps-3 row boxMyExperience">
+                <div class="borderEducation">
+                  <div>
+                    <div class="form-group">
+                      <input type="text" class="form-control text-5 mb-2 form-control-sm"
+                        placeholder="Master in Computer Engineering" name="title">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control mb-2 form-control-sm"
+                        placeholder="Harvard University / 2015 - 2017" name="time">
+                    </div>
+                    <div class="form-group"> -->
+                      <!-- <textarea class="form-control text-muted" id="exampleFormControlTextarea1" rows="3"></textarea> -->
+                      <!-- <textarea class="form-control text-muted" rows="3" name="content"></textarea>
+                    </div>
+                  </div>
+                  <div class="buttonEducation">
+                    <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation">
+                      <i class="fa-solid fa-arrow-up"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation"
+                      style="margin-right: 2rem;">
+                      <i class="fa-solid fa-arrow-down"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-danger btn-sm borderButtonEducation">
                       <i class="fa-solid fa-trash-can"></i>
                     </button>
-                    <button type="button" class="btn-outline-success activeButton" style="border: 2.5px solid green;">
+                    <button type="button" class="btn btn-outline-success btn-sm borderButtonEducation">
                       <i class="fa-solid fa-plus"></i>
                     </button>
                   </div>
-                  <p class="fw-500 text-start mb-3">
-                    <span class="float-end" id="selectorValue">5%</span>
-                    <input type="text" class="form-control" placeholder="Web Design" 
+                </div>
+                <hr class="my-4">
+              </div> -->
+
+              <!-- <div class="border-start border-2 border-primary ps-3 row boxMyExperience">
+                <div class="borderEducation">
+                  <div>
+                    <div class="form-group">
+                      <input type="text" class="form-control text-5 mb-2 form-control-sm"
+                        placeholder="Master in Computer Engineering" name="title">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control mb-2 form-control-sm"
+                        placeholder="Harvard University / 2015 - 2017" name="time">
+                    </div>
+                    <div class="form-group">
+                      <textarea class="form-control text-muted" rows="3" name="content"></textarea>
+                    </div>
+                  </div>
+                  <div class="buttonEducation">
+                    <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation">
+                      <i class="fa-solid fa-arrow-up"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation"
+                      style="margin-right: 2rem;">
+                      <i class="fa-solid fa-arrow-down"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-danger btn-sm borderButtonEducation">
+                      <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-success btn-sm borderButtonEducation">
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                  </div>
+                </div>
+                <hr class="my-4">
+              </div> -->
+</div>
+            </div>
+
+            <!-- My Skills -->
+            <h2 id="text" class="text-7 fw-600 mb-4 pb-2 mt-5 wow fadeInUp">My Skills</h2>
+            <div class="row gx-5">
+
+              <!-- x2 -->
+
+              <div class="col-md-6 wow fadeInUp py-3 borderInputRange boxMySkills">
+
+                <div class="borderButtonRange">
+                  <button type="button" class="btn-outline-danger activeButton "
+                    style="border: 2.5px solid red; margin-right: 1rem;">
+                    <i class="fa-solid fa-trash-can"></i>
+                  </button>
+                  <button  type="button" class="btn-outline-success activeButton"
+                    style="border: 2.5px solid green;">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+
+                <div>
+                  <span class="float-end selectorValue">5%</span>        
+                  <p class="fw-500 text-start mb-3 form-skill">
+                    <input name="skill" type="text" class="form-control" placeholder="Web Design" 
+                    style="width:fit-content; padding: 5px;">               
+                  </p>
+                  <div class="progress progress-sm mb-4 form-skill">
+                    <input class="inputRange" type="range" min="1" max="100" value="70" style="width: 100%" name="value_">
+                  </div>
+                </div>
+                
+              </div>
+
+              <!-- x2 to here-->
+
+              <div class="col-md-6 wow fadeInUp py-3 borderInputRange boxMySkills">
+                <div class="borderButtonRange">
+                  <button onclick="remove()" type="button" class="btn-outline-danger activeButton"
+                    style="border: 2.5px solid red; margin-right: 1rem;">
+                    <i class="fa-solid fa-trash-can"></i>
+                  </button>
+                  <button onclick="add()" type="button" class="btn-outline-success activeButton" style="border: 2.5px solid green;">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+                <div>
+                  <span class="float-end selectorValue">5%</span>
+                  <p class="fw-500 text-start mb-3 form-skill">
+                    <input  name="skill" type=" text" class="form-control" placeholder="Web Design"
                       style="width:fit-content; padding: 5px;">
                   </p>
-                  <div class="progress progress-sm mb-4">
-                    <input id="inputRange" type="range" min="1" max="100" value="70" style="width: 100%">
+                  <div class="progress progress-sm mb-4 form-skill">
+                    <input class="inputRange" type="range" min="1" max="100" value="70" style="width: 100%" name="value_">
                   </div>
+                </div>
+                
+              </div>
 
+              <div class="col-md-6 wow fadeInUp py-3 borderInputRange boxMySkills">
+                <div class="borderButtonRange">
+                  <button type="button" class="btn-outline-danger activeButton" 
+                    style="border: 2.5px solid red; margin-right: 1rem;">
+                    <i class="fa-solid fa-trash-can"></i>
+                  </button>
+                  <button type="button" class="btn-outline-success activeButton" style="border: 2.5px solid green;" id="">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+                <span class="float-end selectorValue">5%</span>
+                <p class="fw-500 text-start mb-3 form-skill">
+                  <input type=" text" class="form-control" placeholder="Web Design" name="skill"
+                    style="width:fit-content; padding: 5px;">
+                </p>
+                <div class="progress progress-sm mb-4 form-skill">
+                  <input class="inputRange" type="range" min="1" max="100" value="70" style="width: 100%" name="value_">
                 </div>
               </div>
-              
-              <p class="text-center mt-5 wow fadeInUp" >
-                <button type="submit" name="submitform" value="submitform" class="btn btn-outline-dark shadow-none rounded-0">Create Portfolio</button>
-              </p>
-            </form>
+
+              <div class="col-md-6 wow fadeInUp py-3 borderInputRange boxMySkills">
+                <div class="borderButtonRange">
+                  <button type="button" class="btn-outline-danger activeButton"
+                    style="border: 2.5px solid red; margin-right: 1rem;">
+                    <i class="fa-solid fa-trash-can"></i>
+                  </button>
+                  <button type="button" class="btn-outline-success activeButton" style="border: 2.5px solid green;">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+                <span class="float-end selectorValue">5%</span>
+                <p class="fw-500 text-start mb-3 form-skill">
+                  <input type=" text" class="form-control" placeholder="Web Design" name="skill"
+                    style="width:fit-content; padding: 5px;">
+                </p>
+                <div class="progress progress-sm mb-4 form-skill">
+                  <input class="inputRange" type="range" min="1" max="100" value="70" style="width: 100%" name="value_">
+                </div>
+              </div>
+
             </div>
-        </section>
-        <!-- Resume end -->
 
-        <!-- Portfoliofile
-      ============================================= -->
-        <!-- Portfolio end -->
+            <p class="text-center mt-5 wow fadeInUp">
+              <button type="submit" class="btn btn-outline-dark shadow-none rounded-0">Save</button>
+            </p>
+          </div>
+      </section>
+      <!-- Resume end -->
 
-        <!-- Call to Action
-      ============================================= -->
-        <!-- Call to Action end -->
-
-        <!-- FAQ
-      ============================================= -->
-        <!-- FAQ end -->
-
-        <!-- Testimonial
-      ============================================= -->
-        <!-- Testimonial end -->
-
-        <!-- Contact Me
-      ============================================= -->
-        <!-- Contact Me end -->
-
-        <!-- Content end -->
-
-        <!-- Footer
+      <!-- Portfolio
     ============================================= -->
-        <footer id="footer" class="section bg-dark text-white">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-6 text-center text-lg-start wow fadeInUp">
-                <p class="mb-2 mb-lg-0">Copyright © 2022 <a class="fw-600" href="#">Team 2</a>. All Rights Reserved.</p>
-              </div>
-              <div class="col-lg-6 wow fadeInUp">
-                <p class="mb-0 text-center text-lg-end">Designed by <a class="fw-600" href="#">Team 2- CTV JS</a></p>
-              </div>
+      <!-- Portfolio end -->
+
+      <!-- Call to Action
+    ============================================= -->
+      <!-- Call to Action end -->
+
+      <!-- FAQ
+    ============================================= -->
+      <!-- FAQ end -->
+
+      <!-- Testimonial
+    ============================================= -->
+      <!-- Testimonial end -->
+
+      <!-- Contact Me
+    ============================================= -->
+      <!-- Contact Me end -->
+
+      <!-- Content end -->
+
+      <!-- Footer
+  ============================================= -->
+      <footer id="footer" class="section bg-dark text-white">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 text-center text-lg-start wow fadeInUp">
+              <p class="mb-2 mb-lg-0">Copyright © 2022 <a class="fw-600" href="#">Team 2</a>. All Rights Reserved.</p>
+            </div>
+            <div class="col-lg-6 wow fadeInUp">
+              <p class="mb-0 text-center text-lg-end">Designed by <a class="fw-600" href="#">Team 2- CTV JS</a></p>
             </div>
           </div>
-        </footer>
-        <!-- Footer end -->
+        </div>
+      </footer>
+      <!-- Footer end -->
 
-      </div>
-      <!-- Document Wrapper end -->
+    </div>
+    <!-- Document Wrapper end -->
 
-      <!-- Back to Top
-  ============================================= -->
-      <a id="back-to-top" class="rounded-circle" data-bs-toggle="tooltip" title="Back to Top" href="javascript:void(0)"><i
-          class="fas fa-arrow-up"></i></a>
+    <!-- Back to Top
+============================================= -->
+    <a id="back-to-top" class="rounded-circle" data-bs-toggle="tooltip" title="Back to Top" href="javascript:void(0)"><i
+        class="fas fa-arrow-up"></i></a>
 
-      <!-- Styles Switcher -->
+    <!-- Styles Switcher -->
 
-      <!-- Styles Switcher End -->
+    <!-- Styles Switcher End -->
 
-      <!-- JavaScript -->
-      <script src="/static/vendor/jquery/jquery.min.js"></script>
-      <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-      <!-- Easing -->
-      <script src="/static/vendor/jquery.easing/jquery.easing.min.js"></script>
-      <!-- Appear -->
-      <script src="/static/vendor/jquery.appear/jquery.appear.min.js"></script>
-      <!-- WOW animation -->
-      <script src="/static/vendor/wow/wow.min.js"></script>
-      <!-- Images Loaded -->
-      <script src="/static/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-      <!-- Typed -->
-      <script src="/static/vendor/typed/typed.min.js"></script>
-      <!-- Parallax Bg -->
-      <script src="/static/vendor/parallaxie/parallaxie.min.js"></script>
-      <!-- Owl Carousel -->
-      <script src="/static/vendor/owl.carousel/owl.carousel.min.js"></script>
-      <!-- isotope Portfolio Filter -->
-      <script src="/static/vendor/isotope/isotope.pkgd.min.js"></script>
-      <!-- Magnific Popup -->
-      <script src="/static/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-      <!-- Style Switcher -->
-      <script src="/static/js/switcher.min.js"></script>
-      <!-- Custom Script -->
-      <script src="/static/js/theme.js"></script>
+    <!-- JavaScript -->
+    <script src="/static/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Easing -->
+    <script src="/static/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <!-- Appear -->
+    <script src="/static/vendor/jquery.appear/jquery.appear.min.js"></script>
+    <!-- WOW animation -->
+    <script src="/static/vendor/wow/wow.min.js"></script>
+    <!-- Images Loaded -->
+    <script src="/static/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <!-- Typed -->
+    <script src="/static/vendor/typed/typed.min.js"></script>
+    <!-- Parallax Bg -->
+    <script src="/static/vendor/parallaxie/parallaxie.min.js"></script>
+    <!-- Owl Carousel -->
+    <script src="/static/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <!-- isotope Portfolio Filter -->
+    <script src="/static/vendor/isotope/isotope.pkgd.min.js"></script>
+    <!-- Magnific Popup -->
+    <script src="/static/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <!-- Style Switcher -->
+    <script src="/static/js/switcher.min.js"></script>
+    <!-- Custom Script -->
+    <script src="/static/js/theme.js"></script>
 
-      <script src="/static/js/input-page.js"></script>
+    <script src="/static/js/input-page.js"></script>
 
-      <script src="https://kit.fontawesome.com/81e4fcabce.js" crossorigin="anonymous"></script>              
+    <script src="https://kit.fontawesome.com/81e4fcabce.js" crossorigin="anonymous"></script>
+    
+
+    <!-- <script>
+      
+      function add_box() {
+        let box = document.getElementById('border-what-i-do')
+        console.log(box)
+        let newField = box.cloneNode(true);
+        console.log(newField)
+        box.append(newField); 
+        
+      }
+      function remove_box() {
+        var box = document.querySelector('.boxMySkills')
+        console.log(box)
+        box.remove(box);
+      
+      }
+      
+      
+    </script> -->
+  </form>
 </body>
 
 </html>
