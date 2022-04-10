@@ -57,6 +57,7 @@ defaultBtn.addEventListener("change", function () {
 // }
 
 function object(){
+    //Intro
     phone = document.querySelectorAll('input[name="phone"]')[0].value;
     avatar = document.getElementById('avt').src;
     job = document.querySelectorAll('input[name="job"]')[0].value;
@@ -73,17 +74,67 @@ function object(){
     facebook = document.getElementsByClassName('aboutMeInput')['facebook'].value;
     github = document.getElementsByClassName('aboutMeInput')['github'].value;
     linkedin = document.getElementsByClassName('aboutMeInput')['linkedin'].value;
-    //How I can help your next project
-    graphicDesign = document.querySelectorAll('input[placeholder="Graphic Design"]')[0].value;
-    textAreaGraphicDesign = document.querySelector('.text-muted.mb-0.form-control').value;
-    //MyEducation
-    experience = document.querySelectorAll('.borderEducation');
-    degreeMyEducation = document.querySelectorAll('.master')[0].value;
-    graduateUniversiry = document.querySelectorAll('.university')[0].value;
-    textareaMyEducation = document.getElementById('exampleFormControlTextarea1').value;
+    //Service(How I can help your next project)
+    services = [...document.getElementsByClassName('borderWhatIDo')].map(e => [...e.getElementsByClassName('input-group')].map(e => e.children[0].value)).map(e => {
+        return {
+            title: e[0],
+            description: e[1]
+        }
+    })
+    // graphicDesign = document.querySelectorAll('input[placeholder="Graphic Design"]')[0].value;
+    // textAreaGraphicDesign = document.querySelector('.text-muted.mb-0.form-control').value;
+
+    // experience = document.querySelectorAll('.borderEducation');
+    // degreeMyEducation = document.querySelectorAll('.master')[0].value;
+    // graduateUniversiry = document.querySelectorAll('.university')[0].value;
+    // textareaMyEducation = document.getElementById('exampleFormControlTextarea1').value;
     // document.querySelectorAll('.borderEducation')[0].querySelectorAll('textarea[id="exampleFormControlTextarea1"]')[0].value
-    
-    
+
+    //MyEducation
+    myEducation = [...document.getElementsByClassName('boxMyEducation')].map(e => [...e.getElementsByClassName('form-group')].map(e => e.children[0].value)).map(e => {
+        return {
+            title: e[0],
+            time: e[1],
+            content: e[2]
+        }
+    })
+    //MyExperience
+    myExperience = [...document.getElementsByClassName('boxMyExperience')].map(e => [...e.getElementsByClassName('form-group')].map(e => e.children[0].value)).map(e => {
+        return {
+            title: e[0],
+            time: e[1],
+            content: e[2]
+        }
+    })
+    //MySkills
+    myKills = [...document.getElementsByClassName('boxMySkills')].map(e => [...e.getElementsByClassName('form-skill')].map(e => e.children[0].value)).map(e => {
+        return {
+            skill: e[0],
+            value_: e[1]
+        }
+    })
+    ObjectJS = {
+        phone: phone,
+        avt: avt,
+        job: job,
+        address: address,
+        nickname: nickname,
+        introduction: introduction,
+        workingTime: workingTime,    
+        name: nameYearOfExperience, 
+        gmail: gmail,
+        dateofbirth: dateOfBirth,       
+        addressYearOfExperience: addressYearOfExperience,
+        facebook: facebook,
+        github: github, 
+        linkedin: linkedin, 
+        services: services,                 
+        education: myEducation,
+        experience: myExperience, 
+        skills: myKills,
+    }
+    return ObjectJS;
+   
     
 }
 

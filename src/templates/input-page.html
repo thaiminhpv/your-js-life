@@ -248,9 +248,9 @@
               <div class="featured-box text-center px-md-4 borderWhatIDo">
                 <div class="input-group mb-3">
                   <input type="text" class="text-6 fw-600 mb-3 aboutMeInput form-control" placeholder="Graphic Design"
-                    style="text-align: center;">
+                    style="text-align: center;" name="title">
                 </div>
-                <div class="input-group mb-3"><textarea class="text-muted mb-0 form-control" rows="5"></textarea></div>
+                <div class="input-group mb-3"><textarea class="text-muted mb-0 form-control" rows="5" name="description"></textarea></div>
 
                 <div class="buttonWhatIDo">
                   <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation">
@@ -290,7 +290,7 @@
 
               <!-- x2 here -->
 
-              <div class="border-start border-2 border-primary ps-3 row">
+              <div class="border-start border-2 border-primary ps-3 row boxMyEducation">
                 <div class="borderEducation">
                   <div>
                     <div class="form-group">
@@ -329,7 +329,7 @@
 
               <!-- x2 to here -->
 
-              <div class="border-start border-2 border-primary ps-3 row">
+              <div class="border-start border-2 border-primary ps-3 row boxMyEducation">
                 <div class="borderEducation">
                   <div>
                     <div class="form-group">
@@ -363,7 +363,7 @@
                 <hr class="my-4">
               </div>
 
-              <div class="border-start border-2 border-primary ps-3 row">
+              <div class="border-start border-2 border-primary ps-3 row boxMyEducation">
                 <div class="borderEducation">
                   <div>
                     <div class="form-group">
@@ -404,19 +404,19 @@
 
               <!-- x2 here -->
 
-              <div class="border-start border-2 border-primary ps-3 row">
+              <div class="border-start border-2 border-primary ps-3 row boxMyExperience">
                 <div class="borderEducation">
                   <div>
                     <div class="form-group">
                       <input type="text" class="form-control text-5 mb-2 form-control-sm"
-                        placeholder="Master in Computer Engineering">
+                        placeholder="Master in Computer Engineering" name="title">
                     </div>
                     <div class="form-group">
                       <input type="text" class="form-control mb-2 form-control-sm"
-                        placeholder="Harvard University / 2015 - 2017">
+                        placeholder="Harvard University / 2015 - 2017" name="time">
                     </div>
                     <div class="form-group">
-                      <textarea class="form-control text-muted" id="" rows="3"></textarea>
+                      <textarea class="form-control text-muted"  rows="3" name="content"></textarea>
                     </div>
                   </div>
                   <div class="buttonEducation">
@@ -440,20 +440,20 @@
 
               <!-- x2 to here -->
 
-              <div class="border-start border-2 border-primary ps-3 row">
+              <div class="border-start border-2 border-primary ps-3 row boxMyExperience">
                 <div class="borderEducation">
                   <div>
                     <div class="form-group">
                       <input type="text" class="form-control text-5 mb-2 form-control-sm"
-                        placeholder="Master in Computer Engineering">
+                        placeholder="Master in Computer Engineering" name="title">
                     </div>
                     <div class="form-group">
                       <input type="text" class="form-control mb-2 form-control-sm"
-                        placeholder="Harvard University / 2015 - 2017">
+                        placeholder="Harvard University / 2015 - 2017" name="time">
                     </div>
                     <div class="form-group">
                       <!-- <textarea class="form-control text-muted" id="exampleFormControlTextarea1" rows="3"></textarea> -->
-                      <textarea class="form-control text-muted" rows="3"></textarea>
+                      <textarea class="form-control text-muted" rows="3" name="content"></textarea>
                     </div>
                   </div>
                   <div class="buttonEducation">
@@ -475,19 +475,19 @@
                 <hr class="my-4">
               </div>
 
-              <div class="border-start border-2 border-primary ps-3 row">
+              <div class="border-start border-2 border-primary ps-3 row boxMyExperience">
                 <div class="borderEducation">
                   <div>
                     <div class="form-group">
                       <input type="text" class="form-control text-5 mb-2 form-control-sm"
-                        placeholder="Master in Computer Engineering">
+                        placeholder="Master in Computer Engineering" name="title">
                     </div>
                     <div class="form-group">
                       <input type="text" class="form-control mb-2 form-control-sm"
-                        placeholder="Harvard University / 2015 - 2017">
+                        placeholder="Harvard University / 2015 - 2017" name="time">
                     </div>
                     <div class="form-group">
-                      <textarea class="form-control text-muted" id="" rows="3"></textarea>
+                      <textarea class="form-control text-muted" rows="3" name="content"></textarea>
                     </div>
                   </div>
                   <div class="buttonEducation">
@@ -530,20 +530,22 @@
                   </button>
                 </div>
 
-                <p class="fw-500 text-start mb-3">
-                  <span class="float-end selectorValue">5%</span>
-                  <input type=" text" class="form-control" placeholder="Web Design" name="address"
-                    style="width:fit-content; padding: 5px;">
-                </p>
-                <div class="progress progress-sm mb-4">
-                  <input class="inputRange" type="range" min="1" max="100" value="70" style="width: 100%">
+                <div>
+                  <span class="float-end selectorValue">5%</span>        
+                  <p class="fw-500 text-start mb-3 form-skill">
+                    <input name="skill" type="text" class="form-control" placeholder="Web Design" 
+                    style="width:fit-content; padding: 5px;">               
+                  </p>
+                  <div class="progress progress-sm mb-4 form-skill">
+                    <input class="inputRange" type="range" min="1" max="100" value="70" style="width: 100%" name="value_">
+                  </div>
                 </div>
-
+                
               </div>
 
               <!-- x2 to here-->
 
-              <!-- <div class="col-md-6 wow fadeInUp py-3 borderInputRange ">
+              <div class="col-md-6 wow fadeInUp py-3 borderInputRange boxMySkills">
                 <div class="borderButtonRange">
                   <button onclick="remove()" type="button" class="btn-outline-danger activeButton"
                     style="border: 2.5px solid red; margin-right: 1rem;">
@@ -553,17 +555,20 @@
                     <i class="fa-solid fa-plus"></i>
                   </button>
                 </div>
-                <p class="fw-500 text-start mb-3">
+                <div>
                   <span class="float-end selectorValue">5%</span>
-                  <input type=" text" class="form-control" placeholder="Web Design" name="address"
-                    style="width:fit-content; padding: 5px;">
-                </p>
-                <div class="progress progress-sm mb-4">
-                  <input class="inputRange" type="range" min="1" max="100" value="70" style="width: 100%">
+                  <p class="fw-500 text-start mb-3 form-skill">
+                    <input  name="skill" type=" text" class="form-control" placeholder="Web Design"
+                      style="width:fit-content; padding: 5px;">
+                  </p>
+                  <div class="progress progress-sm mb-4 form-skill">
+                    <input class="inputRange" type="range" min="1" max="100" value="70" style="width: 100%" name="value_">
+                  </div>
                 </div>
+                
               </div>
 
-              <div class="col-md-6 wow fadeInUp py-3 borderInputRange">
+              <div class="col-md-6 wow fadeInUp py-3 borderInputRange boxMySkills">
                 <div class="borderButtonRange">
                   <button type="button" class="btn-outline-danger activeButton" id="add_more_fields"
                     style="border: 2.5px solid red; margin-right: 1rem;">
@@ -573,17 +578,17 @@
                     <i class="fa-solid fa-plus"></i>
                   </button>
                 </div>
-                <p class="fw-500 text-start mb-3">
-                  <span class="float-end selectorValue">5%</span>
-                  <input type=" text" class="form-control" placeholder="Web Design" name="address"
+                <span class="float-end selectorValue">5%</span>
+                <p class="fw-500 text-start mb-3 form-skill">
+                  <input type=" text" class="form-control" placeholder="Web Design" name="skill"
                     style="width:fit-content; padding: 5px;">
                 </p>
-                <div class="progress progress-sm mb-4">
-                  <input class="inputRange" type="range" min="1" max="100" value="70" style="width: 100%">
+                <div class="progress progress-sm mb-4 form-skill">
+                  <input class="inputRange" type="range" min="1" max="100" value="70" style="width: 100%" name="value_">
                 </div>
               </div>
 
-              <div class="col-md-6 wow fadeInUp py-3 borderInputRange">
+              <div class="col-md-6 wow fadeInUp py-3 borderInputRange boxMySkills">
                 <div class="borderButtonRange">
                   <button type="button" class="btn-outline-danger activeButton"
                     style="border: 2.5px solid red; margin-right: 1rem;">
@@ -593,15 +598,15 @@
                     <i class="fa-solid fa-plus"></i>
                   </button>
                 </div>
-                <p class="fw-500 text-start mb-3">
-                  <span class="float-end selectorValue">5%</span>
-                  <input type=" text" class="form-control" placeholder="Web Design" name="address"
+                <span class="float-end selectorValue">5%</span>
+                <p class="fw-500 text-start mb-3 form-skill">
+                  <input type=" text" class="form-control" placeholder="Web Design" name="skill"
                     style="width:fit-content; padding: 5px;">
                 </p>
-                <div class="progress progress-sm mb-4">
-                  <input class="inputRange" type="range" min="1" max="100" value="70" style="width: 100%">
+                <div class="progress progress-sm mb-4 form-skill">
+                  <input class="inputRange" type="range" min="1" max="100" value="70" style="width: 100%" name="value_">
                 </div>
-              </div> -->
+              </div>
 
             </div>
 
