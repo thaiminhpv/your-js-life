@@ -1,8 +1,11 @@
 from dotenv import load_dotenv
 import os
 import cloudinary
+from requests import request
 
 load_dotenv()
+
+post_request = request
 
 cloudinary.config(
     cloud_name=os.getenv('CLOUD_NAME'),

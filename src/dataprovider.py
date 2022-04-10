@@ -17,6 +17,37 @@ def get_id():
             id += data[i]
     return str(int(id) + 1)
 
+def ConvertForTuple_Exp_Edu(database):
+    list_result = list()
+    dict_temp = dict()
+    list_key = ["id", "portfolio_id", "title", "time", "content"]
+    for item in database:
+        tuple_temp = [(list_key[0],item[0]), (list_key[1],item[1]), (list_key[2],item[2]), (list_key[3],item[3]), (list_key[4],item[4])]
+        dict_temp = dict(tuple_temp)
+        list_result.append(dict_temp)
+    return list_result
+
+
+def ConvertForTuple_Services(database):
+    list_result = list()
+    dict_temp = dict()
+    list_key = ["id", "portfolio_id", "title", "description"]
+    for item in database:
+        tuple_temp = [(list_key[0],item[0]), (list_key[1],item[1]), (list_key[2],item[2]), (list_key[3],item[3])]
+        dict_temp = dict(tuple_temp)
+        list_result.append(dict_temp)
+    return list_result
+
+def ConvertForTuple_my_skills(database):
+    list_result = list()
+    dict_temp = dict()
+    list_key = ["id", "portfolio_id", "skill", "value"]
+    for item in database:
+        tuple_temp = [(list_key[0],item[0]), (list_key[1],item[1]), (list_key[2],item[2]), (list_key[3],item[3])]
+        dict_temp = dict(tuple_temp)
+        list_result.append(dict_temp)
+    return list_result
+
 
 class InteractDatabase:
     def __new__(cls):
@@ -122,6 +153,7 @@ class InteractDatabase:
             parameter = (id, row['skill'], row['value'])
             InteractDatabase.executenonquery(query, parameter)
 
+  
     @staticmethod
     def get_user_data_from_id(id):
         data = InteractDatabase.executequery(
@@ -141,23 +173,9 @@ class InteractDatabase:
                 p.job,
                 p.workingtime,
                 p.introduction,
-                ap.path,
-                e.title,
-                e.time,
-                e.content,
-                s.title,
-                s.description,
-                ex.title,
-                ex.time,
-                ex.content,
-                ms.skill,
-                ms.value
+                ap.path
             FROM portfolio as p
-                     LEFT JOIN avt_path ap on p.id = ap.portfolio_id
-                     LEFT JOIN education e on p.id = e.portfolio_id
-                     LEFT JOIN services s on p.id = s.portfolio_id
-                     LEFT JOIN experience ex on p.id = ex.portfolio_id
-                     LEFT JOIN my_skills ms on p.id = ms.portfolio_id
+                LEFT JOIN avt_path ap on p.id = ap.portfolio_id
             WHERE p.id = %s
             """,
             (id,))
@@ -179,10 +197,10 @@ class InteractDatabase:
             introduction=temp[12],
         )
         path = temp[13]
-        education = [_[14] for _ in data]  # = data[:, 13].T in numpy
-        services = [_[15] for _ in data]
-        experience = [_[16] for _ in data]
-        skills = [_[17] for _ in data]
+        education = ConvertForTuple_Exp_Edu( InteractDatabase.executequery("SELECT * FROM `education` WHERE `portfolio_id` = %s", (id,)) )
+        services = ConvertForTuple_Services( InteractDatabase.executequery("SELECT * FROM `services` WHERE `portfolio_id` = %s", (id,)) )
+        experience = ConvertForTuple_Exp_Edu( InteractDatabase.executequery("SELECT * FROM `experience` WHERE `portfolio_id` = %s", (id,)) )
+        skills = ConvertForTuple_my_skills( InteractDatabase.executequery("SELECT * FROM `my_skills` WHERE `portfolio_id` = %s", (id,)) )
 
         return {
             'user': data_user,
@@ -193,6 +211,7 @@ class InteractDatabase:
             'skills': skills
         }
 
+   
     @staticmethod
     def get_all_portfolio():
         data = InteractDatabase.executequery(

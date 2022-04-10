@@ -21,7 +21,7 @@ class Users:
     @staticmethod
     def getdatafromrequest(data):
         user = Users()
-        user.name = data["name"]
+        #user.name = data["name"]
         user.nickname = data["nickname"]
         user.gmail = data["gmail"]
         user.phone = data["phone"]
