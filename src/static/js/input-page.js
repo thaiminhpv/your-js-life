@@ -26,74 +26,76 @@ const slider = document.getElementById("inputRange");
 
 selectorValue.innerHTML = slider.value + "%";
 slider.oninput = function () {
-    selectorValue.innerHTML = slider.value + "%";
+selectorValue.innerHTML = slider.value + "%";
+}
+//Services
+function add_box() {
+    var services_box = document.getElementsByClassName('what-i-do-item')[0]
+    var parent_box = services_box.parentNode;
+    var newField = services_box.cloneNode(true);
+    parent_box.append(newField); 
 }
 
-var array_my_skill = document.getElementsByClassName('what-i-do-item')
-function add_box() {
-    var mySkill_box = document.getElementsByClassName('what-i-do-item')[0]
-    var parent_box = mySkill_box.parentNode;
-        var newField = mySkill_box.cloneNode(true);
-        parent_box.append(newField); 
-}
 function remove_box() {
     
-        var array = document.getElementsByClassName('borderWhatIDo')     
-        var mySkill_box = document.getElementsByClassName('what-i-do-item')[0]
-        if(array.length > 1){
-            mySkill_box.remove(array);
-        }
+    var array = document.getElementsByClassName('borderWhatIDo')     
+    var services_box = document.getElementsByClassName('what-i-do-item')[0]
+    var remove_button = document.getElementsByClassName('button-education-item');
+    if(array.length > 1){
+        services_box.remove(array);
+    }
+    else{
+        alert("Are you sure you want to delete this section?")
+
+    }
         
 }
-var array_my_education = document.getElementsByClassName('boxMyEducation');
+//MyEducation
 function add_box_education() {
     var mySkill_box = document.getElementsByClassName('boxMyEducation')[0];
     var parent_box = mySkill_box.parentNode;
-        var newField = mySkill_box.cloneNode(true);
-        parent_box.append(newField); 
+    var newField = mySkill_box.cloneNode(true);
+    parent_box.append(newField); 
 }
  
 function remove_box_education() {
     var array = document.getElementsByClassName('borderEducation')
-        var mySkill_box = document.getElementsByClassName('boxMyEducation')[0]  
-        if(array.length > 1){
-            mySkill_box.remove(array);
-        }      
+    var mySkill_box = document.getElementsByClassName('boxMyEducation')[0]  
+    if(array.length > 1){
+        mySkill_box.remove(array);
+    }      
            
         
 }
-
+//MyExperience
 function add_box_experience() {
     var mySkill_box = document.getElementsByClassName('boxMyExperience')[0];
     var parent_box = mySkill_box.parentNode;
-        var newField = mySkill_box.cloneNode(true);
-        // var newField = document.createElement('div');
-        parent_box.append(newField); 
+    var newField = mySkill_box.cloneNode(true);  
+    parent_box.append(newField); 
 }
 function remove_box_experience() {
     var array = document.getElementsByClassName('borderExperience')
-        var mySkill_box = document.getElementsByClassName('boxMyExperience')[0]    
-        if(array.length > 1){
-            mySkill_box.remove(array);
-        }
+    var mySkill_box = document.getElementsByClassName('boxMyExperience')[0]    
+    if(array.length > 1){
+        mySkill_box.remove(array);
+    }
         
 }
-
+//MySkills
 function add_box_skills() {
     var mySkill_box = document.getElementsByClassName('boxMySkills')[0];
     var parent_box = mySkill_box.parentNode;
-        var newField = mySkill_box.cloneNode(true);
-        parent_box.append(newField); 
+    var newField = mySkill_box.cloneNode(true);
+    parent_box.append(newField); 
 }
  
 function remove_box_skills() {
-        var array = document.getElementsByClassName('my-skill-item')
-        var mySkill_box = document.getElementsByClassName('boxMySkills')[0]  
-        if(array.length > 1){
-            mySkill_box.remove(array);
-        }  
-
-           
+    var array = document.getElementsByClassName('my-skill-item')
+    var mySkill_box = document.getElementsByClassName('boxMySkills')[0]  
+    if(array.length > 1){
+        mySkill_box.remove(array);
+    }  
         
 }
 
@@ -103,7 +105,7 @@ function remove_box_skills() {
       
 
 
-function object(){
+// function object(){
     //Intro
     phone = document.querySelectorAll('input[name="phone"]')[0].value;
     avatar = document.getElementById('avt').src;
@@ -165,25 +167,46 @@ function object(){
         phone: phone,
         avt: avt,
         job: job,
-        jobDescription: jobTextarea,
+        job_description: jobTextarea,
         address: address,
         nickname: nickname,
         introduction: introduction,
-        workingTime: workingTime,    
+        working_time: workingTime,    
         name: nameYearOfExperience, 
         gmail: gmail,
-        dateofbirth: dateOfBirth,       
-        addressYearOfExperience: addressYearOfExperience,
+        date_of_birth: dateOfBirth,       
+        address_year_of_experience: addressYearOfExperience,
         facebook: facebook,
         github: github, 
-        linkedin: linkedin, 
+        linked_in: linkedin, 
         services: services,                 
         education: myEducation,
         experience: myExperience, 
         skills: myKills,
     }
-    return ObjectJS;
-   
+//     return objectJS;   
+// }
+function stringifyJson(){
+    // const phone_js = JSON.stringify(phone);
+    // const job_js = JSON.stringify(job);
+    // const jobTextarea_js = JSON.stringify(jobTextarea);
+    // const address_js = JSON.stringify(address);
+    // const nickname_js = JSON.stringify(nickname);
+    // const introduction_js = JSON.stringify(introduction);
+    // const working_time_js = JSON.stringify(workingTime);
+    // const name_year_of_experience_js = JSON.stringify(nameYearOfExperience);
+    // const gmail_js = JSON.stringify(gmail);
+    // const date_of_birth = JSON.stringify(dateOfBirth);
+    // const address_year_of_experience_js = JSON.stringify(addressYearOfExperience);
+    // const facebook_js = JSON.stringify(facebook);
+    // const github_js = JSON.stringify(github);
+    // const linked_in_js = JSON.stringify(linkedin);
+    // const services_js = JSON.stringify(services);
+    // const education_js = JSON.stringify(myEducation);
+    // const my_education_js = JSON.stringify(myEducation);
+    // const my_experience_js = JSON.stringify(myExperience);
+    // const my_kills = JSON.stringify(myKills); 
+     
     
 }
 
