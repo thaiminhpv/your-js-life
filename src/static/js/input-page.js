@@ -19,7 +19,11 @@ defaultBtn.addEventListener("change", function () {
   }
 });
 //-------------------------------------------------
-document.getElementById('submitBtn').addEventListener('click', submitJSONform);
+document.getElementById('submitBtn').addEventListener('click', () => {
+  // disable this button to prevent multiple clicks
+  document.getElementById('submitBtn').disabled = true;
+  submitJSONform()
+});
 
 // Input range My Skills
 const selectorValue = document.getElementById("selectorValue");
