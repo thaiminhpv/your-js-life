@@ -5,7 +5,7 @@ const img = document.querySelector("#avt");
 
 function defaultBtnActive() {
   defaultBtn.click();
-};
+}
 
 defaultBtn.addEventListener("change", function () {
   const file = this.files[0];
@@ -19,14 +19,19 @@ defaultBtn.addEventListener("change", function () {
   }
 });
 //-------------------------------------------------
+document.getElementById('submitBtn').addEventListener('click', submitJSONform);
 
 // Input range My Skills
 const selectorValue = document.getElementById("selectorValue");
 const slider = document.getElementById("inputRange");
 
-selectorValue.innerHTML = slider.value + "%";
-slider.oninput = function () {
-selectorValue.innerHTML = slider.value + "%";
+try {
+    selectorValue.innerHTML = slider.value + "%";
+    slider.oninput = function () {
+        selectorValue.innerHTML = slider.value + "%";
+    }
+} catch (error) {
+    console.error(error);
 }
 //Services
 function add_box() {
@@ -173,8 +178,7 @@ function getAllInputData(){
     }
 }
 
-function submitJSONform(e){
-  e.preventDefault(); // stop the form from reloading the page
+function submitJSONform(){
   let data = getAllInputData();
   let json = JSON.stringify(data);
   fetch('/create-portfolio', {
@@ -200,11 +204,10 @@ function submitFileAndIdAndRedirect(id) {
     })
     .then(res => res.json())
     .then(res => {
+      console.log(res);
       // if success, redirect to portfolio/:id
       if (res.status === 'success') {
         window.location.href = '/portfolio/' + id;
       }
     })
 }
-
-document.getElementById('submitBtn').addEventListener('click', submitJSONform);

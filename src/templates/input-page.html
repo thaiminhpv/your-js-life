@@ -36,7 +36,7 @@
 </head>
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
- <form action="#" method="post" enctype="multipart/form-data">
+ <form method="post" id="form" onsubmit="return false;">
   <!-- Preloader -->
   <div class="preloader">
     <div class="lds-ellipsis">
@@ -663,6 +663,8 @@
 
     </div>
     <!-- Document Wrapper end -->
+  </div>
+ </form>
 
     <!-- Back to Top
 ============================================= -->
@@ -699,31 +701,9 @@
     <!-- Custom Script -->
     <script src="/static/js/theme.js"></script>
 
-    <script src="/static/js/input-page.js"></script>
-
     <script src="https://kit.fontawesome.com/81e4fcabce.js" crossorigin="anonymous"></script>
-    
 
-    <!-- <script>
-      
-      function add_box() {
-        let box = document.getElementById('border-what-i-do')
-        console.log(box)
-        let newField = box.cloneNode(true);
-        console.log(newField)
-        box.append(newField); 
-        
-      }
-      function remove_box() {
-        var box = document.querySelector('.boxMySkills')
-        console.log(box)
-        box.remove(box);
-      
-      }
-      
-      
-    </script> -->
-  </form>
+    <script src="/static/js/input-page.js"></script>
 </body>
 
 </html>

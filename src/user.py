@@ -1,7 +1,7 @@
 import threading
 from time import time
 import cloudinary.uploader
-from flask import redirect, template_rendered, url_for, render_template, request, Blueprint
+from flask import redirect, template_rendered, url_for, render_template, request, Blueprint, Response, jsonify
 from . import config
 from . import model
 from .dataprovider import InteractDatabase
@@ -30,11 +30,10 @@ def create_portfolio_data_user():
 
 @user.route("/create-portfolio", methods=["POST"])
 def create_portfolio_file():
-    data = model.Users.getdatafromrequest(request.json) 
+    data = model.Users.getdatafromrequest(request.json)
     id = dataprovider.get_id()
     threading.Thread(target=save_data, args=(id,data)).start()
-
-    return id, 200
+    return Response(str(id), status=200)
 
 
 @user.route("/create-portfolio/file", methods=["POST"])
@@ -42,7 +41,7 @@ def register():
     id = request.form['id']
     path = get_path_image(request)
     InteractDatabase.save_path_to_database(id, path)
-    return id , 200
+    return jsonify({"id": id, "status": "success"})
 
 
 @user.route("/portfolio/<id>", methods=["GET"])
@@ -73,7 +72,7 @@ def save_data(id, data):
 
 
 def get_path_image(request):
-    file = request.files['file']
+    file = request.files.get('file', None)
     # check if user has uploaded file, save the path
     if file:
         res = cloudinary.uploader.upload(file)
