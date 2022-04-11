@@ -30,17 +30,17 @@ selectorValue.innerHTML = slider.value + "%";
 }
 //Services
 function add_box() {
-    var services_box = document.getElementsByClassName('what-i-do-item')[0]
-    var parent_box = services_box.parentNode;
-    var newField = services_box.cloneNode(true);
+    let services_box = document.getElementsByClassName('what-i-do-item')[0]
+    let parent_box = services_box.parentNode;
+    let newField = services_box.cloneNode(true);
     parent_box.append(newField); 
 }
 
 function remove_box() {
     
-    var array = document.getElementsByClassName('borderWhatIDo')     
-    var services_box = document.getElementsByClassName('what-i-do-item')[0]
-    var remove_button = document.getElementsByClassName('button-education-item');
+    let array = document.getElementsByClassName('borderWhatIDo')     
+    let services_box = document.getElementsByClassName('what-i-do-item')[0]
+    let remove_button = document.getElementsByClassName('button-education-item');
     if(array.length > 1){
         services_box.remove(array);
     }
@@ -52,15 +52,15 @@ function remove_box() {
 }
 //MyEducation
 function add_box_education() {
-    var mySkill_box = document.getElementsByClassName('boxMyEducation')[0];
-    var parent_box = mySkill_box.parentNode;
-    var newField = mySkill_box.cloneNode(true);
+    let mySkill_box = document.getElementsByClassName('boxMyEducation')[0];
+    let parent_box = mySkill_box.parentNode;
+    let newField = mySkill_box.cloneNode(true);
     parent_box.append(newField); 
 }
 
 function remove_box_education() {
-    var array = document.getElementsByClassName('borderEducation')
-    var mySkill_box = document.getElementsByClassName('boxMyEducation')[0]  
+    let array = document.getElementsByClassName('borderEducation')
+    let mySkill_box = document.getElementsByClassName('boxMyEducation')[0]  
     if(array.length > 1){
         mySkill_box.remove(array);
     }      
@@ -69,15 +69,15 @@ function remove_box_education() {
 }
 //MyExperience
 function add_box_experience() {
-    var mySkill_box = document.getElementsByClassName('boxMyExperience')[0];
-    var parent_box = mySkill_box.parentNode;
-    var newField = mySkill_box.cloneNode(true);  
+    let mySkill_box = document.getElementsByClassName('boxMyExperience')[0];
+    let parent_box = mySkill_box.parentNode;
+    let newField = mySkill_box.cloneNode(true);  
     parent_box.append(newField); 
 }
 
 function remove_box_experience() {
-    var array = document.getElementsByClassName('borderExperience')
-    var mySkill_box = document.getElementsByClassName('boxMyExperience')[0]    
+    let array = document.getElementsByClassName('borderExperience')
+    let mySkill_box = document.getElementsByClassName('boxMyExperience')[0]    
     if(array.length > 1){
         mySkill_box.remove(array);
     }
@@ -85,64 +85,50 @@ function remove_box_experience() {
 }
 //MySkills
 function add_box_skills() {
-    var mySkill_box = document.getElementsByClassName('boxMySkills')[0];
-    var parent_box = mySkill_box.parentNode;
-    var newField = mySkill_box.cloneNode(true);
+    let mySkill_box = document.getElementsByClassName('boxMySkills')[0];
+    let parent_box = mySkill_box.parentNode;
+    let newField = mySkill_box.cloneNode(true);
     parent_box.append(newField); 
 }
 
 function remove_box_skills() {
-    var array = document.getElementsByClassName('my-skill-item')
-    var mySkill_box = document.getElementsByClassName('boxMySkills')[0]  
+    let array = document.getElementsByClassName('my-skill-item')
+    let mySkill_box = document.getElementsByClassName('boxMySkills')[0]  
     if(array.length > 1){
         mySkill_box.remove(array);
     }  
         
 }
 
-
-
-      
-      
-
-
-// function object(){
+function getAllInputData(){
     //Intro
-    phone = document.querySelectorAll('input[name="phone"]')[0].value;
-    avatar = document.getElementById('avt').src;
-    job = document.querySelectorAll('input[name="job"]')[0].value;
-    jobTextarea = document.querySelectorAll('textarea[name="job-textarea"]')[0].value;
+    let phone = document.querySelectorAll('input[name="phone"]')[0].value;
+    let avatar = document.getElementById('avt').src;
+    let job = document.querySelectorAll('input[name="job"]')[0].value;
+    let jobTextarea = document.querySelectorAll('textarea[name="job-textarea"]')[0].value;
     //About Me
-    address = document.querySelectorAll('input[name="address"]')[0].value;
-    nickname = document.querySelectorAll('input[name="nickname"]')[0].value;
-    introduction = document.querySelectorAll('textarea[name="introduction"]')[0].value;
-    workingTime = document.querySelectorAll('input[name="workingtime"]')[0].value;
+    let address = document.querySelectorAll('input[name="address"]')[0].value;
+    let nickname = document.querySelectorAll('input[name="nickname"]')[0].value;
+    let introduction = document.querySelectorAll('textarea[name="introduction"]')[0].value;
+    let workingTime = document.querySelectorAll('input[name="workingtime"]')[0].value;
     //Years of Experience
-    nameYearOfExperience = document.querySelectorAll('input[name="name"]')[0].value;
-    gmail = document.querySelectorAll('input[name="gmail"]')[0].value;
-    dateOfBirth = document.querySelectorAll('input[name="dateofbirth"]')[0].value;
-    addressYearOfExperience = document.getElementsByClassName('aboutMeInput')['address'].value;
-    facebook = document.getElementsByClassName('aboutMeInput')['facebook'].value;
-    github = document.getElementsByClassName('aboutMeInput')['github'].value;
-    linkedin = document.getElementsByClassName('aboutMeInput')['linkedin'].value;
+    let nameYearOfExperience = document.querySelectorAll('input[name="name"]')[0].value;
+    let gmail = document.querySelectorAll('input[name="gmail"]')[0].value;
+    let dateOfBirth = document.querySelectorAll('input[name="dateofbirth"]')[0].value;
+    let addressYearOfExperience = document.getElementsByClassName('aboutMeInput')['address'].value;
+    let facebook = document.getElementsByClassName('aboutMeInput')['facebook'].value;
+    let github = document.getElementsByClassName('aboutMeInput')['github'].value;
+    let linkedin = document.getElementsByClassName('aboutMeInput')['linkedin'].value;
     //Service(How I can help your next project)
-    services = [...document.getElementsByClassName('borderWhatIDo')].map(e => [...e.getElementsByClassName('input-group')].map(e => e.children[0].value)).map(e => {
+    let services = [...document.getElementsByClassName('borderWhatIDo')].map(e => [...e.getElementsByClassName('input-group')].map(e => e.children[0].value)).map(e => {
         return {
             title: e[0],
             description: e[1]
         }
     })
-    // graphicDesign = document.querySelectorAll('input[placeholder="Graphic Design"]')[0].value;
-    // textAreaGraphicDesign = document.querySelector('.text-muted.mb-0.form-control').value;
-
-    // experience = document.querySelectorAll('.borderEducation');
-    // degreeMyEducation = document.querySelectorAll('.master')[0].value;
-    // graduateUniversiry = document.querySelectorAll('.university')[0].value;
-    // textareaMyEducation = document.getElementById('exampleFormControlTextarea1').value;
-    // document.querySelectorAll('.borderEducation')[0].querySelectorAll('textarea[id="exampleFormControlTextarea1"]')[0].value
 
     //MyEducation
-    myEducation = [...document.getElementsByClassName('boxMyEducation')].map(e => [...e.getElementsByClassName('form-group')].map(e => e.children[0].value)).map(e => {
+    let myEducation = [...document.getElementsByClassName('boxMyEducation')].map(e => [...e.getElementsByClassName('form-group')].map(e => e.children[0].value)).map(e => {
         return {
             title: e[0],
             time: e[1],
@@ -150,7 +136,7 @@ function remove_box_skills() {
         }
     })
     //MyExperience
-    myExperience = [...document.getElementsByClassName('boxMyExperience')].map(e => [...e.getElementsByClassName('form-group')].map(e => e.children[0].value)).map(e => {
+    let myExperience = [...document.getElementsByClassName('boxMyExperience')].map(e => [...e.getElementsByClassName('form-group')].map(e => e.children[0].value)).map(e => {
         return {
             title: e[0],
             time: e[1],
@@ -158,15 +144,15 @@ function remove_box_skills() {
         }
     })
     //MySkills
-    myKills = [...document.getElementsByClassName('boxMySkills')].map(e => [...e.getElementsByClassName('form-skill')].map(e => e.children[0].value)).map(e => {
+    let myKills = [...document.getElementsByClassName('boxMySkills')].map(e => [...e.getElementsByClassName('form-skill')].map(e => e.children[0].value)).map(e => {
         return {
             skill: e[0],
             value_: e[1]
         }
     })
-    objectJS = {
+    return {
         phone: phone,
-        avt: avt,
+        // avt: avt,
         job: job,
         job_description: jobTextarea,
         address: address,
@@ -185,30 +171,6 @@ function remove_box_skills() {
         experience: myExperience, 
         skills: myKills,
     }
-//     return objectJS;   
-// }
-function stringifyJson(){
-    // const phone_js = JSON.stringify(phone);
-    // const job_js = JSON.stringify(job);
-    // const jobTextarea_js = JSON.stringify(jobTextarea);
-    // const address_js = JSON.stringify(address);
-    // const nickname_js = JSON.stringify(nickname);
-    // const introduction_js = JSON.stringify(introduction);
-    // const working_time_js = JSON.stringify(workingTime);
-    // const name_year_of_experience_js = JSON.stringify(nameYearOfExperience);
-    // const gmail_js = JSON.stringify(gmail);
-    // const date_of_birth = JSON.stringify(dateOfBirth);
-    // const address_year_of_experience_js = JSON.stringify(addressYearOfExperience);
-    // const facebook_js = JSON.stringify(facebook);
-    // const github_js = JSON.stringify(github);
-    // const linked_in_js = JSON.stringify(linkedin);
-    // const services_js = JSON.stringify(services);
-    // const education_js = JSON.stringify(myEducation);
-    // const my_education_js = JSON.stringify(myEducation);
-    // const my_experience_js = JSON.stringify(myExperience);
-    // const my_kills = JSON.stringify(myKills); 
-     
-    
 }
 
 function submitJSONform(){
