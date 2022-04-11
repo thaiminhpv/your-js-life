@@ -29,37 +29,37 @@ slider.oninput = function () {
   selectorValue.innerHTML = slider.value + "%";
 }
 
-var array_my_skill = document.getElementsByClassName('what-i-do-item')
+let array_my_skill = document.getElementsByClassName('what-i-do-item')
 
 function add_box() {
-  var mySkill_box = document.getElementsByClassName('what-i-do-item')[0]
-  var parent_box = mySkill_box.parentNode;
-  var newField = mySkill_box.cloneNode(true);
+  let mySkill_box = document.getElementsByClassName('what-i-do-item')[0]
+  let parent_box = mySkill_box.parentNode;
+  let newField = mySkill_box.cloneNode(true);
   parent_box.append(newField);
 }
 
 function remove_box() {
 
-  var array = document.getElementsByClassName('borderWhatIDo')
-  var mySkill_box = document.getElementsByClassName('what-i-do-item')[0]
+  let array = document.getElementsByClassName('borderWhatIDo')
+  let mySkill_box = document.getElementsByClassName('what-i-do-item')[0]
   if (array.length > 1) {
     mySkill_box.remove(array);
   }
 
 }
 
-var array_my_education = document.getElementsByClassName('boxMyEducation');
+let array_my_education = document.getElementsByClassName('boxMyEducation');
 
 function add_box_education() {
-  var mySkill_box = document.getElementsByClassName('boxMyEducation')[0];
-  var parent_box = mySkill_box.parentNode;
-  var newField = mySkill_box.cloneNode(true);
+  let mySkill_box = document.getElementsByClassName('boxMyEducation')[0];
+  let parent_box = mySkill_box.parentNode;
+  let newField = mySkill_box.cloneNode(true);
   parent_box.append(newField);
 }
 
 function remove_box_education() {
-  var array = document.getElementsByClassName('borderEducation')
-  var mySkill_box = document.getElementsByClassName('boxMyEducation')[0]
+  let array = document.getElementsByClassName('borderEducation')
+  let mySkill_box = document.getElementsByClassName('boxMyEducation')[0]
   if (array.length > 1) {
     mySkill_box.remove(array);
   }
@@ -68,16 +68,16 @@ function remove_box_education() {
 }
 
 function add_box_experience() {
-  var mySkill_box = document.getElementsByClassName('boxMyExperience')[0];
-  var parent_box = mySkill_box.parentNode;
-  var newField = mySkill_box.cloneNode(true);
-  // var newField = document.createElement('div');
+  let mySkill_box = document.getElementsByClassName('boxMyExperience')[0];
+  let parent_box = mySkill_box.parentNode;
+  let newField = mySkill_box.cloneNode(true);
+  // let newField = document.createElement('div');
   parent_box.append(newField);
 }
 
 function remove_box_experience() {
-  var array = document.getElementsByClassName('borderExperience')
-  var mySkill_box = document.getElementsByClassName('boxMyExperience')[0]
+  let array = document.getElementsByClassName('borderExperience')
+  let mySkill_box = document.getElementsByClassName('boxMyExperience')[0]
   if (array.length > 1) {
     mySkill_box.remove(array);
   }
@@ -85,15 +85,15 @@ function remove_box_experience() {
 }
 
 function add_box_skills() {
-  var mySkill_box = document.getElementsByClassName('boxMySkills')[0];
-  var parent_box = mySkill_box.parentNode;
-  var newField = mySkill_box.cloneNode(true);
+  let mySkill_box = document.getElementsByClassName('boxMySkills')[0];
+  let parent_box = mySkill_box.parentNode;
+  let newField = mySkill_box.cloneNode(true);
   parent_box.append(newField);
 }
 
 function remove_box_skills() {
-  var array = document.getElementsByClassName('my-skill-item')
-  var mySkill_box = document.getElementsByClassName('boxMySkills')[0]
+  let array = document.getElementsByClassName('my-skill-item')
+  let mySkill_box = document.getElementsByClassName('boxMySkills')[0]
   if (array.length > 1) {
     mySkill_box.remove(array);
   }
