@@ -4,7 +4,6 @@ from datetime import date
 class Users:
     def __init__(self):
         self.name = ""
-        self.nickname = ""
         self.gmail = ""
         self.phone = ""
         self.address = ""
@@ -22,7 +21,6 @@ class Users:
     def getdatafromrequest(data):
         user = Users()
         user.name = data["name"]
-        user.nickname = data["nickname"]
         user.gmail = data["gmail"]
         user.phone = data["phone"]
         user.address = data["address"]
@@ -60,7 +58,6 @@ class Users:
         data = list()
         data.append(id)
         data.append(data_user.name)
-        data.append(data_user.nickname)
         data.append(data_user.gmail)
         data.append(data_user.phone)
         data.append(data_user.address)

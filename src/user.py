@@ -53,24 +53,24 @@ def handle_data(request):
     :param request:
     :return:
     """
-    data_user = model.Users.getdatafromrequest(request.json)
+    data_user = model.Users.getdatafromrequest(request.form)
     id = InteractDatabase.addportfolio(data_user)  # add data user to database and get id of this user
 
-    request_json = request.json
-    experience = request_json["experience"]
-    InteractDatabase.save_exp(id, experience)
+    # request_json = request.json
+    # experience = request_json["experience"]
+    # InteractDatabase.save_exp(id, experience)
 
-    education = request_json["education"]
-    InteractDatabase.save_edu(id, education)
+    # education = request_json["education"]
+    # InteractDatabase.save_edu(id, education)
 
-    services = request_json["services"]
-    InteractDatabase.save_services(id, services)
+    # services = request_json["services"]
+    # InteractDatabase.save_services(id, services)
 
-    skills = request_json["skills"]
-    InteractDatabase.save_skills(id, skills)
+    # skills = request_json["skills"]
+    # InteractDatabase.save_skills(id, skills)
 
-    # path = get_path_image(request)  # get path user's avt from cloud
-    # InteractDatabase.save_path_to_database(id, path)
+    path = get_path_image(request)  # get path user's avt from cloud
+    InteractDatabase.save_path_to_database(id, path)
     return id
 
 

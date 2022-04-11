@@ -74,7 +74,7 @@ class InteractDatabase:
         """
         id = get_id()  # id of new user
         parameter = model.Users.getuserlist(id, data_user)  # get data user with datatype: list
-        query = "INSERT INTO `portfolio` (`id`, `name`, `nickname`, `gmail`, `phone`, `address`, `dateofbirth`, `linkedin`, `facebook`, `github`, `job`, `workingtime`, `introduction`) VALUES ( %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+        query = "INSERT INTO `portfolio` (`id`, `name`, `gmail`, `phone`, `address`, `dateofbirth`, `linkedin`, `facebook`, `github`, `job`, `workingtime`, `introduction`) VALUES ( %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
         InteractDatabase.executenonquery(query, parameter)
         return id
 
@@ -130,7 +130,6 @@ class InteractDatabase:
             #   *
                 p.id,
                 p.name,
-                p.nickname,
                 p.gmail,
                 p.phone,
                 p.address,
@@ -166,23 +165,22 @@ class InteractDatabase:
         data_user = dict(
             id=temp[0],
             name=temp[1],
-            nickname=temp[2],
-            gmail=temp[3],
-            phone=temp[4],
-            address=temp[5],
-            dateofbirth=temp[6],
-            linkedin=temp[7],
-            facebook=temp[8],
-            github=temp[9],
-            job=temp[10],
-            workingtime=temp[11],
-            introduction=temp[12],
+            gmail=temp[2],
+            phone=temp[3],
+            address=temp[4],
+            dateofbirth=temp[5],
+            linkedin=temp[6],
+            facebook=temp[7],
+            github=temp[8],
+            job=temp[9],
+            workingtime=temp[10],
+            introduction=temp[11],
         )
-        path = temp[13]
-        education = [_[14] for _ in data]  # = data[:, 13].T in numpy
-        services = [_[15] for _ in data]
-        experience = [_[16] for _ in data]
-        skills = [_[17] for _ in data]
+        path = temp[12]
+        education = [_[13] for _ in data]  # = data[:, 13].T in numpy
+        services = [_[14] for _ in data]
+        experience = [_[15] for _ in data]
+        skills = [_[16] for _ in data]
 
         return {
             'user': data_user,
