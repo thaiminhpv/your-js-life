@@ -42,7 +42,7 @@ def register():
     id = request.form['id']
     path = get_path_image(request)
     InteractDatabase.save_path_to_database(id, path)
-    return 200
+    return id , 200
 
 
 @user.route("/portfolio/<id>", methods=["GET"])
@@ -68,7 +68,7 @@ def save_data(id, data):
     InteractDatabase.addportfolio(data['user'])
     InteractDatabase.save_exp(id, data['experience'])
     InteractDatabase.save_edu(id, data['education'])
-    InteractDatabase.save_servicesid, (data['services'])
+    InteractDatabase.save_services(id , data['services'])
     InteractDatabase.save_skills(id, data['skills'])
 
 
