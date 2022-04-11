@@ -188,7 +188,10 @@ class InteractDatabase:
             WHERE p.id = %s
             """,
             (id,))
-
+        if not data:
+            if not connection.is_connected():
+                connection.close()
+            return None
         temp = data[0]
         data_user = dict(
             id=temp[0],

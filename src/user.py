@@ -1,7 +1,7 @@
 import threading
 from time import time
 import cloudinary.uploader
-from flask import redirect, template_rendered, url_for, render_template, request, Blueprint, Response, jsonify
+from flask import redirect, template_rendered, url_for, render_template, request, Blueprint, Response, jsonify, abort
 from . import config
 from . import model
 from .dataprovider import InteractDatabase
@@ -47,6 +47,8 @@ def register():
 @user.route("/portfolio/<id>", methods=["GET"])
 def portfolio(id):
     data = InteractDatabase.get_user_data_from_id(id)
+    if data is None:
+        abort(404)  # not found
 
     data_user = data['user']
     path = data['path']
@@ -60,6 +62,12 @@ def portfolio(id):
         user=data_user, image_path=path, experience=experience,
         education=education, services=services, skills=skills
     )
+
+
+@user.errorhandler(404)
+def page_not_found(e):
+    return render_template("404.html"), 404
+
 
 @user.route("/success", methods=["GET"])
 def success():
