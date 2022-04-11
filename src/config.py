@@ -5,8 +5,6 @@ from requests import request
 
 load_dotenv()
 
-post_request = request
-
 cloudinary.config(
     cloud_name=os.getenv('CLOUD_NAME'),
     api_key=os.getenv('API_KEY'),

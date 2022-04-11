@@ -110,7 +110,7 @@ class InteractDatabase:
         """
         id = get_id()  # id of new user
         parameter = model.Users.getuserlist(id, data_user)  # get data user with datatype: list
-        query = "INSERT INTO `portfolio` (`id`, `name`, `nickname`, `gmail`, `phone`, `address`, `dateofbirth`, `linkedin`, `facebook`, `github`, `job`, `workingtime`, `introduction`) VALUES ( %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+        query = "INSERT INTO `portfolio` (`id`, `name`, `nickname`,`texterea`, `gmail`, `phone`, `address`, `dateofbirth`, `linkedin`, `facebook`, `github`, `job`, `workingtime`, `introduction`) VALUES ( %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
         InteractDatabase.executenonquery(query, parameter)
         return id
 
@@ -171,6 +171,7 @@ class InteractDatabase:
                 p.id,
                 p.name,
                 p.nickname,
+                p.texterea,
                 p.gmail,
                 p.phone,
                 p.address,
@@ -193,18 +194,19 @@ class InteractDatabase:
             id=temp[0],
             name=temp[1],
             nickname=temp[2],
-            gmail=temp[3],
-            phone=temp[4],
-            address=temp[5],
-            dateofbirth=temp[6],
-            linkedin=temp[7],
-            facebook=temp[8],
-            github=temp[9],
-            job=temp[10],
-            workingtime=temp[11],
-            introduction=temp[12],
+            texterea=temp[3].split('\\n'),
+            gmail=temp[4],
+            phone=temp[5],
+            address=temp[6],
+            dateofbirth=temp[7],
+            linkedin=temp[8],
+            facebook=temp[9],
+            github=temp[10],
+            job=temp[11],
+            workingtime=temp[12],
+            introduction=temp[13],
         )
-        path = temp[13]
+        path = temp[14]
         education = ConvertForTuple_Exp_Edu( InteractDatabase.executequery("SELECT * FROM `education` WHERE `portfolio_id` = %s", (id,)) )
         services = ConvertForTuple_Services( InteractDatabase.executequery("SELECT * FROM `services` WHERE `portfolio_id` = %s", (id,)) )
         experience = ConvertForTuple_Exp_Edu( InteractDatabase.executequery("SELECT * FROM `experience` WHERE `portfolio_id` = %s", (id,)) )

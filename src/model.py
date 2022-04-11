@@ -5,6 +5,7 @@ class Users:
     def __init__(self):
         self.name = ""
         self.nickname = ""
+        self.texterea = "Em anh Vũ\nCTV JS"
         self.gmail = ""
         self.phone = ""
         self.address = ""
@@ -20,41 +21,33 @@ class Users:
 
     @staticmethod
     def getdatafromrequest(data):
-        user = Users()
-        user.name = data["name"]
-        user.nickname = data["nickname"]
-        user.gmail = data["gmail"]
-        user.phone = data["phone"]
-        user.address = data["address"]
+        data_user = Users()
+        data_user.name = data["name"]
+        data_user.nickname = data["nickname"]
+        data_user.texterea = data["texterea"]
+        data_user.gmail = data["gmail"]
+        data_user.phone = data["phone"]
+        data_user.address = data["address"]
         try:
-            user.dateofbirth = data["dateofbirth"]
+            data_user.dateofbirth = data["dateofbirth"]
         except:
             pass
-        user.linkedin = data["linkedin"]
-        user.facebook = data["facebook"]
-        user.github = data["github"]
-        user.job = data["job"]
-        user.workingtime = data["workingtime"]
-        user.introduction = data["introduction"]
-        return user
+        data_user.linkedin = data["linkedin"]
+        data_user.facebook = data["facebook"]
+        data_user.github = data["github"]
+        data_user.job = data["job"]
+        data_user.workingtime = data["workingtime"]
+        data_user.introduction = data["introduction"]
 
-    # get data user from request.form
-    @staticmethod
-    def getdatafromdb(data):
-        user = Users()
-        user.name = data[1]
-        user.nickname = data[2]
-        user.gmail = data[3]
-        user.phone = data[4]
-        user.address = data[5]
-        user.dateofbirth = data[6]
-        user.linkedin = data[7]
-        user.facebook = data[8]
-        user.github = data[9]
-        user.job = data[10]
-        user.workingtime = data[11]
-        user.introduction = data[12]
-        return user
+        return {
+            'user': data_user,
+            'education': data['education'],
+            'services': data['services'],
+            'experience': data['experience'],
+            'skills': data['skills']
+        }
+
+
 
     @staticmethod
     def getuserlist(id, data_user):
@@ -62,6 +55,7 @@ class Users:
         data.append(id)
         data.append(data_user.name)
         data.append(data_user.nickname)
+        data.append(data_user.texterea)
         data.append(data_user.gmail)
         data.append(data_user.phone)
         data.append(data_user.address)
