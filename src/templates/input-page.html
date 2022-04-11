@@ -130,7 +130,7 @@
                 <img id="avt" class="img-fluid rounded-pill d-block" src="/static/images/web-developer.jpg">
               </div>
 
-              <input type="file" id="default-btn" hidden>
+              <input name="avt" type="file" id="default-btn" hidden>
               <button type="button" onclick="defaultBtnActive()" id="custom-btn" class="btn btn-warning">Choose your
                 photo</button>
             </div>
@@ -619,7 +619,7 @@
             </div>
 
             <p class="text-center mt-5 wow fadeInUp">
-              <button type="submit" class="btn btn-outline-dark shadow-none rounded-0">Save</button>
+              <button onclick="submitJSONform()" type="submit" class="btn btn-outline-dark shadow-none rounded-0">Save</button>
             </p>
           </div>
       </section>

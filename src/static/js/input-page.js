@@ -4,19 +4,19 @@ const customBtn = document.querySelector("#custom-btn");
 const img = document.querySelector("#avt");
 
 function defaultBtnActive() {
-    defaultBtn.click();
+  defaultBtn.click();
 };
 
 defaultBtn.addEventListener("change", function () {
-    const file = this.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function () {
-            const result = reader.result;
-            img.src = result;
-        }
-        reader.readAsDataURL(file);
+  const file = this.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function () {
+      const result = reader.result;
+      img.src = result;
     }
+    reader.readAsDataURL(file);
+  }
 });
 //-------------------------------------------------
 
@@ -57,7 +57,7 @@ function add_box_education() {
     var newField = mySkill_box.cloneNode(true);
     parent_box.append(newField); 
 }
- 
+
 function remove_box_education() {
     var array = document.getElementsByClassName('borderEducation')
     var mySkill_box = document.getElementsByClassName('boxMyEducation')[0]  
@@ -74,6 +74,7 @@ function add_box_experience() {
     var newField = mySkill_box.cloneNode(true);  
     parent_box.append(newField); 
 }
+
 function remove_box_experience() {
     var array = document.getElementsByClassName('borderExperience')
     var mySkill_box = document.getElementsByClassName('boxMyExperience')[0]    
@@ -89,7 +90,7 @@ function add_box_skills() {
     var newField = mySkill_box.cloneNode(true);
     parent_box.append(newField); 
 }
- 
+
 function remove_box_skills() {
     var array = document.getElementsByClassName('my-skill-item')
     var mySkill_box = document.getElementsByClassName('boxMySkills')[0]  
@@ -210,7 +211,35 @@ function stringifyJson(){
     
 }
 
-    
+function submitJSONform(){
+  let data = getAllInputData();
+  let json = JSON.stringify(data);
+  fetch('/create-portfolio', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: json
+  }).then(res => res.json())
+      .then(id => {
+        console.log(id);
+        submitFileAndIdAndRedirect(id);
+      }).catch(err => console.log(err));
+}
 
-
-
+function submitFileAndIdAndRedirect(id) {
+  let formData = new FormData();
+  formData.append('file', document.querySelectorAll('input[name="avt"]')[0].files[0]);
+  formData.append('id', id);
+  fetch('/create-portfolio/file', {
+      method: 'POST',
+      body: formData
+    })
+    .then(res => res.json())
+    .then(res => {
+      // if success, redirect to portfolio/:id
+      if (res.status === 'success') {
+        window.location.href = '/portfolio/' + id;
+      }
+    })
+}
