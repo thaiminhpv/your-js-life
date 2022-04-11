@@ -118,6 +118,7 @@
         {%endfor%}
     <!-- Portfolio
     ============================================= -->
+    
     <section id="portfolio" class="section bg-light">
       <div class="container">
         <!-- Heading -->
@@ -133,15 +134,15 @@
         <!-- Filter Menu end -->
         <div class="portfolio wow fadeInUp">
           <div class="row g-4 mt-3 portfolio-filter">
-            {%for item in data%}
+            {%for item in portfolios%}
             <div class="col-sm-6 col-lg-4 detailed">
               <div class="portfolio-box">
-                <div class="portfolio-img"> <img class="img-fluid d-block" src="/static/images/projects/project-1.jpg" alt>
-                  <div class="portfolio-overlay"> <a class="popup-ajax stretched-link" href="ajax/portfolio-ajax-project-1.html"></a>
+                <div class="portfolio-img"> <img class="img-fluid d-block" src="" alt>
+                  <div class="portfolio-overlay"> <a class="popup-ajax stretched-link" href="/portfolio/{{item['id']}}"></a>
                     <div class="portfolio-overlay-details">
                       <p class="text-primary text-8"><i class="fas fa-file-alt"></i></p>
-                      <h5 class="text-white text-5">{{item.name}}</h5>
-                      <span class="text-light">{{item.introduction[0:20]}}</span>
+                      <h5 class="text-white text-5">{{item["name"]}}</h5>
+                      <span class="text-light">{{item["introduction"]}}...</span>
                     </div>
                   </div>
                 </div>
@@ -152,6 +153,7 @@
         </div>
       </div>
     </section>
+    
     <!-- Portfolio end --> 
   
  
