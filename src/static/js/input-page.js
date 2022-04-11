@@ -34,33 +34,33 @@ function add_box() {
     var mySkill_box = document.getElementsByClassName('what-i-do-item')[0]
     var parent_box = mySkill_box.parentNode;
         var newField = mySkill_box.cloneNode(true);
-        parent_box.append(newField); 
+        parent_box.append(newField);
 }
 function remove_box() {
-    
-        var array = document.getElementsByClassName('borderWhatIDo')     
+
+        var array = document.getElementsByClassName('borderWhatIDo')
         var mySkill_box = document.getElementsByClassName('what-i-do-item')[0]
         if(array.length > 1){
             mySkill_box.remove(array);
         }
-        
+
 }
 var array_my_education = document.getElementsByClassName('boxMyEducation');
 function add_box_education() {
     var mySkill_box = document.getElementsByClassName('boxMyEducation')[0];
     var parent_box = mySkill_box.parentNode;
         var newField = mySkill_box.cloneNode(true);
-        parent_box.append(newField); 
+        parent_box.append(newField);
 }
- 
+
 function remove_box_education() {
     var array = document.getElementsByClassName('borderEducation')
-        var mySkill_box = document.getElementsByClassName('boxMyEducation')[0]  
+        var mySkill_box = document.getElementsByClassName('boxMyEducation')[0]
         if(array.length > 1){
             mySkill_box.remove(array);
-        }      
-           
-        
+        }
+
+
 }
 
 function add_box_experience() {
@@ -68,45 +68,45 @@ function add_box_experience() {
     var parent_box = mySkill_box.parentNode;
         var newField = mySkill_box.cloneNode(true);
         // var newField = document.createElement('div');
-        parent_box.append(newField); 
+        parent_box.append(newField);
 }
 function remove_box_experience() {
     var array = document.getElementsByClassName('borderExperience')
-        var mySkill_box = document.getElementsByClassName('boxMyExperience')[0]    
+        var mySkill_box = document.getElementsByClassName('boxMyExperience')[0]
         if(array.length > 1){
             mySkill_box.remove(array);
         }
-        
+
 }
 
 function add_box_skills() {
     var mySkill_box = document.getElementsByClassName('boxMySkills')[0];
     var parent_box = mySkill_box.parentNode;
         var newField = mySkill_box.cloneNode(true);
-        parent_box.append(newField); 
+        parent_box.append(newField);
 }
- 
+
 function remove_box_skills() {
         var array = document.getElementsByClassName('my-skill-item')
-        var mySkill_box = document.getElementsByClassName('boxMySkills')[0]  
+        var mySkill_box = document.getElementsByClassName('boxMySkills')[0]
         if(array.length > 1){
             mySkill_box.remove(array);
-        }  
+        }
 
-           
-        
+
+
 }
 
 
 
-      
-      
 
 
-function object(){
+
+
+function getAllInputData(){
     //Intro
     phone = document.querySelectorAll('input[name="phone"]')[0].value;
-    avatar = document.getElementById('avt').src;
+    // avatar = document.getElementById('avt').src;
     job = document.querySelectorAll('input[name="job"]')[0].value;
     jobTextarea = document.querySelectorAll('textarea[name="job-textarea"]')[0].value;
     //About Me
@@ -161,33 +161,26 @@ function object(){
             value_: e[1]
         }
     })
-    objectJS = {
+
+    return {
         phone: phone,
-        avt: avt,
+        // avt: avt,
         job: job,
         jobDescription: jobTextarea,
         address: address,
         nickname: nickname,
         introduction: introduction,
-        workingTime: workingTime,    
-        name: nameYearOfExperience, 
+        workingTime: workingTime,
+        name: nameYearOfExperience,
         gmail: gmail,
-        dateofbirth: dateOfBirth,       
+        dateofbirth: dateOfBirth,
         addressYearOfExperience: addressYearOfExperience,
         facebook: facebook,
-        github: github, 
-        linkedin: linkedin, 
-        services: services,                 
+        github: github,
+        linkedin: linkedin,
+        services: services,
         education: myEducation,
-        experience: myExperience, 
+        experience: myExperience,
         skills: myKills,
-    }
-    return ObjectJS;
-   
-    
+    };
 }
-
-    
-
-
-
