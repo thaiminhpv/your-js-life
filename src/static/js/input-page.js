@@ -173,3 +173,36 @@ function getAllInputData() {
     skills: myKills,
   };
 }
+
+function submitJSONform(){
+  let data = getAllInputData();
+  let json = JSON.stringify(data);
+  fetch('/create-portfolio', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: json
+  }).then(res => res.json())
+      .then(id => {
+        console.log(id);
+        submitFileAndIdAndRedirect(id);
+      }).catch(err => console.log(err));
+}
+
+function submitFileAndIdAndRedirect(id) {
+  let formData = new FormData();
+  formData.append('file', document.querySelectorAll('input[name="avt"]')[0].files[0]);
+  formData.append('id', id);
+  fetch('/create-portfolio/file', {
+      method: 'POST',
+      body: formData
+    })
+    .then(res => res.json())
+    .then(res => {
+      // if success, redirect to portfolio/:id
+      if (res.status === 'success') {
+        window.location.href = '/portfolio/' + id;
+      }
+    })
+}
