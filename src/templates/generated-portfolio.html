@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,7 +59,7 @@
         <a class="logo" href title="JS-Club"> <img src="/static/images/LogoJS.png" alt="JS-Club"
           style="width: 70px; height: 70px;"> </a>
         <!-- Logo End -->
-        <div class="text-3 ms-auto me-2"><span class="text-4 me-2"><i class="fas fa-phone"></i></span>{{portfolio.phone}}</div>
+        <div class="text-3 ms-auto me-2"><span class="text-4 me-2"><i class="fas fa-phone"></i></span>{{user.phone}}</div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#header-nav"><span></span><span></span><span></span></button>
         <div id="header-nav" class="collapse navbar-collapse">
           <div class="d-flex flex-column h-100 align-items-center justify-content-center">
@@ -69,19 +70,19 @@
               <li class="nav-item"><a class="nav-link smooth-scroll" href="#resume">Resume</a></li>
             </ul>
             <ul class="social-icons social-icons-light social-icons-lg social-icons-light d-inline-flex mt-4">
-              <li class="social-icons-facebook"><a data-bs-toggle="tooltip" href="{{portfolio.facebook}}" target="_blank" title
+              <li class="social-icons-facebook"><a data-bs-toggle="tooltip" href="{{user.facebook}}" target="_blank" title
                   data-bs-original-title="Facebook"><i class="fab fa-facebook"></i></a></li>
 
               <li class="social-icons-instagram">
-                <a data-bs-toggle="tooltip" href="{{portfolio.github}}" target="_blank" title data-bs-original-title="Github">
+                <a data-bs-toggle="tooltip" href="{{user.github}}" target="_blank" title data-bs-original-title="Github">
                   <i class="fa-brands fa-github"></i>
                 </a>
               </li>
 
-              <li class="social-icons-linkedin"><a data-bs-toggle="tooltip" href="{{portfolio.linkedin}}" target="_blank" title
+              <li class="social-icons-linkedin"><a data-bs-toggle="tooltip" href="{{user.linkedin}}" target="_blank" title
                   data-bs-original-title="Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
 
-              <li class="social-icons-dribbble"><a data-bs-toggle="tooltip" href="{{portfolio.gmail}}" target="_blank" title
+              <li class="social-icons-dribbble"><a data-bs-toggle="tooltip" href="{{user.gmail}}" target="_blank" title
                   data-bs-original-title="Gmail"> <i class="fa-solid fa-envelope"></i> </a></li>
             </ul>
           </div>
@@ -89,7 +90,202 @@
       </div>
     </nav>
     <!-- Navbar End --> 
+  </header>
+  <!-- Header End --> 
   
+  <!-- Content
+  ============================================= -->
+  <div id="content" role="main"> 
+    
+    <!-- Intro
+    ============================================= -->
+    <section id="home" class="bg-primary d-flex fullscreen position-relative py-5">
+      <div class="container my-auto py-4">
+        <div class="row">
+          <div class="col-lg-7 text-center text-lg-start align-self-center order-1 order-lg-0 wow fadeIn">
+            <h1 class="text-12 fw-300 mb-0 text-uppercase">Hi, I'm a {{user.job}}</h1>
+            <div class="typed-strings">
+              <p>Designer</p>
+              <p>Developer</p>
+            </div>
+            <h2 class="text-21 fw-600 text-uppercase mb-0 ms-n1"><span class="typed"></span></h2>
+            <p class="text-5">based in {{user.address}}.</p>
+            <a href="#portfolio" class="btn btn-dark rounded-0 smooth-scroll mt-3">View My Works</a>
+		  </div>
+          <div class="col-lg-5 text-center align-self-center mb-4 mb-lg-0 order-0 order-lg-1">
+            <div class="bg-light rounded-pill d-inline-block p-3 shadow-lg wow zoomIn"> <img class="img-fluid rounded-pill d-block" src="{{image_path}}" title="I'm Callum" alt></div>
+          </div>
+        </div>
+      </div>
+      <a href="#about" class="scroll-down-arrow text-dark smooth-scroll"><span class="animated"><i class="fas fa-arrow-down"></i></span></a> </section>
+    <!-- Intro end --> 
+    
+    <!-- About
+    ============================================= -->
+    <section id="about" class="section">
+      <div class="container"> 
+        <!-- Heading -->
+        <p class="text-center mb-2 wow fadeInUp"><span class="bg-primary text-dark px-2">About Me</span></p>
+        <h2 class="text-10 fw-600 text-center mb-5 wow fadeInUp">Know Me More</h2>
+        <!-- Heading end-->
+        
+        <div class="row">
+          <div class="col-lg-8 text-center text-lg-start wow fadeInUp">
+            <h2 class="text-8 fw-400 mb-3">Hi, I'm <span class="fw-700 border-bottom border-3 border-primary">{{user.name}}</span></h2>
+            <p class="text-5">{{user.introduction}}</p>
+          </div>
+          <div class="col-lg-4 mt-4 mt-lg-0 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="featured-box style-4">
+              <div class="featured-box-icon text-25 fw-500 bg-primary rounded-circle"><span class="wow heartBeat" data-wow-delay="1.3s">{{user.workingtime}}</span></div>
+              <h3 class="text-7 wow rubberBand" data-wow-delay="2s">Years of <span class="fw-700">Experience</span></h3>
+            </div>
+          </div>
+        </div>
+        <div class="row gy-3 mt-4">
+          <div class="col-6 col-lg-3 wow fadeInUp">
+            <p class="text-muted fw-500 mb-0">Name:</p>
+            <p class="text-4 text-dark fw-600 mb-0">{{user.name}}</p>
+          </div>
+          <div class="col-6 col-lg-3 wow fadeInUp" data-wow-delay="0.2s">
+            <p class="text-muted fw-500 mb-0">Email:</p>
+            <p class="text-4 fw-600 mb-0"><a class="link-dark" href>{{user.gmail}}</a></p>
+          </div>
+          <div class="col-6 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+            <p class="text-muted fw-500 mb-0">Date of birth:</p>
+            <p class="text-4 text-dark fw-600 mb-0">{{user.dateofbirth}}</p>
+          </div>
+          <div class="col-6 col-lg-3 wow fadeInUp" data-wow-delay="0.4s">
+            <p class="text-muted fw-500 mb-0">From:</p>
+            <p class="text-4 text-dark fw-600 mb-0">{{user.address}}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About end --> 
+    
+    <!-- Services
+    ============================================= -->
+    {% if(services != [])%}
+    <section id="services" class="section bg-light">
+      <div class="container"> 
+        <!-- Heading -->
+        <p class=" text-center mb-2 wow fadeInUp"><span class="bg-primary text-dark px-2">What I Do?</span></p>
+        <h2 class="text-10 fw-600 text-center mb-5 wow fadeInUp">How I can help your next project</h2>
+        <!-- Heading end-->
+        
+        <div class="row gy-5 mt-5">
+          {%for item in services%}
+          <div class="col-sm-6 col-lg-4 wow fadeInUp">
+            <div class="featured-box text-center px-md-4">
+              <h3 class="text-6 fw-600 mb-3">{{item['title']}}</h3>
+              <p class="text-muted mb-0">{{item['description']}}</p>
+            </div>
+          </div>
+          {%endfor%}
+        </div>
+      </div>
+    </section>
+    <!-- Services end --> 
+    {%endif%}
+
+    
+    <!-- Resume
+    ============================================= -->
+    {%if ( (education != []) or (experience != []) )%}
+    <section id="resume" class="section">
+      <div class="container"> 
+        <!-- Heading -->
+        <p class=" text-center mb-2 wow fadeInUp"><span class="bg-primary text-dark px-2">Resume</span></p>
+        <h2 class="text-10 fw-600 text-center mb-5 wow fadeInUp">A summary of My Resume</h2>
+        <!-- Heading end-->
+        
+        <div class="row g-5 mt-5"> 
+          {% if(education != [])%}
+          <!-- My Education -->
+          <div class="col-lg-6 wow fadeInUp">
+            <h2 class="text-7 fw-600 mb-4 pb-2">My Education</h2>
+            <div class="border-start border-2 border-primary ps-3">
+              {%for item in education%}
+              <h3 class="text-5">{{item['title']}}</h3>
+              <p class="mb-2">{{item['time']}}</p>
+              <p class="text-muted">{{item['content']}}</p>
+                {% if(education.index(item)) != education.index(education[-1]) %}
+                  <hr class="my-4">
+                {% endif %}
+              {%endfor%}
+            </div>
+          </div>
+          {%endif%}
+          
+          
+          <!-- My Experience -->
+          {% if(experience != [])%}
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
+            <h2 class="text-7 fw-600 mb-4 pb-2">My Experience</h2>
+            <div class="border-start border-2 border-primary ps-3">
+              {%for item in experience%}
+              <h3 class="text-5">{{item['title']}}</h3>
+              <p class="mb-2">{{item['time']}}</p>
+              <p class="text-muted">{{item['content']}}</p>
+                {% if(experience.index(item)) != experience.index(experience[-1]) %}
+                  <hr class="my-4">
+                {% endif %}
+              {%endfor%}
+            </div>
+          </div>
+          {%endif%}
+        </div>
+
+        {% if(skills != [])%}
+        <!-- My Skills -->
+        <h2 class="text-7 fw-600 mb-4 pb-2 mt-5 wow fadeInUp">My Skills</h2>
+        <div class="row gx-5">
+          
+          <div class="col-md-6 wow fadeInUp">
+            {%for item in skills%}
+              {% if((skills.index(item) % 2) == 0) %}
+              <p class="fw-500 text-start mb-2">{{item['title']}} <span class="float-end">{{item['value']}}%</span></p>
+              <div class="progress progress-sm mb-4">
+                <div class="progress-bar" role="progressbar" style = "width: {{item['value']}}%"  aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              {% endif %}
+            {%endfor%}
+          </div>
+          <div class="col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+            {%for item in skills%}
+              {% if((skills.index(item) % 2) == 1) %}
+              <p class="fw-500 text-start mb-2">{{item['title']}}<span class="float-end">{{item['value']}}%</span></p>
+              <div class="progress progress-sm mb-4">
+                <div class="progress-bar" role="progressbar" style="width: {{item['value']}}%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              {% endif %}
+            {%endfor%}
+          </div>
+        </div>
+        {%endif%}
+
+      </div>
+    </section>
+    <!-- Resume end --> 
+    {%endif%}
+  </div>
+  <!-- Content end --> 
+  
+  <!-- Footer
+  ============================================= -->
+  <footer id="footer" class="section bg-dark text-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 text-center text-lg-start wow fadeInUp">
+          <p class="mb-2 mb-lg-0">Copyright © 2022 <a class="fw-600" href="#">Team 2</a>. All Rights Reserved.</p>
+        </div>
+        <div class="col-lg-6 wow fadeInUp">
+          <p class="mb-0 text-center text-lg-end">Designed by <a class="fw-600" href="#">Team 2- CTV JS</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer end --> 
   
 </div>
 <!-- Document Wrapper end --> 

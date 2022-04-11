@@ -1,84 +1,75 @@
+import threading
+from time import time
 import cloudinary.uploader
-from flask import redirect, url_for, render_template, request, Blueprint
-
+from flask import redirect, template_rendered, url_for, render_template, request, Blueprint
+from . import config
 from . import model
 from .dataprovider import InteractDatabase
+from src import dataprovider
+import time
 
 user = Blueprint("user", __name__)
 
 
-@user.route("/", methods=["POST", "GET"])
+@user.route("/", methods=["GET"])
 def home():
-    if request.method == "POST":
-        render_template(url_for('user.register'))
-    elif request.method == "GET":
-        MAX_DESCRIPTION_LENGTH = 15
-        portfolios_tuple = InteractDatabase.get_all_portfolio()
-        portfolios = list(map(list, portfolios_tuple))  # convert list of tuple to list of list
-        for index, portfolio in enumerate(portfolios):
-            if len(portfolio[2]) > MAX_DESCRIPTION_LENGTH:
-                portfolios[index][2] = portfolio[2][:MAX_DESCRIPTION_LENGTH] + "..."
+    MAX_DESCRIPTION_LENGTH = 15
+    portfolios_tuple = InteractDatabase.get_all_portfolio()
+    portfolios = list(map(list, portfolios_tuple))  # convert list of tuple to list of list
+    for index, portfolio in enumerate(portfolios):
+        if len(portfolio[2]) > MAX_DESCRIPTION_LENGTH:
+            portfolios[index][2] = portfolio[2][:MAX_DESCRIPTION_LENGTH] + "..."
 
-        return render_template("landing-page.html", portfolios=portfolios)
+    return render_template("landing-page.html", portfolios=portfolios)
 
 
-@user.route("/create-portfolio", methods=["POST", "GET"])
+@user.route("/create-portfolio", methods=["GET"])
+def create_portfolio_data_user():
+    return render_template("input-page.html")
+
+
+@user.route("/create-portfolio", methods=["POST"])
+def create_portfolio_file():
+    data = model.Users.getdatafromrequest(request.json) 
+    id = dataprovider.get_id()
+    threading.Thread(target=save_data, args=(id,data)).start()
+
+    return id, 200
+
+
+@user.route("/create-portfolio/file", methods=["POST"])
 def register():
-    if request.method == "POST":
-        id = handle_data(request)
-        return redirect(url_for('user.portfolio', id=id))
-        # return id
-    elif request.method == "GET":
-        return render_template("input-page.html")
+    id = request.form['id']
+    path = get_path_image(request)
+    InteractDatabase.save_path_to_database(id, path)
+    return 200
 
 
 @user.route("/portfolio/<id>", methods=["GET"])
 def portfolio(id):
-    if id != 'None':
-        data = InteractDatabase.get_user_data_from_id(id)
+    data = InteractDatabase.get_user_data_from_id(id)
 
-        data_user = data['user']
-        path = data['path']
-        education = data['education']
-        services = data['services']
-        experience = data['experience']
-        skills = data['skills']
+    data_user = data['user']
+    path = data['path']
+    education = data['education']
+    services = data['services']
+    experience = data['experience']
+    skills = data['skills']
 
-        return render_template(
-            'generated-portfolio.html',
-            user=data_user, image_path=path, experience=experience,
-            education=education, services=services, skills=skills
-        )
-    else:
-        return redirect(url_for('user.register'))
+    return render_template(
+        'generated-portfolio.html',
+        user=data_user, image_path=path, experience=experience,
+        education=education, services=services, skills=skills
+    )
 
 
-def handle_data(request):
-    """
-    get data from request
-    save data to database ( data_user, experience, education, service, skills, path of image)
-    :param request:
-    :return:
-    """
-    data_user = model.Users.getdatafromrequest(request.form)
-    id = InteractDatabase.addportfolio(data_user)  # add data user to database and get id of this user
 
-    # request_json = request.json
-    # experience = request_json["experience"]
-    # InteractDatabase.save_exp(id, experience)
-
-    # education = request_json["education"]
-    # InteractDatabase.save_edu(id, education)
-
-    # services = request_json["services"]
-    # InteractDatabase.save_services(id, services)
-
-    # skills = request_json["skills"]
-    # InteractDatabase.save_skills(id, skills)
-
-    path = get_path_image(request)  # get path user's avt from cloud
-    InteractDatabase.save_path_to_database(id, path)
-    return id
+def save_data(id, data):
+    InteractDatabase.addportfolio(data['user'])
+    InteractDatabase.save_exp(id, data['experience'])
+    InteractDatabase.save_edu(id, data['education'])
+    InteractDatabase.save_servicesid, (data['services'])
+    InteractDatabase.save_skills(id, data['skills'])
 
 
 def get_path_image(request):
