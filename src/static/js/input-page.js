@@ -207,7 +207,7 @@ function submitFileAndIdAndRedirect(id) {
       console.log(res);
       // if success, redirect to portfolio/:id
       if (res.status === 'success') {
-        window.location.href = '/portfolio/' + id;
+        window.location.href = `/success?id=${id}`;
       }
     })
 }

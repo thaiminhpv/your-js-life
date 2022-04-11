@@ -32,7 +32,7 @@ def create_portfolio_data_user():
 def create_portfolio_file():
     data = model.Users.getdatafromrequest(request.json)
     id = dataprovider.get_id()
-    threading.Thread(target=save_data, args=(id,data)).start()
+    threading.Thread(target=save_data, args=(id, data)).start()
     return Response(str(id), status=200)
 
 
@@ -61,13 +61,16 @@ def portfolio(id):
         education=education, services=services, skills=skills
     )
 
+@user.route("/success", methods=["GET"])
+def success():
+    return render_template("success.html")
 
 
 def save_data(id, data):
     InteractDatabase.addportfolio(data['user'])
     InteractDatabase.save_exp(id, data['experience'])
     InteractDatabase.save_edu(id, data['education'])
-    InteractDatabase.save_services(id , data['services'])
+    InteractDatabase.save_services(id, data['services'])
     InteractDatabase.save_skills(id, data['skills'])
 
 
