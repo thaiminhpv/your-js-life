@@ -173,7 +173,8 @@ function getAllInputData(){
     }
 }
 
-function submitJSONform(){
+function submitJSONform(e){
+  e.preventDefault(); // stop the form from reloading the page
   let data = getAllInputData();
   let json = JSON.stringify(data);
   fetch('/create-portfolio', {
@@ -205,3 +206,5 @@ function submitFileAndIdAndRedirect(id) {
       }
     })
 }
+
+document.getElementById('submitBtn').addEventListener('click', submitJSONform);
