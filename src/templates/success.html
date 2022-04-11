@@ -82,8 +82,8 @@
           </p>
         </section>
         <footer>
-          <input type="text" value="link">
-          <button>Copy Link</button>
+          <input id="link" type="text" value="link">
+          <button id="copyBtn" >Copy Link</button>
         </footer>
       </div>
     </section>
@@ -139,3 +139,19 @@
   <script src="/static/js/switcher.min.js"></script>
   <!-- Custom Script -->
   <script src="/static/js/theme.js"></script>
+
+  <script>
+      const urlString = window.location.href;
+      let url = new URL(urlString);
+      let id = url.searchParams.get("id");
+      console.log(id);
+      document.getElementById("link").value = `https://${window.location.hostname}/portfolio.html?id=${id}`;
+      // copy to clipboard
+      document.getElementById("copyBtn").addEventListener("click", function() {
+          document.getElementById("link").select();
+          // do something here
+      });
+  </script>
+
+</body>
+</html>
