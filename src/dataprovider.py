@@ -10,9 +10,9 @@ connection = connect(**DATABASE_CONFIG)
 
 def get_id():
     """
-    :return: id of new user
+    :return: id of new user, which is max(id) + 1, if there is no user in database, return 1
     """
-    data = str(InteractDatabase.executequery("SELECT max(id) FROM portfolio;"))
+    data = str(InteractDatabase.executequery("SELECT IFNULL(MAX(id),0) FROM portfolio"))
     id = ''
     for i in range(len(data)):
         if data[i].isdigit():
