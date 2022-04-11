@@ -75,6 +75,33 @@ input:focus {
   border-width: 2.5px;
 }
 
+
+/*Experience*/
+.borderExperience {
+  border: 1.5px solid #fff;
+  border-radius: 3px;
+  position: relative;
+  padding: 0.8rem;
+}
+
+.borderExperience:hover {
+  border: 1.5px solid rgb(97, 95, 95);
+}
+
+.borderExperience:hover .buttonExperience {
+  visibility: visible;
+}
+
+.buttonExperience {
+  position: absolute;
+  top: -18%;
+  right: 0;
+  visibility: hidden;
+}
+
+.borderButtonExperience {
+  border-width: 2.5px;
+}
 /* input range skill */
 .inputRange {
   cursor: pointer;
