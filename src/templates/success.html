@@ -147,7 +147,7 @@
     let url = new URL(urlString);
     let id = url.searchParams.get("id");
     console.log(id);
-    document.getElementById("link").value = `https://${window.location.hostname}/portfolio.html?id=${id}`;
+    document.getElementById("link").value = `${urlString.includes("https://") ? "https://" : "http://"}://${window.location.hostname}/portfolio/${id}`;
     // copy to clipboard
     // document.getElementById("copyBtn").addEventListener("click", function () {
     //   document.getElementById("link").select();
