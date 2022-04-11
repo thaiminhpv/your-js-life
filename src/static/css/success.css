@@ -18,6 +18,7 @@ body {
   background: linear-gradient(to right, var(--start-color), var(--end-color))
     no-repeat;
   font-family: 'Nunito', sans-serif;
+  overflow: hidden;
 }
 
 .wrapper {
