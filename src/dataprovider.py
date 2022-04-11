@@ -233,3 +233,4 @@ class InteractDatabase:
             LIMIT 12
             """)
         return data
+
