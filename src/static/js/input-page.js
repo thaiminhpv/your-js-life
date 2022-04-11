@@ -152,7 +152,7 @@ function getAllInputData(){
     let myKills = [...document.getElementsByClassName('boxMySkills')].map(e => [...e.getElementsByClassName('form-skill')].map(e => e.children[0].value)).map(e => {
         return {
             skill: e[0],
-            value_: e[1]
+            value : e[1]
         }
     })
     return {

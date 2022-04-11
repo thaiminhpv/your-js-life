@@ -80,7 +80,7 @@ def save_data(id, data):
     InteractDatabase.save_edu(id, data['education'])
     InteractDatabase.save_services(id, data['services'])
     InteractDatabase.save_skills(id, data['skills'])
-
+   
 
 def get_path_image(request):
     file = request.files.get('file', None)
