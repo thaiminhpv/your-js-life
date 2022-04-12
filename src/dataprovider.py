@@ -197,7 +197,7 @@ class InteractDatabase:
             id=temp[0],
             name=temp[1],
             nickname=temp[2],
-            texterea=temp[3].split('\\n'),
+            texterea=temp[3].split("\n"),
             gmail=temp[4],
             phone=temp[5],
             address=temp[6],
@@ -230,6 +230,10 @@ class InteractDatabase:
     def get_all_portfolio():
         data = InteractDatabase.executequery(
             """
-            SELECT p.id, p.name, p.introduction FROM portfolio as p LIMIT 12
+            SELECT
+            p.id, p.name, p.introduction, ap.path
+            FROM portfolio as p LEFT JOIN avt_path ap on p.id = ap.portfolio_id
+            LIMIT 12
             """)
         return data
+
