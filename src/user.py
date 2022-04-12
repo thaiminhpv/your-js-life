@@ -61,7 +61,6 @@ def portfolio(id):
     # if params emoji exist (/portfolio/<id>?emoji=true), then convert all string characters to emoji
     if request.args.get('emoji') == 'true':
         data_user = convert_obj_to_emoji(data_user)
-        path = convert_obj_to_emoji(path)
         education = convert_obj_to_emoji(education)
         services = convert_obj_to_emoji(services)
         experience = convert_obj_to_emoji(experience)
