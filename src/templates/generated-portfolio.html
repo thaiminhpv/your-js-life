@@ -114,7 +114,7 @@
             <a href="#portfolio" class="btn btn-dark rounded-0 smooth-scroll mt-3">View My Works</a>
 		  </div>
           <div class="col-lg-5 text-center align-self-center mb-4 mb-lg-0 order-0 order-lg-1">
-            <div class="bg-light rounded-pill d-inline-block p-3 shadow-lg wow zoomIn"> <img class="img-fluid rounded-pill d-block" src="{{image_path}}" title="I'm Callum" alt></div>
+            <div class="bg-light rounded-pill d-inline-block p-3 shadow-lg wow zoomIn"> <img class="img-fluid rounded-pill d-block" src="{{image_path or 'https://res.cloudinary.com/dxu6nsoye/image/upload/v1649690712/sf6owaxixfmia39yffhv.png'}}" title="I'm Callum" alt></div>
           </div>
         </div>
       </div>
@@ -166,7 +166,7 @@
     
     <!-- Services
     ============================================= -->
-    {% if(services != [])%}
+    {%if not ((services.index(services[-1]) == services.index(services[0])) and (services[0]['title'] == ''))%}
     <section id="services" class="section bg-light">
       <div class="container"> 
         <!-- Heading -->
@@ -186,13 +186,13 @@
         </div>
       </div>
     </section>
-    <!-- Services end --> 
     {%endif%}
-
+    <!-- Services end --> 
+    
     
     <!-- Resume
     ============================================= -->
-    {%if ( (education != []) or (experience != []) )%}
+    {%if not ( (education[0]['title'] == '') and (experience[0]['title'] == '') and (not skills) ) %}
     <section id="resume" class="section">
       <div class="container"> 
         <!-- Heading -->
@@ -201,7 +201,7 @@
         <!-- Heading end-->
         
         <div class="row g-5 mt-5"> 
-          {% if(education != [])%}
+          {%if not (education[0]['title'] == '')%}
           <!-- My Education -->
           <div class="col-lg-6 wow fadeInUp">
             <h2 class="text-7 fw-600 mb-4 pb-2">My Education</h2>
@@ -220,7 +220,7 @@
           
           
           <!-- My Experience -->
-          {% if(experience != [])%}
+          {%if not (experience[0]['title'] == '')%}
           <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
             <h2 class="text-7 fw-600 mb-4 pb-2">My Experience</h2>
             <div class="border-start border-2 border-primary ps-3">
@@ -237,15 +237,16 @@
           {%endif%}
         </div>
 
-        {% if(skills != [])%}
+        
         <!-- My Skills -->
+        {%if skills%}
         <h2 class="text-7 fw-600 mb-4 pb-2 mt-5 wow fadeInUp">My Skills</h2>
         <div class="row gx-5">
           
           <div class="col-md-6 wow fadeInUp">
             {%for item in skills%}
               {% if((skills.index(item) % 2) == 0) %}
-              <p class="fw-500 text-start mb-2">{{item['title']}} <span class="float-end">{{item['value']}}%</span></p>
+              <p class="fw-500 text-start mb-2">{{item['skill']}} <span class="float-end">{{item['value']}}%</span></p>
               <div class="progress progress-sm mb-4">
                 <div class="progress-bar" role="progressbar" style = "width: {{item['value']}}%"  aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
@@ -255,7 +256,7 @@
           <div class="col-md-6 wow fadeInUp" data-wow-delay="0.2s">
             {%for item in skills%}
               {% if((skills.index(item) % 2) == 1) %}
-              <p class="fw-500 text-start mb-2">{{item['title']}}<span class="float-end">{{item['value']}}%</span></p>
+              <p class="fw-500 text-start mb-2">{{item['skill']}}<span class="float-end">{{item['value']}}%</span></p>
               <div class="progress progress-sm mb-4">
                 <div class="progress-bar" role="progressbar" style="width: {{item['value']}}%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
