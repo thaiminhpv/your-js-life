@@ -220,7 +220,7 @@
           
           
           <!-- My Experience -->
-          {% if(experience != [])%}
+          {%if not ((experience.index(experience[-1]) == experience.index(experience[0])) and (experience[0]['title'] == ''))%}
           <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
             <h2 class="text-7 fw-600 mb-4 pb-2">My Experience</h2>
             <div class="border-start border-2 border-primary ps-3">
