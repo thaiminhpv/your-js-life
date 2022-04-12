@@ -681,6 +681,7 @@ hr {
   display: flex;
   -ms-flex-item-align: stretch;
   align-self: stretch;
+  
 }
 
 /*=== 4.1 Navigation ===*/
@@ -3660,3 +3661,12 @@ input:-internal-autofill-selected {
   left: -40px;
   border-radius: 4px 0px 0px 4px;
 }
+video {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+

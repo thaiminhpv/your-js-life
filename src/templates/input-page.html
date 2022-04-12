@@ -36,7 +36,7 @@
 </head>
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
- <form action="#" method="post" enctype="multipart/form-data">
+ <form method="post" id="form" onsubmit="return false;">
   <!-- Preloader -->
   <div class="preloader">
     <div class="lds-ellipsis">
@@ -130,7 +130,7 @@
                 <img id="avt" class="img-fluid rounded-pill d-block" src="/static/images/web-developer.jpg">
               </div>
 
-              <input name="avt" type="file" id="default-btn" hidden>
+              <input type="file" id="default-btn" name="file" hidden>
               <button type="button" onclick="defaultBtnActive()" id="custom-btn" class="btn btn-warning">Choose your
                 photo</button>
             </div>
@@ -429,7 +429,7 @@
               <!-- x2 here -->
 
               <div class="border-start border-2 border-primary ps-3 row boxMyExperience" >
-                <div class="borderExperience">
+                <div class="borderEducation">
                   <div>
                     <div class="form-group">
                       <input type="text" class="form-control text-5 mb-2 form-control-sm"
@@ -443,18 +443,18 @@
                       <textarea class="form-control text-muted"  rows="3" name="content"></textarea>
                     </div>
                   </div>
-                  <div class="buttonExperience">
-                    <button type="button" class="btn btn-outline-secondary btn-sm borderButtonExperience">
+                  <div class="buttonEducation">
+                    <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation">
                       <i class="fa-solid fa-arrow-up"></i>
                     </button>
-                    <button type="button" class="btn btn-outline-secondary btn-sm borderButtonExperience"
+                    <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation"
                       style="margin-right: 2rem;">
                       <i class="fa-solid fa-arrow-down"></i>
                     </button>
-                    <button onclick="remove_box_experience()" type="button" class="btn btn-outline-danger btn-sm borderButtonExperience">
+                    <button onclick="remove_box_experience()" type="button" class="btn btn-outline-danger btn-sm borderButtonEducation">
                       <i class="fa-solid fa-trash-can"></i>
                     </button>
-                    <button onclick="add_box_experience()" type="button" class="btn btn-outline-success btn-sm borderButtonExperience">
+                    <button onclick="add_box_experience()" type="button" class="btn btn-outline-success btn-sm borderButtonEducation">
                       <i class="fa-solid fa-plus"></i>
                     </button>
                   </div>
@@ -465,7 +465,7 @@
               <!-- x2 to here -->
 
               <!-- <div class="border-start border-2 border-primary ps-3 row boxMyExperience">
-                <div class="borderExperience">
+                <div class="borderEducation">
                   <div>
                     <div class="form-group">
                       <input type="text" class="form-control text-5 mb-2 form-control-sm"
@@ -500,7 +500,7 @@
               </div> -->
 
               <!-- <div class="border-start border-2 border-primary ps-3 row boxMyExperience">
-                <div class="borderExperience">
+                <div class="borderEducation">
                   <div>
                     <div class="form-group">
                       <input type="text" class="form-control text-5 mb-2 form-control-sm"
@@ -566,12 +566,13 @@
                   </div>
                   
                   </div>
+                </div>
+                
               </div>
-              
 
               <!-- x2 to here-->
 
-              <!-- <div class="col-md-6 wow fadeInUp py-3 borderInputRange boxMySkills">
+              <div class="col-md-6 wow fadeInUp py-3 borderInputRange boxMySkills">
                 <div class="borderButtonRange">
                   <button onclick="remove()" type="button" class="btn-outline-danger activeButton"
                     style="border: 2.5px solid red; margin-right: 1rem;">
@@ -592,9 +593,9 @@
                   </div>
                 </div>
                 
-              </div> -->
+              </div>
 
-              <!-- <div class="col-md-6 wow fadeInUp py-3 borderInputRange boxMySkills">
+              <div class="col-md-6 wow fadeInUp py-3 borderInputRange boxMySkills">
                 <div class="borderButtonRange">
                   <button type="button" class="btn-outline-danger activeButton" 
                     style="border: 2.5px solid red; margin-right: 1rem;">
@@ -612,9 +613,9 @@
                 <div class="progress progress-sm mb-4 form-skill">
                   <input class="inputRange" type="range" min="1" max="100" value="70" style="width: 100%" name="value_">
                 </div>
-              </div> -->
+              </div>
 
-              <!-- <div class="col-md-6 wow fadeInUp py-3 borderInputRange boxMySkills">
+              <div class="col-md-6 wow fadeInUp py-3 borderInputRange boxMySkills">
                 <div class="borderButtonRange">
                   <button type="button" class="btn-outline-danger activeButton"
                     style="border: 2.5px solid red; margin-right: 1rem;">
@@ -632,12 +633,12 @@
                 <div class="progress progress-sm mb-4 form-skill">
                   <input class="inputRange" type="range" min="1" max="100" value="70" style="width: 100%" name="value_">
                 </div>
-              </div> -->
+              </div>
 
             </div>
 
             <p class="text-center mt-5 wow fadeInUp">
-              <button onclick="submitJSONform()" type="submit" class="btn btn-outline-dark shadow-none rounded-0">Save</button>
+              <button id="submitBtn" type="submit" class="btn btn-outline-dark shadow-none rounded-0">Save</button>
             </p>
           </div>
       </section>
@@ -683,6 +684,8 @@
 
     </div>
     <!-- Document Wrapper end -->
+  </div>
+ </form>
 
     <!-- Back to Top
 ============================================= -->
@@ -719,12 +722,9 @@
     <!-- Custom Script -->
     <script src="/static/js/theme.js"></script>
 
-    <script src="/static/js/input-page.js"></script>
-
     <script src="https://kit.fontawesome.com/81e4fcabce.js" crossorigin="anonymous"></script>
-    
 
-    
+    <script src="/static/js/input-page.js"></script>
 </body>
 
 </html>
