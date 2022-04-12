@@ -1,0 +1,139 @@
+input {
+  border: 0;
+  padding: 5px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.aboutMeInput {
+  border: 1px solid black;
+  padding: 2px;
+}
+
+.btn {
+  transition-duration: 0ms;
+}
+
+/* upload avt */
+#custom-btn {
+  border-radius: 25px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem 0.6rem 1.2rem;
+}
+
+/* What I do */
+.borderWhatIDo {
+  border: 1.5px solid #fff;
+  border-radius: 3px;
+  position: relative;
+  padding: 0.8rem;
+}
+
+.borderWhatIDo:hover {
+  border: 1.5px solid rgb(97, 95, 95);
+}
+
+.borderWhatIDo:hover .buttonWhatIDo {
+  visibility: visible;
+}
+
+.buttonWhatIDo {
+  position: absolute;
+  top: -13%;
+  right: 0;
+  visibility: hidden;
+}
+
+/* My education , My experience */
+
+.borderEducation {
+  border: 1.5px solid #fff;
+  border-radius: 3px;
+  position: relative;
+  padding: 0.8rem;
+}
+
+.borderEducation:hover {
+  border: 1.5px solid rgb(97, 95, 95);
+}
+
+.borderEducation:hover .buttonEducation {
+  visibility: visible;
+}
+
+.buttonEducation {
+  position: absolute;
+  top: -18%;
+  right: 0;
+  visibility: hidden;
+}
+
+.borderButtonEducation {
+  border-width: 2.5px;
+}
+
+
+/*Experience*/
+.borderExperience {
+  border: 1.5px solid #fff;
+  border-radius: 3px;
+  position: relative;
+  padding: 0.8rem;
+}
+
+.borderExperience:hover {
+  border: 1.5px solid rgb(97, 95, 95);
+}
+
+.borderExperience:hover .buttonExperience {
+  visibility: visible;
+}
+
+.buttonExperience {
+  position: absolute;
+  top: -18%;
+  right: 0;
+  visibility: hidden;
+}
+
+.borderButtonExperience {
+  border-width: 2.5px;
+}
+/* input range skill */
+.inputRange {
+  cursor: pointer;
+}
+
+.borderInputRange {
+  border: 2px solid #fff;
+  border-radius: 5px;
+  position: relative;
+  opacity: 0.7;
+}
+
+.borderInputRange:hover {
+  border: 2px solid rgb(97, 95, 95);
+}
+.borderInputRange:hover .borderButtonRange {
+  visibility: visible;
+}
+
+.borderButtonRange {
+  visibility: hidden;
+  position: absolute;
+  top: -26%;
+  right: 0;
+}
+
+.activeButton {
+  background-color: transparent;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  border-radius: 0.25rem;
+  width: 4rem;
+  height: 2rem;
+  border-width: 3px;
+}
