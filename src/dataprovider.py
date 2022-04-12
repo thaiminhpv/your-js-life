@@ -194,7 +194,7 @@ class InteractDatabase:
             id=temp[0],
             name=temp[1],
             nickname=temp[2],
-            texterea=temp[3].split('\\n'),
+            texterea=temp[3].split('\n'),
             gmail=temp[4],
             phone=temp[5],
             address=temp[6],
