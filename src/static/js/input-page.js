@@ -39,26 +39,60 @@ try {
 }
 //Services
 function add_box() {
-    let services_box = document.getElementsByClassName('what-i-do-item')[0]
+    let services_box = document.getElementsByClassName('what-i-do-item')[0];
+    
+    // let input_tags = document.getElementsByClassName('what-i-do-item').length + 1;
     let parent_box = services_box.parentNode;
     let newField = services_box.cloneNode(true);
+    newField.setAttribute('id', Math.random() * 100);
+
     parent_box.append(newField); 
+    console.log(newField.getAttribute('id'));
 }
 
 function remove_box() {
     
-    let array = document.getElementsByClassName('borderWhatIDo')     
-    let services_box = document.getElementsByClassName('what-i-do-item')[0]
+    let array = document.getElementsByClassName('borderWhatIDo')   
+    let services_box = document.getElementsByClassName('what-i-do-item')[0]    
     let remove_button = document.getElementsByClassName('button-education-item');
     if(array.length > 1){
         services_box.remove(array);
     }
     else{
-        alert("Are you sure you want to delete this section?")
-
+        // alert("Are you sure you want to delete this section?")
+        confirm("Are you sure you want to delete this section?");
+        // function confirmDelete(){
+            if(confirm("Are you sure you want to delete this section?") == true){      
+                services_box.remove(array);
+            }else{
+                
+            }
+        
+        // }
     }
+
+    // let array = document.getElementsByClassName('borderWhatIDo')
+    // var getId = document.getElementById(this);
+
+    
+    // let services_box = document.getElementsByClassName('what-i-do-item')[0]
+    // console.log(this);
+    // for (let index = 0; index < array.length; index++) {
+    //     if(array.length > 1 && document.getElementsByClassName('borderWhatIDo')[index].getAttribute('id') === getId){
+    //         document.getElementsByClassName('borderWhatIDo')[index].remove();
+    //     }
+        
+    // }
+   
+        
         
 }
+//confirm-delete
+// function confirmDelete(){
+//     confirm("Bấm vào nút OK để tiếp tục");
+// }
+
+
 //MyEducation
 function add_box_education() {
     let mySkill_box = document.getElementsByClassName('boxMyEducation')[0];
@@ -72,7 +106,7 @@ function remove_box_education() {
     let mySkill_box = document.getElementsByClassName('boxMyEducation')[0]  
     if(array.length > 1){
         mySkill_box.remove(array);
-    }      
+    }     
            
         
 }
@@ -215,3 +249,5 @@ function submitFileAndIdAndRedirect(id) {
       }
     })
 }
+
+

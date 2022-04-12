@@ -253,17 +253,17 @@
                 <div class="input-group mb-3"><textarea class="text-muted mb-0 form-control" rows="5" name="description"></textarea></div>
 
                 <div class="buttonWhatIDo">
-                  <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation">
+                  <!-- <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation">
                     <i class="fa-solid fa-arrow-up"></i>
                   </button>
                   <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation"
                     style="margin-right: 2rem;">
                     <i class="fa-solid fa-arrow-down"></i>
-                  </button>
-                  <button  onclick="remove_box()" type="button" class="btn btn-outline-danger btn-sm borderButtonEducation button-education-item">
+                  </button> -->
+                  <button  onclick="remove_box() " type="button" class="btn btn-outline-danger btn-sm borderButtonEducation button-education-item">
                     <i class="fa-solid fa-trash-can"></i>
                   </button>
-                  <button onclick="add_box()"  type="button" class="btn btn-outline-success btn-sm borderButtonEducation">
+                  <button onclick="add_box()"  type="button" class="btn btn-outline-success btn-sm borderButtonEducation" >
                     <i class="fa-solid fa-plus"></i>
                   </button>
                 </div>
@@ -272,6 +272,24 @@
 
             
           </div>
+
+          <div class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                  <p>One fine body&hellip;</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
           
 
         </div>
@@ -312,13 +330,13 @@
 
                   <div class="buttonEducation">
 
-                    <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation">
+                    <!-- <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation">
                       <i class="fa-solid fa-arrow-up"></i>
                     </button>
                     <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation"
                       style="margin-right: 2rem;">
                       <i class="fa-solid fa-arrow-down"></i>
-                    </button>
+                    </button> -->
                     <button onclick="remove_box_education()" type="button" class="btn btn-outline-danger btn-sm borderButtonEducation">
                       <i class="fa-solid fa-trash-can"></i>
                     </button>
@@ -333,75 +351,7 @@
 
               
 
-              <!-- x2 to here -->
-
-              <!-- <div class="border-start border-2 border-primary ps-3 row boxMyEducation">
-                <div class="borderEducation">
-                  <div>
-                    <div class="form-group">
-                      <input type="text" class="form-control text-5 mb-2 form-control-sm master"
-                        placeholder="Master in Computer Engineering" name="title">
-                    </div>
-                    <div class="form-group">
-                      <input type="text" class="form-control mb-2 form-control-sm university"
-                        placeholder="Harvard University / 2015 - 2017" name="time">
-                    </div>
-                    <div class="form-group">
-                      <textarea class="form-control text-muted " rows="3" name="content"></textarea>
-                    </div>
-                  </div>
-                  <div class="buttonEducation">
-                    <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation">
-                      <i class="fa-solid fa-arrow-up"></i>
-                    </button>
-                    <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation"
-                      style="margin-right: 2rem;">
-                      <i class="fa-solid fa-arrow-down"></i>
-                    </button>
-                    <button type="button" class="btn btn-outline-danger btn-sm borderButtonEducation">
-                      <i class="fa-solid fa-trash-can"></i>
-                    </button>
-                    <button type="button" class="btn btn-outline-success btn-sm borderButtonEducation">
-                      <i class="fa-solid fa-plus"></i>
-                    </button>
-                  </div>
-                </div>
-                <hr class="my-4">
-              </div> -->
-
-              <!-- <div class="border-start border-2 border-primary ps-3 row boxMyEducation">
-                <div class="borderEducation">
-                  <div>
-                    <div class="form-group">
-                      <input type="text" class="form-control text-5 mb-2 form-control-sm master"
-                        placeholder="Master in Computer Engineering" name="title">
-                    </div>
-                    <div class="form-group">
-                      <input type="text" class="form-control mb-2 form-control-sm university"
-                        placeholder="Harvard University / 2015 - 2017" name="time">
-                    </div>
-                    <div class="form-group">
-                      <textarea class="form-control text-muted " rows="3" name="content"></textarea>
-                    </div>
-                  </div>
-                  <div class="buttonEducation">
-                    <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation">
-                      <i class="fa-solid fa-arrow-up"></i>
-                    </button>
-                    <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation"
-                      style="margin-right: 2rem;">
-                      <i class="fa-solid fa-arrow-down"></i>
-                    </button>
-                    <button type="button" class="btn btn-outline-danger btn-sm borderButtonEducation">
-                      <i class="fa-solid fa-trash-can"></i>
-                    </button>
-                    <button type="button" class="btn btn-outline-success btn-sm borderButtonEducation">
-                      <i class="fa-solid fa-plus"></i>
-                    </button>
-                  </div>
-                </div>
-                <hr class="my-4">
-              </div> -->
+              
 
             </div>
             <!-- My Experience -->
@@ -426,13 +376,13 @@
                     </div>
                   </div>
                   <div class="buttonEducation">
-                    <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation">
+                    <!-- <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation">
                       <i class="fa-solid fa-arrow-up"></i>
                     </button>
                     <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation"
                       style="margin-right: 2rem;">
                       <i class="fa-solid fa-arrow-down"></i>
-                    </button>
+                    </button> -->
                     <button onclick="remove_box_experience()" type="button" class="btn btn-outline-danger btn-sm borderButtonEducation">
                       <i class="fa-solid fa-trash-can"></i>
                     </button>
@@ -444,76 +394,7 @@
                 <hr class="my-4">
               </div>
 
-              <!-- x2 to here -->
-
-              <!-- <div class="border-start border-2 border-primary ps-3 row boxMyExperience">
-                <div class="borderEducation">
-                  <div>
-                    <div class="form-group">
-                      <input type="text" class="form-control text-5 mb-2 form-control-sm"
-                        placeholder="Master in Computer Engineering" name="title">
-                    </div>
-                    <div class="form-group">
-                      <input type="text" class="form-control mb-2 form-control-sm"
-                        placeholder="Harvard University / 2015 - 2017" name="time">
-                    </div>
-                    <div class="form-group"> -->
-                      <!-- <textarea class="form-control text-muted" id="exampleFormControlTextarea1" rows="3"></textarea> -->
-                      <!-- <textarea class="form-control text-muted" rows="3" name="content"></textarea>
-                    </div>
-                  </div>
-                  <div class="buttonEducation">
-                    <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation">
-                      <i class="fa-solid fa-arrow-up"></i>
-                    </button>
-                    <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation"
-                      style="margin-right: 2rem;">
-                      <i class="fa-solid fa-arrow-down"></i>
-                    </button>
-                    <button type="button" class="btn btn-outline-danger btn-sm borderButtonEducation">
-                      <i class="fa-solid fa-trash-can"></i>
-                    </button>
-                    <button type="button" class="btn btn-outline-success btn-sm borderButtonEducation">
-                      <i class="fa-solid fa-plus"></i>
-                    </button>
-                  </div>
-                </div>
-                <hr class="my-4">
-              </div> -->
-
-              <!-- <div class="border-start border-2 border-primary ps-3 row boxMyExperience">
-                <div class="borderEducation">
-                  <div>
-                    <div class="form-group">
-                      <input type="text" class="form-control text-5 mb-2 form-control-sm"
-                        placeholder="Master in Computer Engineering" name="title">
-                    </div>
-                    <div class="form-group">
-                      <input type="text" class="form-control mb-2 form-control-sm"
-                        placeholder="Harvard University / 2015 - 2017" name="time">
-                    </div>
-                    <div class="form-group">
-                      <textarea class="form-control text-muted" rows="3" name="content"></textarea>
-                    </div>
-                  </div>
-                  <div class="buttonEducation">
-                    <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation">
-                      <i class="fa-solid fa-arrow-up"></i>
-                    </button>
-                    <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation"
-                      style="margin-right: 2rem;">
-                      <i class="fa-solid fa-arrow-down"></i>
-                    </button>
-                    <button type="button" class="btn btn-outline-danger btn-sm borderButtonEducation">
-                      <i class="fa-solid fa-trash-can"></i>
-                    </button>
-                    <button type="button" class="btn btn-outline-success btn-sm borderButtonEducation">
-                      <i class="fa-solid fa-plus"></i>
-                    </button>
-                  </div>
-                </div>
-                <hr class="my-4">
-              </div> -->
+              
 </div>
             </div>
 
@@ -522,97 +403,37 @@
             <div class="row gx-5">
 
               <!-- x2 -->
-
-              <div class="col-md-6 wow fadeInUp py-3 borderInputRange boxMySkills">
-
-                <div class="borderButtonRange">
-                  <button type="button" class="btn-outline-danger activeButton "
-                    style="border: 2.5px solid red; margin-right: 1rem;">
-                    <i class="fa-solid fa-trash-can"></i>
-                  </button>
-                  <button  type="button" class="btn-outline-success activeButton"
-                    style="border: 2.5px solid green;">
-                    <i class="fa-solid fa-plus"></i>
-                  </button>
-                </div>
-
-                <div>
-                  <span class="float-end selectorValue">5%</span>        
-                  <p class="fw-500 text-start mb-3 form-skill">
-                    <input name="skill" type="text" class="form-control" placeholder="Web Design" 
-                    style="width:fit-content; padding: 5px;">               
-                  </p>
-                  <div class="progress progress-sm mb-4 form-skill">
-                    <input class="inputRange" type="range" min="1" max="100" value="70" style="width: 100%" name="value_">
+              
+                <div class="col-md-6 wow fadeInUp py-3 borderInputRange boxMySkills">
+                  <div class="my-skill-item">
+                  <div class="borderButtonRange">
+                    <button onclick="remove_box_skills()" type="button" class="btn-outline-danger activeButton "
+                      style="border: 2.5px solid red; margin-right: 1rem;">
+                      <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                    <button onclick="add_box_skills()" type="button" class="btn-outline-success activeButton"
+                      style="border: 2.5px solid green;">
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                  </div>
+  
+                  <div>
+                    <!-- <span class="float-end selectorValue">5%</span>         -->
+                    <p class="fw-500 text-start mb-3 form-skill">
+                      <input name="skill" type="text" class="form-control" placeholder="Web Design" 
+                      style="width:fit-content; padding: 5px;">               
+                    </p>
+                    <div class="progress progress-sm mb-4 form-skill">
+                      <input class="inputRange" type="range" min="1" max="100" value="70" style="width: 100%" name="value_">
+                    </div>
+                  </div>
+                  
                   </div>
                 </div>
                 
               </div>
 
-              <!-- x2 to here-->
-
-              <div class="col-md-6 wow fadeInUp py-3 borderInputRange boxMySkills">
-                <div class="borderButtonRange">
-                  <button onclick="remove()" type="button" class="btn-outline-danger activeButton"
-                    style="border: 2.5px solid red; margin-right: 1rem;">
-                    <i class="fa-solid fa-trash-can"></i>
-                  </button>
-                  <button onclick="add()" type="button" class="btn-outline-success activeButton" style="border: 2.5px solid green;">
-                    <i class="fa-solid fa-plus"></i>
-                  </button>
-                </div>
-                <div>
-                  <span class="float-end selectorValue">5%</span>
-                  <p class="fw-500 text-start mb-3 form-skill">
-                    <input  name="skill" type=" text" class="form-control" placeholder="Web Design"
-                      style="width:fit-content; padding: 5px;">
-                  </p>
-                  <div class="progress progress-sm mb-4 form-skill">
-                    <input class="inputRange" type="range" min="1" max="100" value="70" style="width: 100%" name="value_">
-                  </div>
-                </div>
-                
-              </div>
-
-              <div class="col-md-6 wow fadeInUp py-3 borderInputRange boxMySkills">
-                <div class="borderButtonRange">
-                  <button type="button" class="btn-outline-danger activeButton" 
-                    style="border: 2.5px solid red; margin-right: 1rem;">
-                    <i class="fa-solid fa-trash-can"></i>
-                  </button>
-                  <button type="button" class="btn-outline-success activeButton" style="border: 2.5px solid green;" id="">
-                    <i class="fa-solid fa-plus"></i>
-                  </button>
-                </div>
-                <span class="float-end selectorValue">5%</span>
-                <p class="fw-500 text-start mb-3 form-skill">
-                  <input type=" text" class="form-control" placeholder="Web Design" name="skill"
-                    style="width:fit-content; padding: 5px;">
-                </p>
-                <div class="progress progress-sm mb-4 form-skill">
-                  <input class="inputRange" type="range" min="1" max="100" value="70" style="width: 100%" name="value_">
-                </div>
-              </div>
-
-              <div class="col-md-6 wow fadeInUp py-3 borderInputRange boxMySkills">
-                <div class="borderButtonRange">
-                  <button type="button" class="btn-outline-danger activeButton"
-                    style="border: 2.5px solid red; margin-right: 1rem;">
-                    <i class="fa-solid fa-trash-can"></i>
-                  </button>
-                  <button type="button" class="btn-outline-success activeButton" style="border: 2.5px solid green;">
-                    <i class="fa-solid fa-plus"></i>
-                  </button>
-                </div>
-                <span class="float-end selectorValue">5%</span>
-                <p class="fw-500 text-start mb-3 form-skill">
-                  <input type=" text" class="form-control" placeholder="Web Design" name="skill"
-                    style="width:fit-content; padding: 5px;">
-                </p>
-                <div class="progress progress-sm mb-4 form-skill">
-                  <input class="inputRange" type="range" min="1" max="100" value="70" style="width: 100%" name="value_">
-                </div>
-              </div>
+              
 
             </div>
 
@@ -621,29 +442,7 @@
             </p>
           </div>
       </section>
-      <!-- Resume end -->
-
-      <!-- Portfolio
-    ============================================= -->
-      <!-- Portfolio end -->
-
-      <!-- Call to Action
-    ============================================= -->
-      <!-- Call to Action end -->
-
-      <!-- FAQ
-    ============================================= -->
-      <!-- FAQ end -->
-
-      <!-- Testimonial
-    ============================================= -->
-      <!-- Testimonial end -->
-
-      <!-- Contact Me
-    ============================================= -->
-      <!-- Contact Me end -->
-
-      <!-- Content end -->
+      
 
       <!-- Footer
   ============================================= -->
