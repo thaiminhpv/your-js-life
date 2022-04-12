@@ -7,6 +7,7 @@ from . import model
 from .dataprovider import InteractDatabase
 from src import dataprovider
 import time
+from .emojify import convert_obj_to_emoji
 
 user = Blueprint("user", __name__)
 
@@ -57,6 +58,14 @@ def portfolio(id):
     experience = data['experience']
     skills = data['skills']
 
+    # if params emoji exist (/portfolio/<id>?emoji=true), then convert all string characters to emoji
+    if request.args.get('emoji') == 'true':
+        data_user = convert_obj_to_emoji(data_user)
+        education = convert_obj_to_emoji(education)
+        services = convert_obj_to_emoji(services)
+        experience = convert_obj_to_emoji(experience)
+        skills = convert_obj_to_emoji(skills)
+
     return render_template(
         'generated-portfolio.html',
         user=data_user, image_path=path, experience=experience,
@@ -80,7 +89,7 @@ def save_data(id, data):
     InteractDatabase.save_edu(id, data['education'])
     InteractDatabase.save_services(id, data['services'])
     InteractDatabase.save_skills(id, data['skills'])
-   
+
 
 def get_path_image(request):
     file = request.files.get('file', None)
