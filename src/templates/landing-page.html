@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
   <link href="/static/images/favicon.png" rel="icon">
-  <title>JS CLUB</title>
+  <title>Your JS Life - Team 2 BCM</title>
   <meta name="description" content="Callum is responsive bootstrap 5 one page personal portfolio html template.">
   <meta name="author" content="harnishdesign.net">
 
@@ -58,10 +58,9 @@
         class="primary-menu navbar navbar-expand-none navbar-overlay navbar-text-light bg-transparent border-bottom-0 text-5 fw-600">
         <div class="container">
           <!-- Logo -->
-          <a class="logo" href title="JS-Club"> <img src="/static/images/LogoJS.png" alt="JS-Club"
+          <a class="logo" href="/" title="JS-Club"> <img src="/static/images/LogoJS.png" alt="JS-Club"
               style="width: 70px; height: 70px;"> </a>
           <!-- Logo End -->
-          <div class="text-3 text-white ms-auto me-2"><span class="text-4 me-2"><i class="fas fa-phone"></i></span></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#header-nav"><span></span><span></span><span></span></button>
           <div id="header-nav" class="collapse navbar-collapse">
@@ -70,22 +69,6 @@
                 <li class="nav-item"><a class="nav-link smooth-scroll active" href="#home">Home</a></li>
                 <li class="nav-item"><a class="nav-link smooth-scroll" href="#portfolio">Portfolio</a></li>
                 <li class="nav-item"><a class="nav-link smooth-scroll" href="#testimonial">Client Speak</a></li>
-              </ul>
-              <ul class="social-icons social-icons-light social-icons-lg social-icons-light d-inline-flex mt-4">
-                <li class="social-icons-facebook"><a data-bs-toggle="tooltip" href="#" target="_blank" title
-                    data-bs-original-title="Facebook"><i class="fab fa-facebook"></i></a></li>
-
-                <li class="social-icons-instagram">
-                  <a data-bs-toggle="tooltip" href="#" target="_blank" title data-bs-original-title="Github">
-                    <i class="fa-brands fa-github"></i>
-                  </a>
-                </li>
-
-                <li class="social-icons-linkedin"><a data-bs-toggle="tooltip" href="#" target="_blank" title
-                    data-bs-original-title="Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
-
-                <li class="social-icons-dribbble"><a data-bs-toggle="tooltip" href="#" target="_blank" title
-                    data-bs-original-title="Gmail"> <i class="fa-solid fa-envelope"></i> </a></li>
               </ul>
             </div>
           </div>
@@ -105,11 +88,11 @@
         <div class="hero-wrap">
           <div class="hero-mask opacity-8 bg-dark"></div>
           <div class="hero-bg parallax">
-              <iframe class="w-100 h-100"
-                      src="https://www.youtube.com/embed/Sk9olA1JUrc?controls=0&amp;autoplay=1&amp;mute=1&amp;showinfo=0&amp;autohide=1&amp;loop=1&amp;modestbranding=1&amp;iv_load_policy=3&amp;playlist=Sk9olA1JUrc"
-                      title="YouTube video player" frameborder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen></iframe>
+            <iframe class="w-100 h-100"
+              src="https://www.youtube.com/embed/Sk9olA1JUrc?controls=0&amp;autoplay=1&amp;mute=1&amp;showinfo=0&amp;autohide=1&amp;loop=1&amp;modestbranding=1&amp;iv_load_policy=3&amp;playlist=Sk9olA1JUrc"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
           </div>
           <div class="hero-content d-flex fullscreen py-5">
             <div class="container my-auto py-4">
@@ -140,51 +123,57 @@
         </div>
       </section>
       <!-- Intro end -->
- <!-- Portfolio
+      <!-- Portfolio
     ============================================= -->
-    <section id="portfolio" class="section bg-light">
-      <div class="container">
-        <!-- Heading -->
-        <p class=" text-center mb-2 wow fadeInUp"><span class="bg-primary text-dark px-2">Portfolio</span></p>
-        <h2 class="text-10 fw-600 text-center mb-5 wow fadeInUp">Some sample portfolios on our website</h2>
-        <!-- Heading end-->
+      <section id="portfolio" class="section bg-light">
+        <div class="container">
+          <!-- Heading -->
+          <p class=" text-center mb-2 wow fadeInUp"><span class="bg-primary text-dark px-2">Portfolio</span></p>
+          <h2 class="text-10 fw-600 text-center mb-5 wow fadeInUp">Some sample portfolios on our website</h2>
+          <!-- Heading end-->
 
-        <!-- Filter Menu -->
-        <ul
-          class="portfolio-menu nav nav-tabs fw-600 justify-content-start justify-content-md-center border-bottom-0 mb-4 wow fadeInUp">
-        
-        </ul>
-        <!-- Filter Menu end -->
-        <div class="portfolio wow fadeInUp">
-          <div class="row g-4 mt-3 portfolio-filter">
-            {%for item in portfolios%}
-            <div class="col-sm-6 col-lg-4 detailed">
-              <div class="portfolio-box">
-                <div class="portfolio-img"> <img class="img-fluid d-block" src="{{item[3] or 'https://res.cloudinary.com/dxu6nsoye/image/upload/v1649690712/sf6owaxixfmia39yffhv.png'}}" alt = "Portfolio images">
-                  <div class="portfolio-overlay"> <a class="stretched-link" href="/portfolio/{{item[0]}}"></a>
-                    <div class="portfolio-overlay-details">
-                      <p class="text-primary text-8"><i class="fas fa-file-alt"></i></p>
-                      <h5 class="text-white text-5">{{item[1]}}</h5>
-                      <span class="text-light">{{item[2]}}</span>
+          <!-- Filter Menu -->
+          <ul
+            class="portfolio-menu nav nav-tabs fw-600 justify-content-start justify-content-md-center border-bottom-0 mb-4 wow fadeInUp">
+
+          </ul>
+          <!-- Filter Menu end -->
+          <div class="portfolio wow fadeInUp">
+            <div class="row g-4 mt-3 portfolio-filter">
+              {%for item in portfolios%}
+              <div class="col-sm-6 col-lg-4 detailed">
+                <div class="portfolio-box">
+                  <div class="portfolio-img"> <img class="img-fluid d-block"
+                      src="{{item[3] or 'https://res.cloudinary.com/dxu6nsoye/image/upload/v1649690712/sf6owaxixfmia39yffhv.png'}}"
+                      alt="Portfolio images">
+                    <div class="portfolio-overlay"> <a class="stretched-link" href="/portfolio/{{item[0]}}"></a>
+                      <div class="portfolio-overlay-details">
+                        <p class="text-primary text-8"><i class="fas fa-file-alt"></i></p>
+                        <h5 class="text-white text-5">{{item[1]}}</h5>
+                        <span class="text-light">{{item[2]}}</span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
+              {%endfor%}
             </div>
-            {%endfor%}
           </div>
         </div>
-      </div>
-    </section>
-    <!-- Portfolio end --> 
+      </section>
+      <!-- Portfolio end -->
 
       <!-- Testimonial
     ============================================= -->
-      <section id="testimonial" class="section bg-secondary">
-        <div class="container">
+      <section id="testimonial" class="section bg-testimonial">
+
+        <div class="container ">
+
           <!-- Heading -->
-          <p class=" text-center mb-2 wow fadeIn"><span class="bg-primary text-dark px-2">Client Speak</span></p>
-          <h2 class="text-10 fw-600 text-white text-center mb-5 wow fadeIn">What Some of my Clients Say</h2>
+          <div style="z-index: 3;">
+            <p class=" text-center mb-2 wow fadeIn"><span class="bg-primary text-dark px-2">Client Speak</span></p>
+            <h2 class="text-10 fw-600 text-white text-center mb-5 wow fadeIn">What Some of my Clients Say</h2>
+          </div>
           <!-- Heading end-->
           <div class="row">
             <div class="col-lg-9 mx-auto wow fadeInUp">
@@ -209,7 +198,8 @@
                 </div>
                 <div class="item text-center px-5"> <span class="text-9 text-primary"><i
                       class="fa fa-quote-start"></i></span>
-                  <p class="text-5 text-white">“Em cũng giống như sợi phở: trắng trẻo và dẻo mềm, chỉ tiếc là không được anh thưởng thức.”</p>
+                  <p class="text-5 text-white">“Em cũng giống như sợi phở: trắng trẻo và dẻo mềm, chỉ tiếc là không được
+                    anh thưởng thức.”</p>
                   <img class="img-fluid d-inline-block w-auto rounded-circle shadow"
                     src="/static/images/testimonial/rsz_anhhung.jpg" alt> <strong
                     class="d-block text-3 fw-500 text-white">Phạm Quang Hưng</strong> <span class="text-light">Mentor of
@@ -294,3 +284,7 @@
     <script src="/static/js/switcher.min.js"></script>
     <!-- Custom Script -->
     <script src="/static/js/theme.js"></script>
+  </div>
+</body>
+
+</html>
