@@ -260,10 +260,10 @@
                     style="margin-right: 2rem;">
                     <i class="fa-solid fa-arrow-down"></i>
                   </button>
-                  <button  onclick="remove_box()" type="button" class="btn btn-outline-danger btn-sm borderButtonEducation button-education-item">
+                  <button  onclick="remove_box() " type="button" class="btn btn-outline-danger btn-sm borderButtonEducation button-education-item">
                     <i class="fa-solid fa-trash-can"></i>
                   </button>
-                  <button onclick="add_box()"  type="button" class="btn btn-outline-success btn-sm borderButtonEducation">
+                  <button onclick="add_box()"  type="button" class="btn btn-outline-success btn-sm borderButtonEducation" >
                     <i class="fa-solid fa-plus"></i>
                   </button>
                 </div>
@@ -272,6 +272,24 @@
 
             
           </div>
+
+          <div class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                  <p>One fine body&hellip;</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
           
 
         </div>
@@ -537,7 +555,7 @@
                   </div>
   
                   <div>
-                    <span class="float-end selectorValue">5%</span>        
+                    <!-- <span class="float-end selectorValue">5%</span>         -->
                     <p class="fw-500 text-start mb-3 form-skill">
                       <input name="skill" type="text" class="form-control" placeholder="Web Design" 
                       style="width:fit-content; padding: 5px;">               
@@ -706,25 +724,7 @@
     <script src="https://kit.fontawesome.com/81e4fcabce.js" crossorigin="anonymous"></script>
     
 
-    <!-- <script>
-      
-      function add_box() {
-        let box = document.getElementById('border-what-i-do')
-        console.log(box)
-        let newField = box.cloneNode(true);
-        console.log(newField)
-        box.append(newField); 
-        
-      }
-      function remove_box() {
-        var box = document.querySelector('.boxMySkills')
-        console.log(box)
-        box.remove(box);
-      
-      }
-      
-      
-    </script> -->
+    
 </body>
 
 </html>

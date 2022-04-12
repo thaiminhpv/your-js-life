@@ -45,11 +45,26 @@ function remove_box() {
         services_box.remove(array);
     }
     else{
-        alert("Are you sure you want to delete this section?")
-
+        // alert("Are you sure you want to delete this section?")
+        confirm("Are you sure you want to delete this section?");
+        // function confirmDelete(){
+            if(confirm("Are you sure you want to delete this section?") == true){      
+                services_box.remove(array);
+            }else{
+                
+            }
+        
+        // }
     }
         
+        
 }
+//confirm-delete
+// function confirmDelete(){
+//     confirm("Bấm vào nút OK để tiếp tục");
+// }
+
+
 //MyEducation
 function add_box_education() {
     var mySkill_box = document.getElementsByClassName('boxMyEducation')[0];
@@ -243,3 +258,5 @@ function submitFileAndIdAndRedirect(id) {
       }
     })
 }
+
+
