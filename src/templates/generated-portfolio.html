@@ -192,7 +192,7 @@
     
     <!-- Resume
     ============================================= -->
-    {%if ( (education != []) or (experience != []) )%}
+    <!-- {%if not (((education.index(education[-1]) == education.index(education[0])) and (education[0]['title'] == '')) and ((experience.index(experience[-1]) == experience.index(experience[0])) and (experience[0]['title'] == '')))%} -->
     <section id="resume" class="section">
       <div class="container"> 
         <!-- Heading -->
@@ -201,7 +201,7 @@
         <!-- Heading end-->
         
         <div class="row g-5 mt-5"> 
-          {%if not ((education.index(education[-1]) == education.index(education[0])) and (education[0]['title'] == ''))%}
+          {%if not (education[0]['title'] == '')%}
           <!-- My Education -->
           <div class="col-lg-6 wow fadeInUp">
             <h2 class="text-7 fw-600 mb-4 pb-2">My Education</h2>
@@ -220,7 +220,7 @@
           
           
           <!-- My Experience -->
-          {%if not ((experience.index(experience[-1]) == experience.index(experience[0])) and (experience[0]['title'] == ''))%}
+          {%if not (experience[0]['title'] == '')%}
           <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
             <h2 class="text-7 fw-600 mb-4 pb-2">My Experience</h2>
             <div class="border-start border-2 border-primary ps-3">
@@ -237,8 +237,9 @@
           {%endif%}
         </div>
 
-        {% if(skills != [])%}
+        
         <!-- My Skills -->
+        {%if skills%}
         <h2 class="text-7 fw-600 mb-4 pb-2 mt-5 wow fadeInUp">My Skills</h2>
         <div class="row gx-5">
           
