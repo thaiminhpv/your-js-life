@@ -61,8 +61,7 @@
           <a class="logo" href title="JS-Club"> <img src="/static/images/LogoJS.png" alt="JS-Club"
               style="width: 70px; height: 70px;"> </a>
           <!-- Logo End -->
-          <div class="text-3 text-white ms-auto me-2"><span class="text-4 me-2"><i class="fas fa-phone"></i></span>(060)
-            444 434 444</div>
+          <div class="text-3 text-white ms-auto me-2"><span class="text-4 me-2"><i class="fas fa-phone"></i></span></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#header-nav"><span></span><span></span><span></span></button>
           <div id="header-nav" class="collapse navbar-collapse">
@@ -142,7 +141,7 @@
       <div class="container">
         <!-- Heading -->
         <p class=" text-center mb-2 wow fadeInUp"><span class="bg-primary text-dark px-2">Portfolio</span></p>
-        <h2 class="text-10 fw-600 text-center mb-5 wow fadeInUp">Some sample Portfolio on our website</h2>
+        <h2 class="text-10 fw-600 text-center mb-5 wow fadeInUp">Some sample portfolios on our website</h2>
         <!-- Heading end-->
 
         <!-- Filter Menu -->
@@ -156,18 +155,18 @@
             {%for item in portfolios%}
             <div class="col-sm-6 col-lg-4 detailed">
               <div class="portfolio-box">
-                <div class="portfolio-img"> <img class="img-fluid d-block" src="item.path" alt>
-                  <div class="portfolio-overlay"> <a class="popup-ajax stretched-link" href="/portfolio/1.html"></a>
+                <div class="portfolio-img"> <img class="img-fluid d-block" src="{{item[3]}}" alt = "Portfolio images">
+                  <div class="portfolio-overlay"> <a class="popup-ajax stretched-link" href="/portfolio/{{item[0]}}"></a>
                     <div class="portfolio-overlay-details">
                       <p class="text-primary text-8"><i class="fas fa-file-alt"></i></p>
-                      <h5 class="text-white text-5">{{item.name}}</h5>
-                      <span class="text-light">{{item.introduction}}</span>
+                      <h5 class="text-white text-5">{{item[1]}}</h5>
+                      <span class="text-light">{{item[2][0:20]}}</span>
                     </div>
                   </div>
                 </div>
               </div>
+              {%endfor%}
             </div>
-            {%endfor%}
           </div>
         </div>
       </div>
