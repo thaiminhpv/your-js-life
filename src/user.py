@@ -1,4 +1,3 @@
-import threading
 from time import time
 import cloudinary.uploader
 from flask import redirect, template_rendered, url_for, render_template, request, Blueprint, Response, jsonify, abort
@@ -33,7 +32,7 @@ def create_portfolio_data_user():
 def create_portfolio_file():
     data = model.Users.getdatafromrequest(request.json)
     id = dataprovider.get_id()
-    threading.Thread(target=save_data, args=(id, data)).start()
+    save_data(id, data)
     return Response(str(id), status=200)
 
 
