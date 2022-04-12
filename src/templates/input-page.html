@@ -36,7 +36,7 @@
 </head>
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
- <form action="#" method="post" enctype="multipart/form-data">
+ <form method="post" id="form" onsubmit="return false;">
   <!-- Preloader -->
   <div class="preloader">
     <div class="lds-ellipsis">
@@ -111,7 +111,7 @@
           <div class="row">
             <div class="col-lg-7 text-center text-lg-start align-self-center order-1 order-lg-0 wow fadeIn">
               <h1 class="text-12 fw-300 mb-0 text-uppercase">Hi, I'm a
-                <input type="text" placeholder="Freelancer" style="width: 60%;" name="job">
+                <input  type="text" placeholder="Freelancer" style="width: 60%;" name="job">
               </h1>
               <div class="form-group">
                 <textarea class="form-control text-muted mb-2 mt-2" style="width: 60%;" rows="3" cols="15"
@@ -260,7 +260,7 @@
                     style="margin-right: 2rem;">
                     <i class="fa-solid fa-arrow-down"></i>
                   </button>
-                  <button  onclick="remove_box()" type="button" class="btn btn-outline-danger btn-sm borderButtonEducation">
+                  <button  onclick="remove_box()" type="button" class="btn btn-outline-danger btn-sm borderButtonEducation button-education-item">
                     <i class="fa-solid fa-trash-can"></i>
                   </button>
                   <button onclick="add_box()"  type="button" class="btn btn-outline-success btn-sm borderButtonEducation">
@@ -272,6 +272,7 @@
 
             
           </div>
+          
 
         </div>
       </section>
@@ -329,6 +330,8 @@
                 </div>
                 <hr class="my-4">
               </div>
+
+              
 
               <!-- x2 to here -->
 
@@ -614,7 +617,7 @@
             </div>
 
             <p class="text-center mt-5 wow fadeInUp">
-              <button type="submit" class="btn btn-outline-dark shadow-none rounded-0">Save</button>
+              <button id="submitBtn" type="submit" class="btn btn-outline-dark shadow-none rounded-0">Save</button>
             </p>
           </div>
       </section>
@@ -660,6 +663,8 @@
 
     </div>
     <!-- Document Wrapper end -->
+  </div>
+ </form>
 
     <!-- Back to Top
 ============================================= -->
@@ -696,31 +701,9 @@
     <!-- Custom Script -->
     <script src="/static/js/theme.js"></script>
 
-    <script src="/static/js/input-page.js"></script>
-
     <script src="https://kit.fontawesome.com/81e4fcabce.js" crossorigin="anonymous"></script>
-    
 
-    <!-- <script>
-      
-      function add_box() {
-        let box = document.getElementById('border-what-i-do')
-        console.log(box)
-        let newField = box.cloneNode(true);
-        console.log(newField)
-        box.append(newField); 
-        
-      }
-      function remove_box() {
-        var box = document.querySelector('.boxMySkills')
-        console.log(box)
-        box.remove(box);
-      
-      }
-      
-      
-    </script> -->
-  </form>
+    <script src="/static/js/input-page.js"></script>
 </body>
 
 </html>
