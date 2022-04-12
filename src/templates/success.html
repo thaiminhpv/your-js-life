@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
   <link href="/static/images/favicon.png" rel="icon">
-  <title>JS Club</title>
+  <title>Your JS Life - Team 2 BCM</title>
   <meta name="description" content="Callum is responsive bootstrap 5 one page personal portfolio html template.">
   <meta name="author" content="harnishdesign.net">
 
@@ -59,7 +59,7 @@
         class="primary-menu navbar navbar-expand-none navbar-overlay navbar-text-light bg-transparent border-bottom-0 text-5 fw-600">
         <div class="container">
           <!-- Logo -->
-          <a class="logo" href title="JS-Club"> <img src="/static/images/LogoJS.png" alt="JS-Club"
+          <a class="logo" href="/" title="JS-Club"> <img src="/static/images/LogoJS.png" alt="JS-Club"
               style="width: 100px; height: 100px;"> </a>
           <!-- Logo End -->
 
@@ -85,6 +85,9 @@
           <input id="link" type="text" value="link">
           <button type="button" id="copyBtn" onclick="myFunction()">Copy Link</button>
         </footer>
+        <a href="/create-portfolio"><button type="button" class="btn btn-primary" style="margin-top: 3.5rem;">Create
+            Another Portfolio</button></a>
+
       </div>
     </section>
 
@@ -147,7 +150,7 @@
     let url = new URL(urlString);
     let id = url.searchParams.get("id");
     console.log(id);
-    document.getElementById("link").value = `${urlString.includes("https://") ? "https" : "http"}://${window.location.hostname}/portfolio/${id}`;
+    document.getElementById("link").value = `https://${window.location.hostname}/portfolio.html?id=${id}`;
     // copy to clipboard
     // document.getElementById("copyBtn").addEventListener("click", function () {
     //   document.getElementById("link").select();
