@@ -1,7 +1,7 @@
 import threading
 from time import time
 import cloudinary.uploader
-from flask import redirect, template_rendered, url_for, render_template, request, Blueprint
+from flask import redirect, template_rendered, url_for, render_template, request, Blueprint, Response, jsonify, abort
 from . import config
 from . import model
 from .dataprovider import InteractDatabase
@@ -30,11 +30,10 @@ def create_portfolio_data_user():
 
 @user.route("/create-portfolio", methods=["POST"])
 def create_portfolio_file():
-    data = model.Users.getdatafromrequest(request.json) 
+    data = model.Users.getdatafromrequest(request.json)
     id = dataprovider.get_id()
-    threading.Thread(target=save_data, args=(id,data)).start()
-
-    return id, 200
+    threading.Thread(target=save_data, args=(id, data)).start()
+    return Response(str(id), status=200)
 
 
 @user.route("/create-portfolio/file", methods=["POST"])
@@ -42,12 +41,14 @@ def register():
     id = request.form['id']
     path = get_path_image(request)
     InteractDatabase.save_path_to_database(id, path)
-    return 200
+    return jsonify({"id": id, "status": "success"})
 
 
 @user.route("/portfolio/<id>", methods=["GET"])
 def portfolio(id):
     data = InteractDatabase.get_user_data_from_id(id)
+    if data is None:
+        abort(404)  # not found
 
     data_user = data['user']
     path = data['path']
@@ -63,17 +64,26 @@ def portfolio(id):
     )
 
 
+@user.errorhandler(404)
+def page_not_found(e):
+    return render_template("404.html"), 404
+
+
+@user.route("/success", methods=["GET"])
+def success():
+    return render_template("success.html")
+
 
 def save_data(id, data):
     InteractDatabase.addportfolio(data['user'])
     InteractDatabase.save_exp(id, data['experience'])
     InteractDatabase.save_edu(id, data['education'])
-    InteractDatabase.save_servicesid, (data['services'])
+    InteractDatabase.save_services(id, data['services'])
     InteractDatabase.save_skills(id, data['skills'])
-
+   
 
 def get_path_image(request):
-    file = request.files['file']
+    file = request.files.get('file', None)
     # check if user has uploaded file, save the path
     if file:
         res = cloudinary.uploader.upload(file)
