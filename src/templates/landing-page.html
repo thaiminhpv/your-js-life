@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
-  <link href="/static/images/icon.png" rel="icon">
-  <title>Your JS Life - Team 2 BCM</title>
+  <link href="/static/images/favicon.png" rel="icon">
+  <title>JS CLUB</title>
   <meta name="description" content="Callum is responsive bootstrap 5 one page personal portfolio html template.">
   <meta name="author" content="harnishdesign.net">
 
@@ -58,10 +58,10 @@
         class="primary-menu navbar navbar-expand-none navbar-overlay navbar-text-light bg-transparent border-bottom-0 text-5 fw-600">
         <div class="container">
           <!-- Logo -->
-          <a class="logo" href="/" title="JS-Club"> <img src="/static/images/LogoJS.png" alt="JS-Club"
+          <a class="logo" href title="JS-Club"> <img src="/static/images/LogoJS.png" alt="JS-Club"
               style="width: 70px; height: 70px;"> </a>
           <!-- Logo End -->
-
+          <div class="text-3 text-white ms-auto me-2"><span class="text-4 me-2"><i class="fas fa-phone"></i></span></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#header-nav"><span></span><span></span><span></span></button>
           <div id="header-nav" class="collapse navbar-collapse">
@@ -70,6 +70,22 @@
                 <li class="nav-item"><a class="nav-link smooth-scroll active" href="#home">Home</a></li>
                 <li class="nav-item"><a class="nav-link smooth-scroll" href="#portfolio">Portfolio</a></li>
                 <li class="nav-item"><a class="nav-link smooth-scroll" href="#testimonial">Client Speak</a></li>
+              </ul>
+              <ul class="social-icons social-icons-light social-icons-lg social-icons-light d-inline-flex mt-4">
+                <li class="social-icons-facebook"><a data-bs-toggle="tooltip" href="#" target="_blank" title
+                    data-bs-original-title="Facebook"><i class="fab fa-facebook"></i></a></li>
+
+                <li class="social-icons-instagram">
+                  <a data-bs-toggle="tooltip" href="#" target="_blank" title data-bs-original-title="Github">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </li>
+
+                <li class="social-icons-linkedin"><a data-bs-toggle="tooltip" href="#" target="_blank" title
+                    data-bs-original-title="Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+
+                <li class="social-icons-dribbble"><a data-bs-toggle="tooltip" href="#" target="_blank" title
+                    data-bs-original-title="Gmail"> <i class="fa-solid fa-envelope"></i> </a></li>
               </ul>
             </div>
           </div>
@@ -89,11 +105,11 @@
         <div class="hero-wrap">
           <div class="hero-mask opacity-8 bg-dark"></div>
           <div class="hero-bg parallax">
-            <iframe class="w-100 h-100"
-              src="https://www.youtube.com/embed/Sk9olA1JUrc?controls=0&amp;autoplay=1&amp;mute=1&amp;showinfo=0&amp;autohide=1&amp;loop=1&amp;modestbranding=1&amp;iv_load_policy=3&amp;playlist=Sk9olA1JUrc"
-              title="YouTube video player" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
+              <iframe class="w-100 h-100"
+                      src="https://www.youtube.com/embed/Sk9olA1JUrc?controls=0&amp;autoplay=1&amp;mute=1&amp;showinfo=0&amp;autohide=1&amp;loop=1&amp;modestbranding=1&amp;iv_load_policy=3&amp;playlist=Sk9olA1JUrc"
+                      title="YouTube video player" frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen></iframe>
           </div>
           <div class="hero-content d-flex fullscreen py-5">
             <div class="container my-auto py-4">
@@ -102,6 +118,7 @@
                   <h1 class="text-8 text-white fw-400 mb-0 text-uppercase">Hi, We're JS club collaborators</h1>
                   <div class="typed-strings">
                     <p>Thái Minh</p>
+                    <p>Xuân Hậu</p>
                     <p>Tuấn Ninh</p>
                     <p>Xuân Hậu</p>
                     <p>Đặng Trang</p>
@@ -123,131 +140,51 @@
         </div>
       </section>
       <!-- Intro end -->
-
-      <!-- Portfolio
+ <!-- Portfolio
     ============================================= -->
-      <section id="portfolio" class="section bg-light">
-        <div class="container">
-          <!-- Heading -->
-          <p class=" text-center mb-2 wow fadeInUp"><span class="bg-primary text-dark px-2">Portfolio</span></p>
-          <h2 class="text-10 fw-600 text-center mb-5 wow fadeInUp">Some sample Portfolio on our website</h2>
-          <!-- Heading end-->
+    <section id="portfolio" class="section bg-light">
+      <div class="container">
+        <!-- Heading -->
+        <p class=" text-center mb-2 wow fadeInUp"><span class="bg-primary text-dark px-2">Portfolio</span></p>
+        <h2 class="text-10 fw-600 text-center mb-5 wow fadeInUp">Some sample portfolios on our website</h2>
+        <!-- Heading end-->
 
-          <!-- Filter Menu -->
-          <ul
-            class="portfolio-menu nav nav-tabs fw-600 justify-content-start justify-content-md-center border-bottom-0 mb-4 wow fadeInUp">
-
-          </ul>
-          <!-- Filter Menu end -->
-          <div class="portfolio wow fadeInUp">
-            <div class="row g-4 mt-3 portfolio-filter">
-              <div class="col-sm-6 col-lg-4 detailed">
-                <div class="portfolio-box">
-                  <div class="portfolio-img"> <img class="img-fluid d-block" src="/static/images/projects/project-1.jpg"
-                      alt>
-                    <div class="portfolio-overlay"> <a class="popup-ajax stretched-link"
-                        href="ajax/portfolio-ajax-project-1.html"></a>
-                      <div class="portfolio-overlay-details">
-                        <p class="text-primary text-8"><i class="fas fa-file-alt"></i></p>
-                        <h5 class="text-white text-5">Detailed Project 1</h5>
-                        <span class="text-light">Category</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-lg-4 mockups" data-wow-delay="0.2s">
-                <div class="portfolio-box">
-                  <div class="portfolio-img"> <img class="img-fluid d-block" src="/static/images/projects/project-2.jpg"
-                      alt>
-                    <div class="portfolio-overlay"> <a class="popup-img stretched-link"
-                        href="/static/images/projects/project-2.jpg"></a>
-                      <div class="portfolio-overlay-details">
-                        <p class="text-primary text-8"><i class="fas fa-file-alt"></i></p>
-                        <h5 class="text-white text-5">Mockups Design 1</h5>
-                        <span class="text-light">Category</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-lg-4 youtube" data-wow-delay="0.3s">
-                <div class="portfolio-box">
-                  <div class="portfolio-img"> <img class="img-fluid d-block" src="/static/images/projects/project-3.jpg"
-                      alt>
-                    <div class="portfolio-overlay"> <a class="popup-youtube stretched-link"
-                        href="https://www.youtube.com/watch?v=PMNnEEEacCg"></a>
-                      <div class="portfolio-overlay-details">
-                        <p class="text-primary text-8"><i class="fas fa-file-alt"></i></p>
-                        <h5 class="text-white text-5">YouTube Video</h5>
-                        <span class="text-light">Category</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-lg-4 vimeo">
-                <div class="portfolio-box">
-                  <div class="portfolio-img"> <img class="img-fluid d-block" src="/static/images/projects/project-4.jpg"
-                      alt>
-                    <div class="portfolio-overlay"> <a class="popup-vimeo stretched-link"
-                        href="https://vimeo.com/259411563"></a>
-                      <div class="portfolio-overlay-details">
-                        <p class="text-primary text-8"><i class="fas fa-file-alt"></i></p>
-                        <h5 class="text-white text-5">Vimeo Video</h5>
-                        <span class="text-light">Category</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-lg-4 detailed" data-wow-delay="0.2s">
-                <div class="portfolio-box">
-                  <div class="portfolio-img"> <img class="img-fluid d-block" src="/static/images/projects/project-5.jpg"
-                      alt>
-                    <div class="portfolio-overlay"> <a class="popup-ajax stretched-link"
-                        href="ajax/portfolio-ajax-project-2.html"></a>
-                      <div class="portfolio-overlay-details">
-                        <p class="text-primary text-8"><i class="fas fa-file-alt"></i></p>
-                        <h5 class="text-white text-5">Detailed Project 2</h5>
-                        <span class="text-light">Category</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-lg-4 mockups" data-wow-delay="0.3s">
-                <div class="portfolio-box">
-                  <div class="portfolio-img"> <img class="img-fluid d-block" src="/static/images/projects/project-6.jpg"
-                      alt>
-                    <div class="portfolio-overlay"> <a class="popup-img stretched-link"
-                        href="/static/images/projects/project-6.jpg"></a>
-                      <div class="portfolio-overlay-details">
-                        <p class="text-primary text-8"><i class="fas fa-file-alt"></i></p>
-                        <h5 class="text-white text-5">Mockups Design 2</h5>
-                        <span class="text-light">Category</span>
-                      </div>
+        <!-- Filter Menu -->
+        <ul
+          class="portfolio-menu nav nav-tabs fw-600 justify-content-start justify-content-md-center border-bottom-0 mb-4 wow fadeInUp">
+        
+        </ul>
+        <!-- Filter Menu end -->
+        <div class="portfolio wow fadeInUp">
+          <div class="row g-4 mt-3 portfolio-filter">
+            {%for item in portfolios%}
+            <div class="col-sm-6 col-lg-4 detailed">
+              <div class="portfolio-box">
+                <div class="portfolio-img"> <img class="img-fluid d-block" src="{{item[3] or 'https://res.cloudinary.com/dxu6nsoye/image/upload/v1649690712/sf6owaxixfmia39yffhv.png'}}" alt = "Portfolio images">
+                  <div class="portfolio-overlay"> <a class="stretched-link" href="/portfolio/{{item[0]}}"></a>
+                    <div class="portfolio-overlay-details">
+                      <p class="text-primary text-8"><i class="fas fa-file-alt"></i></p>
+                      <h5 class="text-white text-5">{{item[1]}}</h5>
+                      <span class="text-light">{{item[2]}}</span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+            {%endfor%}
           </div>
         </div>
-      </section>
-      <!-- Portfolio end -->
+      </div>
+    </section>
+    <!-- Portfolio end --> 
 
       <!-- Testimonial
     ============================================= -->
-      <section id="testimonial" class="section bg-testimonial">
-
-        <div class="container ">
-
+      <section id="testimonial" class="section bg-secondary">
+        <div class="container">
           <!-- Heading -->
-          <div style="z-index: 3;">
-            <p class=" text-center mb-2 wow fadeIn"><span class="bg-primary text-dark px-2">Client Speak</span></p>
-            <h2 class="text-10 fw-600 text-white text-center mb-5 wow fadeIn">What Some of my Clients Say</h2>
-          </div>
+          <p class=" text-center mb-2 wow fadeIn"><span class="bg-primary text-dark px-2">Client Speak</span></p>
+          <h2 class="text-10 fw-600 text-white text-center mb-5 wow fadeIn">What Some of my Clients Say</h2>
           <!-- Heading end-->
           <div class="row">
             <div class="col-lg-9 mx-auto wow fadeInUp">
@@ -272,8 +209,7 @@
                 </div>
                 <div class="item text-center px-5"> <span class="text-9 text-primary"><i
                       class="fa fa-quote-start"></i></span>
-                  <p class="text-5 text-white">“Em cũng giống như sợi phở: trắng trẻo và dẻo mềm, chỉ tiếc là không được
-                    anh thưởng thức.”</p>
+                  <p class="text-5 text-white">“Em cũng giống như sợi phở: trắng trẻo và dẻo mềm, chỉ tiếc là không được anh thưởng thức.”</p>
                   <img class="img-fluid d-inline-block w-auto rounded-circle shadow"
                     src="/static/images/testimonial/rsz_anhhung.jpg" alt> <strong
                     class="d-block text-3 fw-500 text-white">Phạm Quang Hưng</strong> <span class="text-light">Mentor of
@@ -293,11 +229,11 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-6 text-center text-lg-start wow fadeInUp">
-              <p class="mb-2 mb-lg-0">Copyright © 2022 <a class="fw-600" href="#">Team 2 </a>. All Rights Reserved.</p>
+              <p class="mb-2 mb-lg-0">Copyright © 2021 <a class="fw-600" href="#">Team 2 </a>. All Rights Reserved.</p>
             </div>
             <div class="col-lg-6 wow fadeInUp">
               <p class="mb-0 text-center text-lg-end">Designed by <a class="fw-600"
-                  href="https://www.facebook.com/fu.jsclub/">Team 2- BCM</a></p>
+                  href="https://www.facebook.com/fu.jsclub/">Team 2- CTV JS</a></p>
             </div>
           </div>
         </div>
@@ -313,6 +249,24 @@
         class="fas fa-arrow-up"></i></a>
 
     <!-- Styles Switcher -->
+    <div id="styles-switcher" class="right">
+      <h2 class="text-3 fw-600">Color Switcher</h2>
+      <hr>
+      <ul>
+        <li class="cyan" data-bs-toggle="tooltip" title="Cyan" data-path="css/color-cyan.css"></li>
+        <li class="spring-green" data-bs-toggle="tooltip" title="Spring Green" data-path="css/color-spring-green.css">
+        </li>
+        <li class="green-yellow" data-bs-toggle="tooltip" title="Green Yellow" data-path="css/color-green-yellow.css">
+        </li>
+        <li class="lime-punch" data-bs-toggle="tooltip" title="Lime Punch" data-path="css/color-lime-punch.css"></li>
+        <li class="violet" data-bs-toggle="tooltip" title="Violet" data-path="css/color-violet.css"></li>
+        <li class="orange" data-bs-toggle="tooltip" title="Orange" data-path="css/color-orange.css"></li>
+        <li class="pale-golden-rod" data-bs-toggle="tooltip" title="Pale Golden Rod"
+          data-path="css/color-pale-golden-rod.css"></li>
+        <li class="yellow" id="reset-color" data-bs-toggle="tooltip" title="Reset Default Yellow"></li>
+      </ul>
+      <button class="btn switcher-toggle"><i class="fas fa-cog"></i></button>
+    </div>
     <!-- Styles Switcher End -->
 
     <!-- JavaScript -->
@@ -340,7 +294,3 @@
     <script src="/static/js/switcher.min.js"></script>
     <!-- Custom Script -->
     <script src="/static/js/theme.js"></script>
-  </div>
-</body>
-
-</html>
