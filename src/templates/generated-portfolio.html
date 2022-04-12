@@ -192,7 +192,7 @@
     
     <!-- Resume
     ============================================= -->
-    {%if not ( (education[0]['title'] == '') and (experience[0]['title'] == '') and (not skills) ) %}
+    {%if not ( (education[0]['title'] == '') and (experience[0]['title'] == '') and (skills[0]['title']) == '' ) %}
     <section id="resume" class="section">
       <div class="container"> 
         <!-- Heading -->
@@ -239,7 +239,7 @@
 
         
         <!-- My Skills -->
-        {%if skills%}
+        {%if not (skills[0]['title'] == '')%}
         <h2 class="text-7 fw-600 mb-4 pb-2 mt-5 wow fadeInUp">My Skills</h2>
         <div class="row gx-5">
           
