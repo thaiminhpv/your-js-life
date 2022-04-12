@@ -178,7 +178,7 @@
           {%for item in services%}
           <div class="col-sm-6 col-lg-4 wow fadeInUp">
             <div class="featured-box text-center px-md-4">
-              <h3 class="text-6 fw-600 mb-3">{{item['title']}}{{services}}</h3>
+              <h3 class="text-6 fw-600 mb-3">{{item['title']}}</h3>
               <p class="text-muted mb-0">{{item['description']}}</p>
             </div>
           </div>
@@ -201,7 +201,7 @@
         <!-- Heading end-->
         
         <div class="row g-5 mt-5"> 
-          {% if(education != [])%}
+          {%if not ((education.index(education[-1]) == education.index(education[0])) and (education[0]['title'] == ''))%}
           <!-- My Education -->
           <div class="col-lg-6 wow fadeInUp">
             <h2 class="text-7 fw-600 mb-4 pb-2">My Education</h2>
