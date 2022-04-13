@@ -267,6 +267,12 @@ function submitJSONform(){
   }).then(res => res.json())
       .then(id => {
         console.log(id);
+        if (id === -1) {
+          alert("Please fill all the information!");
+          document.getElementById('submitBtn').disabled = false;
+          document.getElementById('loading').style.display = "none"
+          return;
+        }
         submitFileAndIdAndRedirect(id);
       }).catch(err => console.log(err));
 }
