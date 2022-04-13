@@ -251,6 +251,7 @@ function submitJSONform(){
   if (data.phone == '' || data.job == '' || data.address == '' || data.nickname == '' || data.introduction == '' || data.workingtime == '' || data.name == '' || data.gmail == '' || data.dateOfBirth == '' || data.address_year_of_experience == '' || data.facebook == '' || data.github == '' || data.linkedin == '' || data.services.length == 0 || data.education.length == 0 || data.experience.length == 0 || data.skills.length == 0){
     alert("Please fill all the information!");
     document.getElementById('submitBtn').disabled = false;
+    document.getElementById('loading').style.display = "none"
     return;
   }
   document.getElementById('submitBtn').disabled = true;
