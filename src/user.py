@@ -20,7 +20,7 @@ def home():
         if len(portfolio[2]) > MAX_DESCRIPTION_LENGTH:
             portfolios[index][2] = portfolio[2][:MAX_DESCRIPTION_LENGTH] + "..."
     print(portfolios)
-    return render_template("landing-page.html", portfolios=portfolios)
+    return render_template("landing-page.html", portfolios=portfolios[::-1])
 
 
 @user.route("/create-portfolio", methods=["GET"])
