@@ -248,7 +248,7 @@ function getAllInputData(){
 function submitJSONform(){
   let data = getAllInputData();
   // if any of data is empty, alert, then return
-  if (data.phone == '' || data.job == '' || data.address == '' || data.nickname == '' || data.introduction == '' || data.workingtime == '' || data.name == '' || data.gmail == '' || data.dateOfBirth == '' || data.address_year_of_experience == '' || data.facebook == '' || data.github == '' || data.linkedin == '' || data.services.length == 0 || data.education.length == 0 || data.experience.length == 0 || data.skills.length == 0){
+  if (data.phone == '' || data.job == '' || data.address == '' || data.nickname == '' || data.introduction == '' || data.workingtime == '' || data.name == '' || data.gmail == '' || data.dateOfBirth == '' || data.address_year_of_experience == ''  || data.services.length == 0 || data.education.length == 0 || data.experience.length == 0 || data.skills.length == 0) {
     alert("Please fill all the information!");
     document.getElementById('submitBtn').disabled = false;
     document.getElementById('loading').style.display = "none"
