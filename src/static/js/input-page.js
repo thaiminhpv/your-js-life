@@ -123,6 +123,17 @@ function remove_box_experience() {
     let mySkill_box = document.getElementsByClassName('boxMyExperience')[0]    
     if(array.length > 1){
         mySkill_box.remove(array);
+    } else {
+        // alert("Are you sure you want to delete this section?")
+        confirm("Are you sure you want to delete this section?");
+        // function confirmDelete(){
+            if(confirm("Are you sure you want to delete this section?") == true){
+                mySkill_box.remove(array);
+            }else{
+
+            }
+
+        // }
     }
         
 }
@@ -139,8 +150,20 @@ function remove_box_skills() {
     let mySkill_box = document.getElementsByClassName('boxMySkills')[0]  
     if(array.length > 1){
         mySkill_box.remove(array);
-    }  
-        
+    } else {
+        // alert("Are you sure you want to delete this section?")
+        confirm("Are you sure you want to delete this section?");
+        // function confirmDelete(){
+            if(confirm("Are you sure you want to delete this section?") == true){
+                mySkill_box.remove(array);
+            }else{
+
+            }
+
+        // }
+    }
+
+
 }
 
 function getAllInputData(){
