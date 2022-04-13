@@ -74,40 +74,62 @@ class Users:
         return data
 
 def checknvalidValue(data_user, data):
-    print(str(data_user.github))
+    flag = "1"
+    bug = ""
+
     if  data_user.name == None or data_user.nickname == None or  data_user.texterea == None or  data_user.gmail == None or data_user.phone == None or data_user.address == None or data_user.dateofbirth == None or  data_user.job == None or data_user.workingtime == None  :
-       return "-1"
+       flag = "-1"
     
     if  str(data_user.name).replace(" ","") == "" or str(data_user.nickname).replace(" ","") == "" or  str(data_user.texterea).replace(" ","") == "" or  str(data_user.gmail).replace(" ", "") == "" or str(data_user.phone).replace(" ","") == "" or str(data_user.address).replace(" ","") == "" or str(data_user.dateofbirth).replace(" ","") == "" or str(data_user.job).replace(" ","") == "" or str(data_user.workingtime).replace(" ","") == ""  :
-        return "-1"
+        flag =  "-1"
 
     for item in data['education']:
-            if str(item["title"]).replace(" ","") == "" or item["title"] == None:
-                return "-1"
-            if str(item["time"]).replace(" ","") == "" or item["time"] == None:
-                return "-1"
-            if str(item["content"]).replace(" ","") == "" or item["content"] == None:
-                return "-1"
+        if str(item["title"]).replace(" ","") == "" or item["title"] == None:
+            bug += ' education.'
+            flag =  "-1"
+            break
+        if str(item["time"]).replace(" ","") == "" or item["time"] == None:
+            bug += ' education.'
+            flag =  "-1"
+            break
+        if str(item["content"]).replace(" ","") == "" or item["content"] == None:
+            bug += ' education.'
+            flag =  "-1"
+            break
 
     for item in data['services']:
-            if str(item["title"]).replace(" ","") == "" or item["title"] == None:
-                return "-1"
-            if str(item["description"]).replace(" ","") == "" or item["description"] == None:
-                return "-1"
+        if str(item["title"]).replace(" ","") == "" or item["title"] == None:
+            bug += ' services.'
+            flag =  "-1"
+            break
+        if str(item["description"]).replace(" ","") == "" or item["description"] == None:
+            bug += ' services.'
+            flag =  "-1"
+            break
          
     for item in data['experience']:
-            if str(item["title"]).replace(" ","") == "" or item["title"] == None:
-                return "-1"
-            if str(item["time"]).replace(" ","") == "" or item["time"] == None:
-                return "-1"
-            if str(item["content"]).replace(" ","") == "" or item["content"] == None:
-                return "-1"
+        if str(item["title"]).replace(" ","") == "" or item["title"] == None:
+            bug += ' experience.'
+            flag =  "-1"
+            break
+        if str(item["time"]).replace(" ","") == "" or item["time"] == None:
+            bug += ' experience.'
+            flag =  "-1"
+            break
+        if str(item["content"]).replace(" ","") == "" or item["content"] == None:
+            bug += ' experience.'
+            flag =  "-1"
+            break
 
     for item in data['skills']:
-            if str(item["skill"]).replace(" ","") == "" or item["skill"] == None:
-                return "-1"
-            if str(item["value"]).replace(" ","") == "" or item["value"] == None:
-                return "-1"
+        if str(item["skill"]).replace(" ","") == "" or item["skill"] == None:
+            bug += ' skills.'
+            flag =  "-1"
+            break
+        if str(item["value"]).replace(" ","") == "" or item["value"] == None:
+            bug += ' skills.'
+            flag =  "-1"
+            break
             
-    return "1"
-           
+            
+    return flag           
