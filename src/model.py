@@ -29,7 +29,7 @@ class Users:
         data_user.phone = data["phone"]
         data_user.address = data["address"]
         try:
-            data_user.dateofbirth = data["dateofbirth"]
+            data_user.dateOfBirth = data["dateofbirth"]
         except:
             pass
         data_user.linkedin = data["linkedin"]
