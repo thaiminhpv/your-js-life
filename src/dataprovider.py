@@ -108,10 +108,10 @@ class InteractDatabase:
         add data portfolio to database
         :return: id of this portfolio
         """
-        id = get_id()  # id of new user
-        parameter = model.Users.getuserlist(id, data_user)  # get data user with datatype: list
-        query = "INSERT INTO `portfolio` (`id`, `name`, `nickname`,`texterea`, `gmail`, `phone`, `address`, `dateofbirth`, `linkedin`, `facebook`, `github`, `job`, `workingtime`, `introduction`) VALUES ( %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-        InteractDatabase.executenonquery(query, parameter)
+        #id = get_id()  # id of new user
+        parameter = model.Users.getuserlist(data_user)  # get data user with datatype: list
+        query = "INSERT INTO `portfolio` ( `name`, `nickname`,`texterea`, `gmail`, `phone`, `address`, `dateofbirth`, `linkedin`, `facebook`, `github`, `job`, `workingtime`, `introduction`) OUTPUT Inserted.id VALUES ( %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+        id =InteractDatabase.executenonquery(query, parameter)
         return id
 
     @staticmethod

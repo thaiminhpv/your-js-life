@@ -50,9 +50,8 @@ class Users:
 
 
     @staticmethod
-    def getuserlist(id, data_user):
+    def getuserlist(data_user):
         data = list()
-        data.append(id)
         data.append(data_user.name)
         data.append(data_user.nickname)
         data.append(data_user.texterea)
