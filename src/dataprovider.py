@@ -96,7 +96,7 @@ class InteractDatabase:
                 else:
                     cursor.execute(query)
 
-                result = cursor.rowcount
+                result = cursor.lastrowid
             connection.commit()
             return result
         except Error as e:
@@ -110,7 +110,7 @@ class InteractDatabase:
         """
         #id = get_id()  # id of new user
         parameter = model.Users.getuserlist(data_user)  # get data user with datatype: list
-        query = "INSERT INTO `portfolio` ( `name`, `nickname`,`texterea`, `gmail`, `phone`, `address`, `dateofbirth`, `linkedin`, `facebook`, `github`, `job`, `workingtime`, `introduction`) OUTPUT Inserted.id VALUES ( %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+        query = "INSERT INTO `portfolio` ( `name`, `nickname`,`texterea`, `gmail`, `phone`, `address`, `dateofbirth`, `linkedin`, `facebook`, `github`, `job`, `workingtime`, `introduction`) VALUES ( %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
         id =InteractDatabase.executenonquery(query, parameter)
         return id
 
