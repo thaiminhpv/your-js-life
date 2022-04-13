@@ -260,7 +260,7 @@
                     style="margin-right: 2rem;">
                     <i class="fa-solid fa-arrow-down"></i>
                   </button> -->
-                  <button  onclick="remove_box() " type="button" class="btn btn-outline-danger btn-sm borderButtonEducation button-education-item">
+                  <button  onclick="remove_box(); reply_click(this.id)" type="button" class="btn btn-outline-danger btn-sm borderButtonEducation button-education-item">
                     <i class="fa-solid fa-trash-can"></i>
                   </button>
                   <button onclick="add_box()"  type="button" class="btn btn-outline-success btn-sm borderButtonEducation" >
@@ -423,8 +423,11 @@
                       <input name="skill" type="text" class="form-control" placeholder="Web Design" 
                       style="width:fit-content; padding: 5px;">               
                     </p>
-                    <div class="progress progress-sm mb-4 form-skill">
-                      <input class="inputRange" type="range" min="1" max="100" value="70" style="width: 100%" name="value_">
+                    <div class="progress progress-sm mb-4 form-skill slidecontainer">
+                      
+                        <input class="inputRange slider" type="range" min="1" max="100" value="70" style="width: 100%" name="value_">
+                      
+                      
                     </div>
                   </div>
                   
@@ -437,8 +440,12 @@
 
             </div>
 
-            <p class="text-center mt-5 wow fadeInUp">
-              <button id="submitBtn" type="submit" class="btn btn-outline-dark shadow-none rounded-0">Save</button>
+            <p class="text-center mt-5 wow fadeInUp ">
+              <button id="submitBtn" type="submit" class="btn btn-outline-dark shadow-none rounded-0">Save
+                <div class="spinner-border spinner-border-sm" role="status" id="loading">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </button>
             </p>
           </div>
       </section>

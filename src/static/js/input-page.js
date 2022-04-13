@@ -22,6 +22,7 @@ defaultBtn.addEventListener("change", function () {
 document.getElementById('submitBtn').addEventListener('click', () => {
   // disable this button to prevent multiple clicks
   document.getElementById('submitBtn').disabled = true;
+  document.getElementById('loading').style.display = "inline-block"
   submitJSONform()
 });
 
@@ -76,7 +77,6 @@ function remove_box() {
 
     
     // let services_box = document.getElementsByClassName('what-i-do-item')[0]
-    // console.log(this);
     // for (let index = 0; index < array.length; index++) {
     //     if(array.length > 1 && document.getElementsByClassName('borderWhatIDo')[index].getAttribute('id') === getId){
     //         document.getElementsByClassName('borderWhatIDo')[index].remove();
@@ -87,6 +87,11 @@ function remove_box() {
         
         
 }
+function reply_click(clicked_id)
+  {
+     console.log(clicked_id)
+      
+  }
 //confirm-delete
 // function confirmDelete(){
 //     confirm("Bấm vào nút OK để tiếp tục");
@@ -176,6 +181,7 @@ function remove_box_skills() {
         
 }
 
+
 function getAllInputData(){
     //Intro
     let phone = document.querySelectorAll('input[name="phone"]')[0].value;
@@ -252,6 +258,7 @@ function getAllInputData(){
 function submitJSONform(){
   let data = getAllInputData();
   let json = JSON.stringify(data);
+  document.getElementById('loading').style.display = "none";
   fetch('/create-portfolio', {
     method: 'POST',
     headers: {
@@ -279,6 +286,7 @@ function submitFileAndIdAndRedirect(id) {
       // if success, redirect to portfolio/:id
       if (res.status === 'success') {
         window.location.href = `/success?id=${id}`;
+
       }
     })
 }
