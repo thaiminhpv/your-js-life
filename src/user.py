@@ -93,7 +93,7 @@ def save_data(id, data):
 def get_path_image(request):
     file = request.files.get('file', None)
     # check if user has uploaded file, save the path
-    if file:
+    if file is not None:
         res = cloudinary.uploader.upload(file)
         return res['secure_url']
     else:
