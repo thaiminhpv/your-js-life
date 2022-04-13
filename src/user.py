@@ -1,4 +1,5 @@
 from time import time
+import json
 import cloudinary.uploader
 from flask import redirect, template_rendered, url_for, render_template, request, Blueprint, Response, jsonify, abort
 from . import config
@@ -65,11 +66,24 @@ def portfolio(id):
         experience = convert_obj_to_emoji(experience)
         skills = convert_obj_to_emoji(skills)
 
+    # pretty_print_json(data_user=data_user, path=path, education=education, services=services, experience=experience, skills=skills)
+
+    education = [e for e in education if e.get('title') and e.get('time') and e.get('content')]
+    experience = [e for e in experience if e.get('title') and e.get('time') and e.get('content')]
+    services = [s for s in services if s.get('description') and s.get('title')]
+    skills = [s for s in skills if s.get('skill')]
+
     return render_template(
         'generated-portfolio.html',
         user=data_user, image_path=path, experience=experience,
         education=education, services=services, skills=skills
     )
+
+
+def pretty_print_json(**kwargs):
+    temp = dict(**kwargs)
+    # pretty print json
+    print(json.dumps(temp, indent=4, sort_keys=True))
 
 
 @user.errorhandler(404)
