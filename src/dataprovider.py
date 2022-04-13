@@ -233,7 +233,7 @@ class InteractDatabase:
             SELECT
             p.id, p.name, p.introduction, ap.path
             FROM portfolio as p LEFT JOIN avt_path ap on p.id = ap.portfolio_id
-            LIMIT 20
+            LIMIT 21
             """)
         return data
 

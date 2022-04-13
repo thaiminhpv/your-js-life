@@ -18,7 +18,7 @@ def home():
     portfolios_tuple = InteractDatabase.get_all_portfolio()
     portfolios = list(map(list, portfolios_tuple))  # convert list of tuple to list of list
     for index, portfolio in enumerate(portfolios):
-        if len(portfolio[2]) > MAX_DESCRIPTION_LENGTH:
+        if portfolio[2] and len(portfolio[2]) > MAX_DESCRIPTION_LENGTH:
             portfolios[index][2] = portfolio[2][:MAX_DESCRIPTION_LENGTH] + "..."
     print(portfolios)
     return render_template("landing-page.html", portfolios=portfolios[::-1])
