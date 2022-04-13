@@ -87,7 +87,7 @@ class InteractDatabase:
         :return:
         """
         if not connection.is_connected():
-                connection.connect()
+            connection.connect()
         try:
             
             with connection.cursor() as cursor:
@@ -126,7 +126,7 @@ class InteractDatabase:
         parameter.append(id)
         parameter.append(path)
         InteractDatabase.executenonquery(query, parameter)
-        if not connection.is_connected():
+        if connection.is_connected():
             connection.close()
 
 
@@ -189,7 +189,7 @@ class InteractDatabase:
             """,
             (id,))
         if not data:
-            if not connection.is_connected():
+            if connection.is_connected():
                 connection.close()
             return None
         temp = data[0]
@@ -214,7 +214,7 @@ class InteractDatabase:
         services = ConvertForTuple_Services( InteractDatabase.executequery("SELECT * FROM `services` WHERE `portfolio_id` = %s", (id,)) )
         experience = ConvertForTuple_Exp_Edu( InteractDatabase.executequery("SELECT * FROM `experience` WHERE `portfolio_id` = %s", (id,)) )
         skills = ConvertForTuple_my_skills( InteractDatabase.executequery("SELECT * FROM `my_skills` WHERE `portfolio_id` = %s", (id,)) )
-        if not connection.is_connected():
+        if connection.is_connected():
             connection.close()
         return {
             'user': data_user,
@@ -233,7 +233,7 @@ class InteractDatabase:
             SELECT
             p.id, p.name, p.introduction, ap.path
             FROM portfolio as p LEFT JOIN avt_path ap on p.id = ap.portfolio_id
-            # LIMIT 12
+            LIMIT 20
             """)
         return data
 

@@ -264,7 +264,9 @@ function submitJSONform(){
 
 function submitFileAndIdAndRedirect(id) {
   let formData = new FormData();
-  formData.append('file', document.querySelectorAll('input[name="file"]')[0].files[0]);
+  if (document.querySelectorAll('input[name="file"]')[0].files[0] !== undefined) {
+    formData.append('file', document.querySelectorAll('input[name="file"]')[0].files[0]);
+  }
   formData.append('id', id);
   fetch('/create-portfolio/file', {
       method: 'POST',
