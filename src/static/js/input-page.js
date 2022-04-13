@@ -111,17 +111,6 @@ function remove_box_education() {
     let mySkill_box = document.getElementsByClassName('boxMyEducation')[0]  
     if(array.length > 1){
         mySkill_box.remove(array);
-    }else{
-        // alert("Are you sure you want to delete this section?")
-        confirm("Are you sure you want to delete this section?");
-        // function confirmDelete(){
-            if(confirm("Are you sure you want to delete this section?") == true){      
-                mySkill_box.remove(array);
-            }else{
-                
-            }
-        
-        // }
     }     
            
         
@@ -139,16 +128,16 @@ function remove_box_experience() {
     let mySkill_box = document.getElementsByClassName('boxMyExperience')[0]    
     if(array.length > 1){
         mySkill_box.remove(array);
-    }else{
+    } else {
         // alert("Are you sure you want to delete this section?")
         confirm("Are you sure you want to delete this section?");
         // function confirmDelete(){
-            if(confirm("Are you sure you want to delete this section?") == true){      
+            if(confirm("Are you sure you want to delete this section?") == true){
                 mySkill_box.remove(array);
             }else{
-                
+
             }
-        
+
         // }
     }
         
@@ -166,19 +155,20 @@ function remove_box_skills() {
     let mySkill_box = document.getElementsByClassName('boxMySkills')[0]  
     if(array.length > 1){
         mySkill_box.remove(array);
-    }else{
+    } else {
         // alert("Are you sure you want to delete this section?")
         confirm("Are you sure you want to delete this section?");
         // function confirmDelete(){
-            if(confirm("Are you sure you want to delete this section?") == true){      
+            if(confirm("Are you sure you want to delete this section?") == true){
                 mySkill_box.remove(array);
             }else{
-                
+
             }
-        
+
         // }
-    }  
-        
+    }
+
+
 }
 
 
@@ -257,6 +247,13 @@ function getAllInputData(){
 
 function submitJSONform(){
   let data = getAllInputData();
+  // if any of data is empty, alert, then return
+  if (data.phone == '' || data.job == '' || data.address == '' || data.nickname == '' || data.introduction == '' || data.workingtime == '' || data.name == '' || data.gmail == '' || data.dateOfBirth == '' || data.address_year_of_experience == '' || data.facebook == '' || data.github == '' || data.linkedin == '' || data.services.length == 0 || data.education.length == 0 || data.experience.length == 0 || data.skills.length == 0){
+    alert("Please fill all the information!");
+    document.getElementById('submitBtn').disabled = false;
+    return;
+  }
+  document.getElementById('submitBtn').disabled = true;
   let json = JSON.stringify(data);
   
   document.getElementById('loading').style.display = "inline-block";
@@ -275,7 +272,9 @@ function submitJSONform(){
 
 function submitFileAndIdAndRedirect(id) {
   let formData = new FormData();
-  formData.append('file', document.querySelectorAll('input[name="file"]')[0].files[0]);
+  if (document.querySelectorAll('input[name="file"]')[0].files[0] !== undefined) {
+    formData.append('file', document.querySelectorAll('input[name="file"]')[0].files[0]);
+  }
   formData.append('id', id);
   fetch('/create-portfolio/file', {
       method: 'POST',
