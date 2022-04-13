@@ -258,7 +258,8 @@ function getAllInputData(){
 function submitJSONform(){
   let data = getAllInputData();
   let json = JSON.stringify(data);
-  document.getElementById('loading').style.display = "none";
+  
+  document.getElementById('loading').style.display = "inline-block";
   fetch('/create-portfolio', {
     method: 'POST',
     headers: {
