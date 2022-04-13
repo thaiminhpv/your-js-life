@@ -51,25 +51,13 @@ function add_box() {
     console.log(newField.getAttribute('id'));
 }
 
-function remove_box() {
+function remove_box(event) {
     
     let array = document.getElementsByClassName('borderWhatIDo')   
     let services_box = document.getElementsByClassName('what-i-do-item')[0]    
     let remove_button = document.getElementsByClassName('button-education-item');
     if(array.length > 1){
-        services_box.remove(array);
-    }
-    else{
-        // alert("Are you sure you want to delete this section?")
-        confirm("Are you sure you want to delete this section?");
-        // function confirmDelete(){
-            if(confirm("Are you sure you want to delete this section?") == true){      
-                services_box.remove(array);
-            }else{
-                
-            }
-        
-        // }
+        event.parentNode.parentNode.parentNode.remove()
     }
 
     // let array = document.getElementsByClassName('borderWhatIDo')
@@ -106,11 +94,12 @@ function add_box_education() {
     parent_box.append(newField); 
 }
 
-function remove_box_education() {
+function remove_box_education(event) {
+    console.log(event)
     let array = document.getElementsByClassName('borderEducation')
     let mySkill_box = document.getElementsByClassName('boxMyEducation')[0]  
     if(array.length > 1){
-        mySkill_box.remove(array);
+        event.parentNode.parentNode.parentNode.remove()
     }     
            
         
@@ -123,23 +112,12 @@ function add_box_experience() {
     parent_box.append(newField); 
 }
 
-function remove_box_experience() {
+function remove_box_experience(event) {
     let array = document.getElementsByClassName('borderExperience')
     let mySkill_box = document.getElementsByClassName('boxMyExperience')[0]    
     if(array.length > 1){
-        mySkill_box.remove(array);
-    } else {
-        // alert("Are you sure you want to delete this section?")
-        confirm("Are you sure you want to delete this section?");
-        // function confirmDelete(){
-            if(confirm("Are you sure you want to delete this section?") == true){
-                mySkill_box.remove(array);
-            }else{
-
-            }
-
-        // }
-    }
+        event.parentNode.parentNode.parentNode.remove()
+    } 
         
 }
 //MySkills
@@ -150,23 +128,12 @@ function add_box_skills() {
     parent_box.append(newField); 
 }
 
-function remove_box_skills() {
+function remove_box_skills(event) {
     let array = document.getElementsByClassName('my-skill-item')
     let mySkill_box = document.getElementsByClassName('boxMySkills')[0]  
     if(array.length > 1){
-        mySkill_box.remove(array);
-    } else {
-        // alert("Are you sure you want to delete this section?")
-        confirm("Are you sure you want to delete this section?");
-        // function confirmDelete(){
-            if(confirm("Are you sure you want to delete this section?") == true){
-                mySkill_box.remove(array);
-            }else{
-
-            }
-
-        // }
-    }
+        event.parentNode.parentNode.parentNode.remove()
+    } 
 
 
 }
