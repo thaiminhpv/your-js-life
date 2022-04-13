@@ -29,7 +29,7 @@ class Users:
         data_user.phone = data["phone"]
         data_user.address = data["address"]
         try:
-            data_user.dateofbirth = data["dateofbirth"]
+            data_user.dateofbirth = data["dateOfBirth"]
         except:
             pass
         data_user.linkedin = data["linkedin"]
@@ -38,7 +38,7 @@ class Users:
         data_user.job = data["job"]
         data_user.workingtime = data["workingtime"]
         data_user.introduction = data["introduction"]
-
+        print(str(data["dateOfBirth"]))
         return {
             'user': data_user,
             'education': data['education'],

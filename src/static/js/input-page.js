@@ -204,7 +204,7 @@ function getAllInputData(){
         workingtime: workingTime,
         name: nameYearOfExperience, 
         gmail: gmail,
-        date_of_birth: dateOfBirth,       
+        dateOfBirth: dateOfBirth,
         address_year_of_experience: addressYearOfExperience,
         facebook: facebook,
         github: github, 

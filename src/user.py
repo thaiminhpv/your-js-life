@@ -97,4 +97,4 @@ def get_path_image(request):
         res = cloudinary.uploader.upload(file)
         return res['secure_url']
     else:
-        return "https://res.cloudinary.com/dxu6nsoye/image/upload/v1648535365/ihzghstemlzcobhbbfzg.jpg"
+        return "https://res.cloudinary.com/dxu6nsoye/image/upload/v1649821452/z3336574163217_bc5927ec38c68b516f13b300443dfcac_zouzvp.jpg"
