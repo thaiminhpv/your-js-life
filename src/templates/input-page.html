@@ -1,17 +1,15 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:fb="http://ogp.me/ns/fb#">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
-    <link href="/static/images/favicon.png" rel="icon">
-    <title>Your JS Life - Team 2 BCM</title>
-    <meta name="description" content="Một sản phẩm của CTV BCM Team 2 JS Club gen 10">
-    <meta name="author" content="Cộng Tác Viên Ban Chuyên Môn Team 2 JS Club">
-    <meta property="og:image" content="/static/images/thumbnail-wide.png" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+  <link href="/static/images/favicon.png" rel="icon">
+  <title>Your JS Life - Team 2 BCM</title>
+  <meta name="description" content="Một sản phẩm của CTV BCM Team 2 JS Club gen 10">
+  <meta name="author" content="Cộng Tác Viên Ban Chuyên Môn Team 2 JS Club">
+  <meta property="og:image" content="/static/images/thumbnail-wide.png" />
 
   <!-- Web Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900"
@@ -67,7 +65,7 @@
             <!-- Logo End -->
             <div class="text-3 ms-auto me-2">
               <span class="text-4 me-2"><i class="fas fa-phone"></i></span>
-              <input type="text" placeholder="(060) 444 434 444" name="phone">
+              <input type="text" placeholder="(060) 444 434 444" name="phone" required>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
               data-bs-target="#header-nav"><span></span><span></span><span></span></button>
@@ -114,7 +112,7 @@
             <div class="row">
               <div class="col-lg-7 text-center text-lg-start align-self-center order-1 order-lg-0 wow fadeIn">
                 <h1 class="text-12 fw-300 mb-0 text-uppercase">Hi, I'm a
-                  <input type="text" placeholder="Freelancer" style="width: 60%;" name="job">
+                  <input type="text" placeholder="Freelancer" style="width: 60%;" name="job" required>
                 </h1>
                 <div class="form-group">
                   <textarea class="form-control text-muted mb-2 mt-2" style="width: 60%;" rows="3" cols="15"
@@ -123,17 +121,18 @@
 
                 <p class="text-5">based in
                   <input type="text" class="form-control" placeholder="Láng Hòa Lạc, Hà Nội" name="address"
-                    style="width: auto; display: inline; padding: 5px;">
+                    style="width: auto; display: inline; padding: 5px;" required>
                 </p>
                 <a href="#resume" class="btn btn-dark rounded-0 smooth-scroll mt-3">View My Works</a>
               </div>
 
               <div class="col-lg-5 text-center align-self-center mb-4 mb-lg-0 order-0 order-lg-1">
                 <div class="bg-light rounded-pill d-inline-block p-3 shadow-lg wow zoomIn">
-                  <img id="avt" class="img-fluid rounded-pill d-block" src="https://res.cloudinary.com/dxu6nsoye/image/upload/v1649821452/z3336574163217_bc5927ec38c68b516f13b300443dfcac_zouzvp.jpg">
+                  <img id="avt" class="img-fluid rounded-pill d-block" src="/static/images/web-developer.jpg"
+                    style="max-width: 450px; max-height: 450px;">
                 </div>
 
-                <input type="file" id="default-btn" name="file" hidden>
+                <input type="file" id="default-btn" name="file" hidden accept=".jpg, .png, .jpeg" required>
                 <button type="button" onclick="defaultBtnActive()" id="custom-btn" class="btn btn-warning">Choose your
                   photo</button>
               </div>
@@ -160,7 +159,7 @@
                 <h2 class="text-8 fw-400 mb-3">Hi, I'm
                   <span class="fw-700">
                     <input type="text" class="aboutMeInput form-control" placeholder="your nickname" name="nickname"
-                      style="width: auto; display: inline; padding: 5px;">
+                      style="width: auto; display: inline; padding: 5px;" required>
                   </span>
                 </h2>
                 <div class="input-group">
@@ -173,7 +172,7 @@
                 <div class="featured-box style-4">
                   <div class="featured-box-icon text-13 bg-primary rounded-circle">
                     <input type="number" style="width: 70%; background-color: inherit; text-align: center;"
-                      placeholder="5" name="workingtime" min="0" max="99">
+                      placeholder="5" name="workingtime" min="0" max="99" required>
                   </div>
                   <h3 class="text-7 wow rubberBand" data-wow-delay="2s">Years of <span class="fw-700">Experience</span>
                   </h3>
@@ -186,28 +185,28 @@
                 <p class="text-muted fw-500 mb-0">Name:</p>
                 <p class="text-4 text-dark fw-600 mb-0">
                   <input type="text" class="aboutMeInput form-control" placeholder="Hồ Khánh Vũ" name="name"
-                    style="width: auto; display: inline; padding: 5px;">
+                    style="width: auto; display: inline; padding: 5px;" required>
                 </p>
               </div>
               <div class="col-6 col-lg-3 wow fadeInUp" data-wow-delay="0.2s">
                 <p class="text-muted fw-500 mb-0">Email:</p>
                 <p class="text-4 fw-600 mb-0">
                   <input type="email" class="aboutMeInput form-control" placeholder="sample@gmail.com" name="gmail"
-                    style="width: auto; display: inline; padding: 5px;">
+                    style="width: auto; display: inline; padding: 5px;" required>
                 </p>
               </div>
               <div class="col-6 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
                 <p class="text-muted fw-500 mb-0">Date of birth:</p>
                 <p class="text-4 text-dark fw-600 mb-0">
                   <input type="date" class="aboutMeInput form-control" placeholder="Callum Smith" name="dateofbirth"
-                    style="width: auto; display: inline; padding: 5px;">
+                    style="width: auto; display: inline; padding: 5px;" required>
                 </p>
               </div>
               <div class="col-6 col-lg-3 wow fadeInUp" data-wow-delay="0.4s">
                 <p class="text-muted fw-500 mb-0">From:</p>
                 <p class="text-4 text-dark fw-600 mb-0">
                   <input type="text" class="aboutMeInput form-control" placeholder="Việt Nam" name="address"
-                    style="width: auto; display: inline; padding: 5px;">
+                    style="width: auto; display: inline; padding: 5px;" required>
                 </p>
               </div>
 
@@ -215,14 +214,14 @@
                 <p class="text-muted fw-500 mb-0">Facebook:</p>
                 <p class="text-4 text-dark fw-600 mb-0">
                   <input type="text" class="aboutMeInput form-control" placeholder="facebook.com/abc" name="facebook"
-                    style="width: fit-content; padding: 5px;">
+                    style="width: fit-content; padding: 5px;" required>
                 </p>
               </div>
               <div class="col-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
                 <p class="text-muted fw-500 mb-0">Github:</p>
                 <p class="text-4 text-dark fw-600 mb-0">
                   <input type="text" class="aboutMeInput form-control" placeholder="github.com/abc" name="github"
-                    style="width: auto; display: inline; padding: 5px;">
+                    style="width: auto; display: inline; padding: 5px;" required>
                 </p>
               </div>
               <div class="col-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
@@ -251,10 +250,10 @@
                 <div class="featured-box text-center px-md-4 borderWhatIDo">
                   <div class="input-group mb-3">
                     <input type="text" class="text-6 fw-600 mb-3 aboutMeInput form-control" placeholder="Graphic Design"
-                      style="text-align: center;" name="title">
+                      style="text-align: center;" name="title" required>
                   </div>
                   <div class="input-group mb-3"><textarea class="text-muted mb-0 form-control" rows="5"
-                      name="description"></textarea></div>
+                      name="description" placeholder="description"></textarea></div>
 
                   <div class="buttonWhatIDo">
                     <!-- <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation">
@@ -324,11 +323,11 @@
                     <div>
                       <div class="form-group">
                         <input type="text" class="form-control text-5 mb-2 form-control-sm master "
-                          placeholder="Master in Computer Engineering" name="title">
+                          placeholder="Master in Computer Engineering" name="title" required>
                       </div>
                       <div class="form-group">
                         <input type="text" class="form-control mb-2 form-control-sm university"
-                          placeholder="Harvard University / 2015 - 2017" name="time">
+                          placeholder="Harvard University / 2015 - 2017" name="time" required>
                       </div>
                       <div class="form-group">
                         <textarea class="form-control text-muted " rows="3" name="content"></textarea>
@@ -374,11 +373,11 @@
                     <div>
                       <div class="form-group">
                         <input type="text" class="form-control text-5 mb-2 form-control-sm"
-                          placeholder="Master in Computer Engineering" name="title">
+                          placeholder="Master in Computer Engineering" name="title" required>
                       </div>
                       <div class="form-group">
                         <input type="text" class="form-control mb-2 form-control-sm"
-                          placeholder="Harvard University / 2015 - 2017" name="time">
+                          placeholder="Harvard University / 2015 - 2017" name="time" required>
                       </div>
                       <div class="form-group">
                         <textarea class="form-control text-muted" rows="3" name="content"></textarea>
@@ -432,7 +431,7 @@
                     <!-- <span class="float-end selectorValue">5%</span>         -->
                     <p class="fw-500 text-start mb-3 form-skill">
                       <input name="skill" type="text" class="form-control" placeholder="Web Design"
-                        style="width:fit-content; padding: 5px;">
+                        style="width:fit-content; padding: 5px;" required>
                     </p>
                     <div class="progress progress-sm mb-4 form-skill">
                       <input class="inputRange" type="range" min="1" max="100" value="70" style="width: 100%"
