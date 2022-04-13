@@ -32,12 +32,9 @@ def create_portfolio_data_user():
 @user.route("/create-portfolio", methods=["POST"])
 def create_portfolio_file():
     data = model.Users.getdatafromrequest(request.json)
-    if data == "-1":
-        return Response(data, status=400)
-    else:
-        id = dataprovider.get_id()
-        save_data(id, data)
-        return Response(str(id), status=200)
+    id = dataprovider.get_id()
+    save_data(id, data)
+    return Response(str(id), status=200)
 
 
 @user.route("/create-portfolio/file", methods=["POST"])
