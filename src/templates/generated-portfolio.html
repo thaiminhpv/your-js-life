@@ -180,7 +180,7 @@
 
       <!-- Services
     ============================================= -->
-      {%if not (services[0]['title'] == '')%}
+      {%if services|length > 0%}
       <section id="services" class="section bg-light">
         <div class="container">
           <!-- Heading -->
@@ -206,7 +206,7 @@
 
       <!-- Resume
     ============================================= -->
-      {%if not ( (education[0]['title'] == '') and (experience[0]['title'] == '') and (skills[0]['title']) == '' ) %}
+      {%if education|length > 0 and experience|length > 0%}
       <section id="resume" class="section">
         <div class="container">
           <!-- Heading -->
@@ -215,18 +215,18 @@
           <!-- Heading end-->
 
           <div class="row g-5 mt-5">
-            {%if not (education[0]['title'] == '')%}
+            {%if education|length > 0%}
             <!-- My Education -->
             <div class="col-lg-6 wow fadeInUp">
               <h2 class="text-7 fw-600 mb-4 pb-2">My Education</h2>
               <div class="border-start border-2 border-primary ps-3">
                 {%for item in education%}
-                <h3 class="text-5">{{item['title']}}</h3>
-                <p class="mb-2">{{item['time']}}</p>
-                <p class="text-muted">{{item['content']}}</p>
-                {% if(education.index(item)) != education.index(education[-1]) %}
-                <hr class="my-4">
-                {% endif %}
+                    <h3 class="text-5">{{item['title']}}</h3>
+                    <p class="mb-2">{{item['time']}}</p>
+                    <p class="text-muted">{{item['content']}}</p>
+                    {% if(education.index(item)) != education.index(education[-1]) %}
+                        <hr class="my-4">
+                    {% endif %}
                 {%endfor%}
               </div>
             </div>
@@ -234,7 +234,7 @@
 
 
             <!-- My Experience -->
-            {%if not (experience[0]['title'] == '')%}
+            {%if experience|length > 0%}
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
               <h2 class="text-7 fw-600 mb-4 pb-2">My Experience</h2>
               <div class="border-start border-2 border-primary ps-3">
@@ -253,7 +253,7 @@
 
 
           <!-- My Skills -->
-          {%if not (skills[0]['title'] == '')%}
+          {%if skills|length > 0%}
           <h2 class="text-7 fw-600 mb-4 pb-2 mt-5 wow fadeInUp">My Skills</h2>
           <div class="row gx-5">
 

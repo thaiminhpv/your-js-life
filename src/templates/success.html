@@ -82,7 +82,7 @@
           </p>
         </section>
         <footer>
-          <input id="link" type="text" value="link">
+            <a href=""><input id="link" type="text" value="link" readonly></a>
           <button type="button" id="copyBtn" onclick="myFunction()">Copy Link</button>
         </footer>
         <a href="/create-portfolio"><button type="button" class="btn btn-primary" style="margin-top: 3.5rem;">Create
@@ -149,7 +149,9 @@
     let url = new URL(urlString);
     let id = url.searchParams.get("id");
     console.log(id);
-    document.getElementById("link").value = `${urlString.includes("https://") ? "https" : "http"}://${window.location.hostname}/portfolio/${id}`;
+    let link = `${urlString.includes("https://") ? "https" : "http"}://${window.location.hostname}/portfolio/${id}`;
+    document.getElementById("link").value = link;
+    document.getElementById("link").parentElement.href = link;
     // copy to clipboard
     // document.getElementById("copyBtn").addEventListener("click", function () {
     //   document.getElementById("link").select();

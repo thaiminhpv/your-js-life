@@ -22,6 +22,7 @@ defaultBtn.addEventListener("change", function () {
 document.getElementById('submitBtn').addEventListener('click', () => {
   // disable this button to prevent multiple clicks
   document.getElementById('submitBtn').disabled = true;
+  document.getElementById('loading').style.display = "inline-block"
   submitJSONform()
 });
 
@@ -50,25 +51,13 @@ function add_box() {
     console.log(newField.getAttribute('id'));
 }
 
-function remove_box() {
+function remove_box(event) {
     
     let array = document.getElementsByClassName('borderWhatIDo')   
     let services_box = document.getElementsByClassName('what-i-do-item')[0]    
     let remove_button = document.getElementsByClassName('button-education-item');
     if(array.length > 1){
-        services_box.remove(array);
-    }
-    else{
-        // alert("Are you sure you want to delete this section?")
-        confirm("Are you sure you want to delete this section?");
-        // function confirmDelete(){
-            if(confirm("Are you sure you want to delete this section?") == true){      
-                services_box.remove(array);
-            }else{
-                
-            }
-        
-        // }
+        event.parentNode.parentNode.parentNode.remove()
     }
 
     // let array = document.getElementsByClassName('borderWhatIDo')
@@ -76,7 +65,6 @@ function remove_box() {
 
     
     // let services_box = document.getElementsByClassName('what-i-do-item')[0]
-    // console.log(this);
     // for (let index = 0; index < array.length; index++) {
     //     if(array.length > 1 && document.getElementsByClassName('borderWhatIDo')[index].getAttribute('id') === getId){
     //         document.getElementsByClassName('borderWhatIDo')[index].remove();
@@ -87,6 +75,11 @@ function remove_box() {
         
         
 }
+function reply_click(clicked_id)
+  {
+     console.log(clicked_id)
+      
+  }
 //confirm-delete
 // function confirmDelete(){
 //     confirm("Bấm vào nút OK để tiếp tục");
@@ -101,11 +94,12 @@ function add_box_education() {
     parent_box.append(newField); 
 }
 
-function remove_box_education() {
+function remove_box_education(event) {
+    console.log(event)
     let array = document.getElementsByClassName('borderEducation')
     let mySkill_box = document.getElementsByClassName('boxMyEducation')[0]  
     if(array.length > 1){
-        mySkill_box.remove(array);
+        event.parentNode.parentNode.parentNode.remove()
     }     
            
         
@@ -118,23 +112,12 @@ function add_box_experience() {
     parent_box.append(newField); 
 }
 
-function remove_box_experience() {
+function remove_box_experience(event) {
     let array = document.getElementsByClassName('borderExperience')
     let mySkill_box = document.getElementsByClassName('boxMyExperience')[0]    
     if(array.length > 1){
-        mySkill_box.remove(array);
-    } else {
-        // alert("Are you sure you want to delete this section?")
-        confirm("Are you sure you want to delete this section?");
-        // function confirmDelete(){
-            if(confirm("Are you sure you want to delete this section?") == true){
-                mySkill_box.remove(array);
-            }else{
-
-            }
-
-        // }
-    }
+        event.parentNode.parentNode.parentNode.remove()
+    } 
         
 }
 //MySkills
@@ -145,26 +128,16 @@ function add_box_skills() {
     parent_box.append(newField); 
 }
 
-function remove_box_skills() {
+function remove_box_skills(event) {
     let array = document.getElementsByClassName('my-skill-item')
     let mySkill_box = document.getElementsByClassName('boxMySkills')[0]  
     if(array.length > 1){
-        mySkill_box.remove(array);
-    } else {
-        // alert("Are you sure you want to delete this section?")
-        confirm("Are you sure you want to delete this section?");
-        // function confirmDelete(){
-            if(confirm("Are you sure you want to delete this section?") == true){
-                mySkill_box.remove(array);
-            }else{
-
-            }
-
-        // }
-    }
+        event.parentNode.parentNode.parentNode.remove()
+    } 
 
 
 }
+
 
 function getAllInputData(){
     //Intro
@@ -242,13 +215,16 @@ function getAllInputData(){
 function submitJSONform(){
   let data = getAllInputData();
   // if any of data is empty, alert, then return
-  if (data.phone == '' || data.job == '' || data.address == '' || data.nickname == '' || data.introduction == '' || data.workingtime == '' || data.name == '' || data.gmail == '' || data.dateOfBirth == '' || data.address_year_of_experience == '' || data.facebook == '' || data.github == '' || data.linkedin == '' || data.services.length == 0 || data.education.length == 0 || data.experience.length == 0 || data.skills.length == 0){
+  if (data.phone == '' || data.job == '' || data.address == '' || data.nickname == '' || data.introduction == '' || data.workingtime == '' || data.name == '' || data.gmail == '' || data.dateOfBirth == '' || data.address_year_of_experience == ''  || data.services.length == 0 || data.education.length == 0 || data.experience.length == 0 || data.skills.length == 0) {
     alert("Please fill all the information!");
     document.getElementById('submitBtn').disabled = false;
+    document.getElementById('loading').style.display = "none"
     return;
   }
   document.getElementById('submitBtn').disabled = true;
   let json = JSON.stringify(data);
+  
+  document.getElementById('loading').style.display = "inline-block";
   fetch('/create-portfolio', {
     method: 'POST',
     headers: {
@@ -258,6 +234,12 @@ function submitJSONform(){
   }).then(res => res.json())
       .then(id => {
         console.log(id);
+        if (id === -1) {
+          alert("Please fill all the information!");
+          document.getElementById('submitBtn').disabled = false;
+          document.getElementById('loading').style.display = "none"
+          return;
+        }
         submitFileAndIdAndRedirect(id);
       }).catch(err => console.log(err));
 }
@@ -278,6 +260,7 @@ function submitFileAndIdAndRedirect(id) {
       // if success, redirect to portfolio/:id
       if (res.status === 'success') {
         window.location.href = `/success?id=${id}`;
+
       }
     })
 }

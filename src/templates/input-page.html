@@ -214,14 +214,14 @@
                 <p class="text-muted fw-500 mb-0">Facebook:</p>
                 <p class="text-4 text-dark fw-600 mb-0">
                   <input type="text" class="aboutMeInput form-control" placeholder="facebook.com/abc" name="facebook"
-                    style="width: fit-content; padding: 5px;" required>
+                    style="width: fit-content; padding: 5px;">
                 </p>
               </div>
               <div class="col-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
                 <p class="text-muted fw-500 mb-0">Github:</p>
                 <p class="text-4 text-dark fw-600 mb-0">
                   <input type="text" class="aboutMeInput form-control" placeholder="github.com/abc" name="github"
-                    style="width: auto; display: inline; padding: 5px;" required>
+                    style="width: auto; display: inline; padding: 5px;">
                 </p>
               </div>
               <div class="col-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
@@ -263,7 +263,7 @@
                     style="margin-right: 2rem;">
                     <i class="fa-solid fa-arrow-down"></i>
                   </button> -->
-                    <button onclick="remove_box() " type="button"
+                    <button onclick="remove_box(this) " type="button"
                       class="btn btn-outline-danger btn-sm borderButtonEducation button-education-item">
                       <i class="fa-solid fa-trash-can"></i>
                     </button>
@@ -343,7 +343,7 @@
                       style="margin-right: 2rem;">
                       <i class="fa-solid fa-arrow-down"></i>
                     </button> -->
-                      <button onclick="remove_box_education()" type="button"
+                      <button onclick="remove_box_education(this)" type="button"
                         class="btn btn-outline-danger btn-sm borderButtonEducation">
                         <i class="fa-solid fa-trash-can"></i>
                       </button>
@@ -383,7 +383,7 @@
                         <textarea class="form-control text-muted" rows="3" name="content"></textarea>
                       </div>
                     </div>
-                    <div class="buttonEducation">
+                    <div class="buttonExperience">
                       <!-- <button type="button" class="btn btn-outline-secondary btn-sm borderButtonEducation">
                       <i class="fa-solid fa-arrow-up"></i>
                     </button>
@@ -391,7 +391,7 @@
                       style="margin-right: 2rem;">
                       <i class="fa-solid fa-arrow-down"></i>
                     </button> -->
-                      <button onclick="remove_box_experience()" type="button"
+                      <button onclick="remove_box_experience(this)" type="button"
                         class="btn btn-outline-danger btn-sm borderButtonEducation">
                         <i class="fa-solid fa-trash-can"></i>
                       </button>
@@ -417,7 +417,7 @@
               <div class="col-md-6 wow fadeInUp py-3 borderInputRange boxMySkills">
                 <div class="my-skill-item">
                   <div class="borderButtonRange">
-                    <button onclick="remove_box_skills()" type="button" class="btn-outline-danger activeButton "
+                    <button onclick="remove_box_skills(this)" type="button" class="btn-outline-danger activeButton "
                       style="border: 2.5px solid red; margin-right: 1rem;">
                       <i class="fa-solid fa-trash-can"></i>
                     </button>
@@ -444,13 +444,16 @@
 
             </div>
 
-
-
+            <p class="text-center mt-5 wow fadeInUp ">
+              <button id="submitBtn" type="submit" class="btn btn-outline-dark shadow-none rounded-0">Save
+                <div class="spinner-border spinner-border-sm" role="status" id="loading" style="display: none;">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </button>
+            </p>
           </div>
 
-          <p class="text-center mt-5 wow fadeInUp">
-            <button id="submitBtn" type="submit" class="btn btn-outline-dark shadow-none rounded-0">Save</button>
-          </p>
+          
       </div>
       </section>
 

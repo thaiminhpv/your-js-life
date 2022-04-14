@@ -1,4 +1,5 @@
 from time import time
+import json
 import cloudinary.uploader
 from flask import redirect, template_rendered, url_for, render_template, request, Blueprint, Response, jsonify, abort
 from . import config
@@ -17,7 +18,7 @@ def home():
     portfolios_tuple = InteractDatabase.get_all_portfolio()
     portfolios = list(map(list, portfolios_tuple))  # convert list of tuple to list of list
     for index, portfolio in enumerate(portfolios):
-        if len(portfolio[2]) > MAX_DESCRIPTION_LENGTH:
+        if portfolio[2] and len(portfolio[2]) > MAX_DESCRIPTION_LENGTH:
             portfolios[index][2] = portfolio[2][:MAX_DESCRIPTION_LENGTH] + "..."
     print(portfolios)
     return render_template("landing-page.html", portfolios=portfolios[::-1])
@@ -31,9 +32,12 @@ def create_portfolio_data_user():
 @user.route("/create-portfolio", methods=["POST"])
 def create_portfolio_file():
     data = model.Users.getdatafromrequest(request.json)
-    id = dataprovider.get_id()
-    save_data(id, data)
-    return Response(str(id), status=200)
+    if data == "-1":
+        return Response(data, status=400)
+    else:
+        id = dataprovider.get_id()
+        save_data(id, data)
+        return Response(str(id), status=200)
 
 
 @user.route("/create-portfolio/file", methods=["POST"])
@@ -65,11 +69,24 @@ def portfolio(id):
         experience = convert_obj_to_emoji(experience)
         skills = convert_obj_to_emoji(skills)
 
+    # pretty_print_json(data_user=data_user, path=path, education=education, services=services, experience=experience, skills=skills)
+
+    education = [e for e in education if e.get('title') and e.get('time') and e.get('content')]
+    experience = [e for e in experience if e.get('title') and e.get('time') and e.get('content')]
+    services = [s for s in services if s.get('description') and s.get('title')]
+    skills = [s for s in skills if s.get('skill')]
+
     return render_template(
         'generated-portfolio.html',
         user=data_user, image_path=path, experience=experience,
         education=education, services=services, skills=skills
     )
+
+
+def pretty_print_json(**kwargs):
+    temp = dict(**kwargs)
+    # pretty print json
+    print(json.dumps(temp, indent=4, sort_keys=True))
 
 
 @user.errorhandler(404)
