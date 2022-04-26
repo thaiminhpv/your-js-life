@@ -13,23 +13,29 @@
 | `feature/landing-page`        | [landing-page.japanese-software.engineer/](https://landing-page.japanese-software.engineer)                                  |
 | `feature/connect_database`    | [connect-database.japanese-software.engineer](https://connect-database.japanese-software.engineer)                           |
 
-## How to run locally
+## How to run
 
-```bash
-# 1. Create virtual environment
-python -m venv env
+1. Setup MySQL database (can be _local_ or _remote_)
+2. Run [database-dump.sql](./sql-dump/database-dump.sql)
+3. Setup Cloudinary
+4. Copy `.env.example` to `.env` and fill in the secrets
+5. Run server
 
-# 2. Activate virtual environment
-env\Scripts\activate.bat          # for Windows
-    # or
-source env/bin/activate           # for Linux
+    ```bash
+    # Create virtual environment
+    python -m venv env
 
-# 3. Install dependencies
-pip install -r requirements.txt
+    # Activate virtual environment
+    env\Scripts\activate.bat          # for Windows
+        # or
+    source env/bin/activate           # for Linux
 
-# 4. Run server
-python app.py
-```
+    # Install dependencies
+    pip install -r requirements.txt
+
+    # Run
+    python app.py
+    ```
 
 ## Contributors
 
