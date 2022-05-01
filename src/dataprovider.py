@@ -235,5 +235,7 @@ class InteractDatabase:
             FROM portfolio as p LEFT JOIN avt_path ap on p.id = ap.portfolio_id
             LIMIT 21
             """)
+        if connection.is_connected():
+            connection.close()
         return data
 
