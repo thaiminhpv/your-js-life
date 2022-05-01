@@ -5,8 +5,6 @@ from .config import *
 from .model import Users
 from src import model
 
-connection = connect(**DATABASE_CONFIG) 
-
 
 def get_id():
     """
@@ -52,10 +50,14 @@ def ConvertForTuple_my_skills(database):
 
 
 class InteractDatabase:
-    def __new__(cls):
-        if not hasattr(cls, 'instance'):
-            cls.instance = super(InteractDatabase, cls).__new__(cls)
-        return cls.instance
+    connection = None
+
+    def __enter__(self):
+        InteractDatabase.connection = connect(**DATABASE_CONFIG)
+        return InteractDatabase.connection
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        InteractDatabase.connection.close()
 
     @staticmethod
     def executequery(query: str, parameter=NULL):
@@ -64,10 +66,8 @@ class InteractDatabase:
         :param parameter:
         :return:
         """
-        if not connection.is_connected():
-            connection.connect()
         try:
-            with connection.cursor() as cursor:
+            with InteractDatabase.connection.cursor() as cursor:
                 if parameter != NULL:
                     cursor.execute(query, parameter)
                 else:
@@ -86,18 +86,16 @@ class InteractDatabase:
         :param parameter:
         :return:
         """
-        if not connection.is_connected():
-            connection.connect()
         try:
-            
-            with connection.cursor() as cursor:
+
+            with InteractDatabase.connection.cursor() as cursor:
                 if parameter != NULL:
                     cursor.execute(query, parameter)
                 else:
                     cursor.execute(query)
 
                 result = cursor.lastrowid
-            connection.commit()
+            InteractDatabase.connection.commit()
             return result
         except Error as e:
             print(e)
@@ -125,9 +123,8 @@ class InteractDatabase:
         parameter = list()
         parameter.append(id)
         parameter.append(path)
-        InteractDatabase.executenonquery(query, parameter)
-        if connection.is_connected():
-            connection.close()
+        with InteractDatabase():
+            InteractDatabase.executenonquery(query, parameter)
 
 
     # parameter list_edu [id, title, time, content] ; list_exp [id, title, time, content]
@@ -161,92 +158,90 @@ class InteractDatabase:
             parameter = (id, row['skill'], row['value'])
             InteractDatabase.executenonquery(query, parameter)
 
-  
+
     @staticmethod
     def get_user_data_from_id(id):
-        data = InteractDatabase.executequery(
-            """
-            SELECT
-            #   *
-                p.id,
-                p.name,
-                p.nickname,
-                p.texterea,
-                p.gmail,
-                p.phone,
-                p.address,
-                p.dateofbirth,
-                p.linkedin,
-                p.facebook,
-                p.github,
-                p.job,
-                p.workingtime,
-                p.introduction,
-                ap.path
-            FROM portfolio as p
-                LEFT JOIN avt_path ap on p.id = ap.portfolio_id
-            WHERE p.id = %s
-            """,
-            (id,))
-        if not data:
-            if connection.is_connected():
-                connection.close()
-            return None
-        temp = data[0]
-        data_user = dict(
-            id=temp[0],
-            name=temp[1],
-            nickname=temp[2],
-            texterea=temp[3].split("\n"),
-            gmail=temp[4],
-            phone=temp[5],
-            address=temp[6],
-            dateofbirth=temp[7],
-            linkedin=temp[8],
-            facebook=temp[9],
-            github=temp[10],
-            job=temp[11],
-            workingtime=temp[12],
-            introduction=temp[13],
-        )
-        path = temp[14]
-        education = ConvertForTuple_Exp_Edu( InteractDatabase.executequery("SELECT * FROM `education` WHERE `portfolio_id` = %s", (id,)) )
-        services = ConvertForTuple_Services( InteractDatabase.executequery("SELECT * FROM `services` WHERE `portfolio_id` = %s", (id,)) )
-        experience = ConvertForTuple_Exp_Edu( InteractDatabase.executequery("SELECT * FROM `experience` WHERE `portfolio_id` = %s", (id,)) )
-        skills = ConvertForTuple_my_skills( InteractDatabase.executequery("SELECT * FROM `my_skills` WHERE `portfolio_id` = %s", (id,)) )
-        if connection.is_connected():
-            connection.close()
-        return {
-            'user': data_user,
-            'path': path,
-            'education': education,
-            'services': services,
-            'experience': experience,
-            'skills': skills
-        }
+        with InteractDatabase():
+            data = InteractDatabase.executequery(
+                """
+                SELECT
+                #   *
+                    p.id,
+                    p.name,
+                    p.nickname,
+                    p.texterea,
+                    p.gmail,
+                    p.phone,
+                    p.address,
+                    p.dateofbirth,
+                    p.linkedin,
+                    p.facebook,
+                    p.github,
+                    p.job,
+                    p.workingtime,
+                    p.introduction,
+                    ap.path
+                FROM portfolio as p
+                    LEFT JOIN avt_path ap on p.id = ap.portfolio_id
+                WHERE p.id = %s
+                """,
+                (id,))
+            if not data:
+                # implicit close db connection
+                return None
+            temp = data[0]
+            data_user = dict(
+                id=temp[0],
+                name=temp[1],
+                nickname=temp[2],
+                texterea=temp[3].split("\n"),
+                gmail=temp[4],
+                phone=temp[5],
+                address=temp[6],
+                dateofbirth=temp[7],
+                linkedin=temp[8],
+                facebook=temp[9],
+                github=temp[10],
+                job=temp[11],
+                workingtime=temp[12],
+                introduction=temp[13],
+            )
+            path = temp[14]
+            education = ConvertForTuple_Exp_Edu( InteractDatabase.executequery("SELECT * FROM `education` WHERE `portfolio_id` = %s", (id,)) )
+            services = ConvertForTuple_Services( InteractDatabase.executequery("SELECT * FROM `services` WHERE `portfolio_id` = %s", (id,)) )
+            experience = ConvertForTuple_Exp_Edu( InteractDatabase.executequery("SELECT * FROM `experience` WHERE `portfolio_id` = %s", (id,)) )
+            skills = ConvertForTuple_my_skills( InteractDatabase.executequery("SELECT * FROM `my_skills` WHERE `portfolio_id` = %s", (id,)) )
+            # if connection.is_connected():
+            #     connection.close()
+            return {
+                'user': data_user,
+                'path': path,
+                'education': education,
+                'services': services,
+                'experience': experience,
+                'skills': skills
+            }
 
-   
+
     @staticmethod
     def get_all_portfolio():
-        data = InteractDatabase.executequery(
-            """
-            SELECT
-            p.id, p.name, p.introduction, ap.path
-            FROM portfolio as p LEFT JOIN avt_path ap on p.id = ap.portfolio_id
-            LIMIT 21
-            """)
-        if connection.is_connected():
-            connection.close()
+        with InteractDatabase():
+            data = InteractDatabase.executequery(
+                """
+                SELECT
+                p.id, p.name, p.introduction, ap.path
+                FROM portfolio as p LEFT JOIN avt_path ap on p.id = ap.portfolio_id
+                LIMIT 21
+                """)
         return data
 
     @staticmethod
     def save_data(id, data):
-        InteractDatabase.addportfolio(data['user'])
-        InteractDatabase.save_exp(id, data['experience'])
-        InteractDatabase.save_edu(id, data['education'])
-        InteractDatabase.save_services(id, data['services'])
-        InteractDatabase.save_skills(id, data['skills'])
-        if connection.is_connected():
-            connection.close()
+        with InteractDatabase():
+            InteractDatabase.addportfolio(data['user'])
+            InteractDatabase.save_exp(id, data['experience'])
+            InteractDatabase.save_edu(id, data['education'])
+            InteractDatabase.save_services(id, data['services'])
+            InteractDatabase.save_skills(id, data['skills'])
         return True
 
