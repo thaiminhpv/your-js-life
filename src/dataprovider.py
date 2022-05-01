@@ -239,3 +239,14 @@ class InteractDatabase:
             connection.close()
         return data
 
+    @staticmethod
+    def save_data(id, data):
+        InteractDatabase.addportfolio(data['user'])
+        InteractDatabase.save_exp(id, data['experience'])
+        InteractDatabase.save_edu(id, data['education'])
+        InteractDatabase.save_services(id, data['services'])
+        InteractDatabase.save_skills(id, data['skills'])
+        if connection.is_connected():
+            connection.close()
+        return True
+

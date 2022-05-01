@@ -36,7 +36,7 @@ def create_portfolio_file():
         return Response(data, status=400)
     else:
         id = dataprovider.get_id()
-        save_data(id, data)
+        InteractDatabase.save_data(id, data)
         return Response(str(id), status=200)
 
 
@@ -97,14 +97,6 @@ def page_not_found(e):
 @user.route("/success", methods=["GET"])
 def success():
     return render_template("success.html")
-
-
-def save_data(id, data):
-    InteractDatabase.addportfolio(data['user'])
-    InteractDatabase.save_exp(id, data['experience'])
-    InteractDatabase.save_edu(id, data['education'])
-    InteractDatabase.save_services(id, data['services'])
-    InteractDatabase.save_skills(id, data['skills'])
 
 
 def get_path_image(request):
