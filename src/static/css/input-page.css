@@ -1,6 +1,22 @@
 input {
   border: 0;
   padding: 5px;
+  border-radius: 10px;
+}
+
+#about {
+  width: 60%;
+  margin: auto;
+}
+
+.textFrom2 {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+#main-wrapper {
+  background-color: #d3d1c4;
 }
 
 input:focus {
@@ -75,7 +91,6 @@ input:focus {
   border-width: 2.5px;
 }
 
-
 /*Experience*/
 .borderExperience {
   border: 1.5px solid #fff;
@@ -102,6 +117,7 @@ input:focus {
 .borderButtonExperience {
   border-width: 2.5px;
 }
+
 /* input range skill */
 .inputRange {
   cursor: pointer;
@@ -117,6 +133,7 @@ input:focus {
 .borderInputRange:hover {
   border: 2px solid rgb(97, 95, 95);
 }
+
 .borderInputRange:hover .borderButtonRange {
   visibility: visible;
 }
@@ -136,4 +153,53 @@ input:focus {
   width: 4rem;
   height: 2rem;
   border-width: 3px;
+}
+
+#footer1 {
+  padding: 20px;
+}
+
+.required-field::after {
+  content: " *";
+  color: red;
+}
+
+.gift-choice {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.custom-radio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.present {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.checkout {
+  font-family: sans-serif;
+  background-color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 5px;
+  margin: 1.5rem 0;
+}
+
+ul {
+  list-style: none;
+}
+
+li:not(:last-child) {
+  padding-bottom: 0.3rem;
+}
+
+li > span {
+  font-weight: 700;
 }
