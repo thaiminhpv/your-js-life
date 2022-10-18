@@ -1,205 +1,316 @@
-input {
-  border: 0;
-  padding: 5px;
-  border-radius: 10px;
-}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
 
-#about {
-  width: 60%;
-  margin: auto;
-}
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+  <link href="/static/images/favicon.png" rel="icon">
+  <title>Anonymous Shipper</title>
+  <meta name="description" content="Một sản phẩm của CTV BCM Team 2 JS Club gen 10">
+  <meta name="author" content="Cộng Tác Viên Ban Chuyên Môn Team 2 JS Club">
+  <meta property="og:image" content="/static/images/thumbnail-wide.png" />
 
-.textFrom2 {
-  font-size: 20px;
-  font-weight: bold;
-  font-family: sans-serif;
-}
+  <!-- Web Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900"
+    type="text/css">
 
-#main-wrapper {
-  background-color: #d3d1c4;
-}
+  <!-- Stylesheet
+============================== -->
+  <!-- Animate -->
+  <link rel="stylesheet" type="text/css" href="/static/vendor/animate/animate.min.css">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- Font Awesome Icon -->
+  <link rel="stylesheet" type="text/css" href="/static/vendor/font-awesome/css/all.min.css">
+  <!-- Owl Carousel -->
+  <link rel="stylesheet" type="text/css" href="/static/vendor/owl.carousel/assets/owl.carousel.min.css">
+  <!-- Magnific Popup -->
+  <link rel="stylesheet" type="text/css" href="/static/vendor/magnific-popup/magnific-popup.min.css">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" type="text/css" href="/static/css/stylesheet.css">
 
-input:focus {
-  outline: none;
-}
+  <!-- Colors Css -->
+  <link id="color-switcher" type="text/css" rel="stylesheet" href="#">
 
-.aboutMeInput {
-  border: 1px solid black;
-  padding: 2px;
-}
+  <link rel="stylesheet" href="../static/css/input-page.css">
+</head>
 
-.btn {
-  transition-duration: 0ms;
-}
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
+  <!-- <form method="post" action="#" id="form" onsubmit="return false;"> -->
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="lds-ellipsis">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <!-- Preloader End -->
 
-/* upload avt */
-#custom-btn {
-  border-radius: 25px;
-  font-size: 1.2rem;
-  font-weight: 600;
-  padding: 0.6rem 1.2rem 0.6rem 1.2rem;
-}
+  <!-- Document Wrapper   
+=============================== -->
+  <div id="main-wrapper">
+    <header id="header" class="sticky-top">
+      <!-- Navbar -->
+      <nav
+        class="primary-menu navbar navbar-expand-none navbar-overlay navbar-overlay-dark bg-transparent border-bottom-0 text-5 fw-600">
+        <div class="container">
+          <!-- Logo -->
+          <!-- <a class="logo" href="/" title="JS-Club"> <img src="/static/images/LogoJS.png" alt="JS-Club"
+              style="width: 70px; height: 70px;"> </a> -->
+          <!-- Logo End -->
+          <div class="text-3 ms-auto me-2">
+            <span class="text-4 me-2"><i class="fas fa-phone" style="margin-right: 5px;"></i>0376312235</span>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#header-nav"><span></span><span></span><span></span></button>
+          <div id="header-nav" class="collapse navbar-collapse">
+            <div class="d-flex flex-column h-100 align-items-center justify-content-center">
+              <ul class="social-icons social-icons-light social-icons-lg social-icons-light d-inline-flex mt-4">
+                <li class="social-icons-facebook"><a data-bs-toggle="tooltip" href="#" target="_blank" title
+                    data-bs-original-title="Facebook"><i class="fab fa-facebook"></i></a></li>
 
-/* What I do */
-.borderWhatIDo {
-  border: 1.5px solid #fff;
-  border-radius: 3px;
-  position: relative;
-  padding: 0.8rem;
-}
+                <li class="social-icons-instagram">
+                  <a data-bs-toggle="tooltip" href="#" target="_blank" title data-bs-original-title="Github">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </li>
 
-.borderWhatIDo:hover {
-  border: 1.5px solid rgb(97, 95, 95);
-}
+                <li class="social-icons-linkedin"><a data-bs-toggle="tooltip" href="#" target="_blank" title
+                    data-bs-original-title="Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
 
-.borderWhatIDo:hover .buttonWhatIDo {
-  visibility: visible;
-}
+                <li class="social-icons-dribbble"><a data-bs-toggle="tooltip"
+                    href="anonymousshipper.fptu.ssg104@gmail.com" target="_blank" title data-bs-original-title="Gmail">
+                    <i class="fa-solid fa-envelope"></i> </a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- Navbar End -->
+    </header>
 
-.buttonWhatIDo {
-  position: absolute;
-  top: -13%;
-  right: 0;
-  visibility: hidden;
-}
+    <!-- Content
+  ============================================= -->
+    <div id="content" role="main">
 
-/* My education , My experience */
+      <!-- About
+    ============================================= -->
+      <section id="home" class="d-flex  position-relative ">
+        <div class="img-fluid">
+          <img class="w-100 h-100" src="../static/images/1.png"></img>
+        </div>
+      </section>
 
-.borderEducation {
-  border: 1.5px solid #fff;
-  border-radius: 3px;
-  position: relative;
-  padding: 0.8rem;
-}
+      <section id="about" class="section">
+        <form action="" method="post">
+          <p class="textFrom2">Thông tin người gửi</p>
+          <div style="border-bottom: 1px solid black;">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4" class="required-field">Bạn tên là gì ? (Hoặc nickname của bạn)
+                </label>
+                <input type="text" class="form-control" id="inputEmail4" name="from_name"
+                  placeholder="Câu trả lời của bạn" required>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputEmail" class="required-field">Link Facebook của bạn :
+                </label>
+                <input type="text" name="from_facebook" class="form-control" id="inputEmail"
+                  placeholder="Câu trả lời của bạn" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputState">Giới Tính</label>
+                <select id="inputState" name="from_sex" class="form-control">
+                  <option selected>Choose...</option>
+                  <option>Nam</option>
+                  <option>Nữ</option>
+                  <option>Bí mật</option>
+                </select>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputState">Bạn là sinh viên khóa bao nhiêu ?</label>
+                <select id="inputState" name="from_gen" class="form-control">
+                  <option selected>Choose...</option>
+                  <option>K18</option>
+                  <option>K17</option>
+                  <option>K16</option>
+                  <option>K15</option>
+                  <option>K14 trở về trước</option>
+                  <option>Không phải là sinh viên FPT</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress" class="required-field">SDT của bạn :</label>
+              <input type="text" name="from_phone" class="form-control" id="inputAddress"
+                placeholder="Câu trả lời của bạn" required>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress2">Email cá nhân của bạn</label>
+              <input type="text" name="from_mail" class="form-control" id="inputAddress2"
+                placeholder="Câu trả lời của bạn">
+            </div>
+          </div>
 
-.borderEducation:hover {
-  border: 1.5px solid rgb(97, 95, 95);
-}
+          <p class="textFrom2 mt-4">Thông tin người nhận quà</p>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4" class="required-field">Tên người nhận
+              </label>
+              <input type="text" name="to_name" class="form-control" id="inputEmail4" placeholder="Câu trả lời của bạn"
+                required>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputEmail" class="required-field">Link Facebook người nhận
+              </label>
+              <input type="text" name="to_facebook" class="form-control" id="inputEmail"
+                placeholder="Câu trả lời của bạn" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputState">Giới Tính</label>
+              <select id="inputState" name="to_sex" class="form-control">
+                <option selected>Choose...</option>
+                <option>Nam</option>
+                <option>Nữ</option>
+                <option>Bí mật</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputAddress" class="required-field">SDT người nhận:</label>
+              <input type="text" name="to_phone" class="form-control" id="inputAddress"
+                placeholder="Câu trả lời của bạn">
+            </div>
+          </div>
 
-.borderEducation:hover .buttonEducation {
-  visibility: visible;
-}
+          <div class="form-group">
+            <label for="inputAddress2">Email cá nhân của người nhận :</label>
+            <input type="text" name="to_mail" class="form-control" id="inputAddress2" placeholder="Câu trả lời của bạn">
+          </div>
+          <div class="form-group">
+            <label for="inputAddress2">Bạn có lời nhắn nào muốn gửi gắm hay không ?</label>
+            <input type="text" name="to_mess" class="form-control" id="inputAddress2" placeholder="Câu trả lời của bạn">
+          </div>
+          <div class="form-group">
+            <label for="inputAddress2">Bạn có yêu cầu gì cho chúng mình hay không ? (Thời gian, địa điểm,..)
+            </label>
+            <input type="text" name="to_request" class="form-control" id="inputAddress2"
+              placeholder="Câu trả lời của bạn">
+          </div>
 
-.buttonEducation {
-  position: absolute;
-  top: -18%;
-  right: 0;
-  visibility: hidden;
-}
+          <br>
+          <p class="textFrom2 mt-5">Menu</p>
+          <div class="gift-choice">
+            <div class=" custom-radio">
+              <label for="customRadio1">
+                <img class="img-fluid" src="../static/images/69k.png"></img>
+              </label>
+              <input type="radio" class="custom-radio" name="gift" value="69" checked>
+            </div>
+            <div class=" custom-radio">
+              <label for="customRadio2">
+                <img class="img-fluid" src="../static/images/99k.png"></img>
+              </label>
+              <input type="radio" class="custom-radio" name="gift" value="99">
+            </div>
+            <div class=" custom-radio">
+              <label for="customRadio2">
+                <img class="img-fluid" src="../static/images/25k.png"></img>
+              </label>
+              <input type="radio" class="custom-radio" name="gift" value="99">
+            </div>
+          </div>
 
-.borderButtonEducation {
-  border-width: 2.5px;
-}
+          <div class="checkout">
+            <p style="font-size: 1.5rem;">Bạn vui lòng chuyển tiền vào tài khoản : </p>
+            <ul>
+              <li><span>STK:</span> 6868620112003 (VU QUYNH CHI)</li>
+              <li><span>Ngân hàng: </span> MB Bank</li>
+              <li><span>Ghi chú: </span>Ten_SDT_SoLuong_TongTien (Ví dụ: NguyenDinhDung_0376312235_1_99)</li>
+            </ul>
 
-/*Experience*/
-.borderExperience {
-  border: 1.5px solid #fff;
-  border-radius: 3px;
-  position: relative;
-  padding: 0.8rem;
-}
+          </div>
 
-.borderExperience:hover {
-  border: 1.5px solid rgb(97, 95, 95);
-}
+          <button type="submit" value="submit" class="btn"><span style="color: #585334;">Gửi</span></button>
+        </form>
+      </section>
+      <!-- About end -->
 
-.borderExperience:hover .buttonExperience {
-  visibility: visible;
-}
 
-.buttonExperience {
-  position: absolute;
-  top: -18%;
-  right: 0;
-  visibility: hidden;
-}
+      <!-- Resume
+    ============================================= -->
 
-.borderButtonExperience {
-  border-width: 2.5px;
-}
 
-/* input range skill */
-.inputRange {
-  cursor: pointer;
-}
+    </div>
+    </section>
 
-.borderInputRange {
-  border: 2px solid #fff;
-  border-radius: 5px;
-  position: relative;
-  opacity: 0.7;
-}
 
-.borderInputRange:hover {
-  border: 2px solid rgb(97, 95, 95);
-}
+    <!-- Footer
+  ============================================= -->
+    <footer id="footer1" class="section bg-dark text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 text-center text-lg-start wow fadeInUp">
+            <p class="mb-2 mb-lg-0">Copyright © 2022. All Rights Reserved.</p>
+          </div>
+          <div class="col-lg-6 wow fadeInUp">
+            <p class="mb-0 text-center text-lg-end">Designed by <a class="fw-600" href="#">NTN</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer end -->
 
-.borderInputRange:hover .borderButtonRange {
-  visibility: visible;
-}
+  </div>
+  <!-- Document Wrapper end -->
+  </div>
+  </form>
 
-.borderButtonRange {
-  visibility: hidden;
-  position: absolute;
-  top: -26%;
-  right: 0;
-}
+  <!-- Back to Top
+============================================= -->
+  <a id="back-to-top" class="rounded-circle" data-bs-toggle="tooltip" title="Back to Top" href="javascript:void(0)"><i
+      class="fas fa-arrow-up"></i></a>
 
-.activeButton {
-  background-color: transparent;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  border-radius: 0.25rem;
-  width: 4rem;
-  height: 2rem;
-  border-width: 3px;
-}
+  <!-- Styles Switcher -->
 
-#footer1 {
-  padding: 20px;
-}
+  <!-- Styles Switcher End -->
 
-.required-field::after {
-  content: " *";
-  color: red;
-}
+  <!-- JavaScript -->
+  <script src="/static/vendor/jquery/jquery.min.js"></script>
+  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Easing -->
+  <script src="/static/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <!-- Appear -->
+  <script src="/static/vendor/jquery.appear/jquery.appear.min.js"></script>
+  <!-- WOW animation -->
+  <script src="/static/vendor/wow/wow.min.js"></script>
+  <!-- Images Loaded -->
+  <script src="/static/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <!-- Typed -->
+  <script src="/static/vendor/typed/typed.min.js"></script>
+  <!-- Parallax Bg -->
+  <script src="/static/vendor/parallaxie/parallaxie.min.js"></script>
+  <!-- Owl Carousel -->
+  <script src="/static/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <!-- isotope Portfolio Filter -->
+  <script src="/static/vendor/isotope/isotope.pkgd.min.js"></script>
+  <!-- Magnific Popup -->
+  <script src="/static/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+  <!-- Style Switcher -->
+  <script src="/static/js/switcher.min.js"></script>
+  <!-- Custom Script -->
+  <script src="/static/js/theme.js"></script>
 
-.gift-choice {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
+  <script src="https://kit.fontawesome.com/81e4fcabce.js" crossorigin="anonymous"></script>
 
-.custom-radio {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 60%;
-  margin: 0 auto;
-}
+  <script src="/static/js/input-page.js"></script>
+</body>
 
-.present {
-  display: flex;
-  justify-content: center;
-  margin-top: 1.5rem;
-}
-
-.checkout {
-  font-family: sans-serif;
-  background-color: #fff;
-  padding: 1rem 1.5rem;
-  border-radius: 5px;
-  margin: 1.5rem 0;
-}
-
-ul {
-  list-style: none;
-}
-
-li:not(:last-child) {
-  padding-bottom: 0.3rem;
-}
-
-li > span {
-  font-weight: 700;
-}
+</html>
